@@ -10,13 +10,17 @@
 	
 		<!-- 머리 -->
 		<%@ include file="./include/header.jsp"%>
-		
-		<!-- 내용시작 -->
 		<div id="container">
+			<%@ include file="./include/Head.jsp"%>
 			
-		</div>
-		<!-- 내용끝 -->
+			<!-- 내용시작 -->
+			<div id="content">
+			
+			</div>
+			<!-- 내용끝 -->
 		
+		</div>	
+		<!-- 머리끝 -->
 		<!-- 푸터시작 -->
 		<div id="footer">
 			<%@ include file="./include/footer.jsp"%>
