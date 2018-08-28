@@ -1,0 +1,565 @@
+﻿@charset "utf-8";
+/* ----------------------------------------------------------
+	# 삼성생명 다이렉트 리뉴얼 2015
+	# 컨텐츠 페이지 : 청약
+---------------------------------------------------------- */
+
+/* ----------------------------------------------------------
+	청약 공통 레이아웃
+---------------------------------------------------------- */
+#content.page-step {width:100%;padding-top:0;font-family:'SECGCM';}
+#content.page-step .tit-page {position:absolute;left:-9999px;}
+#content.page-step > .heading {position:relative;background:#8e95a1;z-index:100;width:100%}
+#content.page-step > .heading .ui-toggle-btn {overflow:hidden;position:absolute;right:0;top:22px;width:60px;height:60px;text-indent:-9999px;font-size:0;background:url(../images/com/btn_toggle1.png) no-repeat -55px 50%;}
+#content.page-step > .heading.open .ui-toggle-btn {background-position:14px 50%;}
+#content.page-step > .heading > div > div {position:relative;width:910px;margin:0 auto;padding:0 60px 0 0;}
+#content.page-step > .heading > div > div.promotion{padding:0;}
+#content.page-step > .heading > div.info-detail {position:absolute;left:50%;top:78px;width:240px;margin:0 0 0 185px;padding:12px 28px 30px;background:#fff;border:2px solid #4f5661;z-index:49;border-radius:5px;}
+#content.page-step > .heading > div.info-detail div {overflow:hidden;width:100%;padding:0;}
+#content.page-step > .heading > div.info-detail div .btn-area {margin-top:20px;}
+
+#content.page-step .info-basic .info {overflow:hidden;padding:14px 0;text-align:right;color:#fff;}
+#content.page-step .info-basic .info > li {display:inline-block;padding:16px 30px;vertical-align:top;font-size:18px;line-height:22px;*display:inline;*zoom:1;}
+#content.page-step .info-basic .info > li .tit {position:absolute;left:-9999px;}
+#content.page-step .info-basic .info > li span, #content.page-step .info-basic .info > li em {display:inline-block;vertical-align:bottom;}
+#content.page-step .info-basic .info > li span {font-size:16px;}
+#content.page-step .info-basic .info > li strong {font-weight:normal;}
+#content.page-step .info-basic .info > li em.block {display:block;}
+#content.page-step .info-basic .info > li.name {float:left;background:none;padding:0 15px;}
+#content.page-step .info-basic .info > li.name > .tit + span, #content.page-step .info-basic .info > li.name em {}
+#content.page-step .info-basic .info > li.name > .tit + span {font-size:27px;line-height:38px;text-align:left;}
+#content.page-step .info-basic .info > li.name > .tit + span strong {display:block;}
+#content.page-step .info-basic .info > li.name > em {font-size:18px;line-height:28px;}
+#content.page-step .info-basic .info > li.price {padding:0 0 0 30px;border-left:1px solid #bbbfc7;line-height:74px;}
+#content.page-step .info-basic .info > li.price > span {font-size:18px;}
+#content.page-step .info-basic .info > li.price > span strong {font-size:40px;}
+
+#content.page-step .info-detail .info {text-align:center;border-bottom:1px solid #ddd;}
+#content.page-step .info-detail .info > li {padding:17px 0;border-top:1px dashed #ddd;text-align:right;}
+#content.page-step .info-detail .info > li .txt-fund{text-align:left;}
+#content.page-step .info-detail .info > li .txt-fund p{font-size:12px; color:#67777f;font-family:'SECGCL'}
+#content.page-step .info-detail .info > li .tit {float:left;color:#3c4449;}
+#content.page-step .info-detail .info > li h4{text-align: left;}
+#content.page-step .info-detail .info > li strong {color:#e96e5c;font-family:'SECGCL';}
+#content.page-step .info-detail .info > li.small {display:inline-block;margin:0 -5px;padding:16px 15px 16px 10px;border:0;font-size:14px;text-align:center;*display:inline;*zoom:1;}
+#content.page-step .info-detail .info > li.small .tit {padding:0;background:none;}
+#content.page-step .info-detail .info > li.small strong {color:#0096eb;padding-left:3px;}
+#content.page-step .info-detail .info > li.small + li.small {background:url(../images/com/bul_1x13_d3d3d3.gif) no-repeat 0 48%;}
+#content.page-step .info-detail .info > li.small + li.small + li {border-top:2px solid #455560;}
+
+/* ---------------------------상세정보 : 치아보험--------------------------- 
+#content.page-step .info-detail .info.pro10{height:460px;width:220px;padding:10px; overflow-y: scroll;}
+#content.page-step .info-detail .info.pro10 > li{padding:10px 0;}
+#content.page-step .info-detail .info.pro10 > li.small{padding: 16px 15px 16px 10px;}
+#content.page-step .info-detail .info.pro10 > li > ul > li{padding:4px 0 ;} */
+
+.page-step > .section {width:860px;margin:0 auto;padding:40px 55px;background:#fff url(../images/com/line_dotted_ccced3.png) repeat-x 0 0;}
+.page-step > .section.line {background-image:none;}
+
+.page-step .tab-process {width:970px;margin:0 auto;}
+.page-step .tab-process + .section, #content.page-step > .heading + .section {background-image:none;}
+.page-step .tab-process + * + .section {*background-image:none;}
+.section.join{background-image:none;width:970px;}
+
+.page-step .tit-type1 {margin-bottom:20px;}
+
+#wrapper.scrolling #content.page-step {padding-top:108px;}
+#wrapper.scrolling #content.page-step > .heading {position:fixed;top:0;left:0;right:0;}
+
+/* ----------------------------------------------------------
+	청약 1단계 : 공인인증
+---------------------------------------------------------- */
+.page-step.step1-1 {text-align:center;}
+.page-step.step1-1 .list-step {display:inline-block;width:100%;margin:0 auto;*display:inline;*zoom:1;}
+.page-step.step1-1 .list-step li {float:left;width:33.3%;padding:136px 0 0;}
+.page-step.step1-1 .list-step li:first-child {margin-left:0;border-left:none;}
+.page-step.step1-1 .list-step li > p {display:inline-block;font-size:17px;line-height:25px;color:#3c4449;}
+.page-step.step1-1 .list-step .bg1 {background:url(../images/subscription/visual_step1_k.png) no-repeat 50% 23px;}
+.page-step.step1-1 .list-step .bg2 {background:url(../images/subscription/visual_step1_2.png) no-repeat 50% 23px;}
+.page-step.step1-1 .list-step .bg3 {background:url(../images/subscription/visual_step1_3.png) no-repeat 50% 23px;}
+.page-step.step1-1 .form-content1 {margin:-11px 0 0;}
+.page-step.step1-1 .form-content1 dl {float:none !important;display:inline-block;margin:0 20px;*display:inline;*zoom:1;}
+.page-step.step1-1 .form-content1 dl.col3{float:left !important; margin: 0 20px 0 289px;}
+.page-step.step1-1 .form-content1 dl.col3 dt{width: 130px;text-align: left;}
+.page-step.step1-1 .form-content1 .text {width:90px;}
+.page-step.step1-1 .form-content1 .text-name {width:128px;}
+.page-step.step1-1 .form-content1 .text.text-number {width: 128px;}
+.page-step.step1-1 .form-content1 .txt-check {margin:10px 0 0;}
+.page-step.step1-1 .form-content1 .number{width:160px; }
+.page-step.step1-1 .box-mes2 {font-size:14px;padding:16px 0;margin:40px 30px 0;}
+/*제휴페이지 본인계좌를 확인해 주세요. 삭제시 */
+.page-step.step1-1 .list-step.two {display:inline-block;width:80%;margin:0 auto;*display:inline;*zoom:1;}
+.page-step.step1-1 .list-step.two li {float:left;width:50%;padding:136px 0 0;}
+/*제휴 휴대폰 공인인증 페이지 */
+.page-step.step1-1 .list-step .bg1.bg_paccident {background:url(../images/subscription/visual_step1_p.png) no-repeat 50% 23px;}
+.page-step.step1-1 .btn-area .btn-com{padding-right:10px;}
+.page-step.step1-1 .btn-area em.icon-sms {background:url(../images/subscription/icon_sms.png) no-repeat 0 0;background-size: 23px 30px;padding: 6px 16px;}
+.page-step.step1-1 .btn-area em.icon-cer {background:url(../images/subscription/icon_cer.png) no-repeat 0 0;background-size: 28px 30px;padding: 6px 18px;}
+/*카카오인증 추가 */
+.page-step.step1-1 .tab-area {width:790px;margin: 0 auto;}
+.page-step.step1-1 .tab-area .tab-tbl{background: none; border-radius: 5px 5px 0 0;border: 1px solid #565d6d;}
+.page-step.step1-1 .tab-area .tab-tbl li{position: relative; height: 66px;}
+.page-step.step1-1 .tab-area .tab-tbl li span{position: relative; margin-left: 50px; font-size:16px;vertical-align: middle;}
+.page-step.step1-1 .tab-area .tab-tbl li span:before{content:''; display: inline-block; width:45px; height:16px;position: absolute; top:1px; left:-50px;  background:url(../images/com/icon_kakao.png) no-repeat 0 0;}
+.page-step.step1-1 .tab-area .tab-tbl li.on span:before{background-position: 100% 0;}
+.page-step.step1-1 .tab-area .tab-tbl li:first-child span{margin-left:25px;}
+.page-step.step1-1 .tab-area .tab-tbl li:first-child span:before{background-position: 0 -14px;width:16px; height:22px;top:-5px; left:-20px;}
+.page-step.step1-1 .tab-area .tab-tbl li.on a:after{content: '';position: absolute;top: 50px;left: 33.3%;display: inline-block;width: 144px; height: 16px;background: url(../images/com/bg_tab_bt.png)no-repeat 0 0;}
+.page-step.step1-1 .tab-area .tab-tbl li.on:first-child span:before{background-position: 22% -14px;width:16px; top:-5px; left:-20px;}
+.page-step.step1-1 .tab-area .tab-tbl li.on:last-child {background: url(../images/com/bg_tab_tbl2.png) no-repeat 100% 9%;}
+.page-step.step1-1 .tab-area .tab-tbl li.on:last-child a{background:#ffcd00; height:74%;}
+.page-step.step1-1 .tab-area .tab-tbl li.on:last-child a:after{background-position: 50% 0;border-top: 1px solid #ffcd00;margin-top: -2px;}
+.page-step.step1-1 .tab-area .tab-tbl li.on:last-child span {color:#1e1e1e;}
+.page-step.step1-1 .tab-area + .con-area{background: #fff; padding:40px 0;border: 1px solid #565d6d;margin-top: -18px;}
+/*제휴 카카오인증 화면*/
+.page-step.step1-1 .tab-area .tab-tbl.triple li{width:33.3%;}
+.page-step.step1-1 .tab-area .tab-tbl.triple li:nth-child(2) a{height:74%;border-right:1px solid #565d6d;border-left:1px solid #565d6d;}
+.page-step.step1-1 .tab-area .tab-tbl.triple li:nth-child(2).on{background-position: 90% 0%}
+.page-step.step1-1 .tab-area .tab-tbl.triple li.on a:after{left:23%;}
+.page-step.step1-1 .tab-area .tab-tbl.triple li.icon-phone span{margin-left:25px;}
+.page-step.step1-1 .tab-area .tab-tbl.triple li.icon-phone span:before{background-position: 0% 107%;width: 15px;height: 22px;left: -20px;}
+
+/*카카오인증 확인 팝업 */
+.pop-session5 .mes-type1 {padding-top:140px;background:url(../images/com/visual_helper2.png) no-repeat 50% 0;}
+.pop-session5 .tit-type3 {margin:10px 0 0; font-size:17px; text-align: center;}
+
+/* ----------------------------------------------------------
+	청약 1단계 : 정보입력/고객정보동의
+---------------------------------------------------------- */
+.page-step.step1-2 .bottom-btn .next {background-position:91% -30px;}
+.page-step.step1-2 .box-mes2 {margin-bottom:10px;}
+.page-step.step1-2 .box-mes2 {text-align:center;}
+.page-step.step1-2 .form-content1.double {width:858px;padding:0;background:#f8f8f8;border:1px solid #e5e6e8;text-align:center;border-radius:5px;}
+.page-step.step1-2 .form-content1.double fieldset {width:46%;padding:17px 2% 18px;*width:50%;*padding:17px 0 18px;}
+.page-step.step1-2 .form-content1.double fieldset:first-child {border-right:1px solid #e5e6e8;margin-left:-1px;}
+.page-step.step1-2 .form-content1.double .heading {display:block;padding:0;}
+.page-step.step1-2 .form-content1.double .heading .label em {margin-left:5px;}
+.page-step.step1-2 .form-content1.double .wrap {padding:12px 0 0;position: relative;}
+.page-step.step1-2 .form-content1.double + .txt-check {margin:20px 0 0;}
+/*.page-step.step1-2 .section + .section p {padding-right:0;margin:12px 0 0;font-size:12px;font-family:'SECGCL';text-align:left;}*/
+.page-step.step1-2 .form-content1.double .wrap .mark {border-bottom:5px solid #67e8ff;border-radius:5px 2px 5px; position: absolute;top: 38px;left: 36px;width: 55px;}
+.page-step.step1-2 .form-content1 .heading.agree-form{position: relative;width: 70%;padding: 16px 0;margin-right: -6px;z-index: 10;}
+.page-step.step1-2 .form-content1 .heading.agree-form p.small{padding:4px 0 0 16px;line-height: 24px;}
+.page-step.step1-2 .form-content1 .heading.agree-form p.small .txt-type4{background: url(../images/com/bul_10x8_000.gif) no-repeat 0 0.1rem;}
+.page-step.step1-2 .form-content1 .wrap2{width: 30%; padding:18px 0; z-index: 0;text-align: right; display: inline-block;}
+/*.page-step.step1-2 .form-content1 .wrap2 .mark{border-bottom: 3px solid #e96e5c; border-radius: 2px; padding: 0 10px;}*/
+#popAgree1 .font-red {color:#e96e5c;}
+#popAgree1 .font-blue {color:#0096eb;}
+#popAgree1 p.small {font-size:0.9em}
+#popAgree2 .font-red {color:#e96e5c;}
+#popAgree2 .font-blue {color:#0096eb;}
+#popAgree2 p.small {font-size:0.9em}
+
+#jobQuickSearch .wrap {border:0;}
+#jobQuickSearch .wrap dl.list-word {padding:10px 0;}
+#jobQuickSearch .wrap dl.list-word dd {display:inline-block;margin: 0 2px 6px 0;border: 1px solid #bdc0c7;border-radius:3px;}
+#jobQuickSearch .wrap dl.list-word dd a {margin: 0 26px;}
+
+/* ----------------------------------------------------------
+	청약 2단계 : 계약전 알릴 의무 작성
+---------------------------------------------------------- */
+.page-step.step2 .form-content1.list .area2 .heading {width:40%;}
+.page-step.step2 .form-content1.list .area2 .wrap {width:60%;}
+.page-step.step2 .form-content1.list .area3 .ui-title-wrapper{margin:20px 0 -15px 0px;}
+.page-step.step2 .form-content1.list .area3 select{padding-right:13px;}
+.page-step.step2 .form-content1.list .mes-type2 .sub{color:#7e8492;}
+
+/* ----------------------------------------------------------
+	청약 3단계 : 가입문서확인/결제
+---------------------------------------------------------- */
+.page-step.step3 .info-data {overflow:hidden;margin:30px 0 29px;}
+.page-step.step3 .info-data li {overflow:hidden;float:left;width:420px;height:85px;margin:0 0 0 10px;line-height:85px;font-size:19px;text-align:center;background:url(../images/com/box_round_420x85.png) no-repeat 0 0;}
+.page-step.step3 .info-data li:first-childl {margin:0;}
+.page-step.step3 .info-data .tit {margin-right:14px;color:#222;}
+.page-step.step3 .info-data .tit + span {color:#0096eb;}
+.page-step.step3 .info-data .tit + span.money {color:#e96e5c;}
+.page-step.step3 .info-data .tit + span.money strong {font-size:25px;margin:0 4px;}
+.page-step.step3 fieldset + .btn-area {margin:40px 0 10px;}
+.page-step.step3 .btn-area .btn-type1 span {min-width:145px !important;}
+.page-step.step3 .box-mes2 {text-align:center;}
+.page-step.step3 .form-content1.list .area3 .ui-title-wrapper {margin:20px 0px -15px 0px;}
+.page-step.step3 .form-content1.list .area3 select{padding-right:13px;}
+.page-step.step3 .box-scroll{overflow-y:scroll;height:75px;padding:10px; background:#f8f8f8;border:1px solid #ddd;}
+.page-step.step3 .top-line{border-top: 1px solid #ddd;}
+.page-step.step3 .con-policy{line-height:2;}
+.page-step.step3 .form-content1 .wrap .txt-check {margin: 20px 0; width:70%;}
+.page-step.step3 .custom-chk{padding-top: 36px;}
+.page-step.step3 .select-box{vertical-align: top;}
+.page-step.step3 .btn-mouse{vertical-align: top;}
+
+/* 가입문서확인 팝업 */
+.pop-document .heading {position:relative;margin:0 0 20px;text-align:center;}
+.pop-document .heading .tit {font-size:25px;line-height:27px;color:#222;}
+.pop-document .heading a {position:absolute;top:50%;margin-top:-10px;}
+.pop-document .heading a.before {left:0;}
+.pop-document .heading a.next {right:0;}
+.pop-document .wrap-document {position:relative;padding:10px 0 0;}
+.pop-document .wrap-document .paging2 {position:absolute;left:0;top:10px;}
+.pop-document .wrap-document .btnarea {position:absolute;right:0;top:0;}
+.pop-document .wrap-scroll {margin:20px 0 0;overflow-y:scroll;border:1px solid #ddd;width:100%;height:600px;}
+.pop-document .bottom {position:absolute;right:0;top:0;margin:-67px 0 0;text-align:right;padding:16px 30px;background:#0d9ce0;border-radius:0 20px 0 0;}
+.pop-document .bottom a {display:block;}
+.pop-document .bottom2 {position:absolute;left:30px;bottom:31px;width:782px;height:62px;background:#0d9ce0;}
+.pop-document .bottom2 a {display:block;width:204px;height:64px;margin:14px 240px;}
+
+.pop-down .btn-area.m10{margin-top:10px;}
+.pop-down .txt-area{margin-top: 14px;margin-left: 30px;}
+.pop-down .txt-area span.label-check{margin-left:10px;}
+
+/* ----------------------------------------------------------
+	청약 4단계 : 청약가입 완료
+---------------------------------------------------------- */
+.page-step.step4 > .section {width:970px;padding:50px 0 0;background:none;}
+.step4 .tit-type1 + .mes-type1 {font-size:17px;}
+.step4 .tit-sub {font-size:17px;color:#777;text-align:center;line-height:28px;}
+.step4 .tit-sub strong {display:block;margin-bottom:24px;font-weight:normal;font-size:35px;color:#222;letter-spacing:-1px;line-height:1em;}
+
+.step4 .list-step {overflow:hidden;margin-top:35px;padding-top:160px;background:url(../images/subscription/visual_step4.png) no-repeat 50% 0;text-align:center;}
+.step4 .list-step li {display:inline-block;width:320px;font-size:17px;line-height:25px;color:#3c4449;*display:inline;*zoom:1;}
+.step4 .list-step li + li {margin-left:-5px;}
+
+.step4 .list-step.case2 {background-image:url(../images/subscription/visual_step4_2.png);}
+
+.step4 .box-content2 {position:relative;margin:0 auto;}
+.step4 .box-content2 > div {padding:0;z-index:2;}
+.step4 .box-content2 > div.line {z-index:1;}
+.step4 .list-box {overflow:hidden;width:100%;text-align:center;}
+.step4 .list-box:after {content:'';position:absolute;left:50%;top:-10px;bottom:-10px;width:1px;display:block;background:#eeeef0;z-index:3;}
+.step4 .list-box li {float:left;position:relative;width:50%;height:145px;padding:26px 0;font-size:15px;color:#67777f;line-height:23px;*border-left:1px solid #eeeef0;*margin:0 0 0 -1px;}
+.step4 .list-box li .tit {display:block;margin:0 0 12px;font-family:"SECGCM";font-size:25px;line-height:29px;font-weight:normal;color:#3c4449;}
+.step4 .list-box li .tit > span {color:#e96e5c;}
+.step4 .list-box li .btn {margin:20px 0 0;}
+.step4 .list-box li .btn a {vertical-align:top;}
+
+.step4 .content{padding: 40px;background: #eeeeee;}
+.step4 .box-content2 > div.con{position:relative; display: inline-block;width: 440px;height: 410px;background: #fff;border-radius: 5px;}
+.step4 .box-content2 > div.con .tit-type3{font-size: 15px;margin: 28px 0 0;padding-left: 180px;}
+.step4 .box-content2 > div.con .tit-type3:before{content: '';display: inline-block;width: 107px;height: 65px; position: absolute;left: 60px;background: url(../images/subscription/img_gift3.png) no-repeat 0px 5px;}
+.step4 .box-content2 > div.con.p2 .tit-type3:before{background: url(../images/subscription/img_gift1.png) no-repeat 0px 5px;}
+.step4 .box-content2 > div.con .tit-type3 > .heading{font-size: 16px; line-height: 24px;}
+.step4 .box-content2 > div.con .tit-type3 > .heading + p{font-size:12px; margin: 4px 0 0;}
+.step4 .box-content2 > div.con ul li {display: inline-block;text-align:center;width: 200px;height: 164px;position:absolute;top:96px; left:0; padding: 100px 0px 10px;margin: 20px 0 0 16px;border: 1px solid #ddd;border-radius: 10px;}
+.step4 .box-content2 > div.con ul li+li{margin: 20px 4px 0 0;left:222px;}
+.step4 .box-content2 > div.con ul li:before{content: '';display: inline-block;width: 130px;height: 80px; position: absolute;top:15px;left: 35px;background: url(../images/subscription/icon_p1.gif) no-repeat 0px 5px;}
+.step4 .box-content2 > div.con ul li.icon-p1:before{background: url(../images/subscription/icon_p1.gif) no-repeat 0px 0px;}
+.step4 .box-content2 > div.con ul li.icon-p2:before{background: url(../images/subscription/icon_p2.gif) no-repeat 0px 0px;}
+.step4 .box-content2 > div.con ul li.icon-p3:before{background: url(../images/subscription/icon_p3.gif) no-repeat 0px 0px;}
+.step4 .box-content2 > div.con ul li.icon-p4:before{background: url(../images/subscription/icon_p4.gif) no-repeat 0px 0px;}
+.step4 .box-content2 > div.con ul li.icon-p5:before{background: url(../images/subscription/icon_p5.gif) no-repeat 0px 0px;}
+.step4 .box-content2 > div.con ul li.icon-p6:before{background: url(../images/subscription/icon_p6.gif) no-repeat 0px 0px;}
+.step4 .box-content2 > div.con ul li dl dt{font-size:21px; padding:0 0 10px;}
+.step4 .box-content2 > div.con ul li dl + .btn{position: absolute; bottom:30px;left:60px;}
+.step4 .page-counsel .box-content2 {position:relative;margin:0 auto;padding: 0 35px;border: 1px solid #ddd;border-radius: 5px;width:820px;}
+.step4 .page-counsel .box-content2 .info{display: inline-block;width:260px;margin:20px 0;}
+.step4 .page-counsel .box-content2 .info + .mes-type1{display: inline-block;width:480px;margin:30px; vertical-align: top; text-align: left;}
+.step4 .page-counsel .box-content .info .tel{padding-bottom: 4px; }
+.step4 .page-counsel .box-content .counsel-list > li a > strong{font-weight: normal;}
+
+/* ----------------------------------------------------------
+	팝업
+---------------------------------------------------------- */
+/* 주소찾기 */
+.info-zipcode {position:relative;}
+.info-zipcode dt {position:absolute;left:-9999px;}
+.info-zipcode dd {display:inline-block;padding:6px 0;vertical-align:top;line-height:19px;*display:inline;*zoom:1;}
+.info-zipcode dd.code, .info-zipcode dd.kind {float:left;text-align:center;}
+.info-zipcode dd.code {width:80px;margin:0 -85px 0 0;padding:0;border:1px solid #b8b5b8;border-radius:4px;line-height:32px;}
+.info-zipcode dd.kind {width:60px;margin:5px -65px 0 0;padding:2px 0 0;border:1px solid #0096eb;border-radius:12px;line-height:20px;color:#0096eb;text-align:center;}
+.info-zipcode dd.code + dt + dd {padding-left:90px;}
+.info-zipcode dd.kind + dt + dd a {display:block;padding-left:70px;}
+.info-zipcode + .form-wrap4 {margin:10px 0 0;}
+
+/* 직업검색 */
+#popFindJob .label-radiobtn label {min-width:90px;}
+
+/* 추가확인필요안내 */
+.tel {display:block;font-family:verdana;font-weight:normal;font-size:25px;color:#222;line-height:27px;text-align:center;}
+.tel > span {display:inline-block;overflow:hidden;width:3px;height:3px;padding:0 4px;margin-bottom:5px;background:url(../images/com/bul_3x3_0077ba.gif) no-repeat 50% 50%;text-indent:-9999px;vertical-align:middle;}
+.pop-mes1 .mes-type1.visual {background:url(../images/com/visual_helper.png) no-repeat 0 0;padding-left:132px;text-align:left;}
+.pop-mes1 .mes-type1.visual .tel {text-align:left;}
+
+.icon-list {overflow:hidden;margin-top:27px;border-top:2px solid #455560;}
+.icon-list li {float:left;width:50%;min-height:52px;padding:20px 0;border-bottom:1px solid #ededed;text-align:left;}
+.icon-list li > div, .icon-list li > a {display:block;padding:0 60px 0 10px;border-left:1px solid #ededed;margin:0 0 0 -1px;}
+.icon-list li > a:hover, .icon-list li > a:focus {text-decoration:none;color:#4f565b;}
+.icon-list li em {display:block;font-family:"SECGCM";font-size:22px;color:#222;}
+.icon-list li em > span {color:#0096eb;}
+
+.icon-list li.list1 {background:url(../images/subscription/icon_list1.png) no-repeat 85% 50%;}
+.icon-list li.list2 {background:url(../images/subscription/icon_list2.png) no-repeat 95% 50%;}
+.icon-list li.list3 {background:url(../images/subscription/icon_list3.png) no-repeat 85% 50%;}
+.icon-list li.list4 {background:url(../images/subscription/icon_list4.png) no-repeat 95% 50%;}
+.icon-list li.list2 > a, .icon-list li.list4 > a {padding-left:30px;}
+.icon-list li.list3 a {margin-top:13px;*padding-top:13px;}
+
+.icon-list.no-icon {margin-bottom:20px;border-top:none;}
+.icon-list.no-icon li {text-align:center;border-bottom:none;}
+.icon-list.no-icon li > div, .icon-list.no-icon li > a {min-height:0;padding:0 10px;}
+
+/* 세션종료 */
+.pop-session1 .mes-type1 {padding-top:140px;background:url(../images/com/visual_helper.png) no-repeat 50% 0;}
+
+/* 가입문서 다운로드 */
+.pop-mes3 {text-align:center;}
+.pop-mes3 .mes-type1, .pop-mes3 .wrap-flash {position:relative;z-index:0;}
+.pop-mes3 .mes-type1 {padding:10px 0;z-index:1;background:#fff;}
+.pop-mes3 .mes-type1 .txt-tip {margin-top:4px;}
+.pop-mes3 .wrap-flash {margin:-70px 0 20px;}
+
+.graph-progress strong span {display:inline-block;vertical-align:middle;margin:0 -4px 0 0;}
+.graph-progress strong:after {display:inline-block;width:1px;height:48px;content:'';vertical-align:middle;}
+
+/* ----------------------------------------------------------
+	변액적립보험1단계 : 최초진입 가입방식 선택
+---------------------------------------------------------- */
+.page-step.step0 .box-area.s8, .box-area2.s8{position:relative; background-color:#e5e5e5;border-radius:10px;}
+.page-step.step0 .box-area.s8 h2, .page-step.step0 .box-area.s8 h3{padding-top:40px;letter-spacing:-0.1em;}
+.page-step.step0 .box-area.s8 h2 em.txt-check{display:inline;padding-top:4px;}
+.page-step.step0 .box-area.s8 .btn-area li{margin-right:20px;}
+.page-step.step0 .box-area3{width:860px;background-color:#f0f0f0;border-radius:10px; margin:0 auto;}
+.page-step.step0 p.txt-exp2{padding-bottom:40px;font-size:17px;}
+.page-step.step0 .txt-num.tbl-info{width:700px;margin:20px auto;padding-left: 24px;text-align:left;line-height:20px;background: url(../images/com/bul_required.png) no-repeat 6px 13%;}
+.page-step.step0 dl.txt-num.tbl-info{margin:40px 30px 0;}
+.page-step.step0 .section{padding:40px 60px;}
+.page-step.step0 .section.visual{background:#fff url(../images/com/line_dotted_ccced3.png) repeat-x 0 0;}
+.page-step.step0 .section.visual .tit-type1{margin-bottom:0;}
+.page-step.step0 .btn-area2 {width:970px; margin:40px 0;}
+.page-step.step0 .box-area.s8 .tit-type2 {font-size: 25px;line-height: 30px;text-align: center;color: #3c4449;font-family: "SECGCM";}
+.page-step.step0 .box-area.s8 div.box-set{margin:0 auto;padding-bottom:20px;height:210px;}
+.page-step.step0 .box-area.s8 h3.tit-type1{padding-top:40px;}
+.page-step.step0 .box-area.s8 ul.box-intxt{padding:40px;}
+.page-step.step0 .box-area.s8 li.txt-check{text-align:left;line-height:1.4em;padding:0 0 0 30px;}
+.page-step.step0 .box-area.s8 li.txt-check.last{margin-top:20px;}
+.page-step.step0 .join p.txt-exp{padding-top:30px;font-size:17px;color:3c4449;}
+.page-step.step0 .join ul, dl.pd-btm{padding-bottom:40px;}
+.page-step.step0 .join ul li.txt-exp{font-size:17px;}
+.page-step.step0 .join ul li.txt-exp strong{color:#e96e5c;}
+.page-step.step0 .join ul li.txt-exp span{color:#0596ce;}
+.page-step.step0 .join .mes-type1 span.block-sub{font-size:24px;line-height:2.0em;}
+.page-step.step0 .join .mes-type1 span.block{font-size:28px;line-height:1.4em;}
+.page-step.step0 .join .mes-type1 span strong.mark{font-size:31px;}
+.page-step.step0 .box-area .fund-info{margin:0 40px 10px; text-align:left;line-height:1.4em;font-size:17px;}
+.page-step.step0 .tit-type1{margin-bottom:-10px;}
+.page-step .question{width:860px;margin:0 auto;padding:40px 55px;}
+.page-step.step0 {text-align:center;}
+.page-step.step0 dl{padding-left:120px;}
+.page-step.step0 .list-step {display:inline-block;width:860px;margin:0 auto;*display:inline;*zoom:1;overflow:hidden;padding-top:160px;background:url(../images/subscription/visual_step4.png) no-repeat 50% 0;text-align:center;}
+.page-step.step0 .list-step li {float:left;width:33.3%;font-size:17px;}
+.page-step.step0 .list-step li .w98 {margin-left:-60px;border-left:none;}
+.page-step.step0 .list-step li .w49 {margin-left:60px;border-left:none;}
+.page-step.step0 .list-step li > p {display:inline-block;font-size:17px;line-height:25px;color:#3c4449;}
+.page-step.step0 .form-content1 {margin:-11px 0 0;}
+.page-step.step0 .form-content1 dl {float:none !important;display:inline-block;margin:0 20px;*display:inline;*zoom:1;}
+.page-step.step0 .form-content1 .text {width:90px;}
+.page-step.step0 .form-content1 .text-name {width:128px;}
+.page-step.step0 .form-content1 .txt-check {margin:10px 0 0;}
+.page-step.step0 ul.btn-area {height:170px;}
+.page-step.step0 .box-mes2 {font-size:15px;padding:20px 0 15px 0;margin-top:30px;}
+.page-step.step0 .box-area{width:970px; margin:0 auto;}
+.pd-bot{padding-bottom: 30px;}
+.pd-bot2{padding:40px 0 0;}
+
+/* ----------------------------------------------------------
+	변액적립보험1단계 : 가입성향진단 : 공인인증
+---------------------------------------------------------- */
+.page-step.step0-1 .box-area.s8, .box-area2.s8{position:relative; background-color:#e5e5e5;border-radius:10px;}
+.page-step.step0-1 .box-area.s8 h2, .page-step.step0 .box-area.s8 h3{padding-top:40px;letter-spacing:-0.1em;}
+.page-step.step0-1 .box-area.s8 h2 em.txt-check{display:inline;padding-top:4px;}
+.page-step.step0-1 .box-area.s8 .btn-area li{margin-right:20px;}
+.page-step.step0-1 .box-area3{width:860px;background-color:#e5e5e5;border-radius:10px; margin:40px auto 0;}
+.page-step.step0-1 .box-area3 .tit-type2{line-height:34px;font-size:24px;}
+.page-step.step0-1 p.txt-exp2{padding-bottom:40px;font-size:17px;}
+.page-step.step0-1 .txt-num.tbl-info{width:700px;margin:20px auto;padding-left: 24px;text-align:left;line-height:20px;background: url(../images/com/bul_required.png) no-repeat 6px 13%;}
+.page-step.step0-1 dl.txt-num.tbl-info{margin:40px 46px 0;}
+
+.page-step.step0-1 .section{padding:40px 60px;}
+.page-step.step0-1 .section.visual{background:#fff url(../images/com/line_dotted_ccced3.png) repeat-x 0 0;}
+.page-step.step0-1 .btn-area2 {width:970px; margin:40px 0;}
+.page-step.step0-1 .box-area.s8 div.box-set{margin:0 auto;height:200px;}
+.page-step.step0-1 .box-area.s8 h3.tit-type1{padding:40px;margin: 0 auto;}
+dl.box-chk, dl.box-chk1, dl.box-chk2, dl.box-chk3{display:inline-block;margin:10px;background-color:#fff;border-radius:5px;width:280px;max-height:160px;} 
+.page-step.step0-1 .box-area.s8 dl.box-chk1, dl.box-chk2, dl.box-chk3{position:absolute; top:110px;border:1px solid #e5e5e5; min-height:180px;}
+.page-step.step0-1 .box-area.s8 dl.box-chk1{left:30px;}
+.page-step.step0-1 .box-area.s8 dl.box-chk2{left:336px;}
+.page-step.step0-1 .box-area.s8 dl.box-chk3{right:30px;}
+.page-step.step0-1 .box-area.s8 dl.box-chk dt, dl.box-chk1 dt,  dl.box-chk2 dt, dl.box-chk3 dt{font-size:24px;margin-top:30px;line-height:24px;text-align:left;}
+.page-step.step0-1 .box-area.s8 dl.box-chk dt span.txt-small , dl.box-chk1 dt span.txt-small,  dl.box-chk2 dt span.txt-small, dl.box-chk3 dt span.txt-small{font-size:14px;}
+.page-step.step0-1 .box-area.s8 dl.box-chk dd, dl.box-chk1 dd, dl.box-chk2 dd, dl.box-chk3 dd{margin:20px 30px;font-size:16px;line-height:24px;color:#67777f;}
+.page-step.step0-1 .box-area.s8 .ui-tip-wrapper .txt-check div.tooltip.bottom.ui-tip-con dt{color:#474e5c; font-size:13px; line-height:18px;margin-top:10px;}
+.page-step.step0-1 .box-area.s8 .ui-tip-wrapper .txt-check div.tooltip.bottom.ui-tip-con dd{color:#474e5c; font-size:12px; line-height:16px;margin:0 10px 5px;}
+.page-step.step0-1 .box-area.s8 .ui-tip-wrapper .txt-check .tooltip.bottom.ui-tip-con{min-width:300px;padding:0 19px 0;min-height:36px;border-radius:6px 6px;}
+.page-step.step0-1 .box-area.s8 ul.box-intxt{padding:40px;text-align:left;}
+.page-step.step0-1 .box-area.s8 li.txt-check.last{margin-top:20px;}
+.page-step.step0-1 .box-area.s8 li.txt-check{font-size:18px;line-height:26px;word-spacing:-2px;}
+.page-step.step0-1 .box-area.s8 li.txt-check.small{font-size:15px;}
+.page-step.step0-1 .join p.txt-exp{padding-top:30px;font-size:17px;color:#3c4449;}
+.page-step.step0-1 .join ul, dl.pd-btm{padding:20px 0 40px;}
+.page-step.step0-1 .join ul li.txt-exp{font-size:17px;}
+.page-step.step0-1 .join ul li.txt-exp strong{color:#e96e5c;}
+.page-step.step0-1 .join ul li.txt-exp span{color:#0596ce;}
+.page-step.step0-1 .join ul li.txt-exp em.txt-check{font-size:15px;color:#565d6d;}
+.page-step.step0-1 .join .mes-type1 span.block-sub{font-size:22px;line-height:2.0em;color:#3c4449;}
+.page-step.step0-1 .join .mes-type1 span.block{font-size:28px;padding-bottom:40px;line-height:36px;}
+.page-step.step0-1 .join .mes-type1 span strong.mark{font-size:31px;}
+.page-step.step0-1 .box-area .fund-info{margin:0 40px 10px; text-align:left;line-height:1.4em;font-size:16px;}
+.page-step .question{width:860px;margin:0 auto;padding:40px 55px;}
+.page-step.step0-1 {text-align:center;}
+.page-step.step0-1 .list-step {display:inline-block;width:860px;margin:0 auto;*display:inline;*zoom:1;overflow:hidden;padding-top:160px;background:url(../images/subscription/visual_step4.png) no-repeat 50% 0;text-align:center;}
+.page-step.step0-1 .list-step li {float:left;width:33.3%;font-size:17px;}
+.page-step.step0-1 .list-step li .w98 {margin-left:-60px;border-left:none;}
+.page-step.step0-1 .list-step li .w49 {margin-left:60px;border-left:none;}
+.page-step.step0-1 .list-step li > p {display:inline-block;font-size:17px;line-height:25px;color:#3c4449;}
+.page-step.step0-1 .form-content1 {margin:-11px 0 0;}
+.page-step.step0-1 .form-content1 dl {float:none !important;display:inline-block;margin:0 20px;*display:inline;*zoom:1;}
+.page-step.step0-1 .form-content1 .text {width:90px;}
+.page-step.step0-1 .form-content1 .text-name {width:128px;}
+.page-step.step0-1 .form-content1 .txt-check {margin:10px 0 0;}
+.page-step.step0-1 ul.btn-area {height:190px;}
+.page-step.step0-1 .box-mes2 {font-size:15px;padding:20px 0 15px 0;margin-top:30px;}
+.page-step.step0-1 .box-area{width:970px; margin:0 auto;}
+.page-step.step0-1 .link-icon.tip2 {margin: 0 4px 0 0;padding: 0 26px 0 0;background: url(../images/com/icon_question.png) no-repeat 100% 0;line-height: 24px;}
+.page-step.step0-1 em.txt-check{line-height:24px;color:#3c4449;text-align:left;display:inline;}
+.page-step.step0-1 .box-chk2 .txt-check span{color:#8d95a5;}
+.page-step.step0-1 .box-area2{width: 860px;padding: 30px 40px 0;border: 1px solid #e5e5e5;margin:0 auto;border-radius:5px;}
+.page-step.step0-1 .box-area2 .form-content1.list li{text-align:left;}
+
+/*카카오인증 추가 */
+.page-step.step0-1 .tab-area {width:790px;margin: 0 auto;}
+.page-step.step0-1 .tab-area .tab-tbl{background: none; border-radius: 5px 5px 0 0;border: 1px solid #565d6d;}
+.page-step.step0-1 .tab-area .tab-tbl li{position: relative; height: 66px;}
+.page-step.step0-1 .tab-area .tab-tbl li span{position: relative; margin-left: 50px; font-size:16px;vertical-align: middle;}
+.page-step.step0-1 .tab-area .tab-tbl li span:before{content:''; display: inline-block; width:45px; height:16px;position: absolute; top:1px; left:-50px;  background:url(../images/com/icon_kakao.png) no-repeat 0 0;}
+.page-step.step0-1 .tab-area .tab-tbl li.on span:before{background-position: 100% 0;}
+.page-step.step0-1 .tab-area .tab-tbl li:first-child span{margin-left:25px;}
+.page-step.step0-1 .tab-area .tab-tbl li:first-child span:before{background-position: 0 -14px;width:16px; height:22px;top:-5px; left:-20px;}
+.page-step.step0-1 .tab-area .tab-tbl li.on a:after{content: '';position: absolute;top: 50px;left: 33.3%;display: inline-block;width: 144px; height: 16px;background: url(../images/com/bg_tab_bt.png)no-repeat 0 0;}
+.page-step.step0-1 .tab-area .tab-tbl li.on:first-child span:before{background-position: 22% -14px;width:16px; top:-5px; left:-20px;}
+.page-step.step0-1 .tab-area .tab-tbl li.on:last-child {background: url(../images/com/bg_tab_tbl2.png) no-repeat 100% 9%;}
+.page-step.step0-1 .tab-area .tab-tbl li.on:last-child a{background:#ffcd00; height:74%;}
+.page-step.step0-1 .tab-area .tab-tbl li.on:last-child a:after{background-position: 50% 0;border-top: 1px solid #ffcd00;margin-top: -2px;}
+.page-step.step0-1 .tab-area .tab-tbl li.on:last-child span {color:#1e1e1e;}
+.page-step.step0-1 .tab-area + .con-area{background: #fff; padding:40px 0;border: 1px solid #565d6d;margin-top: -18px;}
+.page-step.step0-1 .form-content1.double .col3{margin: 20px 0 0 176px;}
+.page-step.step0-1 .form-content1.double .col3 dt{width: 144px;}
+
+/* ----------------------------------------------------------
+	변액적립보험3단계 : 펀드선택
+---------------------------------------------------------- */
+.page-step .fund-choice{width:970px;margin:0 auto;padding-top:40px;}
+.page-step .fund-choice .left-side{position:relative; height:120px;}
+.page-step .fund-choice .left-side .txt-type2 span{font-family:"SECGCL";color:#8d95a5;}
+.page-step .fund-input .fund-section{text-align: right;margin-top:20px;}
+.page-step .fund-input .fund-section p.txt-type1{margin:10px 0 30px 0;padding:0;background:none;}
+.page-step .fund-input .form-wrap1 .placeholder.valueon {z-index:2; border-color:#57aef2;}
+/* 펀드 툴팁 */
+.page-step .fund-input .tooltip.bottom {min-width:320px;min-height:36px;margin:0 0 30px;padding:0 19px;border-radius:6px 6px; z-index:9999;}
+.page-step .fund-input .tooltip.bottom > *:first-child {display:block;padding:16px 0 22px;margin:0 0 -9px;background:url(../images/com/arr_tip3.png) no-repeat 50% 100%;}
+.page-step .fund-input .tooltip.bottom dt{font-size:13px; line-height: 16px; margin-bottom:4px;}
+.page-step .fund-input .tooltip.bottom dt:before{content:'·';vertical-align:middle;margin-right:5px}
+.page-step .fund-input .tooltip.bottom dd{font-size:12px; line-height: 14px; margin:0 0 2px 0;font-family: "SECGCL";back; background:none;}
+.page-step .fund-input .tooltip.bottom dd:before{content:'-';vertical-align:middle;margin-right:5px}
+.page-step .fund-input .ui-tip-wrapper{z-index:9999;}
+/* 계산결과 상세보기 : 펀드 퍼센트 입력시 */
+.fund-input .tbl-type3{width: 100%;margin: 10px 0;border-bottom: 1px solid #e5e6e8;border-top:none;word-break: break-all;}
+.fund-input .tbl-type3 tr th{background-color:#0096eb;border-color:#0096eb; border-color: #0096EB;z-index:2;position: relative;border-left: 1px solid #fff;}
+.fund-input .tbl-type3 tr.sub th{color:#455062;background-color: #eee;border-left: 1px solid #CAC6CA;border-top: 1px solid #e5e5e5;border-bottom: 1px solid #e5e5e5;z-index:4;}
+.fund-input .tbl-type3 tr.sub th:last-child{border-right:1px solid #e5e5e5;}
+.fund-input .tbl-type3 tr.sub th:first-child{border-left:1px solid #fff;}
+.fund-input .tbl-type3 tr.sub th.on{background-color:#0096eb;border-color:#0096eb; border-color: #0096EB;z-index: 2;position: relative;border-left: 1px solid #fff;}
+.fund-input .tbl-type3 tr.sub th.on, .fund-input .tbl-type3 tr.sub th.on a{color:#fff;}
+.fund-input .tbl-type3 th.c1{background-color:#455062;}
+.fund-input .tbl-type3 th.c2{background-color:#8e95a1;}
+.fund-input .tbl-type3 tbody tr td{color:#455062;}
+.fund-input .tbl-type3 tbody tr td.line-on{color:#455062;}
+.fund-input .tbl-type3 tbody tr td.line-on .txt-type5.txt-small{color:#e96e5c;}
+.fund-input .tbl-type3 tbody tr td.line-on:first-child{border-left:none;}
+
+/* ----------------------------------------------------------
+	변액적립보험3단계 : 펀드팝업
+---------------------------------------------------------- */
+.tit-type3.mg-cnt{text-align:center; margin:30px 0 0px;}
+.tit-type3.mg-cnt span.block{font-size:17px;}
+.tit-type3.mg-cnt span.txt-tip.txt-c2{margin-top:10px;}
+.pop-fc dt,.pop-fc dd{line-height:2em;}
+.pop-fc dt{font-size:16px;}
+.pop-fc dd.form-content3 {padding-top:16px;}
+.popfund-chk{color:#67777f;}
+
+/* ----------------------------------------------------------
+	변액적립보험3단계 : 펀드팝업
+---------------------------------------------------------- */
+.page-step.step1 > *:first-child {border-top:1px dotted #fff;}
+.page-step.step1 .form-content1.list > dl {padding:20px 0;border-bottom:1px solid #ddd;width:860px;}
+.page-step.step1 dl.txt-type1{margin:0;}
+.page-step.step1 dl.txt-type1 dd {font-size:12px;background:none;margin-left:6px;}
+.page-step.step1 .form-content1.list > div, .form-content1.list > fieldset, .form-content1.list > dl {padding: 20px 0;border-top: 1px solid #d5d6d8;}
+.page-step.step1 .form-content1.list.noline > fieldset{border:none; margin-right:20px;}
+.page-step.step1 .section {width:860px;margin:0 auto;padding:40px 55px;background:#fff url(../images/com/line_dotted_ccced3.png) repeat-x 0 0;}
+
+/* ----------------------------------------------------------
+	옴니채널 : 20161116;
+---------------------------------------------------------- */
+/* 보장성 보험 이탈시 */
+.omni1 .content .pop-txt-area{background:#f0f0f0;border-radius:5px;border: 1px solid #ddd;margin-top:40px; padding:30px 30px 20px;}
+.omni1 .content .pop-txt-area p{text-align: left;}
+.omni1 .content .pop-txt-area .mes-type1 .block{color:#565d6d;}
+.omni1 .content .pop-txt-area .mes-type1 strong.font-wb{font-weight: bold;}
+.omni1 .content .pop-txt-area .mes-type1 span.block{font-size: 32px;margin-bottom:30px;font-weight: bold;}
+.omni1 .content .btn-area .btn-type1.c4 .w160{width:160px;}
+.omni1.pop-modal3 .header.c1{border-radius: 0;}
+
+.omni2.content.double {padding: 0;}
+.omni2.content.double .section{position:relative; width:55%;height:630px;float:left;padding:0;background:#fff;border-radius: 0 0 0 30px;}
+.omni2.content.double .section:last-child{width:45%;height:630px;float:left;background: #23b2f4;border-radius: 0 0 30px 0;}
+.omni2.content.double .section:last-child .btn-area{margin: 24px 0 0;}
+.omni2.content.double .section .img-area3{padding-top:40px;text-align:center;}
+.omni2.content.double .section .txt-area{margin:30px 30px 0;border:0;border-radius:0;}
+.omni2.content.double .section .txt-area .mes-type1 span.block{font-size:32px; font-weight: bold; line-height: 32px;}
+.omni2.content.double .section .txt-area .mes-type1 span.cw{color:#fff;}
+.omni2.content.double .section .txt-area ul{padding: 10px 20px 0;margin:0;font-family:"SECGCM";text-align: left;}
+.omni2.content.double .section .txt-area ul li{position: relative;line-height: 26px;}
+.omni2.content.double .section .txt-area ul li em{position:absolute;top:14px; left:10px;color:#6c7386; font-size:44px;}
+.omni2.content.double .section .txt-area ul li p{padding:0 0 10px 48px;}
+.omni2.content.double .section .txt-area ul li p span.txt-sub{font-size:14px; line-height: 20px; margin:0;}
+.omni2.content.double .section .txt-area dl{padding-top: 20px; position:relative;font-family:"SECGCM";}
+.omni2.content.double .section .txt-area dl dt{padding:0 0 0 40px; color:#fff;}
+.omni2.content.double .section .txt-area dl dt em{position:absolute;top:20px;left:0; font-size:42px;font-weight:bold;font-family:"SECGCM"; line-height:42px; color:#fff;}
+.omni2.content.double .section .txt-area dl dd{padding:20px 0 0 40px; color:#3c4e73;}
+.omni2.content.double .section .txt-area dl dd.line-up{padding:12px 0 14px 40px;}
+.omni2.content.double .section .txt-area dl dd em{position:absolute;top:78px;left:0; font-size:42px;font-weight:bold;font-family:"SECGCM"; line-height:42px; color:#3c4e73;}
+.omni2.content.double .section .btn-area{position: absolute;left:0;right:0;bottom:40px;text-align: center;}
+.omni2.content.double .section .btn-area div{padding:0 40px 10px;}
+
+.omni3.content .heading {padding: 15px 0 5px;border-bottom: 2px solid #455560;font-family: "SECGCM";font-size: 15px;line-height: 20px;color: #3c4449;}
+.omni3.content .mes-type1 {padding:30px 0;}
+.omni3.content .mes-type1 .block{font-size: 32px;font-weight: bold;line-height:32px;}
+.omni3.content .mes-type1 .txt-sub{font-size:18px;margin:0;}
+.omni3.content .btn-area {margin:40px 0 10px;}
+.omni3 .box-scroll {overflow-y: scroll;height: 75px;padding: 15px 0 15px 10px;background: #f8f8f8;border-top: 1px dashed #ddd;border-bottom: 1px dashed #ddd;}
+.omni3 .form-agree3 {border-bottom:0;}
+.omni3 .form-agree3 legend{padding:30px 0 10px;}
+.omni3 ul.list-step {display:inline-block;width:100%;padding-bottom:20px;border-bottom: 2px solid #455560;margin:0 auto;*display:inline;*zoom:1;}
+.omni3 ul.list-step li {position:relative;float:left;width:33.3%;padding:180px 0 0;text-align:center;}
+.omni3 ul.list-step li span.next {display:block;position:absolute;top:40%;right:0;background:url(../images/com/arr2_14x19_565d6d.png) no-repeat 0 0;width:14px; height: 19px;text-indent:-99999em;}
+.omni3 ul.list-step li:first-child {margin-left:0;border-left:none;}
+.omni3 ul.list-step li > p {display:inline-block;font-size:16px;font-family:"SECGCM";line-height:24px;color:#3c4449;}
+.omni3 ul.list-step .bg1 {background:url(../images/subscription/img_fc01.jpg) no-repeat 50% 23px;}
+.omni3 ul.list-step .bg2 {background:url(../images/subscription/img_fc02.jpg) no-repeat 50% 23px;}
+.omni3 ul.list-step .bg3 {background:url(../images/subscription/img_fc03.jpg) no-repeat 50% 23px;}
+.omni3 ul.list-step .bg4 {background:url(../images/subscription/img_fc04.jpg) no-repeat 50% 23px;}
+.omni3 ul.list-step .bg5 {background:url(../images/subscription/img_fc05.jpg) no-repeat 50% 23px;}
+.omni3 ul.list-step .bg6 {background:url(../images/subscription/img_fc06.jpg) no-repeat 50% 23px;}
+.omni3 .box-mes2 {font-size:15px;padding:18px 0;margin-top:30px;}
+.omni3.pop-modal3 div.content div.mes-type1 {margin:20px;}
+.omni3 .textform.form-wrap1 .textarea{margin:10px 0 30px; width:760px;}
+
+/* ----------------------------------------------------------
+	전자적해피콜 : 20170419;
+---------------------------------------------------------- */
+.pop-down .mes-type1 strong.block.tit{font-size:20px;color:#e96e5c;}
+.pop-down .double-area {width: 46%;padding: 0 10px 20PX;display: inline-block;float: left; border-right: 1px solid #ddd;}
+.pop-down .double-area .btn-area.m10{margin-top:0;}
+.pop-down .double-area + .double-area{border-right:none;}
+.pop-down .double-area + .btn-area{width: 100%; display: inline-block;}
+.pop-down .double-area > .btn-area{margin:52px 0 0;}
+.pop-down .btn-section{width:100%;}

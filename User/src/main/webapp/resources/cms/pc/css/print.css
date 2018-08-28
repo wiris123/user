@@ -1,0 +1,36 @@
+﻿@charset "utf-8";
+
+/* ----------------------------------------------------------
+	# 삼성생명 다이렉트 리뉴얼 2015
+	# 인쇄용 CSS
+---------------------------------------------------------- */
+
+@media print {
+
+	/* 계산결과 : 결과제외한 버튼 및 기타 디스플레이 조정 */
+	.product-other,
+	.product-result .label-mode,
+	.product-result .txt-info,
+	.product-result .view-pop,
+	.product-result .area-util {display:none;}
+
+	.list-result {padding:10px 0 !important;background:#ededed;}
+
+	/* 스크롤, 토글컨텐츠 초기화 */
+	.wrap-scroll {height:auto !important;overflow-y:show;}
+	.wrap-scroll .section .tit-sub1 {margin:0 0 27px;}
+
+	.tbl-type3 {width:100%;table-layout:auto;font-size:12px;line-height:18px;}
+	.tbl-type3 th, .tbl-type3 td {padding:9px 5px 8px;}
+	.btn-more, .btn-area {display:none;}
+	.tb-toggle table tbody tr {display:table-row;}
+	.tb-toggle .tbl-type3 tbody tr.on td {background-color:#fefff2 !important;}
+
+	/* 퀵메뉴숨김 */
+	#uiNavQuick {display:none;}
+
+	/* 기타 스타일 : 상품탭간격수정 */
+	.product-tab ul {width:100%;}
+	.product-tab ul li {width:25%;}
+	.menu-skip li {width:25%;}
+}
