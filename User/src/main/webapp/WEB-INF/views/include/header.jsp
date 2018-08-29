@@ -13,8 +13,8 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <!-- 공통 css -->
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/common68b3.css?ver=1" />
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/content68b3.css?ver=1" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/common.css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/content.css" />
 <!-- 공통 script -->
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/ui.plugin.js"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/ui.common.js"></script>

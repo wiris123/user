@@ -38,7 +38,10 @@ public class InsuController {
 	
 	@RequestMapping("/product/Cancer")
 	public String ds() {
+		
+		
 		return "product/Cancer";
 	}
+	
 	
 }
