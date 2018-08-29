@@ -9,7 +9,7 @@
 					<li class="icon-suggest3"><a href="annuity.html" onclick="ga('send', 'event', 'Direct', 'Etc', 'GNB-Menu_Link_annuity', 1);" rel="history"><strong>연금저축보험</strong></a><span class="hd">BEST(추천)</span></li>
 				</ul>
 				<ul class="list-option db-coulm">
-					<li><a href="cancer.html" onclick="ga('send', 'event', 'Direct', 'Etc', 'GNB-Menu_Link_cancer', 1);" rel="history"><span>삼성생명 인터넷</span><strong>암보험</strong><span>6.0</span><span>(갱신형/무배당)</span></a></li>
+					<li><a href="./product/Cancer" onclick="ga('send', 'event', 'Direct', 'Etc', 'GNB-Menu_Link_cancer', 1);" rel="history"><span>삼성생명 인터넷</span><strong>암보험</strong><span>6.0</span><span>(갱신형/무배당)</span></a></li>
 					<li><a href="term.html" onclick="ga('send', 'event', 'Direct', 'Etc', 'GNB-Menu_Link_term', 1);" rel="history"><span>삼성생명 인터넷</span><strong>정기보험</strong><span>4.0</span><span>(무배당)</span></a></li>
 					<li><a href="accident.html" onclick="ga('send', 'event', 'Direct', 'Etc', 'GNB-Menu_Link_accident', 1);" rel="history"><span>삼성생명 인터넷</span><strong>상해보험</strong><span>4.0</span><span>(무배당)</span></a></li>
 					<li><a href="medical.html" onclick="ga('send', 'event', 'Direct', 'Etc', 'GNB-Menu_Link_medical', 1);" rel="history"><span>삼성생명 인터넷</span><strong>실손<span>의료비보장</span>보험

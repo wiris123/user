@@ -9,14 +9,18 @@
 	<div id="wrapper">
 	
 		<!-- 머리 -->
-		<%@ include file="./include/header.jsp"%>
+		<%@ include file="./include/header.jsp"  %>
 		<div id="container">
-			<%@ include file="./include/Head.jsp"%>
+			<%@ include file="./include/Head.jsp" %>
 			
 			<!-- 내용시작 -->
 			<div id="content">
+<<<<<<< HEAD
 			
 	
+=======
+			dsds
+>>>>>>> refs/remotes/origin/master
 			</div>
 			<!-- 내용끝 -->
 		
