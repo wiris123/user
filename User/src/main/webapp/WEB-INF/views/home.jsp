@@ -15,7 +15,12 @@
 			
 			<!-- 내용시작 -->
 			<div id="content">
+<<<<<<< HEAD
+			
+	
+=======
 			dsds
+>>>>>>> refs/remotes/origin/master
 			</div>
 			<!-- 내용끝 -->
 		
@@ -26,7 +31,7 @@
 			<%@ include file="./include/footer.jsp"%>
 		</div>
 		<!-- 푸터끝 -->
-
+		
 	</div>
 </body>
 </html>
