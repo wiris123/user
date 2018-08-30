@@ -15,12 +15,7 @@
 			
 			<!-- 내용시작 -->
 			<div id="content">
-<<<<<<< HEAD
-			
-	
-=======
-			dsds
->>>>>>> refs/remotes/origin/master
+				dd
 			</div>
 			<!-- 내용끝 -->
 		
