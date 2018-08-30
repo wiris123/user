@@ -93,7 +93,7 @@ label:focus, label.focus {outline:1px dotted #606879;}
 .nav-path:hover{overflow:wrap;}
 
 .nav-path .gnb-area{position: absolute;overflow: hidden;min-width: 970px; max-width: 1200px;height: 39px;border: 1px solid #ddd;border-top: none;}
-.nav-path .gnb-area > li{float: left;text-align:center;width:22%;height: 359px;}
+.nav-path .gnb-area > li{float: left;text-align:center;width:25%;height: 359px;}
 .nav-path .gnb-area > li.list-path1{float:left;border-radius:0 0 0 10px;width:34%}
 .nav-path .gnb-area > li.list-path1 ul.db-coulm{width: 50%;float: left;}
 .nav-path .gnb-area > li.list-path1 ul.db-coulm.line2{margin-right:-1px; border-right:1px solid #ddd;}

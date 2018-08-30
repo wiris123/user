@@ -4,7 +4,7 @@
 <meta name="author" content="삼성생명, Samsung Life Insurance, 삼성생명 다이렉트"/>
 <meta name="keywords" content="생명보험인터넷가입, 삼성생명인터넷가입, 인터넷보험라운지, 보험온라인가입, 인터넷보험견적, 삼성생명보험가입, 온라인다이렉트보험, 삼성보험회사, 생명보험다이렉트, 인터넷으로보험가입, 인터넷보험, 삼성라이프, 인터넷다이렉트보험, 보험인터넷가입, 인터넷보험가입, 인터넷보험상품, 삼성라운지, 보험료계산, 생명보험, 삼성생명, 건강보험, 삼성생명보험, 다이렉트보험, 보장성보험, 삼성생명다이렉트" />
 <meta name="description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 삼성생명! " />
-<meta property="og:image" content="resources/cms/mobile/images/com/visual_samsung2.gif" />
+<meta property="og:image" content="<%=request.getContextPath() %>resources/cms/mobile/images/com/visual_samsung2.gif" />
 <meta property="og:url" content="index-2.html" />
 <meta property="og:title" content="삼성생명 다이렉트" />
 <meta property="og:site_name" content="삼성생명 다이렉트" />
@@ -13,21 +13,21 @@
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <!-- 공통 css -->
-<link rel="stylesheet" href="resources/cms/pc/css/common68b3.css?ver=1" />
-<link rel="stylesheet" href="resources/cms/pc/css/content68b3.css?ver=1" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/common.css" />
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/content.css" />
 <!-- 공통 script -->
-<script type="text/javascript" src="resources/web/js/ui.plugin.js"></script>
-<script type="text/javascript" src="resources/web/js/ui.common.js"></script>
-<script type="text/javascript" src="resources/web/js/dev.plugin.js" charset="utf-8"></script>
-<script type="text/javascript" src="resources/web/js/dev.common.js" charset="utf-8"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/ui.plugin.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/ui.common.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/dev.plugin.js" charset="utf-8"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/dev.common.js" charset="utf-8"></script>
 <!-- plan script -->
-<script type="text/javascript" src="resources/web/js/plan.js" charset="utf-8"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/plan.js" charset="utf-8"></script>
 
 <!-- 어도비 스크립트 -->
-<script type="text/javascript" src="resources/web/js/adobeDtm.js" charset="utf-8"></script>
-<script type="text/javascript" id="criteoScript" src="resources/js/ld.js" async="true"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/adobeDtm.js" charset="utf-8"></script>
+<script type="text/javascript" id="criteoScript" src="<%=request.getContextPath() %>/resources/js/ld.js" async="true"></script>
 <!-- 타불라 스크립트 -->
-<script src="resources/js/tfa.js"></script>
+<script src="<%=request.getContextPath() %>/common/js/tfa.js"></script>
 <!-- 타불라 스크립트 -->
 
 
