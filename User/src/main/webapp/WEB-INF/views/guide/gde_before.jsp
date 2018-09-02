@@ -1534,7 +1534,7 @@ function chaiConv(step, param){
 						<a href="#none"><span><em>가입 전</em> 가이드</span></a>
 					</li>
 					<li>
-						<a href="guideAfter.html"><span><em>가입 후</em> 가이드</span></a>
+						<a href="gde_after.jsp"><span><em>가입 후</em> 가이드</span></a>
 					</li>
 				</ul>
 			</div>
