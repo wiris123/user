@@ -27,7 +27,7 @@
 	//	session process check
 	var sessionProcessing = false;
 
-	//	상품구분  1: 암, 2: 정기, 3: 상해, 4: 저축, 5:연금저축, 7 :연금
+	//	상품구분  1: 암, 2: 정기, 3: 상해, 4: 저축, 5:c연금저축, 7 :연금
 	var	 insuranceType = "";
 	var	 insTerm = "";
 	
