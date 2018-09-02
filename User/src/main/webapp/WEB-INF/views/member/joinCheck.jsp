@@ -31,15 +31,16 @@
     	
     }
 	
-	function selectOne(obj){
+	function selectOne(obj)
+	{
 		var chkObj = document.getElementById("select_all");
-		
+		var selObj = document.getElementsByName("select_chkbox");
 		if(obj.checked!=true)
 		{
 			chkObj.checked = false;	
 		}
-		else if(obj.checked==true)
-		{
+		else if(obj.checked==true && selObj.checked==true)
+		{			 
 			chkObj.checked = true;
 		}
 	}
@@ -144,7 +145,7 @@
     <div class="provision_wrap">
     <form name="agreeForm" method="post" action="join.jsp">
 		<div class="agree">이용약관, 개인정보 수집 및 이용, 프로모션 안내 메일 수신(선택)에 모두 동의합니다.</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" id="select_all" value="" onclick="selectAll(this)"><i class="check-icon"></i></label></div>
+		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_all" id="select_all" value="" onclick="selectAll(this)"><i class="check-icon"></i></label></div>
 		<br /><br />
 		<div class="agree">ISM 이용약관 동의(필수)</div>
 		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" value="" id="select_one" onclick="selectOne(this);"><i class="check-icon"></i></label></div>
