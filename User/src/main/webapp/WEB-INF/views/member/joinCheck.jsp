@@ -158,7 +158,7 @@
     	이용약관을 구구절절 적어요<br />
     	</div><br />
     	<div class="agree">개인정보 수집 및 이용에 대한 안내(필수)</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" value="checkbox"><i class="check-icon"></i></label></div>
+		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" id="select_one" value="checkbox" onclick="selectOne()"><i class="check-icon"></i></label></div>
 		<div class="provision">
     	이용약관을 구구절절 적어요<br />
     	이용약관을 구구절절 적어요<br />
