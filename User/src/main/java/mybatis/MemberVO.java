@@ -20,14 +20,6 @@ public class MemberVO {
 	}
 	
 	//인자 생성자
-	
-	public MemberVO(String id, String pass, String name, String email) {
-		super();
-		this.id = id;
-		this.pass = pass;
-		this.name = name;
-		this.email = email;
-	}
 
 	public MemberVO(String id, String pass, String name, String email, String mobile, Date birth, Date regidate) {
 		super();

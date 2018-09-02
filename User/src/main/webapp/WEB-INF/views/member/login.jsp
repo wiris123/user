@@ -15,10 +15,10 @@
 			
 			<!-- 내용시작 -->
 			<c:choose>
-				 <c:when test="${not empty sessionScope.siteUserInfo }">
+				 <c:when test="${not empty rows }">
 					 <div class="row" style="border:2px solid #cccccc" padding="10px">
-						 <h4>	아이디 : ${sessionScope.siteUserInfo.id }
-						 	   이름 : ${sessionScope.siteUserInfo.name }</h4>
+						 <h4>	아이디 : ${rows.id }
+						 	   이름 : ${rows.name }</h4>
 					 <br />
 					 <br />
 					 <button onclick="location.href='./logout.do'"> 로그아웃</button>
