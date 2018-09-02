@@ -29,6 +29,11 @@
 	
 	function selectOne(obj){
 		var chkObj = document.getElementsById("select_one");
+		var rowCnt = chkOgj.length -1;
+		
+		if(obj.checkd==false){
+			
+		}
 	}
 
 </script>
