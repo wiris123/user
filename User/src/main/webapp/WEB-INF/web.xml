@@ -31,7 +31,7 @@
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
 
-	<!-- 한글 꺠짐 현상을 방자히가 위한 필터 설정 : 컨텍스트루트 하위의 모든 파일을 대상으로 UTF-8로 설정하겠다는 의미 -->
+	<!-- 한글 깨짐 현상을 방자히가 위한 필터 설정 : 컨텍스트루트 하위의 모든 파일을 대상으로 UTF-8로 설정하겠다는 의미 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
 		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>

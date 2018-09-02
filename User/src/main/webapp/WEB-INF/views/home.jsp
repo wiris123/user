@@ -15,6 +15,7 @@
 			
 			<!-- 내용시작 -->
 			<div id="content">
+<<<<<<< HEAD
 		
 				<a href="./guide/gde_before" target="_blank">가입전 가이드</a> <br />
 				<a href="./guide/gde_after" target="_blank">가입후 가이드</a> <br />
@@ -23,6 +24,9 @@
 				<a href="./member/joinCheck" target="_blank">약관동의</a>
 				
 			
+=======
+				
+>>>>>>> branch 'master' of https://github.com/wiris123/user.git
 			</div>
 			<!-- 내용끝 -->
 		
