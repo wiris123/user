@@ -196,6 +196,13 @@
 			<version>2.5.1</version>
 		</dependency>
 		
+		<!-- 메일 -->
+		<dependency>
+		   <groupId>javax.mail</groupId>
+		   <artifactId>mail</artifactId>
+		   <version>1.4.3</version>
+		</dependency>
+		
 		
 	</dependencies>
 	<build>
