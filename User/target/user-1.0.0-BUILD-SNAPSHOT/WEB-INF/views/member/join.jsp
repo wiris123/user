@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -280,13 +281,13 @@ function email_input(em, frm){
       	<option value="<%=i%>"><%=i %></option>
       	<%} %>
       </select>일    
-      
-
+     
       <input type="submit" value="가입하기" >
     </form>
     <iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>
     </div><!---div join-->
-			</div>
+		</div>
+
 			<!-- 내용끝 -->
 		
 		</div>	

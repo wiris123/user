@@ -7,7 +7,7 @@
 <title>Home</title>
 </head>
 <body>
-	<div id="wrapper">
+	<div id="wrapper"> 
 	
 		<!-- 머리 -->
 		<%@ include file="./include/header.jsp"  %>
@@ -15,7 +15,7 @@
 			<%@ include file="./include/Head.jsp" %>
 			
 			<!-- 내용시작 -->
-<<<<<<< HEAD
+
 			<div id="content" class="page-main">
 			<h1 class="hd">삼성생명 다이렉트 홈</h1>
 				<!-- ## 개인화 및 계산기영역 ////////////////////////////////// -->
@@ -27,7 +27,7 @@
 							<div class="bg-main">
 								<ul>
 									<li class="visual-con01">
-										<a href="" title="연금가입가이드 바로가기" >
+										<a href="/user/guide/gde_annual" title="연금가입가이드 바로가기" >
 											<p class="heading">
 												<span>100세 시대,</span> 당신의 아름답고 행복한 노후
 												<strong class="title"><span><i style="color:RoyalBlue;">ISM</i>&nbsp; 다이렉트가<br/>함께합니다</span></strong>
@@ -127,31 +127,6 @@
 						</div>
 					</fieldset>
 				</form>
-=======
-			<div id="content">
-
-				<ul class="tab-type1">
-				<li><a href="/myPageHome.eds">마이페이지</a></li>
-				<li class="on"><a href="#none" id="holdingContractCount">보유계약조회</a></li>
-				<!-- <li><a href="/myPageContractProgress.eds">계약진행 조회<em>1<span>건</span></em></a></li> -->
-				<li><a href="/myPageContinueSubscribe.eds" id="continueSubscribeCount">가입 계속하기<em>3<span>건</span></em></a></li>
-
-
-				<a href="./guide/gde_before" target="_blank">가입전 가이드</a> <br />
-				<a href="./guide/gde_after" target="_blank">가입후 가이드</a> <br />
-				<a href="./guide/gde_annual" target="_blank">연금가입 가이드</a> <br />
-				<a href="./member/login.do" target="_blank">로그인과 조인??</a> <br />
-				<a href="./member/join" target="_blank">회원가입</a> <br />
-				<a href="./member/joinCheck" target="_blank">약관동의</a>
-
-				<li><a href="/myPageEvent.eds" id="eventCount">나의 이벤트</a></li>
-				
-				
-				<li class="last"><a href="/myPageConsult.eds" id="consultCount">나의 상담</a></li>
-				
-			</ul>
-
->>>>>>> refs/remotes/origin/newbranch
 			</div>
 				
 			<!-- CMS 영역 -->
@@ -269,5 +244,28 @@
 		<!-- 푸터끝 -->
 		
 	</div>
+	<!-- <div id="content">
+
+				<ul class="tab-type1">
+				<li><a href="/myPageHome.eds">마이페이지</a></li>
+				<li class="on"><a href="#none" id="holdingContractCount">보유계약조회</a></li>
+				<li><a href="/myPageContractProgress.eds">계약진행 조회<em>1<span>건</span></em></a></li>
+				<li><a href="/myPageContinueSubscribe.eds" id="continueSubscribeCount">가입 계속하기<em>3<span>건</span></em></a></li>
+
+
+				<a href="./guide/gde_before" target="_blank">가입전 가이드</a> <br />
+				<a href="./guide/gde_after" target="_blank">가입후 가이드</a> <br />
+				<a href="./guide/gde_annual" target="_blank">연금가입 가이드</a> <br />
+				<a href="./member/login.do" target="_blank">로그인과 조인??</a> <br />
+				<a href="./member/join" target="_blank">회원가입</a> <br />
+				<a href="./member/joinCheck" target="_blank">약관동의</a>
+
+				<li><a href="/myPageEvent.eds" id="eventCount">나의 이벤트</a></li>
+				
+				
+				<li class="last"><a href="/myPageConsult.eds" id="consultCount">나의 상담</a></li>
+				
+			</ul>
+	</div> -->
 </body>
 </html>
