@@ -58,8 +58,7 @@ public class MyBatisController
 		}
 		else
 		{
-			//로그인 성공 시
-			session.setAttribute("siteUserInfo", vo);
+			
 		}
 		
 /*		String backUrl = req.getParameter("backUrl");
@@ -73,12 +72,16 @@ public class MyBatisController
 			mv.setViewName(backUrl);
 		}
 		*/
+		
+		//로그인 성공 시
+		session.setAttribute("userInfo", vo);
 		mv.addObject("rows", vo);
+		
 		mv.setViewName("/member/login");
 		return mv;
 	}
 	
-	
+	/*
 	@RequestMapping("/event/bbs_event")
 	public String list(Model model,HttpServletRequest req)
 	{
@@ -110,5 +113,5 @@ public class MyBatisController
 		model.addAttribute("pagingImg",pagingImg);
 		
 		return "event/bbs_event";
-	}
+	}*/
 }
