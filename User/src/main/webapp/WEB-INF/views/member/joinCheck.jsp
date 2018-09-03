@@ -22,26 +22,29 @@
     		}
     		
     		// 체크 해제시
-    	} else {
+    	} else
+    	{
     		// 전부 체크 해제
-    		for (var i = 0; i <= rowCnt; i++) {
+    		for (var i = 0; i <= rowCnt; i++)
+			{
     			chkObj[i].checked = false;
     		}
     	}
-    	
     }
 	
-	function selectOne(obj)
+	function selectOne()
 	{
 		var chkObj = document.getElementById("select_all");
-		var selObj = document.getElementsByName("select_chkbox");
-		if(obj.checked!=true)
+		var selObj = document.getElementById("select_one");
+		var selObj2 = document.getElementById("select_one1");
+		
+		if(selObj.checked==true && selObj2.checked==true)
 		{
-			chkObj.checked = false;	
+			chkObj.checked = true;	
 		}
-		else if(obj.checked==true && selObj.checked==true)
+		else
 		{			 
-			chkObj.checked = true;
+			chkObj.checked = false;
 		}
 	}
 
@@ -148,7 +151,7 @@
 		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_all" id="select_all" value="" onclick="selectAll(this)"><i class="check-icon"></i></label></div>
 		<br /><br />
 		<div class="agree">ISM 이용약관 동의(필수)</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" value="" id="select_one" onclick="selectOne(this);"><i class="check-icon"></i></label></div>
+		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" value="" id="select_one" onclick="selectOne();"><i class="check-icon"></i></label></div>
 		<div class="provision">
     	이용약관을 구구절절 적어요<br />
     	이용약관을 구구절절 적어요<br />
@@ -172,7 +175,7 @@
     	이용약관을 구구절절 적어요<br />
     	</div><br />
     	<div class="agree">개인정보 수집 및 이용에 대한 안내(필수)</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" id="select_one1" value="" onclick="selectOne(this);"><i class="check-icon"></i></label></div>
+		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" id="select_one1" value="" onclick="selectOne();"><i class="check-icon"></i></label></div>
 		<div class="provision">
     	이용약관을 구구절절 적어요<br />
     	이용약관을 구구절절 적어요<br />
