@@ -8,7 +8,11 @@
 </head>
 <body>
 	<div id="wrapper">
+<<<<<<< HEAD
 		   <!-- 머리 -->
+=======
+		<!-- 머리 -->
+>>>>>>> refs/remotes/origin/newbranch
       <%@ include file="../include/header.jsp"  %>
       <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/calculator.css"/>
       <div id="container">
@@ -145,6 +149,7 @@
       </div><!-- resultTab end -->
 
       <!-- 친절한 설명 -->
+<<<<<<< HEAD
 		      <div class="box-advice" id="areaBoxAdvice">
 		         <div class="case1">
 		            <h2><span>친절안내</span></h2>
@@ -163,6 +168,26 @@
 		      </div>
 		   </div>
 		</div>
+=======
+      <div class="box-advice" id="areaBoxAdvice">
+         <div class="case1">
+            <h2><span>친절안내</span></h2>
+            <div class="box-row">
+               <div class="advice-txt-box">
+                  <strong class="advice-tit">어떻게 설계할지 고민 되시나요?</strong>
+                  <p>연락 주시면 전문상담원이 친절히 도와드립니다.</p>
+               </div>
+               <div class="advice-tel">
+                  <span class="tel-icon"><img src="resources/cms/pc/images/com/icon_telephone.png" alt="" /></span>
+                  <strong>080-789-3300</strong>
+                  <span>평일 08:30~17:30 (무료)</span>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+>>>>>>> refs/remotes/origin/newbranch
 
       </div>
       <!-- 머리끝 -->
