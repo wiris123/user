@@ -47,7 +47,7 @@ public class CustomController {
 	public String sendemail(HttpServletRequest request) {
 		System.out.println("아무거나");
 		String name =  request.getParameter("name"); 
-		String mobile = request.getParameter("mobile1")+"-"+request.getParameter("mobile2")+"-"+request.getParameter("mobile3");
+		String mobile = request.getParameter("mobile");
 		String email = request.getParameter("email1")+"@"+request.getParameter("email2");
 		String contents =  request.getParameter("contents"); 
 		
@@ -72,6 +72,6 @@ public class CustomController {
 			System.out.println("N");
 		}
 		
-		return "custom/cus_qna_email";
+		return "custom/cus_qna";
 	}
 }

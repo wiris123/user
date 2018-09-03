@@ -187,21 +187,27 @@
 <div id="header">
 	<!-- 로고 -->
 	<div class="logo">
-		<a href="http://www.samsunglife.com/main.html?tloParam=DI_logo&amp;utm_campaign=Internet&amp;utm_source=DI_logo&amp;utm_medium=PC-DI_logo&amp;utm_content=main&amp;utm_term=thum&amp;int=hp+org_sli_direct+main+img_direct_main_high_btn1+_+_+_+_" target="_blank" title="새창열림(삼성생명)">삼성생명</a> <a href="index-2.html" title="메인페이지">삼성생명 다이렉트</a>
+<<<<<<< HEAD
+		<a href="http://www.samsunglife.com/main.html?tloParam=DI_logo&amp;utm_campaign=Internet&amp;utm_source=DI_logo&amp;utm_medium=PC-DI_logo&amp;utm_content=main&amp;utm_term=thum&amp;int=hp+org_sli_direct+main+img_direct_main_high_btn1+_+_+_+_" target="_blank" title="새창열림(삼성생명)">ISM</a> <a href="/user/" title="메인페이지">ISM 다이렉트</a>
+=======
+		<a href="/user" target="_blank" title="새창열림(삼성생명)">ISM생명</a> <a href="/user" title="메인페이지">ISM 다이렉트</a>
+>>>>>>> refs/remotes/origin/newbranch
 	</div>
 	<!-- 유틸메뉴 -->
 	<ul class="nav-util">
-		<li><a href="guide/introduce.html"><strong>왜 삼성생명 다이렉트인가요?</strong></a></li>
+<<<<<<< HEAD
+		<li><a href="guide/introduce.html"><strong>왜 ISM인가요?</strong></a></li>
+=======
+		<li><a href="/guide/gde_before"><strong>왜 ISM 다이렉트인가요?</strong></a></li>
+>>>>>>> refs/remotes/origin/newbranch
 		<li><a href="http://product.samsunglife.com/product/insu/product/common/insuDictionaryPopup.do?int=hp+org_sli_direct+insuDictionary+img_direct_main_high_btn2+_+_+_+_" target="_blank" title="(새창) 삼성생명 보험용어사전">보험용어사전</a></li>
 		<li><a href="http://www.samsunglife.com/disclosure/product/main/product_main.html?int=hp+org_sli_direct+disclosure_product+img_direct_main_high_btn3+_+_+_+_" target="_blank" title="(새창) 삼성생명 공시안내">공시실</a></li>
 	</ul>
 
-
 	<!-- GNB -->
-
 	<ul class="nav-gnb">
 		<li><a href="#asideRecent" class="gnb1"><span>최근설계내역</span><em id="headerRecentPlanCount"></em></a></li>
-		<li><a href="myPageLogin.html" class="gnb4" title="마이페이지"><span>마이페이지</span></a></li>
+		<li><a href="/user/member/login.do" class="gnb4" title="로그인하기"><span>로그인하기</span></a></li>
 		<!-- <li><a href="#asideMenu" class="gnb3" title="전체메뉴"><span>전체메뉴</span></a></li> -->
 	</ul>
 

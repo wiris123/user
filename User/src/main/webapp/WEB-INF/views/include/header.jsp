@@ -191,14 +191,13 @@
 	</div>
 	<!-- 유틸메뉴 -->
 	<ul class="nav-util">
+
 		<li><a href="/guide/gde_before"><strong>왜 ISM 다이렉트인가요?</strong></a></li>
 		<li><a href="http://product.samsunglife.com/product/insu/product/common/insuDictionaryPopup.do?int=hp+org_sli_direct+insuDictionary+img_direct_main_high_btn2+_+_+_+_" target="_blank" title="(새창) 삼성생명 보험용어사전">보험용어사전</a></li>
 		<li><a href="http://www.samsunglife.com/disclosure/product/main/product_main.html?int=hp+org_sli_direct+disclosure_product+img_direct_main_high_btn3+_+_+_+_" target="_blank" title="(새창) 삼성생명 공시안내">공시실</a></li>
 	</ul>
 
-
 	<!-- GNB -->
-
 	<ul class="nav-gnb">
 		<li><a href="#asideRecent" class="gnb1"><span>최근설계내역</span><em id="headerRecentPlanCount"></em></a></li>
 		<li><a href="/user/member/login.do" class="gnb4" title="로그인하기"><span>로그인하기</span></a></li>
