@@ -24,7 +24,7 @@
 	</div>
 	<!-- 삼성생명 다이렉트 블로그 -->
 	<div class="section-blog">
-		<a href="http://blog.naver.com/sslifeinsu" target="_blank" id="uiSitemap">공식 블로그</a>
+		<a href="http://www.ikosmo.co.kr" target="_blank" id="uiSitemap">한국소프트웨어인재개발원</a>
 	</div>
 
 	<!-- 사이트맵 -->

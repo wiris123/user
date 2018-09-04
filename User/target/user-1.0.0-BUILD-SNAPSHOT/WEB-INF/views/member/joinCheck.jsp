@@ -13,11 +13,14 @@
     	var chkObj = document.getElementsByName("select_chkbox");
     	var rowCnt = chkObj.length - 1;
     	// 대가리에 노드를 체크로 전환시
-    	if (obj.checked == true) {
+    	if (obj.checked == true) 
+    	{
     		// 전부 선택으로 바꿔줌
-    		for (var i = 0; i <= rowCnt; i++) {
+    		for (var i = 0; i <= rowCnt; i++) 
+    		{
     			chkObj[i].checked = true;
     		}
+    		
     		// 체크 해제시
     	} else {
     		// 전부 체크 해제
@@ -25,14 +28,20 @@
     			chkObj[i].checked = false;
     		}
     	}
+    	
     }
 	
-	function selectOne(obj){
-		var chkObj = document.getElementsById("select_one");
-		var rowCnt = chkOgj.length -1;
-		
-		if(obj.checkd==false){
-			
+	function selectOne(obj)
+	{
+		var chkObj = document.getElementById("select_all");
+		var selObj = document.getElementsByName("select_chkbox");
+		if(obj.checked!=true)
+		{
+			chkObj.checked = false;	
+		}
+		else if(obj.checked==true && selObj.checked==true)
+		{			 
+			chkObj.checked = true;
 		}
 	}
 
@@ -136,10 +145,10 @@
     <div class="provision_wrap">
     <form name="agreeForm" method="post" action="join.jsp">
 		<div class="agree">이용약관, 개인정보 수집 및 이용, 프로모션 안내 메일 수신(선택)에 모두 동의합니다.</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" value="checkbox" onclick="selectAll(this)"><i class="check-icon"></i></label></div>
+		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_all" id="select_all" value="" onclick="selectAll(this)"><i class="check-icon"></i></label></div>
 		<br /><br />
 		<div class="agree">ISM 이용약관 동의(필수)</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" value="checkbox" id="select_one" onclick="selectOne(this)"><i class="check-icon"></i></label></div>
+		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" value="" id="select_one" onclick="selectOne(this);"><i class="check-icon"></i></label></div>
 		<div class="provision">
     	이용약관을 구구절절 적어요<br />
     	이용약관을 구구절절 적어요<br />
@@ -163,7 +172,7 @@
     	이용약관을 구구절절 적어요<br />
     	</div><br />
     	<div class="agree">개인정보 수집 및 이용에 대한 안내(필수)</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" id="select_one" value="checkbox" onclick="selectOne()"><i class="check-icon"></i></label></div>
+		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" id="select_one1" value="" onclick="selectOne(this);"><i class="check-icon"></i></label></div>
 		<div class="provision">
     	이용약관을 구구절절 적어요<br />
     	이용약관을 구구절절 적어요<br />

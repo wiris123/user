@@ -117,6 +117,7 @@ public class MyBatisController
 		
 		return "event/bbs_event";
 	}*/
+<<<<<<< HEAD
 	
 	@RequestMapping("/member/join.do")
 	public String JoinDAO(Model model) {
@@ -141,4 +142,6 @@ public class MyBatisController
 	}
 	 
 	
+=======
+>>>>>>> branch 'newbranch' of https://github.com/wiris123/user
 }
