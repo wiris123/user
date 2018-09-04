@@ -10,7 +10,7 @@ public class MemberVO {
 	private String name;
 	private String email;
 	private String mobile;
-	private Date birth;
+	private java.sql.Date birth;
 	private Date regidate;
 	
 	//기본 생성자
@@ -21,7 +21,7 @@ public class MemberVO {
 	
 	//인자 생성자
 
-	public MemberVO(String id, String pass, String name, String email, String mobile, Date birth, Date regidate) {
+	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth, Date regidate) {
 		super();
 		this.id = id;
 		this.pass = pass;
@@ -33,7 +33,7 @@ public class MemberVO {
 	}
 
 
-	public MemberVO(String id, String pass, String name, String email, String mobile, Date birth) {
+	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth) {
 		super();
 		this.id = id;
 		this.pass = pass;
@@ -76,7 +76,7 @@ public class MemberVO {
 	public Date getBirth() {
 		return birth;
 	}
-	public void setBirth(Date birth) {
+	public void setBirth(java.sql.Date birth) {
 		this.birth = birth;
 	}
 	public Date getRegidate() {

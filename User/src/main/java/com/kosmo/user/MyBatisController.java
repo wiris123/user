@@ -1,6 +1,10 @@
 package com.kosmo.user;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,9 +28,11 @@ import mybatis.MyBbsDAOImpl;
 public class MyBatisController 
 {
 
+	
 	@Autowired
 	private SqlSession sqlSession;
 	//로그인처리
+
 	
 	//로그인 리다이렉팅
 	@RequestMapping("/member/login.do")
@@ -78,7 +84,7 @@ public class MyBatisController
 		return mv;
 	}
 	
-	
+	/*
 	@RequestMapping("/event/bbs_event")
 	public String list(Model model,HttpServletRequest req)
 	{
@@ -110,5 +116,29 @@ public class MyBatisController
 		model.addAttribute("pagingImg",pagingImg);
 		
 		return "event/bbs_event";
+	}*/
+	
+	@RequestMapping("/member/join.do")
+	public String JoinDAO(Model model) {
+			
+		return "member/join";
+		 
 	}
+	
+	@RequestMapping("/member/insertjoin.do")	 
+	public String insertjoin(HttpServletRequest req,HttpSession session)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");	
+		String birth = (req.getParameter("birth1")+"-"+req.getParameter("birth2")+"-"+req.getParameter("birth3"));
+		Date dat = Date.valueOf(birth);
+		
+		sqlSession.getMapper(MyMemberImpl.class).insertjoin
+				(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat);
+			
+
+		
+		return "redirect:/member/login";
+	}
+	 
+	
 }
