@@ -1,6 +1,10 @@
 package com.kosmo.user;
 
+import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Locale;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -24,9 +28,11 @@ import mybatis.MyBbsDAOImpl;
 public class MyBatisController 
 {
 
+	
 	@Autowired
 	private SqlSession sqlSession;
 	//로그인처리
+
 	
 	//로그인 리다이렉팅
 	@RequestMapping("/member/login.do")
@@ -42,10 +48,7 @@ public class MyBatisController
 	public ModelAndView loginAction(HttpServletRequest req,HttpSession session)
 	{
 		ModelAndView mv = new ModelAndView();
-//			MemberVO vo = dao.login(req.getParameter("id"), req.getParameter("pass"));
-		
-		//mybatis 사용
-		
+
 		
 		MemberVO vo =
 		sqlSession.getMapper(MyMemberImpl.class).login(req.getParameter("id"), req.getParameter("pass"));
@@ -61,17 +64,6 @@ public class MyBatisController
 			
 		}
 		
-/*		String backUrl = req.getParameter("backUrl");
-		
-		if(backUrl==null || backUrl.equals(""))
-		{
-			mv.setViewName("/member/login");
-		}
-		else
-		{
-			mv.setViewName(backUrl);
-		}
-		*/
 		
 		//로그인 성공 시
 		session.setAttribute("userInfo", vo);
@@ -86,7 +78,7 @@ public class MyBatisController
 	public String list(Model model,HttpServletRequest req)
 	{
 		//jdbc template 사용
-//		ArrayList<MyBoardDTO> lists = dao.list();		
+		ArrayList<MyBoardDTO> lists = dao.list();		
 		//mybatis 사용
 		String b_id = req.getParameter("b_id");
 		int totalRecordCount = sqlSession.getMapper(MyBbsDAOImpl.class).getTotalCount(b_id);
@@ -103,7 +95,7 @@ public class MyBatisController
 		
 		ArrayList<BoardVO> lists = sqlSession.getMapper(MyBbsDAOImpl.class).listPage(b_id, start, end);
 		
-/*		for(BoardVO dto : lists)
+	 for(BoardVO dto : lists)
 		{
 			String tmp = dto.getContents().replace("\r\n", "<br/>");
 			dto.setContents(tmp);
@@ -114,4 +106,21 @@ public class MyBatisController
 		
 		return "event/bbs_event";
 	}
+
+	
+	@RequestMapping("/member/insertjoin.do")	 
+	public String insertjoin(HttpServletRequest req,HttpSession session)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");	
+		String birth = (req.getParameter("birth1")+"-"+req.getParameter("birth2")+"-"+req.getParameter("birth3"));
+		Date dat = Date.valueOf(birth);
+		
+		sqlSession.getMapper(MyMemberImpl.class).insertjoin
+				(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat);
+			
+
+		
+		return "redirect:/member/login";
+	}
+	
 }
