@@ -78,7 +78,7 @@ public class MyBatisController
 	public String list(Model model,HttpServletRequest req)
 	{
 		//jdbc template 사용
-		ArrayList<MyBoardDTO> lists = dao.list();		
+//		ArrayList<MyBoardDTO> lists = dao.list();		
 		//mybatis 사용
 		String b_id = req.getParameter("b_id");
 		int totalRecordCount = sqlSession.getMapper(MyBbsDAOImpl.class).getTotalCount(b_id);
@@ -95,7 +95,7 @@ public class MyBatisController
 		
 		ArrayList<BoardVO> lists = sqlSession.getMapper(MyBbsDAOImpl.class).listPage(b_id, start, end);
 		
-	 for(BoardVO dto : lists)
+/*		for(BoardVO dto : lists)
 		{
 			String tmp = dto.getContents().replace("\r\n", "<br/>");
 			dto.setContents(tmp);
@@ -120,7 +120,7 @@ public class MyBatisController
 			
 
 		
-		return "redirect:/member/login";
+		return "redirect:/member/login.do";
 	}
 	
 }

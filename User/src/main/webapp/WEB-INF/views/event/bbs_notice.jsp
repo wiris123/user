@@ -1,19 +1,9 @@
-<%@page import="utill.PagingUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<%
-int t = 15;
-int p = 2;
-int b = 2;
-int n = 5;
-String pa = request.getContextPath().toString()+"/event/bbs_notice";
- 
-String pagingImg ;
-%>
 <title>공지사항</title>
 </head>
 <body>
@@ -159,7 +149,6 @@ String pagingImg ;
 
 				<!-- ## 페이징 ## -->
 				<div class="paging">
-					<%=pagingImg %>
 				</div>
 			</div>
 

@@ -5,6 +5,37 @@
 <head>
 <title>Home</title>
 </head>
+<script>
+	function fn_setInputUi(num){
+		$("#telNumField").hide();
+		$("#naver").hide();
+		$("#google").hide();
+		$("#signTab1").parent("li").removeClass();
+		$("#signTab2").parent("li").removeClass();
+	
+		//1: 공인인증, 2: 카카오
+		if( num == 1 )
+		{
+			$("#field").hide();
+			$("#pass").hide();
+			$("#naver").show();
+			$("#google").show();
+			$("#signTab1").parent("li").attr("class", "on");
+
+			
+		} 
+		else if(num == 2 )
+		{
+			$("#naver").hide();
+			$("#google").hide();
+			$("#field").show();
+			$("#name").show();
+			$("#pass").show();
+			$("#signTab2").parent("li").attr("class", "on");
+		}
+	}
+
+</script>
 <body>
 	<div id="wrapper">
 	
@@ -31,17 +62,14 @@
 								<div class="form-content1 small">
 									<ul class="tab-type2">
 										<li>
-											<img src="../resources/img/naver_Bn_Green.PNG" width="200" height="40"onclick="${url}">
-											<!-- <a href="#none" onclick="fn_setInputUi(1);" id="signTab1"><span>네이버</span></a>	 -->
+											<a href="#none" onclick="fn_setInputUi(1);" id="signTab1"><span>SOCIAL 로그인</span></a>	
 										</li>
-										<li class="on">
-											<img src="../resources/img/googlelogin.jpg"" width="200" height="40" onclick="location.href='../login/googlelogin.jsp'">	
-											<!-- <a href="#none" onclick="fn_setInputUi(2);" id="signTab2"><span>구글</span></a> -->	
+										<li class="on">	
+											<a href="#none" onclick="fn_setInputUi(2);" id="signTab2"><span>로그인</span></a>	
 										</li>
-									</ul>
-									
+									</ul>	
 									<form name="form1" action="../member/loginAction.do" id="form1" autocomplete="off" method="post" >
-										<fieldset>
+										<fieldset id="field">
 											<legend>본인인증</legend>
 											<!-- ## 이름 ##-->
 											<dl>
@@ -62,8 +90,9 @@
 													</span>
 												</dd>
 											</dl>
-											
 										</fieldset>
+										<button class="btn-type2 c1" onClick='location.href="../snslogin/naverlogin.do";' id="naver"><span>확인</span></button>
+										<button class="btn-type2 c2" onClick='location.href="../snslogin/googlelogin.do;' id="google"><span>확인</span></button>
 										<div class="btn-area">
 										<button class="btn-type2 c1" onClick='javascript:login();'><span>확인</span></button>
 									</div>
@@ -77,12 +106,6 @@
 					</div>
 					 </c:otherwise>
 				 </c:choose>
-
-
-
-
-
-
 
 			<!-- 내용끝 -->
 		
