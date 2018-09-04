@@ -71,6 +71,7 @@
   		width: 800px;
   		height: 740px;
   		border: 1px solid #eee;
+  		background: #f7f7f7;
   	}
 
   	.agree {

@@ -5,42 +5,45 @@
 <head>
 <title>Home</title>
 </head>
-<script>
-	function fn_setInputUi(num){
-		$("#telNumField").hide();
-		$("#naver").hide();
-		$("#google").hide();
-		$("#signTab1").parent("li").removeClass();
-		$("#signTab2").parent("li").removeClass();
-	
-		//1: 공인인증, 2: 카카오
-		if( num == 1 )
-		{
-			$("#field").hide();
-			$("#pass").hide();
-			$("#naver").show();
-			$("#google").show();
-			$("#signTab1").parent("li").attr("class", "on");
-
-			
-		} 
-		else if(num == 2 )
-		{
-			$("#naver").hide();
-			$("#google").hide();
-			$("#field").show();
-			$("#name").show();
-			$("#pass").show();
-			$("#signTab2").parent("li").attr("class", "on");
-		}
-	}
-
-</script>
 <body>
 	<div id="wrapper">
 	
 		<!-- 머리 -->
 		<%@ include file="../include/header.jsp"  %>
+	<script>
+$(function(){
+	
+	$("#naver").hide();
+	$("#google").hide();
+
+});
+
+function fn_setInputUi(num)
+{
+	$("#signTab1").parent("li").removeClass();
+	$("#signTab2").parent("li").removeClass();
+
+	//1: 공인인증, 2: 카카오
+	if( num == 1 )
+	{
+		$("#field").hide();
+		$("#pass").hide();
+		$("#naver").show();
+		$("#google").show();
+		$("#signTab1").parent("li").attr("class", "on");	
+	} 
+	else if(num == 2 )
+	{
+		$("#naver").hide();
+		$("#google").hide();
+		$("#field").show();
+		$("#name").show();
+		$("#pass").show();
+		$("#signTab2").parent("li").attr("class", "on");
+	}
+}
+
+</script>
 		<div id="container">
 			<%@ include file="../include/Head.jsp" %>	
 			<!-- 내용시작 -->
@@ -83,16 +86,17 @@
 												<dd class="wrap">
 													
 													<input type="password" class="text" id="pass" name="pass" title="비밀번호" maxlength="12" />
-													<span class="label-check btn-mouse">
+													<!-- <span class="label-check btn-mouse">
 														<label for="MousechkBox1" class="" id="labelMouseInput" onmousedown="fnMouseInputToggle(); return false;" onclick="return false;">마우스입력</label>
 														<input type="checkbox" name="" class="check" id="MousechkBox1"/>
-														<!--  style="ime-mode:disabled;" onblur="javascript:checkNum(this);" onkeypress="if(event.keyCode==13){ login(); return false;}" -->
-													</span>
+														 style="ime-mode:disabled;" onblur="javascript:checkNum(this);" onkeypress="if(event.keyCode==13){ login(); return false;}"
+													</span> -->
 												</dd>
 											</dl>
 										</fieldset>
-										<button class="btn-type2 c1" onClick='location.href="../snslogin/naverlogin.do";' id="naver"><span>확인</span></button>
-										<button class="btn-type2 c2" onClick='location.href="../snslogin/googlelogin.do;' id="google"><span>확인</span></button>
+										
+											<div id="naver"><img src="/resources/img/naver_Bn_Green.PNG" alt="" /><a href="../snslogin/naverlogin.do">cfgcfgcfgcfg</a></div>
+											<div id="google"><a href="../snslogin/googlelogin.do"><img src="/resources/img/btn_google.jpg" alt="" />cfgcfgcfgcf</a></div>
 										<div class="btn-area">
 										<button class="btn-type2 c1" onClick='javascript:login();'><span>확인</span></button>
 									</div>
