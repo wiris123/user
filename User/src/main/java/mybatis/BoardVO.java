@@ -13,7 +13,6 @@ public class BoardVO {
 	private Date regidate;
 	private String viewcnt;
 	private String attfile;
-	private String attfileR;
 	private String b_id;
 	private int reply;
 	
@@ -23,11 +22,10 @@ public class BoardVO {
 		super();
 	}
 
-
 	
 	//인자 생성자
 	public BoardVO(String num, String id, String name, String title, String contents, Date regidate, String viewcnt,
-			String attfile, String attfileR, String b_id, int reply) {
+			String attfile,String b_id, int reply) {
 		super();
 		this.num = num;
 		this.id = id;
@@ -38,7 +36,6 @@ public class BoardVO {
 		this.viewcnt = viewcnt;
 		this.attfile = attfile;
 		this.b_id = b_id;
-		this.attfileR = attfileR;
 		this.reply = reply;
 	}
 
@@ -53,19 +50,6 @@ public class BoardVO {
 	public void setReply(int reply) {
 		this.reply = reply;
 	}
-
-
-
-	public String getAttfileR() {
-		return attfileR;
-	}
-
-
-
-	public void setAttfileR(String attfileR) {
-		this.attfileR = attfileR;
-	}
-
 
 
 	public String getNum() {

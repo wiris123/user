@@ -6,10 +6,11 @@ import org.apache.ibatis.annotations.Param;
 
 public interface MyBbsDAOImpl 
 {
-	//방명록 리스트
+	//리스트출력 리스트
 	public ArrayList<BoardVO> list();
+	
 	//1. 게시물수 카운트
-	public int getTotalCount();
+	public int getTotalCount(String b_id);
 	
 	//2.start,end 값을 받아서 select하기
 	public ArrayList<BoardVO> listPage (String b_id, int start, int end);

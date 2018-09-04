@@ -81,7 +81,7 @@ public class MyBatisController
 		return mv;
 	}
 	
-	/*
+	
 	@RequestMapping("/event/bbs_event")
 	public String list(Model model,HttpServletRequest req)
 	{
@@ -89,29 +89,29 @@ public class MyBatisController
 //		ArrayList<MyBoardDTO> lists = dao.list();		
 		//mybatis 사용
 		String b_id = req.getParameter("b_id");
-		int totalRecordCount = sqlSession.getMapper(MyBbsDAOImpl.class).getTotalCount();
+		int totalRecordCount = sqlSession.getMapper(MyBbsDAOImpl.class).getTotalCount(b_id);
 		int pageSize = 4;
 		int blockPage = 2;
 		int nowPage = req.getParameter("nowPage")==null ? 1 :
 			Integer.parseInt(req.getParameter("nowPage"));
 		
-		int start = (nowPage-1) * pageSize + 1;
-		int end = nowPage * pageSize;
+		int start =  1;//(nowPage-1) * pageSize + 1;
+		int end = 5; //nowPage * pageSize;
 		
-		String pagingImg = PagingUtil.pagingImgServlet(totalRecordCount,
+		String pagingImg = PagingUtil.paging(totalRecordCount,
 				pageSize, blockPage, nowPage,req.getContextPath()+"/event/bbs_event.do?");
 		
 		ArrayList<BoardVO> lists = sqlSession.getMapper(MyBbsDAOImpl.class).listPage(b_id, start, end);
 		
-		for(BoardVO dto : lists)
+/*		for(BoardVO dto : lists)
 		{
 			String tmp = dto.getContents().replace("\r\n", "<br/>");
 			dto.setContents(tmp);
-		}
+		}*/
 		
 		model.addAttribute("list",lists);
 		model.addAttribute("pagingImg",pagingImg);
 		
 		return "event/bbs_event";
-	}*/
+	}
 }

@@ -23,7 +23,7 @@
 			<li class="list-path3"><a href="#none" onclick="toggleGNB();"><p class="headline">이벤트/공지</p></a>
 				<ul class="list-option">
 
-					<li><a href="<%=request.getContextPath() %>/event/bbs_event"><strong>이벤트</strong></a><span class="hd"></span></li>
+					<li><a href="<%=request.getContextPath() %>/event/bbs_event?b_id=a"><strong>이벤트</strong></a><span class="hd"></span></li>
 					<li><a href="<%=request.getContextPath() %>/event/bbs_notice"><strong>공지사항</strong></a></li>
 				</ul></li>
 			<li class="list-path4"><a href="#none" onclick="toggleGNB();"><p class="headline">고객센터</p></a>

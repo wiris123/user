@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class EventController {
 
-	@RequestMapping("/event/bbs_event")
+/*	@RequestMapping("/event/bbs_event")
 	public String bbs_event() {
 		
 		
@@ -18,6 +18,6 @@ public class EventController {
 		
 		
 		return "event/bbs_notice";
-	}
+	}*/
 	
 }
