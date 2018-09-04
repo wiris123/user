@@ -1,4 +1,3 @@
-<%@page import="utill.PagingUtil"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -159,7 +158,7 @@ String pagingImg ;
 
 				<!-- ## 페이징 ## -->
 				<div class="paging">
-					<%=pagingImg %>
+
 				</div>
 			</div>
 
