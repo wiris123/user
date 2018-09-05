@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
@@ -15,7 +14,7 @@
 			<%@ include file="../include/Head.jsp"%>
 
 			<!-- 내용시작 -->
-	
+
 			<div id="content" class="page-event">
 				<div class="tit-page">
 					<h1>이벤트</h1>
@@ -25,16 +24,9 @@
 				<div class="banner-visual" name="fixedEventList">
 					<div class="banner ui-banner1" id="fixedEventList">
 						<div class="bx-wrapper" style="max-width: 100%;">
-							<div class="bx-viewport" aria-live="polite"
-								style="width: 100%; overflow: hidden; position: relative; height: 380px;">
-								<ul class="list"
-									style="width: 3215%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
-									<li aria-hidden="false"
-										style="float: left; list-style: none; position: relative; width: 970px;"><a
-										href="/event/view.eds?id=1914&amp;page=1"><strong
-											class="tit">18.9월 보험료 결과발송 이벤트</strong><img
-											src="https://direct.samsunglife.com/upload/201808/5634.jpg"
-											alt="18.9월 보험료 결과발송 이벤트"></a></li>								
+							<div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 380px;">
+								<ul class="list" style="width: 3215%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);">
+									<li aria-hidden="false" style="float: left; list-style: none; position: relative; width: 970px;"><a href="/event/view.eds?id=1914&amp;page=1"><strong class="tit">18.9월 보험료 결과발송 이벤트</strong><img src="https://direct.samsunglife.com/upload/201808/5634.jpg" alt="18.9월 보험료 결과발송 이벤트"></a></li>
 								</ul>
 							</div>
 							<div class="bx-controls bx-has-controls-auto bx-has-pager">
@@ -48,16 +40,13 @@
 								</div>
 								<div class="bx-pager bx-custom-pager">
 									<div class="bx-pager-item">
-										<a href="" data-slide-index="0" class="bx-pager-link active"><span>18.9월
-												보험료 결과발송 이벤트</span></a>
+										<a href="" data-slide-index="0" class="bx-pager-link active"><span>18.9월 보험료 결과발송 이벤트</span></a>
 									</div>
 									<div class="bx-pager-item">
-										<a href="" data-slide-index="1" class="bx-pager-link"><span>18.9월
-												9ood가입이벤트</span></a>
+										<a href="" data-slide-index="1" class="bx-pager-link"><span>18.9월 9ood가입이벤트</span></a>
 									</div>
 									<div class="bx-pager-item">
-										<a href="" data-slide-index="2" class="bx-pager-link"><span>18.9월
-												노후연금력 계산이벤트</span></a>
+										<a href="" data-slide-index="2" class="bx-pager-link"><span>18.9월 노후연금력 계산이벤트</span></a>
 									</div>
 								</div>
 							</div>
@@ -66,31 +55,19 @@
 				</div>
 
 				<h2 class="hd">이벤트목록</h2>
-				<ul class="board-img btn" id="eventList">	
-								
-			<c:forEach items="${list }" var="rows" >
-			
-				<li class="state1"><a
-				href="/event/view.eds?id=1914&amp;page=1"> <span
-					class="visual"><img
-						src="https://direct.samsunglife.com/upload/201808/5635.jpg"
-						alt="18.9월 보험료 결과발송 이벤트"> </span> <strong class="tit">${rows.title }</strong><em class="icon-state2 icon1"><span>진행중</span></em> <span>18.9月
-						${rows.name }&nbsp;</span> <em class="date">${rows.num }</em>
-			</a>
-						<div class="btn"></div></li>
-			</c:forEach>
-	
+				<ul class="board-img btn" id="eventList">
+
+					<c:forEach items="${list }" var="rows">
+
+						<li class="state1"><a href="<%=request.getContextPath() %>/event/bbs_view?num=${rows.num }&nowPage=${param.nowPage}"> <span class="visual"><img src="https://direct.samsunglife.com/upload/201808/5635.jpg" alt="18.9월 보험료 결과발송 이벤트"> </span> <strong class="tit">${rows.title }</strong><em class="icon-state2 icon1"><span>진행중</span></em> <span> ${rows.title }&nbsp;</span> <em class="date">${rows.regidate }</em>
+						</a>
+							<div class="btn"></div></li>
+					</c:forEach>
+
 				</ul>
 
 				<div class="paging">
-					<a data-page="1" href="#list?page=1" class="btn first"><span>처음</span></a><a
-						data-page="1" href="#list?page=1" class="btn prev"><span>이전</span></a><a
-						data-page="1" href="#list?page=1" class="current">1</a><a
-						data-page="2" href="#list?page=2">2</a><a data-page="3"
-						href="#list?page=3">3</a><a data-page="4" href="#list?page=4">4</a><a
-						data-page="5" href="#list?page=5">5</a><a data-page="2"
-						href="#list?page=2" class="btn next"><span>다음</span></a><a
-						data-page="17" href="#list?page=17" class="btn last"><span>마지막</span></a>
+					<a data-page="1" href="#list?page=1" class="btn first"><span>처음</span></a><a data-page="1" href="#list?page=1" class="btn prev"><span>이전</span></a><a data-page="1" href="#list?page=1" class="current">1</a><a data-page="2" href="#list?page=2">2</a><a data-page="3" href="#list?page=3">3</a><a data-page="4" href="#list?page=4">4</a><a data-page="5" href="#list?page=5">5</a><a data-page="2" href="#list?page=2" class="btn next"><span>다음</span></a><a data-page="17" href="#list?page=17" class="btn last"><span>마지막</span></a>
 				</div>
 			</div>
 			<!-- 내용끝 -->

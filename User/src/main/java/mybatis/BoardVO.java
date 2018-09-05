@@ -1,6 +1,6 @@
 package mybatis;
 
-import java.util.Date;
+import java.sql.Date;
 
 //게시판
 public class BoardVO {

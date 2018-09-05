@@ -25,6 +25,9 @@
  		SELECT * FROM (SELECT Tb.*, rownum rNum FROM (SELECT * FROM multiboard where b_id=#{param1}order by num desc) Tb)
  		WHERE rNum BETWEEN #{param2} and #{param3}
  	</select>
+ 	<select id="listView" resultType="mybatis.BoardVO">
+ 	select * from multiboard where num = #{param1}
+ 	</select>
 <!--  	<insert id="write">
 		insert into myboard (idx,id,name,contents) values (myboard_seq.nextval,#{_id},#{_name},#{_contents})
  	</insert>
