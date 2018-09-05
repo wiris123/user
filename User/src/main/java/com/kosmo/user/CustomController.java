@@ -27,10 +27,7 @@ public class CustomController {
 		
 		return "custom/cus_qna";
 	}
-	
-		
-	
-	
+
 	
 	@RequestMapping("/custom/cus_qna_email")
 	public String cus_qna_email() {

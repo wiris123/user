@@ -43,5 +43,13 @@ public class InsuController {
 		return "product/Cancer";
 	}
 	
+	@RequestMapping("/product/annual2")
+	public String d2s() {
+		
+		
+		return "product/pro_annual2";
+	}
+	
+	
 	
 }

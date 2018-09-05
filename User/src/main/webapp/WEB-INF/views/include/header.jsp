@@ -21,7 +21,7 @@
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/dev.plugin.js" charset="utf-8"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/dev.common.js" charset="utf-8"></script>
 <!-- plan script -->
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/plan.js" charset="utf-8"></script>
+<%-- <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/plan.js" charset="utf-8"></script> --%>
 
 <!-- 어도비 스크립트 -->
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/adobeDtm.js" charset="utf-8"></script>
