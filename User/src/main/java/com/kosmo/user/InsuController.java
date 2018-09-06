@@ -4,8 +4,10 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -15,9 +17,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * Handles requests for the application home page.
  */
 @Controller
-public class InsuController {
+public class InsuController 
+{
 	
 	private static final Logger logger = LoggerFactory.getLogger(InsuController.class);
+	@Autowired
+	private SqlSession sqlSession;
+	//로그인처리
+
 	
 	/**
 	 * Simply selects the home view to render by returning its name.
@@ -51,5 +58,13 @@ public class InsuController {
 	}
 	
 	
+	
+	@RequestMapping("/product/insert_member_term")
+	public String insertMemTerm() 
+	{
+		
+		
+		return "product/pro_annual";
+	}
 	
 }
