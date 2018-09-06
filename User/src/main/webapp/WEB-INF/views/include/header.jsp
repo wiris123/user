@@ -12,6 +12,8 @@
 <meta property="og:description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 삼성생명!" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
+<link rel="shortcut icon" href="<%=request.getContextPath() %>../resources/web/images/com/samsunglife.ico" />
+
 <!-- 공통 css -->
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/common.css" />
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/content.css" />
