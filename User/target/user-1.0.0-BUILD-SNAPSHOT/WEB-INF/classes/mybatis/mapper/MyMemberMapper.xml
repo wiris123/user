@@ -4,4 +4,12 @@
 	<select id="login" resultType="mybatis.MemberVO">
 		select * from member where id=#{0} and pass=#{1}
 	</select>
+	
+	<insert id="insertjoin">
+		insert into member(id,pass,name,email,mobile,birth) values (#{0},#{1},#{2},#{3},#{4},#{5})
+   	</insert>
+   	<insert id="email">
+		insert into booking(idx,name,mobile,email,contents,flag) values (#{0},#{1},#{2},#{3},#{4},#{5})
+   	</insert>
+   	
 </mapper>

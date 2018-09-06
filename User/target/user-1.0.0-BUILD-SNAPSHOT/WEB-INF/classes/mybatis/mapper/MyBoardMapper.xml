@@ -14,7 +14,7 @@
  -->
  <mapper namespace="mybatis.MyBbsDAOImpl">
  	<select id="list" resultType="mybatis.BoardVO">
- 	select * from multiboard where b_id=#{0} order by num desc
+ 	select *,rownum from multiboard where b_id=#{0} order by num desc
  	</select>
  	
  	<select id="getTotalCount" resultType="int">
@@ -22,7 +22,7 @@
  	</select>
  	
  	<select id="listPage" resultType="mybatis.BoardVO">
- 		SELECT * FROM (SELECT Tb.*, rownum rNum FROM (SELECT * FROM multiboard where b_id=#{param1}order by num desc)Tb)
+ 		SELECT * FROM (SELECT Tb.*, rownum rNum FROM (SELECT * FROM multiboard where b_id=#{param1}order by num desc) Tb)
  		WHERE rNum BETWEEN #{param2} and #{param3}
  	</select>
 <!--  	<insert id="write">

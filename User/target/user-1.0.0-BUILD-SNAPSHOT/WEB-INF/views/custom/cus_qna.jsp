@@ -381,7 +381,7 @@
 					<div class="content">
 						<!-- # 상담신청입력폼 # -->
 						<h3 class="mes-top">이메일 주소와 상담하실 내용을 입력해 주세요.</h3>
-						<form src="<%=request.getContextPath()%>/custom/sendemail" method="post">
+						<form src="<%=request.getContextPath()%>/custom/sendemail" method="post" action="insert1.do" >
 						<fieldset class="form-content3">
 							<legend>이메일상담 신청정보입력</legend>
 							<dl>
@@ -402,7 +402,7 @@
 								</dt>
 								<dd class="wrap">
 									<div class="form-telnum">
-										<span class="select-box"> <select title="연락처(앞자리)" id="telNum1">
+										<span class="select-box"> <select title="연락처(앞자리)" id="telNum1" name="mobile1">
 												<option>010</option>
 												<option>011</option>
 												<option>016</option>
@@ -413,7 +413,7 @@
 										</span>
 										<div class="form-wrap1">
 											<label for="telNum2" class="label">-없이 번호만 입력해주세요.</label> 
-											<input maxlength="8" type="text" id="telNum2" class="text placeholder numOnly" name="mobile">
+											<input maxlength="8" type="text" id="telNum2" class="text placeholder numOnly" name="mobile2">
 										</div>
 									</div>
 								</dd>
@@ -451,7 +451,7 @@
 											대한 간략한 내용과 함께 문의가 필요한 보험상품과<br />본인 정보등을 함께 작성해 주시면, 보다 빠른
 											상담이 가능합니다.
 										</label>
-										<textarea rows="4" cols="20" id="popEmailapplyCounselMemo"
+										<textarea rows="4" name="contents" cols="20" id="popEmailapplyCounselMemo"
 											class="textarea placeholder" title="문의내용(2000자까지 입력가능)"
 											maxlength="2000" onkeyup="checkByte2(this, '2000', 'popEmailContentLength')" 
 											style="ime-mode: active;">아래 내용을 기입해 주시면 보다 빠르고 자세한 상담이 가능합니다.
@@ -506,9 +506,8 @@
 						</div>
 						<!-- # 하단버튼 # -->
 						<div class="btn-area">
-							<a href="#none" class="btn-type2 ui-close"><span>취소</span></a> <a
-								href="#none" class="btn-type2 c1" id="sendTelCounsel"
-								onclick="ga('send','event','Direct','Etc','Rightside-Navi_Counsil_done',1);"><span>상담신청</span></a>
+							<a href="#none" class="btn-type2 ui-close"><span>취소</span></a>
+							<a class="btn-type2 c1" id="sendTelCounsel" type="submit"><span>상담신청</span></a>
 						</div>
 					</form>
 					</div>
