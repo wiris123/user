@@ -119,7 +119,7 @@ public class JsonController
 		return map;
 	}
 
-	
+	@RequestMapping("product/annuPrem.do")
 	@ResponseBody
 	public Map<String, Object> annuPrem(Model model,HttpServletRequest req) throws ParseException
 	{
