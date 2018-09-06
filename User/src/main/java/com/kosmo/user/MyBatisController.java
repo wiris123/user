@@ -83,9 +83,7 @@ public class MyBatisController
 		
 		sqlSession.getMapper(MyMemberImpl.class).insertjoin
 				(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat);
-			
 
-		
 		return "redirect:/member/login.do";
 	}
 	
