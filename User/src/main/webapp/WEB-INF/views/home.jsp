@@ -4,13 +4,15 @@
 <!DOCTYPE html>
 <html>
 <head>
+<%@ include file="./include/header.jsp"  %>
+
 <title>Home</title>
 </head>
 <body>
 	<div id="wrapper"> 
 	
 		<!-- 머리 -->
-		<%@ include file="./include/header.jsp"  %>
+		
 		<div id="container">
 			<%@ include file="./include/Head.jsp" %>
 			
