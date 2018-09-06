@@ -88,7 +88,8 @@
 			<scope>runtime</scope>
 		</dependency>
 		<!-- Google Login API -->
-        <dependency>
+		
+       <dependency>
              <groupId>org.springframework.social</groupId>
             <artifactId>spring-social-google</artifactId>
             <version>1.0.0.RELEASE</version>
@@ -98,8 +99,8 @@
               <groupId>org.apache.httpcomponents</groupId>
               <artifactId>httpclient</artifactId>
               <version>4.5.3</version>
-        </dependency>
-		
+        </dependency> 
+        
 		<!-- naverlogin -->
 		<dependency>
 			<groupId>com.github.scribejava</groupId>
@@ -201,12 +202,12 @@
 		</dependency>
 		
 		<!-- JSON을 위한 의존설정 -->
-	<!-- 	<dependency>
+		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-databind</artifactId>
 			<version>2.9.1</version>
 		</dependency>
-	 -->	
+	
 		<!-- JSON CORE -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>

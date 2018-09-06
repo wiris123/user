@@ -123,29 +123,34 @@ public class JsonController
 	@ResponseBody
 	public Map<String, Object> annuPrem(Model model,HttpServletRequest req) throws ParseException
 	{
-		int payment = Integer.parseInt(req.getParameter("payment"));
-		String instart  = req.getParameter("instart");
+		int payment = Integer.parseInt(req.getParameter("payment")); //매월 연금 납입액
+		String instart  = req.getParameter("instart"); //연금개시나이
 		String paytime = req.getParameter("paytime");
 		int rprem = Integer.parseInt(req.getParameter("rprem"));
 		int interest =Integer.parseInt(req.getParameter("interest"));
+		String birth = req.getParameter("birth"); //생일 8자리값
+				
+		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+		Date begin = new Date();
+		Date end = formatter.parse(birth);
+		//나이를 구함
+		long age = (begin.getTime() - end.getTime()) / (24 * 60 * 60 * 1000);
+		age = age / 365;
 		
-		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
-		Date begin = formatter.parse(instart);
-		Date end = formatter.parse(regidate);
-		
-		long diffDays = (begin.getTime() - end.getTime()) / (24 * 60 * 60 * 1000);
-		diffDays = diffDays / 365;
+		System.out.println("age"+age);
+		//연금개시나이 - 나이 = 연금개시일까지 일수
+		int remainDays = Integer.parseInt(instart) - (int)age;
 		
 		//연금보험 계산
 		double result = 0;
 		
-		result = (payment*10000)* Math.pow(1+(interest*0.01), (int)diffDays) / Math.pow(1+(3*0.01) , (int)diffDays);
-		result = result + (result * (interest*0.01*diffDays)) -(result*((rprem*0.01)*diffDays));
+		result = (payment*10000)* Math.pow(1+(interest*0.01), (int)remainDays) / Math.pow(1+(3*0.01) , (int)remainDays);
+		result = result + (result * (interest*0.01*remainDays)) -(result*((rprem*0.01)*remainDays));
 		result = (int)Math.round(result);
 
 		
 		Map<String, Object> obj = new HashMap<String, Object>();
-		obj.put("payt", (int)diffDays);
+		obj.put("payt", (int)remainDays);
 		obj.put("result", result);
 
 		return obj;

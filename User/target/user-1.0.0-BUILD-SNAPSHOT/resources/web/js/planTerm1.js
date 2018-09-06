@@ -166,7 +166,7 @@
 	}
 	
 	// 가입설계 계산
-	function termPlanCalc(type){
+	/*function termPlanCalc(type){
 		var contBirth = $("#birthday").val();
 		var contGender = $("input[name=pgender]:checked").val();
 		var insuPeriod = $("#insTerm option:selected").val();
@@ -285,7 +285,7 @@
 		NCDC_LOAD();
 		goog_report_conversion();
 		
-	}
+	}*/
 		
     // 고객 정보 세팅
     function termSetCustInfo() {

@@ -33,7 +33,7 @@
                <!-- CMS 영역 -->
                <div class="info">
                   <h1>
-                     <span>삼성생명</span><strong>인터넷연금보험</strong><em>1.5(무배당)</em>
+                     <span>ISM 다이렉트</span><strong>인터넷 연금보험</strong><em>3.0(무배당)</em>
                   </h1>
                   <p class="com1">
                      <strong>장기유지 보너스</strong>와 <br />
