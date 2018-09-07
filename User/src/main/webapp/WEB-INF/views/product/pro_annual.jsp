@@ -31,6 +31,8 @@
                <!-- # 상품기본정보 # -->
 <script type="text/javascript">
 
+$('#uiProductResult1').hide();
+
 function premCal()
 {
 	$(function()
@@ -41,19 +43,23 @@ function premCal()
 				type : "post",
 				data : 
 				{
-					payment : $('#paym').val(),
-					instart : $('#datepicker1').val(),
-					regidate : $('#datepicker2').val(),
-					interest : $('#inter').val(),
-					rprem : $('#rp').val()
+					payment : $('#payment').val(),
+					instart : $('#instart').val(),
+					paytime : $('#paytime').val(),
+					interest : $('#interest').val(),
+					birth : $('#birth').val(),
+					gender : $('#calcGender1').val() + $('#calcGender2').val()										
 				},
 				dataType : "json",
-				contentType : "text/html; charset:utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
+				contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
 				success:function(resp)
 				{	//성공 시 월납입액, 납부연한에 값 입력
-
-					$('#monthp').val(resp.result);		
-					$('#payt').val(resp.payt);
+					
+					$('#resultAnnu').text(resp.result);		
+					$('#spanBonusAmount').text(resp.bonus);
+					$('#returnPer').text(resp.bonus);
+					$('#uiProductResult1').show();
+					
 				},
 				error:function(errorData)
 				{
@@ -100,7 +106,7 @@ function premCal()
                                  <div class="form-wrap1">
                                     <label for="birthday" class="label">생년월일 <span>(예
                                           : 19851015 )</span></label> <input type="text" autocomplete="off"
-                                       class="text placeholder numOnly" id="birthday"
+                                       class="text placeholder numOnly" id="birth"
                                        maxlength="8" />
                                  </div>
                               </li>
@@ -118,8 +124,7 @@ function premCal()
                               </li>
 					
                            </ul>
-                           <a href="#none" class="btn" id="calcPremium"><span>내
-                                 수령액 확인 / 가입</span></a>
+                           <a href="#none" class="btn" id="calcPremium" onclick="premCal();"><span>내 수령액 확인 / 가입</span></a>
                         </div>
                      </div>
                   </fieldset>
@@ -135,7 +140,7 @@ function premCal()
                   <div id="tabDirectPlan" class="on">직접 설계</div>
                   <div id="tabRecommendPlan">추천 설계</div>
                </div>
-				<input type="hid den" name="interest" id="interest" />
+				<input type="hid den" name="interest" id="interest" value="3" />
                <!-- tab1 직접 설계 -->
                <div data-tab-target="resultTab">
                   <div class="direct-planning">
@@ -150,7 +155,7 @@ function premCal()
                                  <ul>
                                     <!-- 연금개시나이 -->
                                     <li><label for="annAge" class="re-cal-tit">연금개시나이</label>
-                                       <span class="select-box"> <select id="instime">
+                                       <span class="select-box"> <select name="instart" id="instart">
                                              <option value="55">55세</option>
                                              <option value="65">65세</option>
                                              <option value="75">75세</option>
@@ -168,8 +173,7 @@ function premCal()
                                     <li><label for="napMoney" id="napMoneyExample"
                                        class="re-cal-tit">납입금액 10만원 이상</label>
                                        <div class="input-wrap">
-                                          <input type="text" autocomplete="off"
-                                             class="text placeholder numOnly" id="payment" name="payment" value="10"
+                                          <input type="text" class="text placeholder numOnly" id="payment" name="payment" value="10"
                                              maxlength="5" size="5" title="단위(만원)" /> <span
                                              class="label">만원</span>
                                        </div></li>
@@ -194,13 +198,13 @@ function premCal()
                                           </div>
                                        </div></li>
                                  </ul>
-                                 <button type="button" class="re-calcul-btn" id="reCalcPremium2">
+                                 <button type="button" class="re-calcul-btn" id="reCalcPremium2" onclick="premCal();" >
                                     <span>다시계산하기</span>
                                  </button>
                               </div>
                              <div class="result-info-area">
 								<div class="result-info">
-									<div class="info-header">연금개시 시 <strong>장기유지보너스 </strong><strong><span id="spanBonusAmount">3,420,000</span>원 </strong>추가적립!
+									<div class="info-header">연금개시 시 <strong>장기유지보너스 </strong><strong><span id="spanBonusAmount">000</span>원 </strong>추가적립!
 										<div class="tooltip-area">
 											<a href="#none" class="icon-tip big" rel="history">장기유지보너스 지급</a>
 											<div class="tooltip">
@@ -211,15 +215,15 @@ function premCal()
 										</div>
 									</div>
 									<div class="info-content">
-										<strong>평생받는</strong> 예상 <strong class="annually-refund">연금수령액은 매년<span id="annuityMoney2">352</span>만원</strong>입니다<br>
-    									(<strong class="refund">환급률 <span><span id="returnRatio2">197.9</span>%</span></strong>)
+										<strong>평생받는</strong> 예상 <strong class="annually-refund">연금수령액은 매년<span id="resultAnnu">000</span>원</strong>입니다<br>
+    									(<strong class="refund">환급률 <span><span id="returnPer">000</span>%</span></strong>)
     								</div>
 									<div class="info-footer"><p class="tit">※해당예시는 현재 공시이율 지속 가정시이며, 공시이율 변동에 따라 바뀔 수 있습니다. (공시이율 매월 변동)</p></div>
 								</div>
 								
 								<div class="join-refund">
 									<a href="#none" class="btn-join" id="goPlan2" onclick="ga('send','event','Direct','Entry','iannuity-top_list_2',1);" rel="history">
-									<img src="/resources/cms/pc/images/com/btn_join_refund.png" alt="바로 가입하기"></a>
+									<img src="../resources/cms/pc/images/com/btn_join_refund.png" alt="바로 가입하기"></a>
 											<span class="join-ban"><img src="https://direct.samsunglife.com/upload/201805/4863.png" alt="이벤트 저축"></span>
 								</div>								
 							</div>

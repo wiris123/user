@@ -122,37 +122,55 @@ public class JsonController
 	@RequestMapping("product/annuPrem.do")
 	@ResponseBody
 	public Map<String, Object> annuPrem(Model model,HttpServletRequest req) throws ParseException
-	{
+	{	
 		int payment = Integer.parseInt(req.getParameter("payment")); //매월 연금 납입액
 		String instart  = req.getParameter("instart"); //연금개시나이
 		String paytime = req.getParameter("paytime");
-		int interest =Integer.parseInt(req.getParameter("interest"));
+		int interest = Integer.parseInt(req.getParameter("interest"));
 		String birth = req.getParameter("birth"); //생일 8자리값
-				
+		int gender = Integer.parseInt(req.getParameter("gender"));
+		
+		
+		DecimalFormat df = new DecimalFormat("#,###");
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 		Date begin = new Date();
 		Date end = formatter.parse(birth);
+		
 		//나이를 구함
 		long age = (begin.getTime() - end.getTime()) / (24 * 60 * 60 * 1000);
 		age = age / 365;
-		int rprem = 3;
+		int rprem =0;
 		
-		System.out.println("age"+age);
+		if(gender==12)
+		{
+			rprem = 3;
+		}
+		else
+		{
+			rprem = 2;
+		}
+		
 		//연금개시나이 - 나이 = 연금개시일까지 일수
 		int remainDays = Integer.parseInt(instart) - (int)age;
 		
 		//연금보험 계산
 		double result = 0;
 		
-		result = (payment*10000)* Math.pow(1+(interest*0.01), (int)remainDays) / Math.pow(1+(3*0.01) , (int)remainDays);
-		result = result + (result * (interest*0.01*remainDays)) -(result*((rprem*0.01)*remainDays));
+		result = (payment*10000)* Math.pow(1+(interest*0.01), (int)remainDays) / Math.pow(1+(2*0.01) , (int)remainDays);		
+		result = result + (result * (interest*0.01*remainDays)) - (result*((rprem*0.01)*remainDays));
 		result = (int)Math.round(result);
 
+		//장기유지보너스 (10%)
+		double bonus = result * 0.1 * 12;
+
+		//환급률
+		double returnPer = result * 20 / (payment*10000) * remainDays;
 		
 		Map<String, Object> obj = new HashMap<String, Object>();
 		obj.put("payt", (int)remainDays);
-		obj.put("result", result);
-
+		obj.put("result", df.format(result));
+		obj.put("bonus", df.format(bonus));
+		obj.put("returnPer", (int)Math.round(returnPer));
 		return obj;
 		
 	}
