@@ -182,7 +182,7 @@
 		}
 	}
 	
-	function setCalculatorEvent() {
+/*	function setCalculatorEvent() {
 		$.cookie("calcEvent", "1" ,{path:'/'});
 		
 		// real click 전환 보험료 계산 스크립트
@@ -192,7 +192,7 @@
 		if(typeof _CONV != "undefined"){
 			_CONV('', '', '', '', '', '', '', '1', '', '', '', '0');
 		}
-	}
+	}*/
 	
 	function clickDetailTab(index) {
 		var order = $("#uiProductResult1 .list-result .box").index($("#uiProductResult1 .list-result .on"));

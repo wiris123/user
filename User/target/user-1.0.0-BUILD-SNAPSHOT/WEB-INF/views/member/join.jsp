@@ -63,7 +63,8 @@ join {
 }
 </style>
 <script type="text/javascript">
-    
+
+   
 // 아이디 중복 체크
 function check_id() {
   document.getElementById("chk_id2").value=0;
@@ -171,24 +172,24 @@ function mValidate(fn) {
 }
 
 function email_input(em, frm){
-	   //선택한 select의 값이 빈값이 아닐때만 동작
-	   if(em.value!=""){
-	      if(em.value=="1"){
-	         //직접입력 선택한 경우
-	         //readonly속성 해제
-	         frm.email2.readOnly = false;
-	         //도메인부분 비워주기
-	         frm.email2.value = "";
-	      }
-	      else{
-	         //도메인을 선택한 경우
-	         //선택한 도메인을 입력한다.
-	         frm.email2.value = em.value;
-	         //readonly속성을 활성화한다.
-	         frm.email2.readOnly = true;
-	      }
-	   }
+	//선택한 select의 값이 빈값이 아닐때만 동작
+	if(em.value!=""){
+		if(em.value=="1"){
+			//직접입력 선택한 경우
+			//readonly속성 해제
+			frm.email2.readOnly = false;
+			//도메인부분 비워주기
+			frm.email2.value = "";
+		}
+		else{
+			//도메인을 선택한 경우
+			//선택한 도메인을 입력한다.
+			frm.email2.value = em.value;
+			//readonly속성을 활성화한다.
+			frm.email2.readOnly = true;
+		}
 	}
+} 
 </script>
 <body>
 	<div id="wrapper">
@@ -198,105 +199,109 @@ function email_input(em, frm){
 		<div id="container"> 
 			<%@ include file="../include/Head.jsp" %>
 			
-			<!-- 내용시작 -->
-			<div id="content">
-			<div><h4>회원가입</h4></div>
-				<div class="join_wrap">   
-  <form method=post name=memberFrm" action="" onsubmit="return mValidate(this);";" >
-     <div id="join" style="width: 500px; margin: 0 auto;" >
-      <tr> 
-        <td>아이디</td><br />
-        <td><input type=text name=id size=15 maxlength=15 id="chk_id1" style="width: 70%;">
-        <input type=button value="중복검사" id="idOverlap" onclick="check_id();" style="width: 29%; position: relative;top: 2px;"></td>
-        <input type=hidden id="chk_id2" name=chk_id2 value="0">
-      </tr>
-      <p></p>
-      <tr> 
-        <td>비밀번호</td>
-        <td><input type=password name=pass size=15 maxlength=15></td>
-      </tr>
-      <tr>
-        <td>비밀번호 확인</td>
-        <td><input type=password name=pass2 size=15 maxlength=15></td>
-      </tr>   
-      <label for="name">이름</label>
-      <input type="text" id="name" name=name placeholder="이름">
-     
-      <label for="email">이메일</label><br />
-      <input type="text" id="email" name=email placeholder="이메일을 입력하세요" style="width: 33%;">  @ 
-      <input type="text" onChange="email_input(this,this.form);" class="pass" id="last_email_check2" name="email2" style="width: 31%" readonly="readonly">
-      <select name="" id="" style="width: 31%; height: 45px; position: relative;top: 2px;">
-      	<option selected="" value="">선택하세요</option>
-	    <option value="1" >직접입력</option>
-	    <option value="dreamwiz.com" >dreamwiz.com</option>
-	    <option value="empal.com" >empal.com</option>
-	    <option value="empas.com" >empas.com</option>
-	    <option value="freechal.com" >freechal.com</option>
-	    <option value="hanafos.com" >hanafos.com</option>
-	    <option value="hanmail.net" >hanmail.net</option>
-	    <option value="hotmail.com" >hotmail.com</option>
-	    <option value="intizen.com" >intizen.com</option>
-	    <option value="korea.com" >korea.com</option>
-	    <option value="kornet.net" >kornet.net</option>
-	    <option value="msn.co.kr" >msn.co.kr</option>
-	    <option value="nate.com" >nate.com</option>
-	    <option value="naver.com" >naver.com</option>
-	    <option value="netian.com" >netian.com</option>
-	    <option value="orgio.co.kr" >orgio.co.kr</option>
-	    <option value="paran.com" >paran.com</option>
-	    <option value="sayclub.com" >sayclub.com</option>
-	    <option value="yahoo.co.kr" >yahoo.co.kr</option>
-	    <option value="yahoo.com" >yahoo.com</option>
-      </select>
-      
-      <label for="phone">핸드폰 번호</label> <br />
-      <select name="mobile" id="" style="width: 30%; height: 45px; position: relative; top: 2px;">
-      	<option value="">선택하세요</option>
-      	<option value="010">010</option>
-      	<option value="011">011</option>
-      	<option value="016">016</option>
-      	<option value="017">017</option>
-      	<option value="018">018</option>
-      	<option value="019">019</option>
-      </select> - 
-      <input type="text" id="phone" name=mobile  style="width: 30%;"> - 
-      <input type="text" id="phone" name=mobile maxlength=4 style="width: 31%;"><br />
-      
-      <label for="birth">생년월일</label><br />
-      <select name="birth" id="" style="width: 30%; height: 45px;">
-      	<option value="">출생년도</option>
-      	<%for(int i=1900; i<=2018; i++){ %>
-      	<option value="<%=i%>"><%=i %></option>
-      	<%} %>
-      </select>년 &nbsp;
-      <select name="birth" id="" style="width: 30%; height: 45px;">
-      	<option value="">월</option>
-      	<%for(int i=1; i<=12; i++){ %>
-      	<option value="<%=i%>"><%=i %></option>
-      	<%} %>
-      </select>월
-      <select name="birth" id="" style="width: 29%; height: 45px;">
-      	<option value="">일</option>
-      	<%for(int i=1; i<=30; i++){ %>
-      	<option value="<%=i%>"><%=i %></option>
-      	<%} %>
-      </select>일    
-     
-      <input type="submit" value="가입하기" >
-    </form>
-    <iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>
-    </div><!---div join-->
+		<!-- 내용시작 -->
+		<div id="content">
+			<div><h1 class="heading">회원가입</h1></div>
+			<div class="join_wrap">   
+				<form name=memberFrm" method="post" action="../member/insertjoin.do" onsubmit="return mValidate(this);";" >
+					<div id="join" style="width: 500px; margin: 0 auto;" >
+      				<tr> 
+        				<td>아이디</td><br />
+        				<td><input type=text name="id" size=15 maxlength=15 id="chk_id1" style="width: 70%;">
+        					<input type=button value="중복검사" id="idOverlap" onclick="check_id();" style="width: 29%; position: relative;top: 2px;"></td>
+        					<input type=hidden id="chk_id2" name=chk_id2 value="0">
+      				</tr>
+      				<p></p>
+      				<tr> 
+			        	<td>비밀번호</td>
+			        	<td><input type=password name="pass" size=15 maxlength=15></td>
+			      	</tr>
+      				<tr>
+				        <td>비밀번호 확인</td>
+				        <td><input type=password name=pass2 size=15 maxlength=15></td>
+					</tr>   
+						<label for="name">이름</label>
+						<input type="text" id="name" name="name" placeholder="이름">
+				     	<label for="email">이메일</label><br />
+						<input type="text"  name="email1" placeholder="이메일을 입력하세요" style="width: 33%;">  @ 
+						<input type="text"  class="pass" name="email2" style="width: 31%" readonly />
+	      					<select name="" id="" onChange="email_input(this,this.form);" style="width: 31%; height: 45px; position: relative;top: 2px;">
+						      	<option selected="" value="">선택하세요</option>
+							    <option value="1" >직접입력</option>
+							    <option value="dreamwiz.com" >dreamwiz.com</option>
+							    <option value="empal.com" >empal.com</option>
+							    <option value="empas.com" >empas.com</option>
+							    <option value="freechal.com" >freechal.com</option>
+							    <option value="hanafos.com" >hanafos.com</option>
+							    <option value="hanmail.net" >hanmail.net</option>
+							    <option value="hotmail.com" >hotmail.com</option>
+							    <option value="intizen.com" >intizen.com</option>
+							    <option value="korea.com" >korea.com</option>
+							    <option value="kornet.net" >kornet.net</option>
+							    <option value="msn.co.kr" >msn.co.kr</option>
+							    <option value="nate.com" >nate.com</option>
+							    <option value="naver.com" >naver.com</option>
+							    <option value="netian.com" >netian.com</option>
+							    <option value="orgio.co.kr" >orgio.co.kr</option>
+							    <option value="paran.com" >paran.com</option>
+							    <option value="sayclub.com" >sayclub.com</option>
+							    <option value="yahoo.co.kr" >yahoo.co.kr</option>
+							    <option value="yahoo.com" >yahoo.com</option>
+	      					</select>
+	      				
+						<label for="phone">핸드폰 번호</label> <br />
+						<select name="mobile1" id="" style="width: 30%; height: 45px; position: relative; top: 2px;">
+							<option value="">선택하세요</option>
+							<option value="010">010</option>
+							<option value="011">011</option>
+							<option value="016">016</option>
+							<option value="017">017</option>
+							<option value="018">018</option>
+							<option value="019">019</option>
+						</select> - 
+							<input type="text" id="phone" name="mobile2"  style="width: 30%;"> - 
+							<input type="text" id="phone" name="mobile3" maxlength=4 style="width: 31%;"><br />
+
+						<label for="birth">생년월일</label><br />
+							<select name="birth1" id="" style="width: 30%; height: 45px;">
+								<option value="">출생년도</option>
+								<%for(int i=1900; i<=2018; i++){ %>
+								<option value="<%=i%>"><%=i %></option>
+								<%} %>
+							</select>년 &nbsp;
+							<select name="birth2" id="" style="width: 30%; height: 45px;">
+								<option value="">월</option>
+								<%for(int i=1; i<=9; i++){ %>
+								<option value="0<%=i%>"><%=i %></option>
+								<%} %>
+								<option value="10">10</option>
+								<option value="11">11</option>
+								<option value="12">12</option>
+							</select>월
+							<select name="birth3" id="" style="width: 29%; height: 45px;">
+								<option value="">일</option>
+								<%for(int i=1; i<=9; i++){ %>
+								<option value="0<%=i%>"><%=i %></option>
+								<%} %>
+								<%for(int i=10; i<=30; i++){ %>
+								<option value="<%=i%>"><%=i %></option>
+								<%} %>
+							</select>일    
+							<input type="submit" value="가입하기" onclick="">
+				</form>
+				<iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>
+			</div><!---div join-->
 		</div>
 
-			<!-- 내용끝 -->
+		<!-- 내용끝 -->
 		
 		</div>	
 		<!-- 머리끝 -->
-		<!-- 푸터시작 -->
-		<div id="footer">
-			<%@ include file="../include/footer.jsp"%>
-		</div>
-		<!-- 푸터끝 -->
-
+	<!-- 푸터시작 -->
+	<div id="footer">
+		<%@ include file="../include/footer.jsp"%>
 	</div>
+	<!-- 푸터끝 -->
+
+</div>
 </html>

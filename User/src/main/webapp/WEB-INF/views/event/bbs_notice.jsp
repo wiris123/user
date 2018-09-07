@@ -128,7 +128,11 @@
 
 				<!-- ## 페이징 ## -->
 				<div class="paging">
+<<<<<<< HEAD
 					${pagingImg}
+=======
+
+>>>>>>> branch 'newbranch' of https://github.com/wiris123/user
 				</div>
 			</div>
 

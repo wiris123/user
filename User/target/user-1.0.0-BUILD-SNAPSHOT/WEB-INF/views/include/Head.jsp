@@ -23,8 +23,8 @@
 			<li class="list-path3"><a href="#none" onclick="toggleGNB();"><p class="headline">이벤트/공지</p></a>
 				<ul class="list-option">
 
-					<li><a href="<%=request.getContextPath() %>/event/bbs_event"><strong>이벤트</strong></a><span class="hd"></span></li>
-					<li><a href="<%=request.getContextPath() %>/event/bbs_notice"><strong>공지사항</strong></a></li>
+					<li><a href="<%=request.getContextPath() %>/event/bbs_event?nowPage=1"><strong>이벤트</strong></a><span class="hd"></span></li>
+					<li><a href="<%=request.getContextPath() %>/event/bbs_notice?nowPage=1"><strong>공지사항</strong></a></li>
 				</ul></li>
 			<li class="list-path4"><a href="#none" onclick="toggleGNB();"><p class="headline">고객센터</p></a>
 				<ul class="list-option">
@@ -33,7 +33,7 @@
 				</ul></li>
 			<li class="list-ban">
 				<div class="ba-img01">
-					<a href="guide/guideAnnuity.html">
+					<a href="../guide/gde_annual">
 						<p>
 							<span>한 눈에 상품별 혜택 비교가 쫙~!</span><br />
 							<strong>연금가입 가이드</strong>
@@ -41,7 +41,7 @@
 					</a>
 				</div>
 				<div class="ba-img02">
-					<a href="event/list.html">
+					<a href="../event/bbs_event?b_id=a">
 						<p>
 							<span>혜택이 가득한</span><br />
 							<strong>이벤트 바로가기</strong>
@@ -49,7 +49,7 @@
 					</a>
 				</div>
 				<div class="ba-img03">
-					<a href="myPageLogin.html" onclick="ga('send', 'event', 'Direct', 'Entry', 'GNB-Menu_', 1);">
+					<a href="../product/pro_annual" onclick="ga('send', 'event', 'Direct', 'Entry', 'GNB-Menu_', 1);">
 						<p>
 							<span>내가 이전에 설계한 상품</span><br />
 							<strong>가입 계속하기</strong>
