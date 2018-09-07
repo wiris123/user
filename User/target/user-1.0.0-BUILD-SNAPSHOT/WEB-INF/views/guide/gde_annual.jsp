@@ -45,6 +45,7 @@
 								<dd class="txt">
 									<strong>장기유지보너스 최대 3회 지급!<br>+<br>비과세혜택</strong>으로<br>더 많은 연금액!<br><span>(관련 세법요건 충족시)</span>
 								</dd>
+<<<<<<< HEAD
 								<dd class="btn"><a href="../product/pro_annual">Click</a></dd>
 							</dl>
 							<!-- //box -->
@@ -56,6 +57,19 @@
 									한 달만 지나도 <strong>원금보장<br>연복리, 비과세 혜택<br><span>(사업비 차감 후 부리, 관련 세법요건 충족시)</span>+<br>노후 연금전환</strong>가능!<br>
 								</dd>
 								<dd class="btn"><a href="../product/pro_term">Click</a></dd>
+=======
+								<dd class="btn"><a href="#">Click</a></dd>
+							</dl>
+							<!-- //box -->
+				
+							<!-- box -->
+							<dl class="box box3">
+								<dt class="stit"><em>추천상품 3</em><strong>목돈 or 연금</strong> 골라 받는<br><strong class="ac">저축보험</strong></dt>
+								<dd class="txt">
+									한 달만 지나도 <strong>원금보장<br>연복리, 비과세 혜택<br><span>(사업비 차감 후 부리, 관련 세법요건 충족시)</span>+<br>노후 연금전환</strong>가능!<br>
+								</dd>
+								<dd class="btn"><a href="#">Click</a></dd>
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 							</dl>
 							<!-- //box -->
 						</div>

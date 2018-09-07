@@ -67,7 +67,11 @@
 				</ul>
 
 				<div class="paging">
+<<<<<<< HEAD
 					${pagingImg }
+=======
+					<a data-page="1" href="#list?page=1" class="btn first"><span>처음</span></a><a data-page="1" href="#list?page=1" class="btn prev"><span>이전</span></a><a data-page="1" href="#list?page=1" class="current">1</a><a data-page="2" href="#list?page=2">2</a><a data-page="3" href="#list?page=3">3</a><a data-page="4" href="#list?page=4">4</a><a data-page="5" href="#list?page=5">5</a><a data-page="2" href="#list?page=2" class="btn next"><span>다음</span></a><a data-page="17" href="#list?page=17" class="btn last"><span>마지막</span></a>
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 				</div>
 			</div>
 			<!-- 내용끝 -->

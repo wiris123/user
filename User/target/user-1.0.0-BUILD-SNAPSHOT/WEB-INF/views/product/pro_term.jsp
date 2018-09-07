@@ -38,9 +38,15 @@ function premiPlus()
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>정기 보험</title>
 </head>
+<<<<<<< HEAD
 <script type="text/javascript"
 	src="../www.googleadservices.com/pagead/f.txt">	
 </script>
+=======
+<!-- <script type="text/javascript"
+	src="../www.googleadservices.com/pagead/f.txt">	
+</script> -->
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
@@ -49,6 +55,54 @@ function premiPlus()
 	<div id="wrapper"> 
 		 <!-- 머리 -->
       <%@ include file="../include/header.jsp"%>
+<<<<<<< HEAD
+=======
+      <script>
+$(function()
+{
+	
+	$('.list-result').hide();
+
+});
+
+
+function premiPlus()
+{
+	
+	$.ajax
+	({
+		url:"./termPrem.do",
+		type : "post",
+		data : 
+		{
+			paytime : $('#paytime').val(),
+			instime : $('#instime').val(),
+			death_hid : $('#death_hid').val(),
+			gender1 : $('#calcGender1').val(),
+			gender2 : $('#calcGender2').val(),
+			birth : $('#birth').val(),
+			death : $('#death').val()
+		},
+		dataType : "json",
+		contentType : "application/x-www-form-urlencoded; charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
+		success:function(resD)
+		{
+			
+			$('#resultPremium0').text(resD.mini_result);
+			$('#resultPremium2').text(resD.custom_result);
+			$('#resultPremium1').text(resD.max_result);
+			$('.list-result').show();
+		},
+		error:function(errorData){
+			alert("오류발생 : "+errorData.status+":"+errorData.statusText);
+		}
+
+	});	
+
+}
+
+</script>
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
       <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
       <div id="container">
          <%@ include file="../include/Head.jsp"%>
@@ -61,7 +115,7 @@ function premiPlus()
       
             <!-- CMS 영역 -->
             <div class="info">
-               <h1><span>삼성생명 </span><strong>인터넷정기보험</strong><em>4.0(무배당)</em></h1>
+               <h1><span>ISM 다이렉트 </span><strong>인터넷정기보험</strong><em>4.0(무배당)</em></h1>
                <p class="com1">다이렉트로 가입하니까!<br><strong>27% 더 저렴</strong>한 보험료로 사망보험금 준비<br><span class="notice">(자사동일유형 타상품대비)</span></p>
                <p class="com2"><span>필요한만큼만 보장기간을 정해서 합리적인 보험료로 가입<br>(자사 동일유형 타상품대비)</span></p>
             </div>
@@ -90,11 +144,11 @@ function premiPlus()
                                  <div class="label-radiobtn gender">
                                     <span>
                                        <label for="calcGender1">남자</label>
-                                       <input type="radio" name="pgender" class="radio" id="calcGender1" value="1"/>
+                                       <input type="radio" name="gender1" class="radio" id="calcGender1" value="1"/>
                                     </span>
                                     <span>
                                        <label for="calcGender2">여자</label>
-                                       <input type="radio" name="pgender" class="radio" id="calcGender2" value="2"/>
+                                       <input type="radio" name="gender2" class="radio" id="calcGender2" value="2"/>
                                     </span>
                                  </div>
                               </li> -->
@@ -141,14 +195,14 @@ function premiPlus()
                         <div class="box box-result1" id="termCalcResult1-1">
                            <h4 class="heading">
                               <span>최저보험료</span>
-                              <strong><span>월</span><span id="monthlyPremium1">0,000</span>원</strong>
+                              <strong><span>월</span><span id="resultPremium0">0,000</span>원</strong>
                               <a href="#popProductCart" class="btn-save adb-dist1" id="savePlan1" onclick="ga('send','event','Direct','Etc','Check-info_term-top_list_1',1);">설계저장</a>
                            </h4>
                            <div class="con">
                               <div class="form">
                                  <div class="label"><span>사망보험금</span></div>
                                  <div class="data">
-                                    <strong><span id="deathAmt1">5,000</span>원</strong>
+                                    <strong><span id="deathAmt1">5,000</span>만원</strong>
                                  </div>
                               </div>
                               <div class="btn">
@@ -199,7 +253,7 @@ function premiPlus()
                                  <input type="hidden" id="jsonResultData2" name="jsonResultData" />
                               </div>
                               <div class="btn btn-reset">
-                                 <a href="#none" class="btn-c2" id="reCalcPremium"><span>재계산하기</span></a>
+                                 <a href="#none" class="btn-c2" id="reCalcPremium" onclick="premiPlus();"><span>재계산하기</span></a>
                               </div>      
                            </div>
                         </div>
@@ -207,14 +261,14 @@ function premiPlus()
                         <div class="box box-result3" id="termCalcResult1-3">
                            <h4 class="heading">
                               <span>추천보장</span>
-                              <strong><span>월</span><span id="monthlyPremium3">0,000</span>원</strong>
+                              <strong><span>월</span><span id="resultPremium1">1억 5천</span>만원</strong>
                               <a href="#popProductCart" class="btn-save adb-dist3" id="savePlan3" onclick="ga('send','event','Direct','Etc','Check-info_term-top_list_3',1);">설계저장</a>
                            </h4>
                            <div class="con">
                               <div class="form">
                                  <div class="label"><span>사망보험금</span></div>
                                  <div class="data">
-                                    <strong><span id="deathAmt3">2</span>원</strong>
+                                    <strong><span id="deathAmt3">1억 5천</span>만원</strong>
                                  </div>
                               </div>
                               <div class="btn">

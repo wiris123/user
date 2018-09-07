@@ -33,7 +33,11 @@
                <!-- CMS 영역 -->
                <div class="info">
                   <h1>
+<<<<<<< HEAD
                      <span>삼성생명</span><strong>인터넷연금보험</strong><em>1.5(무배당)</em>
+=======
+                     <span>ISM 다이렉트</span><strong>인터넷 연금보험</strong><em>3.0(무배당)</em>
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
                   </h1>
                   <p class="com1">
                      <strong>장기유지 보너스</strong>와 <br />
