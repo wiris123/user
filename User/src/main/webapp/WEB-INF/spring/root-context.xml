@@ -21,7 +21,7 @@
     <!-- 승인된 자바스크립트 원본과 승인된 리디렉션 URI -->
 	<bean id="googleOAuth2Parameters" class="org.springframework.social.oauth2.OAuth2Parameters">
         <property name="scope" value="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email" />
-         <property name="redirectUri" value="http://rootmark.site/user/googleSignInCallback" />
+         <property name="redirectUri" value="http://localhost:8087/user/oauth2callback" />
     </bean>
 	 
 

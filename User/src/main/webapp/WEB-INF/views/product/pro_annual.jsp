@@ -18,8 +18,7 @@
  <!-- 머리 -->
 
       <%@ include file="../include/header.jsp"%>
-      <link rel="stylesheet"
-         href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
+      <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
       <div id="container">
          <%@ include file="../include/Head.jsp"%>
          <!-- page : content /////////////////////////////////////////////////// -->
@@ -27,48 +26,48 @@
             <!-- ## 상품 기본정보 및 계산기 ////////////////////////////////////////////////////////////// -->
             <div class="product-basic page-change">
                <!-- # 상품기본정보 # -->
-<script type="text/javascript">
-
-$('#uiProductResult1').hide();
-
-function premCal()
-{
-	$(function()
+	<script type="text/javascript">
+	
+	$('#uiProductResult1').hide();
+	
+	function premCal()
 	{
-			$.ajax
-			({
-				url:"./annuPrem.do",
-				type : "post",
-				data : 
-				{
-					payment : $('#payment').val(),
-					instart : $('#instart').val(),
-					interest : $('#interest').val(),
-					birth : $('#birth').val(),
-					gender : $('#calcGender1').val() + $('#calcGender2').val(),
-					paytime : $('#paytime').val(),
-				},
-				dataType : "json",
-				contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
-				success:function(resp)
-				{	//성공 시 월납입액, 납부연한에 값 입력
-					
-					$('#resultAnnu').text(resp.result);		
-					$('#spanBonusAmount').text(resp.bonus);
-					$('#returnPer').text(resp.returnPer);
-					$('#uiProductResult1').show();
-					
-				},
-				error:function(errorData)
-				{
-					
-				}
-
+		$(function()
+		{
+				$.ajax
+				({
+					url:"./annuPrem.do",
+					type : "post",
+					data : 
+					{
+						payment : $('#payment').val(),
+						instart : $('#instart').val(),
+						interest : $('#interest').val(),
+						birth : $('#birth').val(),
+						gender : $('#calcGender1').val() + $('#calcGender2').val(),
+						paytime : $('#paytime').val(),
+					},
+					dataType : "json",
+					contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
+					success:function(resp)
+					{	//성공 시 월납입액, 납부연한에 값 입력
+						
+						$('#resultAnnu').text(resp.result);		
+						$('#spanBonusAmount').text(resp.bonus);
+						$('#returnPer').text(resp.returnPer);
+						$('#uiProductResult1').show();
+						
+					},
+					error:function(errorData)
+					{
+						out.println(errorData);
+					}
+	
+				});	
+	
 			});	
-
-		});	
-}
-</script>
+	}
+	</script>
                <!-- CMS 영역 -->
                <div class="info">
                   <h1>

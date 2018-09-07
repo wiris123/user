@@ -5,7 +5,14 @@
 <html>
 <head>
 <%@ include file="./include/header.jsp"  %>
+<script>
+function moveCalc()
+{
+	var mode = document.getElementById("product");	
+	location.href="/user/product/pro_"+mode.value;
+}
 
+</script>
 <title>Home</title>
 </head>
 <body>
@@ -49,7 +56,7 @@
 						<div class="calculator-main">
 							<div class="heading" id="bannerMain">
 								<!-- 배너있을경우 추가 -->						
-							<h2><span>생년월일만으로 간편하게 설계해보세요</span></h2>
+							<h2><span>보험료를 간편하게 설계해보세요</span></h2>
 							</div>
 							<div class="form">
 								<ul>
@@ -60,40 +67,16 @@
 											<select id="product" name="product" title="상품 선택" msg="product" readonly="readonly">
 											
 												<!-- 반복 리스트 -->
-													<option value="5_20_75">
-													인터넷연금저축보험1.8(무배당)
+													<option value="annual">
+													인터넷연금보험3.0(무배당)
 													</option>
-													
-													<option value="4_20_65">
-													인터넷저축보험1.8(무배당)
-													</option>
-													
-													<option value="7_20_65">
-													인터넷연금보험1.5(무배당)
-													</option>
-													
-													<option value="8_20_65">
-													인터넷변액적립보험1.1(무배당)
-													</option>
-													
-													<option value="1_20_60">
-													인터넷암보험6.0(갱신형,무배당)
-													</option>
-													
-													<option value="2_20_49">
+
+													<option value="term">
 													인터넷정기보험4.0(무배당)
 													</option>
-													
-													<option value="3_20_45">
-													인터넷상해보험4.0(무배당)
-													</option>
-												
-													<option value="9_20_60">
+
+													<option value="prop">
 													인터넷실손의료비보장보험1.0
-													</option>
-													
-													<option value="15_20_65">
-													인터넷치아보험(재가입형,무배당)
 													</option>
 												<!-- //반복 리스트 -->
 											</select>
@@ -101,16 +84,16 @@
 									</li>
 									
 									<!-- 생년월일 -->
-									<li>
+								<!-- 	<li>
 										<h3>생년월일 입력</h3>
 										<div class="form-wrap1">
 											<label for="pbirthday" class="label">생년월일 (예 : 19851015 )</label>
 											<input type="text" autocomplete="off" class="text placeholder numOnly" id="pbirthday" maxlength="8"/>
 										</div>
-									</li>
+									</li> -->
 									
 									<!-- 성별 -->
-									<li>
+									<!-- <li>
 										<h3>성별 선택</h3>
 										<div class="label-radiobtn gender">
 											<span>
@@ -122,9 +105,9 @@
 												<input type="radio" name="pgender" class="radio" id="calcGender2" value="2"/>
 											</span>
 										</div>
-									</li>
+									</li> -->
 								</ul>
-								<a href="/user/product/pro_annual" class="btn" id="planApply"><span>확인</span></a>
+								<a href="javascript:moveCalc();" class="btn" name="planApply" id="planApply"><span>확인</span></a>
 							</div>
 						</div>
 					</fieldset>
@@ -145,7 +128,7 @@
 								<a href="/user/product/pro_term" title="정기보험 바로가기">
 									<div class="info-product-img"><img src="resources/cms/pc/images/main/visual_product_esaving.png" alt="저축보험 이미지"></div>
 									<h4><span class="icon"><img src="resources/cms/pc/images/com/txt_hot.png" alt="hot!"></span>정기보험</h4>				
-									<p>한 달만 유지해도<br/><span class="txt-c1">100%이상 환급!</span></br>연금으로도 수령가능</p>
+									<p>한 달만 유지해도<br/><span class="txt-c1">가장의 필수보험!</span></br>미래의 위험에 대비하는 방법!</p>
 									<div class="btn btn-type1">
 										<span>더 알아보기</span>
 									</div>
@@ -155,7 +138,7 @@
 								<a href="/user/product/pro_prop" title="실손보험 바로가기">
 									<div class="info-product-img"><img src="resources/cms/pc/images/main/visual_product_annuity.png" alt="연금저축보험 이미지"></div>
 									<h4><span class="icon"><img src="resources/cms/pc/images/com/txt_best.png" alt="best!"></span>실손보험</h4>				
-									<p><span class="txt-c1">연말정산 준비와</span><br/>노후연금을 한번에!</br></br></p>
+									<p><span class="txt-c1">입원비 및 치료비</span><br/>건강검진까지 한번에!</br></br></p>
 									<div class="btn btn-type1">
 										<span>더 알아보기</span>
 									</div>
@@ -180,56 +163,56 @@
 					<p>삼성생명 다이렉트에서 가입 가능한 다양한 상품을 만나보세요</p>
 					<div class="info-product">
 						<ul>
-							<li class="ic8 column7-box">
+						<!-- 	<li class="ic8 column7-box">
 								<a href="dentalddc4.html?org=directpage&amp;pro=dental&amp;area=button&amp;int=direct+org_directpage+dental+img_1807_button_mid_btn1+_+_+_+_" title="치아보험 바로가기">
 									<h4><em>NEW</em> 치아보험</h4>				
 									<p>부담되는 치과치료<br/>합리적으로 준비!</p>
 								</a>
-							</li>
+							</li> -->
 							<li class="ic1 column7-box">
-								<a href="term832b.html?org=directpage&amp;pro=term&amp;area=button&amp;int=direct+org_directpage+term+img_1807_button_mid_btn2+_+_+_+_" title="정기보험 바로가기">
+								<a href="/product/pro_term" title="정기보험 바로가기">
 									<h4>정기보험</h4>				
 									<p>가장의 필수보험</p>
 								</a>
 							</li>
-							<li class="ic2 column7-box">
-								<a href="cancerce4a.html?org=directpage&amp;pro=cancer&amp;area=button&amp;int=direct+org_directpage+cancer+img_1807_button_mid_btn3+_+_+_+_" title="암보험 바로가기">
-									<h4>암보험</h4>				
-									<p>재발암까지 보장<br/><span class="txt-smaller">(특약가입시)</span></p>
+							<li class="ic6 column7-box">
+								<a href="/product/pro_annual" title="연금보험 바로가기">
+									<h4>연금보험</h4>				
+									<p>세액공제+투자<br/><span class="txt-smaller">(관련세법충족시)</span></p>
 								</a>
 							</li>
-							<li class="ic3 column7-box">
+						<!-- 	<li class="ic3 column7-box">
 								<a href="accident2eb5.html?org=directpage&amp;pro=accident&amp;area=button&amp;int=direct+org_directpage+accident+img_1807_button_mid_btn4+_+_+_+_" title="상해보험 바로가기">
 									<h4>상해보험</h4>				
 									<p>뜻밖의 사고대비</p>
 								</a>
-							</li>
+							</li> -->
 							<li class="ic4 column7-box">
-								<a href="medical5f55.html?org=directpage&amp;pro=medical&amp;area=button&amp;int=direct+org_directpage+medical+img_1807_button_mid_btn5+_+_+_+_" title="실손보험 바로가기">
+								<a href="/product/pro_prop" title="실손보험 바로가기">
 									<h4>실손보험</h4>				
 									<p>질병ㆍ상해<br/>의료비보장</p>
 								</a>
 							</li>
 						</ul>
 						<ul>
-							<li class="ic5 column7-box">
+							<!-- <li class="ic5 column7-box">
 								<a href="variableSaving820d.html?org=directpage&amp;pro=variableSaving&amp;area=button&amp;int=direct+org_directpage+variableSaving+img_1807_button_mid_btn6+_+_+_+_" title="변액보험 바로가기">
 									<h4>변액보험</h4>				
 									<p>글로벌 분산투자</p>
 								</a>
-							</li>
-							<li class="ic6 column7-box">
+							</li> -->
+						<!-- 	<li class="ic6 column7-box">
 								<a href="guide/pension655e.html?org=directpage&amp;pro=pension&amp;area=button&amp;int=direct+org_directpage+pension+img_1807_button_mid_btn7+_+_+_+_" title="IRP 바로가기">
-									<h4>개인형IRP</h4>				
+									<h4>연금보험</h4>				
 									<p>세액공제+투자<br/><span class="txt-smaller">(관련세법충족시)</span></p>
 								</a>
-							</li>
-							<li class="ic7 column7-box">
+							</li> -->
+							<!-- <li class="ic7 column7-box">
 								<a href="https://product.samsunglife.com/tm/page_00.html?org=di&amp;area=main&amp;pro=uni-terminal&amp;tloParam=DI_Uni_TM&amp;int=direct+org_di+main+img_1704_l0039_main_low_btn1+_+_+_+_" target="_blank" title="전화가입보험 새창열림">
 									<h4>전화가입보험</h4>				
 									<p>원하는 상품이<br/>없으신가요?</p>
 								</a>
-							</li>
+							</li> -->
 						</ul>
 					</div>
 				</div>
