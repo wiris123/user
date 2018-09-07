@@ -23,7 +23,7 @@
         <property name="scope" value="https://www.googleapis.com/auth/plus.login https://www.googleapis.com/auth/userinfo.email" />
          <property name="redirectUri" value="http://localhost:8080/user/oauth2callback" />
     </bean>
-<<<<<<< HEAD
+
 	
 	<!-- 이메일 처리를 위한 빈즈 -->
 	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
@@ -43,8 +43,5 @@
                 </props>
         </property>
 	</bean>
-=======
-	 
->>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 
 </beans>
