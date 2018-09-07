@@ -1,4 +1,10 @@
+<%@page import="com.kosmo.user.VisitCounter"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%
+VisitCounter visitcount = new VisitCounter();
+String result = visitcount.visitcount(request);	
+System.out.println(result);
+%>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="author" content="삼성생명, Samsung Life Insurance, 삼성생명 다이렉트"/>
@@ -12,7 +18,7 @@
 <meta property="og:description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 삼성생명!" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
-<link rel="shortcut icon" href="<%=request.getContextPath() %>../resources/web/images/com/samsunglife.ico" />
+<link rel="shortcut icon" href="<%=request.getContextPath() %>/resources/web/images/com/samsunglife.ico" />
 
 <!-- 공통 css -->
 <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/common.css" />
@@ -189,7 +195,7 @@
 <div id="header">
 	<!-- 로고 -->
 	<div class="logo">
-		<a href="/user" target="_blank" title="새창열림(삼성생명)">ISM생명</a> <a href="/user" title="메인페이지">ISM 다이렉트</a>
+		<a href="/user" title="메인페이지">ISM 다이렉트</a>
 	</div>
 	<!-- 유틸메뉴 -->
 	<ul class="nav-util">

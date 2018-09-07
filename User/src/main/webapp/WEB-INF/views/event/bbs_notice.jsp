@@ -6,11 +6,12 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>공지사항</title>
+<!-- 머리 -->
+<%@ include file="../include/header.jsp"%>
 </head>
 <body>
 	<div id="wrapper">
-		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"%>
+
 		<div id="container">
 			<%@ include file="../include/Head.jsp"%>
 
@@ -111,25 +112,21 @@
 
 				<!-- ## 게시물출력 ## -->
 				<ul class="board-list" id="noticeList">
-				<c:set var="totalCount" value="${totalCount }"/>
-				<c:set var="nowPage" value="${(param.nowPage-1)*10 }"/>
-				
-				<c:forEach items="${list }" var="rows" varStatus="stat">
-					
-					<li id="view_1859"><a href="#list?searchWhere=all&amp;searchText=[공지] 전자금융약거래약관 내용변경 안내&amp;page=1&amp;id=1859" class="tit" title="상세내용열기"> <span class="num">${totalCount - (nowPage + stat.index) }</span>${rows.title }<em class="date">${rows.regidate }</em>
-					</a>
-						<div class="con">
-							<div class="wrap-admin">
-								${rows.contents }
-							</div>
-						</div></li>
-				</c:forEach>
+					<c:set var="totalCount" value="${totalCount }" />
+					<c:set var="nowPage" value="${(param.nowPage-1)*10 }" />
+
+					<c:forEach items="${list }" var="rows" varStatus="stat">
+
+						<li id="view_1859"><a href="#list?searchWhere=all&amp;searchText=[공지] 전자금융약거래약관 내용변경 안내&amp;page=1&amp;id=1859" class="tit" title="상세내용열기"> <span class="num">${totalCount - (nowPage + stat.index) }</span>${rows.title }<em class="date">${rows.regidate }</em>
+						</a>
+							<div class="con">
+								<div class="wrap-admin">${rows.contents }</div>
+							</div></li>
+					</c:forEach>
 				</ul>
 
 				<!-- ## 페이징 ## -->
-				<div class="paging">
-					${pagingImg}
-				</div>
+				<div class="paging">${pagingImg}</div>
 			</div>
 
 

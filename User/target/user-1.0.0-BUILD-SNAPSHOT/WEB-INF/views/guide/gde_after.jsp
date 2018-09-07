@@ -139,7 +139,7 @@
 				<p>삼성생명 다이렉트 <strong>가입 전&middot;후 가이드</strong>로<br/>더욱 쉽게 이용하세요</p>
 				<ul class="tab">
 					<li>
-						<a href="guideBefore.html"><span><em>가입 전</em> 가이드</span></a>
+						<a href="gde_before"><span><em>가입 전</em> 가이드</span></a>
 					</li>
 					<li class="on">
 						<a href="#none"><span><em>가입 후</em> 가이드</span></a>

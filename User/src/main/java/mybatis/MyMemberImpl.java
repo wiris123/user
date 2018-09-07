@@ -8,4 +8,5 @@ public interface MyMemberImpl
 	
 	public void insertjoin(String id, String pass, String name, String email, String mobile, Date birth);
 	
+	public void EmailSender(String idx, String name, String mobile, String email, String contents, String flag);
 }

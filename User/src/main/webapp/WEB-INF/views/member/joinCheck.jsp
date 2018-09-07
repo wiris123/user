@@ -1,176 +1,179 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <script src="https://ajax.googleapis.com/ajax/libs/dojo/1.13.0/dojo/dojo.js"></script>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>약관동의</title>
+<!-- 머리 -->
+<%@ include file="../include/header.jsp"%>
 </head>
 <script type="text/javascript">
 	//전체선택
-    function selectAll(obj) {
-    	var chkObj = document.getElementsByName("select_chkbox");
-    	var rowCnt = chkObj.length - 1;
-    	// 대가리에 노드를 체크로 전환시
-    	if (obj.checked == true) 
-    	{
-    		// 전부 선택으로 바꿔줌
-    		for (var i = 0; i <= rowCnt; i++) 
-    		{
-    			chkObj[i].checked = true;
-    		}
-    		
-    		// 체크 해제시
-    	} else
-    	{
-    		// 전부 체크 해제
-    		for (var i = 0; i <= rowCnt; i++)
-			{
-    			chkObj[i].checked = false;
-    		}
-    	}
-    }
-	
-	function selectOne()
-	{
+	function selectAll(obj) {
+		var chkObj = document.getElementsByName("select_chkbox");
+		var rowCnt = chkObj.length - 1;
+		// 대가리에 노드를 체크로 전환시
+		if (obj.checked == true) {
+			// 전부 선택으로 바꿔줌
+			for (var i = 0; i <= rowCnt; i++) {
+				chkObj[i].checked = true;
+			}
+
+			// 체크 해제시
+		} else {
+			// 전부 체크 해제
+			for (var i = 0; i <= rowCnt; i++) {
+				chkObj[i].checked = false;
+			}
+		}
+	}
+
+	function selectOne() {
 		var chkObj = document.getElementById("select_all");
 		var selObj = document.getElementById("select_one");
 		var selObj2 = document.getElementById("select_one1");
-		
-		if(selObj.checked==true && selObj2.checked==true)
-		{
-			chkObj.checked = true;	
-		}
-		else
-		{			 
+
+		if (selObj.checked == true && selObj2.checked == true) {
+			chkObj.checked = true;
+		} else {
 			chkObj.checked = false;
 		}
 	}
 
-	
-	function agreeCheck()
-	{
+	function agreeCheck() {
 		var chkObj = document.getElementById("select_all");
-		if(chkObj.checked!=true)
-		{
+		if (chkObj.checked != true) {
 			alert("약관에 동의하셔야 가입할 수 있습니다.");
 			$('#select_one').focus();
+		} else {
+			location.href = "../member/join"
 		}
-		else
-		{
-			location.href="../member/join"
-		}
-		
+
 	}
 </script>
- 
-  <style type="text/css">
-  	.provision_wrap {
-  		margin: 0 auto;
-  		width: 800px;
-  		height: 740px;
-  		border: 1px solid #eee;
-  		background: #f7f7f7;
-  	}
 
-  	.agree {
-  		margin: auto;
-  		float: left;
-  		width: 700px;
-  		padding: 20px;
-  		font-family: 돋움;
-  		font-size: 11pt;
-  		color: #252525;
-  		font-weight: bold;
-  	}
+<style type="text/css">
+.provision_wrap {
+	margin: 0 auto;
+	width: 800px;
+	height: 740px;
+	border: 1px solid #eee;
+	background: #f7f7f7;
+}
 
-  	.button {
-  		padding-top: 20px;
-  	}
+.agree {
+	margin: auto;
+	float: left;
+	width: 700px;
+	padding: 20px;
+	font-family: 돋움;
+	font-size: 11pt;
+	color: #252525;
+	font-weight: bold;
+}
 
-  	.provision {
-  		margin: 0 auto;
-  		width: 750px;
-  		height: 200px;
-  		overflow:auto; 
-  		padding:5px;
-  		background: #f7f7f7;
-  		font-family: 돋움;
-  		font-size: 9pt;
-  		color: #666;
-  		line-height: 170%;
-  		border: 1px solid #f2f2f2;
-  		resize:none;
-  	}
+.button {
+	padding-top: 20px;
+}
 
-  	.yesno_wrap {
-  		padding-top: 20px;
-  		margin: auto;
-  		width: 710px;
-  		position: relative;
-  	}
+.provision {
+	margin: 0 auto;
+	width: 750px;
+	height: 200px;
+	overflow: auto;
+	padding: 5px;
+	background: #f7f7f7;
+	font-family: 돋움;
+	font-size: 9pt;
+	color: #666;
+	line-height: 170%;
+	border: 1px solid #f2f2f2;
+	resize: none;
+}
 
-  	.pro_no {
-  		float: left;
-  		margin-right: 15px;
-  		font-family: 돋움;
-  		font-size: 14pt;
-  		font-weight: bold;
-  		width: 345px;
-  		height: 70px;
-  		background: #fff;
-  		border: 1px solid #eee;
-  		text-align: center;
-  		line-height: 70px;
-  		
-  	}
+.yesno_wrap {
+	padding-top: 20px;
+	margin: auto;
+	width: 710px;
+	position: relative;
+}
 
-  	.pro_yes {
-  		margin-left: 25px;
-  		font-family: 돋움;
-  		font-size: 14pt;
-  		font-weight: bold;
-  		color: white;
-  		width: 345px;
-  		height: 70px;
-  		background: #4374D9;
-  		border: 1px solid #4374D9;
-  		display: table-cell;
-    	vertical-align: middle;
-    	text-align: center;
-  	}
-  	.checkbox-wrap { cursor: pointer; }
-	.checkbox-wrap .check-icon  { 
-		display: inline-block; 
-		width: 24px; 
-		height: 24px; 
-		background: url(../resources/images/radio_btn1.PNG) left center no-repeat; 
-		vertical-align: middle; transition-duration: .3s; 
-	}
-	.checkbox-wrap input[type=checkbox] { display: none; }
-	.checkbox-wrap input[type=checkbox]:checked + .check-icon { background-image: url(../resources/images/radio_btn2.PNG); }
-  </style>
+.pro_no {
+	float: left;
+	margin-right: 15px;
+	font-family: 돋움;
+	font-size: 14pt;
+	font-weight: bold;
+	width: 345px;
+	height: 70px;
+	background: #fff;
+	border: 1px solid #eee;
+	text-align: center;
+	line-height: 70px;
+}
+
+.pro_yes {
+	margin-left: 25px;
+	font-family: 돋움;
+	font-size: 14pt;
+	font-weight: bold;
+	color: white;
+	width: 345px;
+	height: 70px;
+	background: #4374D9;
+	border: 1px solid #4374D9;
+	display: table-cell;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.checkbox-wrap {
+	cursor: pointer;
+}
+
+.checkbox-wrap .check-icon {
+	display: inline-block;
+	width: 24px;
+	height: 24px;
+	background: url(../resources/images/radio_btn1.PNG) left center
+		no-repeat;
+	vertical-align: middle;
+	transition-duration: .3s;
+}
+
+.checkbox-wrap input[type=checkbox] {
+	display: none;
+}
+
+.checkbox-wrap input[type=checkbox]:checked+.check-icon {
+	background-image: url(../resources/images/radio_btn2.PNG);
+}
+</style>
 <body>
 	<div id="wrapper">
-	
-		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"  %>
-		<div id="container"> 
-			<%@ include file="../include/Head.jsp" %>
-			
+
+
+		<div id="container">
+			<%@ include file="../include/Head.jsp"%>
+
 			<!-- 내용시작 -->
 			<div id="content">
-			<div class="join_wrap">   
-    <div class="provision_wrap">
-    <form name="agreeForm" method="post" action="join.jsp">
-		<div class="agree">이용약관, 개인정보 수집 및 이용, 프로모션 안내 메일 수신(선택)에 모두 동의합니다.</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_all" id="select_all" value="" onclick="selectAll(this)"><i class="check-icon"></i></label></div>
-		<br /><br />
-		<div class="agree">ISM 이용약관 동의(필수)</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" value="" id="select_one" onclick="selectOne();"><i class="check-icon"></i></label></div>
-		<div>
-   		<textarea rows="50" cols="100" class="provision">
+				<div class="join_wrap">
+					<div class="provision_wrap">
+						<form name="agreeForm" method="post" action="join.jsp">
+							<div class="agree">이용약관, 개인정보 수집 및 이용, 프로모션 안내 메일 수신(선택)에 모두 동의합니다.</div>
+							<div class="button">
+								<label class="checkbox-wrap"><input type="checkbox" name="select_all" id="select_all" value="" onclick="selectAll(this)"><i class="check-icon"></i></label>
+							</div>
+							<br />
+							<br />
+							<div class="agree">ISM 이용약관 동의(필수)</div>
+							<div class="button">
+								<label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" value="" id="select_one" onclick="selectOne();"><i class="check-icon"></i></label>
+							</div>
+							<div>
+								<textarea rows="50" cols="100" class="provision">
    		제 1조 (목적)
 이 약관은 삼성생명보험주식회사가 운영하는 삼성생명홈페이지(이하 "홈페이지"이라 한다)에서 제공하는 인터넷 관련 서비스 (이하 "서비스"라 한다)의 이용과 관련한 제반 사항을 규정함을 목적으로 합니다.
 
@@ -251,11 +254,14 @@ ID와 비밀번호에 관한 관리책임은 회원에게 있으며, ID와 비�
 제 15조 (준거법)
 이 약관에서 정하지 아니한 사항은 대한민국법령을 적용합니다.
    		</textarea>
-    	</div><br />
-    	<div class="agree">개인정보 수집 및 이용에 대한 안내(필수)</div>
-		<div class="button"><label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" id="select_one1" value="" onclick="selectOne();"><i class="check-icon"></i></label></div>
-		<div>
-		<textarea class="provision" id="" cols="100" rows="50">
+							</div>
+							<br />
+							<div class="agree">개인정보 수집 및 이용에 대한 안내(필수)</div>
+							<div class="button">
+								<label class="checkbox-wrap"><input type="checkbox" name="select_chkbox" id="select_one1" value="" onclick="selectOne();"><i class="check-icon"></i></label>
+							</div>
+							<div>
+								<textarea class="provision" id="" cols="100" rows="50">
 		정기적인 메일발송, 회원만을 위한 컨텐츠 제공, 상담실 등 게시판 글 작성 등을 위해 필요한 최소한의 개인정보를 수집하고 있습니다. 이에 개인정보의 수집 및 이용에 관하여 아래와 같이 고지하오니 충분히 읽어보신 후 동의하여 주시기 바랍니다.
 
 1. 수집 및 이용목적
@@ -282,17 +288,16 @@ ID와 비밀번호에 관한 관리책임은 회원에게 있으며, ID와 비�
 기타 법률에 의해 이용자의 개인정보를 보존해야 할 필요가 있는 경우에는 해당 법률의 규정에 따릅니다.
 정보통신망 이용촉진 및 정보보호 등에 관한 법률에 따라 홈페이지를 대통령령으로 정하는 기간 동안 로그인하지 아니하는 이용자의 개인정보를 보호하기 위하여 개인정보 파기 등 필요한 조치를 취합니다. 홈페이지 웹회원은 1년간 미로그인시 회원정보 삭제 및 탈퇴처리가 되며, 금융거래가 있는 회원의 경우 전자금융거래법 적용으로 5년간 미로그인시 회원정보 삭제 및 탈퇴처리가 됩니다. 이용자의 요청에 따라 달리 정한 경우가 있을 경우, 달리 정한 기간을 적용할 수 있습니다.
 		</textarea>
-    	</div>
-    </div>
-	</div>
-		<div class="yesno_wrap">
-			<a href="../"><div class="pro_no">비동의</div></a>
-			<a href="javascript:agreeCheck()" ><div class="pro_yes">동의</div></a>
-		</div>
+							</div>
+					</div>
+				</div>
+				<div class="yesno_wrap">
+					<a href="../"><div class="pro_no">비동의</div></a> <a href="javascript:agreeCheck()"><div class="pro_yes">동의</div></a>
+				</div>
 			</div>
 			<!-- 내용끝 -->
-		
-		</div>	
+
+		</div>
 		<!-- 머리끝 -->
 		<!-- 푸터시작 -->
 		<div id="footer">

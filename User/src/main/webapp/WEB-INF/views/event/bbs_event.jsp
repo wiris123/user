@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>이벤트</title>
+<!-- 머리 -->
+<%@ include file="../include/header.jsp"%>
 </head>
 <body>
 	<div id="wrapper">
-		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"%>
 		<div id="container">
 			<%@ include file="../include/Head.jsp"%>
 
@@ -67,7 +67,7 @@
 				</ul>
 
 				<div class="paging">
-					<a data-page="1" href="#list?page=1" class="btn first"><span>처음</span></a><a data-page="1" href="#list?page=1" class="btn prev"><span>이전</span></a><a data-page="1" href="#list?page=1" class="current">1</a><a data-page="2" href="#list?page=2">2</a><a data-page="3" href="#list?page=3">3</a><a data-page="4" href="#list?page=4">4</a><a data-page="5" href="#list?page=5">5</a><a data-page="2" href="#list?page=2" class="btn next"><span>다음</span></a><a data-page="17" href="#list?page=17" class="btn last"><span>마지막</span></a>
+					${pagingImg }
 				</div>
 			</div>
 			<!-- 내용끝 -->

@@ -177,7 +177,7 @@
 				<!-- 상품영역 section2 : 다른 상품 알아보기 -->
 				<div class="section s2">
 					<h3>다른 상품 알아보기</h3>
-					<p>삼성생명 다이렉트에서 가입 가능한 다양한 상품을 만나보세요</p>
+					<p>ISM 다이렉트에서 가입 가능한 다양한 상품을 만나보세요</p>
 					<div class="info-product">
 						<ul>
 							<li class="ic8 column7-box">
