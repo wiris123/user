@@ -192,12 +192,12 @@ function email_input(em, frm){
 	}
 } 
 </script>
+ 	 <%@ include file="../include/header.jsp"%>
 </head>
 <body>
     <div id="wrapper">
    	 <!-- 머리 -->
 
-   	 <%@ include file="../include/header.jsp"%>
    	 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
    	 <div id="container">
    		 <%@ include file="../include/Head.jsp"%>

@@ -165,6 +165,14 @@
 			<artifactId>mybatis-spring</artifactId>
 			<version>1.2.2</version>
 		</dependency>
+		
+		<!-- 채팅을 위한 web-socket -->
+		<dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-websocket</artifactId>
+            <version>4.1.6.RELEASE</version>
+        </dependency>
+        
 		<!-- 스프링 시큐리티 -->
 		<dependency>
 			<groupId>org.springframework.security</groupId>
