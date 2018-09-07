@@ -126,20 +126,9 @@
 				</ul>
 
 				<!-- ## 페이징 ## -->
-<<<<<<< HEAD
 				<div class="paging">${pagingImg}</div>
-=======
-				<div class="paging">
-<<<<<<< HEAD
-					${pagingImg}
-=======
 
->>>>>>> branch 'newbranch' of https://github.com/wiris123/user
-				</div>
->>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 			</div>
-
-
 			<!-- 내용끝 -->
 
 		</div>
