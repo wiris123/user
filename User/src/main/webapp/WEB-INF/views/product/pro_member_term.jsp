@@ -205,7 +205,7 @@ function email_input(em, frm){
    		<div id="content">
 			<div><h1 class="heading">회원가입</h1></div>
 			<div class="join_wrap">   
-				<form name=memberFrm" method="post" action="../product/insert_member_term" onsubmit="return mValidate(this);";" >
+				<form name=memberFrm" method="post" action="../product/insuTermAction.do" onsubmit="return mValidate(this);";" >
 					<div id="join" style="width: 500px; margin: 0 auto;" >
       				<tr> 
         				<td>아이디</td><br />
@@ -220,7 +220,7 @@ function email_input(em, frm){
 			      	</tr>
       				<tr>
 				        <td>비밀번호 확인</td>
-				        <td><input type=password name=pass2 size=15 maxlength=15></td>
+				        <td><input type=password name="pass2" size=15 maxlength=15></td>
 					</tr>   
 						<label for="name">이름</label>
 						<input type="text" id="name" name="name" placeholder="이름">
@@ -251,6 +251,31 @@ function email_input(em, frm){
 							    <option value="yahoo.com" >yahoo.com</option>
 	      					</select>
 	      				
+	      				<label for="phone">전화번호</label> <br />
+						<select name="mobile1" id="" style="width: 30%; height: 45px; position: relative; top: 2px;">
+							<option value="">선택하세요</option>
+							<option value="02">010</option>
+							<option value="031">031</option>
+							<option value="032">032</option>
+							<option value="033">033</option>
+							<option value="041">041</option>
+							<option value="042">042</option>
+							<option value="043">043</option>
+							<option value="044">044</option>
+							<option value="051">051</option>
+							<option value="052">052</option>
+							<option value="053">053</option>
+							<option value="054">054</option>
+							<option value="055">055</option>
+							<option value="061">061</option>
+							<option value="062">062</option>
+							<option value="063">063</option>
+							<option value="064">064</option>
+						</select> - 
+							<input type="text" id="phone" name="mobile2"  style="width: 30%;"> - 
+							<input type="text" id="phone" name="mobile3" maxlength=4 style="width: 31%;"><br />
+						
+						
 						<label for="phone">핸드폰 번호</label> <br />
 						<select name="mobile1" id="" style="width: 30%; height: 45px; position: relative; top: 2px;">
 							<option value="">선택하세요</option>
@@ -263,7 +288,7 @@ function email_input(em, frm){
 						</select> - 
 							<input type="text" id="phone" name="mobile2"  style="width: 30%;"> - 
 							<input type="text" id="phone" name="mobile3" maxlength=4 style="width: 31%;"><br />
-
+						
 						<label for="birth">운전여부</label><br />
 							<select name="drive" id="" style="width: 30%; height: 45px;">
 								<option value="">선택</option>
@@ -276,20 +301,45 @@ function email_input(em, frm){
 							<option value="">선택</option>
 							<option value="2">예</option>
 							<option value="0">아니오</option>
-						</select>년 &nbsp;<br />
+						</select><br />
 						
 						<label for="birth">음주여부</label><br />
 						<select name="drink" id="" style="width: 30%; height: 45px;">
 							<option value="">선택</option>
 							<option value="2">예</option>
 							<option value="0">아니오</option>
-						</select>년 &nbsp;<br />
-						<label for="hobbys">해당하는 취미활동을 선택해주세요.</label>
-						패러글라이딩<input type="checkbox" name="danhobby" value="1"/>
-						스노우보드<input type="checkbox" name="danhobby" value="1"/>
-						모터사이클<input type="checkbox" name="danhobby" value="1"/>
+						</select><br /> <br />
+						<label for="name">키</label><br />
+						<input type="text" id="height" name="height" style="width: 90%">cm <br />
+						<label for="name">몸무게</label> <br />
+						<input type="text" id="weight" name="weight" style="width: 90%">kg <br />
 						
+						<label for="name">위험취미여부</label>
+						<input type="text" id="danhoby" name="danhoby" >
 						
+						<label for="name">월소득액</label>
+						<input type="text" id="income" name="income" style="width: 90%">만원 <br />
+						
+						<label for="birth">건강관련질문1</label><br />
+						<select name="hospit1" id="" style="width: 30%; height: 45px;">
+							<option value="">선택</option>
+							<option value="2">예</option>
+							<option value="0">아니오</option>
+						</select><br />
+						
+						<label for="birth">건강관련질문2</label><br />
+						<select name="hospit2" id="" style="width: 30%; height: 45px;">
+							<option value="">선택</option>
+							<option value="2">예</option>
+							<option value="0">아니오</option>
+						</select><br />
+						
+						<label for="birth">건강관련질문3</label><br />
+						<select name="hospit3" id="" style="width: 30%; height: 45px;">
+							<option value="">선택</option>
+							<option value="2">예</option>
+							<option value="0">아니오</option>
+						</select><br />
 						<input type="submit" value="가입하기" onclick="">
 					
 				</form>

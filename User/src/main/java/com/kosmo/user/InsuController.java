@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.ibatis.session.SqlSession;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Handles requests for the application home page.
@@ -49,22 +52,26 @@ public class InsuController
 		
 		return "product/Cancer";
 	}
-	
-	@RequestMapping("/product/annual2")
-	public String d2s() {
-		
-		
-		return "product/pro_annual2";
-	}
-	
-	
-	
-	@RequestMapping("/product/insert_member_term")
+
+
+	@RequestMapping("/product/insert_term.do")
 	public String insertMemTerm() 
 	{
 		
 		
-		return "product/pro_annual";
+		return "product/pro_member_term";
+	}
+
+	
+	@RequestMapping("/product/insuTermAction.do	")
+	public String insTermAction(HttpServletRequest req, ModelAndView mv) 
+	{
+		
+		String mobile = (req.getParameter("mobile1")+"-"+req.getParameter("mobile2")+"-"+req.getParameter("mobile3"));
+		
+		
+		
+		return "product/pro_member_term";
 	}
 	
 }

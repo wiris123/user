@@ -9,11 +9,9 @@
 	src="../www.googleadservices.com/pagead/f.txt">
 	
 </script>
-
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
-
 </head>
 <body>
 	<div id="wrapper">

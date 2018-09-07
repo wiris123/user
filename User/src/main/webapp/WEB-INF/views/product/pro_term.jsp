@@ -17,14 +17,13 @@
 	<div id="wrapper"> 
 		 <!-- 머리 -->
       <%@ include file="../include/header.jsp"%>
-      <script>
+  <script>
 $(function()
 {
 	
 	$('.list-result').hide();
 
 });
-
 
 function premiPlus()
 {
@@ -208,7 +207,7 @@ function premiPlus()
                               <div class="btn">
                                  <span class="img-gift"></span>
                                  <a href="#popSendEmail" class="btn-c1 adb-dist2" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'><span>메일발송</span></a>
-                                 <a href="#none" class="btn-c2 adb-dist2" id="goPlan2" onclick="ga('send','event','Direct','Entry','term-top_list_2',1);"><span>가입하기</span></a>
+                                 <a href="#none" class="btn-c2 adb-dist2" id="goPlan2" onclick="location.href='../product/insert_term.do'"><span>가입하기</span></a>
                                  <input type="hidden" id="jsonResultData2" name="jsonResultData" />
                               </div>
                               <div class="btn btn-reset">
@@ -248,7 +247,7 @@ function premiPlus()
                   <!-- 유틸버튼 -->
                   <div class="area-util">
                      <a href="#none" class="icon-util print" title="인쇄하기" id="doPrintNew" onclick="fn_printEntire();">인쇄하기</a>
-                     <a href="#popSendEmail" class="icon-util email" title="이메일보내기" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'>이메일보내기</a>
+                     <a href="#popSendEmail" class="icon-util email" title="이메일보내기" onclick='clearMail("삼성생명 인터넷정기보험3.0(무배당)");'>이메일보내기</a>
                   </div>
                </div>
             </div>
