@@ -125,7 +125,7 @@ public class JsonController
 	{	
 		int payment = Integer.parseInt(req.getParameter("payment")); //매월 연금 납입액
 		String instart  = req.getParameter("instart"); //연금개시나이
-		String paytime = req.getParameter("paytime");
+		int paytime = Integer.parseInt(req.getParameter("paytime"));
 		int interest = Integer.parseInt(req.getParameter("interest"));
 		String birth = req.getParameter("birth"); //생일 8자리값
 		int gender = Integer.parseInt(req.getParameter("gender"));
@@ -139,32 +139,37 @@ public class JsonController
 		//나이를 구함
 		long age = (begin.getTime() - end.getTime()) / (24 * 60 * 60 * 1000);
 		age = age / 365;
+		
 		int rprem =0;
 		
 		if(gender==12)
 		{
-			rprem = 3;
+			rprem = 2;
 		}
 		else
 		{
-			rprem = 2;
+			rprem = 1;
 		}
 		
 		//연금개시나이 - 나이 = 연금개시일까지 일수
 		int remainDays = Integer.parseInt(instart) - (int)age;
 		
+		//(pay * (interest*0.01*(remainDays))) + 
 		//연금보험 계산
 		double result = 0;
+		int pay = payment*10000; 
 		
-		result = (payment*10000)* Math.pow(1+(interest*0.01), (int)remainDays) / Math.pow(1+(2*0.01) , (int)remainDays);		
-		result = result + (result * (interest*0.01*remainDays)) - (result*((rprem*0.01)*remainDays));
+		result = pay* Math.pow(1+(interest*0.01), paytime);		
+		result += (pay * (interest*0.01*(paytime)));
+		result -= (pay *((rprem*0.005)*(remainDays)));
+		result = result / Math.pow(1+(2*0.01), remainDays);	
 		result = (int)Math.round(result);
 
 		//장기유지보너스 (10%)
-		double bonus = result * 0.1 * 12;
+		double bonus = result * 12;
 
 		//환급률
-		double returnPer = result * 20 / (payment*10000) * remainDays;
+		double returnPer = result * 25 / (payment*10000) * paytime;
 		
 		Map<String, Object> obj = new HashMap<String, Object>();
 		obj.put("payt", (int)remainDays);

@@ -45,10 +45,10 @@ function premCal()
 				{
 					payment : $('#payment').val(),
 					instart : $('#instart').val(),
-					paytime : $('#paytime').val(),
 					interest : $('#interest').val(),
 					birth : $('#birth').val(),
-					gender : $('#calcGender1').val() + $('#calcGender2').val()										
+					gender : $('#calcGender1').val() + $('#calcGender2').val(),
+					paytime : $('#paytime').val(),
 				},
 				dataType : "json",
 				contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
@@ -57,7 +57,7 @@ function premCal()
 					
 					$('#resultAnnu').text(resp.result);		
 					$('#spanBonusAmount').text(resp.bonus);
-					$('#returnPer').text(resp.bonus);
+					$('#returnPer').text(resp.returnPer);
 					$('#uiProductResult1').show();
 					
 				},
@@ -163,10 +163,10 @@ function premCal()
                                     </span></li>
                                     <!-- 납입기간 -->
                                     <li><label for="napTerm" class="re-cal-tit">납입기간</label>
-                                       <span class="select-box"> <select name="paytime"id="paytime">
-                                             <option value="">10년</option>
-                                             <option value="">15년</option>
-                                             <option value="">20년</option>
+                                       <span class="select-box"> <select name="paytime" id="paytime">
+                                             <option value="10">10년</option>
+                                             <option value="15">15년</option>
+                                             <option value="20">20년</option>
                                        </select>
                                     </span></li>
                                     <!-- 납입금액 -->
@@ -224,7 +224,6 @@ function premCal()
 								<div class="join-refund">
 									<a href="#none" class="btn-join" id="goPlan2" onclick="ga('send','event','Direct','Entry','iannuity-top_list_2',1);" rel="history">
 									<img src="../resources/cms/pc/images/com/btn_join_refund.png" alt="바로 가입하기"></a>
-											<span class="join-ban"><img src="https://direct.samsunglife.com/upload/201805/4863.png" alt="이벤트 저축"></span>
 								</div>								
 							</div>
                            </fieldset>
