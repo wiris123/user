@@ -362,21 +362,13 @@ function premCal()
 											</span></li>								
 									</ul>
 									<div class="btn">
-										<a href="#popSendEmail" class="btn-c1"
-											onclick="clearMail(&quot;인터넷실손의료비보장보험1.0&quot;);"
-											rel="history"><span>메일발송</span></a> <a href="#none"
-											class="btn-c2" id="goPlan2"
-											onclick="ga('send','event','Direct','Entry','medical-top_list_1',1);"
-											rel="history"><span>가입하기</span></a> <input type="hidden"
-											id="jsonResultData1" name="jsonResultData">
-											<a href="#none" class="btn-c2" id="reCalcPremium"
-											rel="history" onclick="premCal();"><span>재계산하기</span></a>
+									<a href="#none"
+									class="btn-c1" id="goPlan2"
+									onclick="ga('send','event','Direct','Entry','medical-top_list_1',1);"
+									rel="history"><span>가입하기</span></a> 
+									<a href="#none" class="btn-c2" id="reCalcPremium"
+									rel="history" onclick="premCal();"><span>재계산하기</span></a>
 									</div>
-<!-- 
-									<div class="btn btn-reset" style="display: none;">
-										
-									</div> -->
-
 								</div>
 							</div>
 						</div>
