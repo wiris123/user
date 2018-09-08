@@ -14,12 +14,20 @@
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
+<<<<<<< HEAD
 <%@ include file="../include/header.jsp"%>
+=======
+
+>>>>>>> refs/remotes/origin/180907branch
 </head>
 <body>
 	<div id="wrapper">
 		  <!-- 머리 -->
+<<<<<<< HEAD
       
+=======
+      <%@ include file="../include/header.jsp"%>
+>>>>>>> refs/remotes/origin/180907branch
       <link rel="stylesheet"
          href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
       <div id="container">

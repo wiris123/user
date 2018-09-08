@@ -12,7 +12,10 @@
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
+<<<<<<< HEAD
 	 <%@ include file="../include/header.jsp"%>
+=======
+>>>>>>> refs/remotes/origin/180907branch
 </head>
 <body>
 	<div id="wrapper"> 
