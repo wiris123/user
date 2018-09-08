@@ -28,8 +28,13 @@
             <div class="product-basic page-change">
                <!-- # 상품기본정보 # -->
 <script type="text/javascript">
+$(function()
+		{
+	
+	$('#uiProductResult1').hide();	
+	
+})
 
-$('#uiProductResult1').hide();
 
 function premCal()
 {
@@ -131,7 +136,7 @@ function premCal()
 
             <!-- 연금계산결과 -->
             <!-- ## 계산결과 /////////////////////////////////////////////////////////////////////////////////////// -->
-            <div class="product-result open" id="uiProductResult1"
+            <div class="product-result" id="uiProductResult1"
                style="display: block;" tabindex="0">
                <!-- # 계산결과 출력 //////////////////////////////////////////////////////////////////////////// -->
                <div class="product-result-tab" data-tab="resultTab">

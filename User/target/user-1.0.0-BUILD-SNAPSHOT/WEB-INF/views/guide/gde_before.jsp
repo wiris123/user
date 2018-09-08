@@ -8,37 +8,20 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="author" content="삼성생명, Samsung Life Insurance, 삼성생명 다이렉트"/>
-<meta name="keywords" content="생명보험인터넷가입, 삼성생명인터넷가입, 인터넷보험라운지, 보험온라인가입, 인터넷보험견적, 삼성생명보험가입, 온라인다이렉트보험, 삼성보험회사, 생명보험다이렉트, 인터넷으로보험가입, 인터넷보험, 삼성라이프, 인터넷다이렉트보험, 보험인터넷가입, 인터넷보험가입, 인터넷보험상품, 삼성라운지, 보험료계산, 생명보험, 삼성생명, 건강보험, 삼성생명보험, 다이렉트보험, 보장성보험, 삼성생명다이렉트" />
-<meta name="description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 삼성생명! " />
+<meta name="author" content="ISM, Samsung Life Insurance, ISM 다이렉트"/>
+<meta name="keywords" content="생명보험인터넷가입, ISM인터넷가입, 인터넷보험라운지, 보험온라인가입, 인터넷보험견적, ISM보험가입, 온라인다이렉트보험, 삼성보험회사, 생명보험다이렉트, 인터넷으로보험가입, 인터넷보험, 삼성라이프, 인터넷다이렉트보험, 보험인터넷가입, 인터넷보험가입, 인터넷보험상품, 삼성라운지, 보험료계산, 생명보험, ISM, 건강보험, ISM보험, 다이렉트보험, 보장성보험, ISM다이렉트" />
+<meta name="description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 ISM! " />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <link rel="shortcut icon" type="image/x-icon" href="../resources/web/images/com/samsunglife.ico" />
 <title>가입 전 가이드</title>
-
-	<!-- 공통 css -->
-	<link rel="stylesheet" href="../resources/cms/pc/css/common68b3.css?ver=1"/>
-	<link rel="stylesheet" href="../resources/cms/pc/css/content68b3.css?ver=1"/>
-	<!-- 공통 script -->
-	<script type="text/javascript" src="../resources/web/js/ui.plugin.js"></script>
-	<script type="text/javascript" src="../resources/web/js/ui.common.js"></script>
-	<script type="text/javascript" src="../resources/web/js/dev.plugin.js" charset="utf-8"></script>
-	<script type="text/javascript" src="../resources/web/js/dev.common.js" charset="utf-8"></script>
-	<!-- plan script -->
-	<script type="text/javascript" src="../resources/web/js/plan.js" charset="utf-8"></script>
-	
-	<!-- 어도비 스크립트 -->
-	<script type="text/javascript" src="../resources/web/js/adobeDtm.js" charset="utf-8"></script>
-	<script src="../../assets.adobedtm.com/70e7c1e41a15664b7412b48a9e091675a718223f/satelliteLib-ca1e208783476d525a421be25e9cd460655f0fe0.js"></script>
-	
-	<!-- Google Tag Manager 18.04.19-->
-	
+		<!-- 머리 -->
+		<%@ include file="../include/header.jsp"  %>	
 </head>
 <body>
 	<div id="wrapper">
 	
-		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"  %>
+
 		<div id="container">
 			<%@ include file="../include/Head.jsp" %>
 			<div id="content">
@@ -49,7 +32,7 @@
 			<!-- ## 페이지타이틀 ## -->
 			<h1 class="hd">가입 전 가이드</h1>
 			<div class="visual-top">
-				<p>삼성생명 다이렉트 <strong>가입 전&middot;후 가이드</strong>로<br/>더욱 쉽게 이용하세요</p>
+				<p>ISM 다이렉트 <strong>가입 전&middot;후 가이드</strong>로<br/>더욱 쉽게 이용하세요</p>
 				<ul class="tab">
 					<li class="on">
 						<a href="#none"><span><em>가입 전</em> 가이드</span></a>
@@ -81,7 +64,7 @@
 								<em>신속한 지급</em>이 아니면<br />보험은 의미가 없습니다.
 							</li>
 						</ul>
-						<h4 class="tit-middle txt-arr">그래서 <em class="pen w199">삼성생명 다이렉트</em> 입니다.</h4>
+						<h4 class="tit-middle txt-arr">그래서 <em class="pen w199">ISM 다이렉트</em> 입니다.</h4>
 						<ul class="list-bold2">
 							<li>
 								<span>1</span>
@@ -219,7 +202,7 @@
 											<li>소액치과치료 보철/보존치료 보장</li>
 											<li>만기 및 영구치 유지 보험금 지급</li>
 											<li>이목구비 수술보장</li>
-											<li>든든한 1등 삼성생명</li>
+											<li>든든한 1등 ISM</li>
 										</ul>
 									</dd>
 								</dl>

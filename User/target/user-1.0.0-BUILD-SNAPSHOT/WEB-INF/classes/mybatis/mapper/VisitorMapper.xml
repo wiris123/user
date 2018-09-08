@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="VisitorImpl">
+    <insert id="NewVisitor" parameterType="mybatis.VisitorVO">
+        INSERT
+        INTO TB_VISITOR
+        (
+            VISIT_IDX,
+            VISIT_IP,
+            VISIT_DATE,
+            <if test="visit_from != null and visit_from !=''">
+            VISIT_REFER,
+            </if>
+        )
+        VALUES
+        (
+            VISITOR_SEQ.NEXTVAL,
+            #{visit_ip},
+            SYSDATE,
+            <if test="visit_from != null and visit_from !=''">
+            #{visit_from},
+            </if>
+        )
+    </insert>
+</mapper>

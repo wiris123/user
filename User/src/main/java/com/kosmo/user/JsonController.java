@@ -179,4 +179,33 @@ public class JsonController
 		return obj;
 		
 	}
+	
+	@RequestMapping("/product/propPrem.do")
+	@ResponseBody
+	public Map<String, Object> propCal(HttpServletRequest req)
+	{
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		int hosp = Integer.parseInt(req.getParameter("hosp"));
+		int gohosp = Integer.parseInt(req.getParameter("gohosp"));
+		int sanghosp = Integer.parseInt(req.getParameter("sanghosp"));
+		int sgohosp = Integer.parseInt(req.getParameter("sgohosp"));
+		int chbedosu = Integer.parseInt(req.getParameter("chbedosu"));
+		int chbeinje = Integer.parseInt(req.getParameter("chbeinje"));
+		int chbemri = Integer.parseInt(req.getParameter("chbemri"));
+
+		
+		//보험료처리
+		int premium = hosp+gohosp+sanghosp+sgohosp+chbedosu+chbeinje+chbemri;
+		double result = 10000.;
+		result = 10000*(1+(premium*2*0.01));
+		DecimalFormat df = new DecimalFormat("#,###"); 
+	
+		map.put("result", df.format(result));
+
+		return map;
+	}
+	
+	
+	
 }
