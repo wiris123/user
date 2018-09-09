@@ -12,14 +12,11 @@
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
-<<<<<<< HEAD
 	 <%@ include file="../include/header.jsp"%>
-=======
->>>>>>> refs/remotes/origin/180907branch
 </head>
 <body>
 	<div id="wrapper"> 
-		 <!-- 머리 -->
+	 <!-- 머리 -->
      
   <script>
 $(function()
@@ -40,7 +37,6 @@ function premiPlus()
 		{
 			paytime : $('#paytime').val(),
 			instime : $('#instime').val(),
-			death_hid : $('#death_hid').val(),
 			gender1 : $('#calcGender1').val(),
 			gender2 : $('#calcGender2').val(),
 			birth : $('#birth').val(),
@@ -54,6 +50,10 @@ function premiPlus()
 			$('#resultPremium0').text(resD.mini_result);
 			$('#resultPremium2').text(resD.custom_result);
 			$('#resultPremium1').text(resD.max_result);
+			$('#gobirth').val($('#birth').val()),
+			$('#goinstime').val($('#instime').val()),
+			$('#gopaytime').val($('#paytime').val()),
+			$('#gopayprem').val(resD.custom_result),
 			$('.list-result').show();
 		},
 		error:function(errorData){
@@ -83,7 +83,6 @@ function premiPlus()
             </div>
                <!-- # 보험료 계산하기 # -->
                <form action="" id="formCalculator" onsubmit="premiPlus();">
-                  <input type="hidden" id="death_hid" value="100000000"/>
                		<fieldset>
                      <legend>보험료계산기</legend>
                      <div class="calculator-form">
@@ -175,7 +174,13 @@ function premiPlus()
                            </div>
                         </div>
                         <!-- 결과2 : 맞춤설계 ////////////////////////////////////////////////////////////// -->
+                        
                         <div class="box box-result2 on" id="termCalcResult1-2">
+                        <form action="../product/insert_term.do" method="post" name="term_form">
+                        <input type="hidden" name="gobirth" id="gobirth"/>
+                        <input type="hidden" name="goinstime" id="goinstime"/>
+                        <input type="hidden" name="gopaytime" id="gopaytime"/>
+                        <input type="hidden" name="gopayprem" id="gopayprem"/>
                            <h4 class="heading">
                               <span>맞춤설계</span>
                               <strong><span>월</span><span id="resultPremium2">0,000</span>원</strong>
@@ -183,11 +188,11 @@ function premiPlus()
                            </h4>
                            <div class="con">
                               <p class="hd">아래 수정 후 재계산하기 버튼을 클릭하시면 맞춤설계 내역이 재계산됩니다.</p>
-                              <div class="form">
+                              <div class="">
                                  <div class="label"><label for="reCalcPrice1">사망보험금</label></div>
                                  <div class="data">
                                     <span class="select-box">
-                                       <select id="death">
+                                       <select id="death" name="death">
                                           <option value="50000000">5,000만원</option>
                                           <option value="60000000">6,000만원</option>
                                           <option value="70000000">7,000만원</option>
@@ -211,14 +216,16 @@ function premiPlus()
                               <div class="btn">
                                  <span class="img-gift"></span>
                                  <a href="#popSendEmail" class="btn-c1 adb-dist2" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'><span>메일발송</span></a>
-                                 <a href="#none" class="btn-c2 adb-dist2" id="goPlan2" onclick="location.href='../product/insert_term.do'"><span>가입하기</span></a>
+                                 <button type="submit"id="goPlan2"><span class="btn-c2">가입하기</span></button>
                                  <input type="hidden" id="jsonResultData2" name="jsonResultData" />
                               </div>
                               <div class="btn btn-reset">
                                  <a href="#none" class="btn-c2" id="reCalcPremium" onclick="premiPlus();"><span>재계산하기</span></a>
                               </div>      
                            </div>
+                           </form>
                         </div>
+                        
                         <!-- 결과3 : 추천보장 ///////////////////////////////////////////////////////////// -->
                         <div class="box box-result3" id="termCalcResult1-3">
                            <h4 class="heading">
