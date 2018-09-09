@@ -183,6 +183,8 @@ public class JsonController
 		DecimalFormat df = new DecimalFormat("#,###"); 
 			
 		map.put("result", df.format(result));
+		map.put("result2", (int)result);
+		map.put("prem", premium);
 
 		return map;
 	}

@@ -7,7 +7,15 @@
 			(#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9},#{10},#{11},#{12},#{13},#{14},#{15},#{16},#{17},#{18})
 	   </insert>
 	<insert id="insertStatusTerm">
-		insert into member_term_my (num, id, insname, insnum, remainpay,paidprem,prem,contstat,inssort) values 
-			(term_my_seq.NEXTVAL, #{0},#{1},#{2},#{3},#{4},to_number(#{5},'999999'),#{6},'term')
+		insert into member_term_my (num, id, insname, insnum, remainpay,paidprem,prem,contstat,inssort, death_ins) values 
+			(term_my_seq.NEXTVAL, #{0},#{1},#{2},#{3},#{4},to_number(#{5},'999999'),#{6},'term', #{7})
+	</insert>
+	<insert id="insertMemberProp">
+			insert into member_prop (idx,id,pass,name,phone,mobile,email,riskpremium,enabled,instype,ins_name) values 
+			(prop_mem_seq.NEXTVAL,#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9})
+	   </insert>
+	<insert id="insertStatusProp">
+		insert into member_prop_my (num, id, insname, insnum, remainpay, paidprem,prem,contstat,inssort) values 
+			(prop_my_seq.NEXTVAL, #{0},#{1},#{2},#{3},#{4},to_number(#{5}),#{6},'prop')
 	</insert>
 </mapper>

@@ -63,6 +63,8 @@ join {
 }
 </style>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js" charset="utf-8"></script>
+ 	 <%@ include file="../include/header.jsp"%>
+</head>
 <script type="text/javascript">
 
    
@@ -105,7 +107,8 @@ function check_nick() {
 }*/
 
 // 빈 값 체크
-function mValidate(fn) {
+function mValidate(fn,mode) {
+	
 	if(fn.id.value==""){
       alert("아이디를 입력해주세요");
       fn.id.focus();
@@ -168,10 +171,26 @@ function mValidate(fn) {
     document.join.phone.focus();
     return false;
   }*/
- 
+
  
 }
 
+function subCheck(mode)
+{
+	var fn = document.memberFrm;
+	
+	if(mode=="term")
+	{
+		fn.action = "../product/insuTermAction.do";
+		fn.submit();
+	}
+	else if(mode=="prop")
+	{
+		fn.action = "../product/insuPropAction.do";
+		fn.submit();
+	}	
+
+}
 function email_input(em, frm){
 	//선택한 select의 값이 빈값이 아닐때만 동작
 	if(em.value!=""){
@@ -191,9 +210,8 @@ function email_input(em, frm){
 		}
 	}
 } 
+
 </script>
- 	 <%@ include file="../include/header.jsp"%>
-</head>
 <body>
     <div id="wrapper">
    	 <!-- 머리 -->
@@ -203,12 +221,22 @@ function email_input(em, frm){
    		 <%@ include file="../include/Head.jsp"%>
    		 <!-- page : content /////////////////////////////////////////////////// -->
    		<div id="content">
-			<div><h1 class="heading">인터넷 정기보험 4.0 회원가입</h1></div>
+			<div><h1 class="heading">회원가입</h1></div>
 			<div class="join_wrap">   
-				<form name=memberFrm" method="post" action="../product/insuTermAction.do"> <!-- // onsubmit="return mValidate(this);"  -->
+				<form name="memberFrm" onsubmit="return mValidate(this);" method="post">
 					<div id="join" style="width: 500px; margin: 0 auto;" >
-					<input type="text" name="userInfo" id="userInfo" value='${basicInfo}'>
-					<input type="hidden" name="ins_name" value="인터넷 정기보험 4.0"/>
+					<input type="hid den" name="userInfo" id="userInfo" value='${basicInfo}'>
+					<input type="hid den" name="ins_name" value=
+					<%if(request.getParameter("mode").equals("term"))
+							{
+							%>
+					"인터넷 정기보험 4.0"
+					<%}
+					else
+					{%>
+					"인터넷 실손보험 1.0"
+					<%} %>
+					/>
       				<tr> 
         				<td>아이디</td><br />
         				<td><input type=text name="id" size=15 maxlength=15 id="chk_id1" style="width: 70%;">
@@ -342,7 +370,7 @@ function email_input(em, frm){
 							<option value="2">예</option>
 							<option value="0">아니오</option>
 						</select><br />
-						<input type="submit" value="가입하기">
+						<input type="button" value="가입하기" onclick="subCheck('${mode}');">
 				</form>
 				
 				<iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>

@@ -17,10 +17,10 @@
 							<h1 class="hd">가입 후 가이드</h1>
 							<div class="visual-top">
 								<p>
-									<strong>${name }</strong>
-									ISM 다이렉트 <strong>${ins_name }</strong>가입 신청이 완료되었습니다.<br /> 
-									보험 일련번호 : ${ins_num }
-									
+									<strong>${name }</strong>님<br/>
+									ISM 다이렉트 <strong>${ins_name }</strong>의 가입 신청이 완료되었습니다.<br /> 
+									보험 일련번호 : ${ins_num }<br/>
+									궁금하신 사항은 고객센터 1:1상담을 이용해주세요.
 								</p>
 								<ul class="tab">
 									<li><a href="../member/login.do"><span><em>마이 페이지로</em> 가기</span></a></li>

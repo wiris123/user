@@ -52,6 +52,8 @@ function premCal()
 			success:function(responseData)
 			{					
 				$('#result').text(responseData.result);
+				$('#premium').val(responseData.prem);
+				$('#payment').val(responseData.result2);
 				$('#uiProductResult1').show();
 				
 			},
@@ -105,7 +107,7 @@ function premCal()
 										<div class="form-wrap1">
 											<label for="birthday" class="label">생년월일 <span>(예
 													: 19851015 )</span></label> <input type="text" autocomplete="off"
-												class="text placeholder numOnly" maxlength="8" id="birth" />
+												class="text placeholder numOnly" maxlength="8" id="birth" name="birth"/>
 										</div>
 									</li>
 									<!-- 성별 -->
@@ -162,6 +164,10 @@ function premCal()
 						<div class="data-case1">
 							<!-- 결과 ///////////////////////////////////////////////////////////// -->
 							<div class="box box-result1 on">
+							<form action="../product/prop_cal" method="post" name="prop_cal">
+							<input type="hidden" id="premium" name="premium" /><%-- premium --%>
+							<input type="hidden" name="mode" value="prop" /><%-- mode --%>
+							<input type="hid den" name="payment" id="payment" />
 								<h4 class="heading">
 									<span id="prdtgb"></span> <strong><span>월납</span><span id="result">0,000</span>원</strong> <a
 										href="#popProductCart" class="btn-save" id="savePlan1"
@@ -364,15 +370,16 @@ function premCal()
 									<div class="btn">
 									<a href="#none"
 									class="btn-c1" id="goPlan2"
-									onclick="ga('send','event','Direct','Entry','medical-top_list_1',1);"
-									rel="history"><span>가입하기</span></a> 
+									rel="history"><button type="submit"><span>가입하기</span></button></a> 
 									<a href="#none" class="btn-c2" id="reCalcPremium"
 									rel="history" onclick="premCal();"><span>재계산하기</span></a>
 									</div>
 								</div>
+								</form>
 							</div>
 						</div>
 					</div>
+					
 					<!-- //계산결과 -->
 					<!-- 팝업링크 -->
 					<div class="view-pop">
