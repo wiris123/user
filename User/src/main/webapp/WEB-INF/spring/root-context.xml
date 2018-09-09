@@ -24,10 +24,6 @@
          <property name="redirectUri" value="http://localhost:8080/user/oauth2callback" />
     </bean>
 
-<<<<<<< HEAD
-	
-=======
->>>>>>> refs/remotes/origin/180907branch
 	<!-- 이메일 처리를 위한 빈즈 -->
 	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
 		<property name="host" value="smtp.gmail.com" />

@@ -6,28 +6,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>실손 보험</title>
 </head>
-<script type="text/javascript"
-	src="../www.googleadservices.com/pagead/f.txt">
-	
-</script>
 
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
-<<<<<<< HEAD
 <%@ include file="../include/header.jsp"%>
-=======
-
->>>>>>> refs/remotes/origin/180907branch
 </head>
 <body>
 	<div id="wrapper">
 		  <!-- 머리 -->
-<<<<<<< HEAD
-      
-=======
-      <%@ include file="../include/header.jsp"%>
->>>>>>> refs/remotes/origin/180907branch
       <link rel="stylesheet"
          href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
       <div id="container">

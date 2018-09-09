@@ -4,30 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>연금 보험</title>
-<script type="text/javascript"
-	src="../www.googleadservices.com/pagead/f.txt">
-<<<<<<< HEAD
-=======
-	
->>>>>>> refs/remotes/origin/180907branch
-</script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
 </head>
 <body>
-	<div id="wrapper">
- <!-- 머리 -->
-<<<<<<< HEAD
+	<div id="wrapper"> <!-- 머리 -->
   <%@ include file="../include/header.jsp"%>
       <link rel="stylesheet"  href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
-=======
-
-      <%@ include file="../include/header.jsp"%>
-      <link rel="stylesheet"
-         href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
->>>>>>> refs/remotes/origin/180907branch
       <div id="container">
          <%@ include file="../include/Head.jsp"%>
          <!-- page : content /////////////////////////////////////////////////// -->
@@ -37,15 +21,12 @@
                <!-- # 상품기본정보 # -->
 <script type="text/javascript">
 
-<<<<<<< HEAD
+
 $(function(){
 	$('.result-info-area').hide();
 		
 })
-=======
-$('#uiProductResult1').hide();
 
->>>>>>> refs/remotes/origin/180907branch
 function premCal()
 {
 	$(function()
@@ -259,12 +240,8 @@ function premCal()
                            <p>연락 주시면 전문상담원이 친절히 도와드립니다.</p>
                         </div>
                         <div class="advice-tel">
-<<<<<<< HEAD
                            <span class="tel-icon"><img src="resources/cms/pc/images/com/icon_telephone.png" alt="" /></span>
-=======
-                           <span class="tel-icon"><img
-                              src="resources/cms/pc/images/com/icon_telephone.png" alt="" /></span>
->>>>>>> refs/remotes/origin/180907branch
+
                            <strong>080-789-3300</strong> <span>평일 08:30~17:30 (무료)</span>
                         </div>
                      </div>
