@@ -34,11 +34,7 @@ h3 {
 <body>
 	<div
 		style="background-color: #15a181; width: 100%; height: 50px; text-align: center; color: white;">
-<<<<<<< HEAD
 		
-=======
-		<h3>SIST Naver_Login Success</h3>
->>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 	</div>
 	<br>
 	<h2 style="text-align: center" id="name"></h2>

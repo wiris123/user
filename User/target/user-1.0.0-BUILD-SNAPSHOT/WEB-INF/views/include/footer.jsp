@@ -14,13 +14,13 @@
 			<li><a href="https://pcyber.samsunglife.com/pcyber/comn/link.do?view=easySrvc/accident/guide/receiptGuide" target="_blank" title="(새창) 삼성생명 보험금청구안내" id="tl_elecReceip">보험금청구안내</a></li>
 		</ul>
 		<ul class="info">
-			<li>06620 서울특별시 서초구 서초대로74길 11</li>
-			<li>대표이사 현성철</li>
+			<li>06620 서울특별시 금천구 가산디지털 2로 127</li>
+			<li>대표이사 김희탁</li>
 			<li>사업자등록번호 104-81-26688</li>
 		</ul>
 
 		<p>본 사이트내 이메일무단수집을 거부하며, 위반시 정보통신법에 따라 형사처벌될 수 있습니다.</p>
-		<p class="copy">&copy; SAMSUNG LIFE INSURANCE., ALL RIGHTS RESERVED</p>
+		<p class="copy">&copy; INSURANCE & SAVING MANAGEMENT., ALL RIGHTS RESERVED</p>
 	</div>
 	<!-- 삼성생명 다이렉트 블로그 -->
 	<div class="section-blog">

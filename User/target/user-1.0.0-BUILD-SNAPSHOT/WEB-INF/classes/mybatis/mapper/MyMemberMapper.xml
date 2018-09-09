@@ -8,10 +8,7 @@
 	<insert id="insertjoin">
 		insert into member(id,pass,name,email,mobile,birth) values (#{0},#{1},#{2},#{3},#{4},#{5})
    </insert>
-<<<<<<< HEAD
    <insert id="EmailSender">
 		insert into booking(idx,name,mobile,regidate,email,contents,flag) values (book_seq.NEXTVAL,#{param2},#{param3},sysdate,#{param4},#{param5},#{param6})
    	</insert>
-=======
->>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 </mapper>

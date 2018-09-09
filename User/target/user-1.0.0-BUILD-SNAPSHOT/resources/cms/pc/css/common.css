@@ -47,7 +47,7 @@ label:focus, label.focus {outline:1px dotted #606879;}
 #header {position:relative;width:1200px;height:90px;margin:0 auto;padding:0;text-align:right;background:url(../images/com/layout_pattern.png) no-repeat 0 0;font-size:13px;line-height:18px;}
 #header .logo {position:absolute;left:0;bottom:20px;}
 #header .logo a {overflow:hidden;display:block;float:left;width:135px;height:26px;text-align:left;text-indent:-9999px;background:url(../images/com/layout_logo.png) no-repeat -166px 0;}
-#header .logo a:first-child {width:166px;margin:0;background-position:0 0;}
+#header .logo a:first-child {width:181px;margin:0;background-position:0 0;}
 #header .section-notice {position:absolute;left:480px;bottom:20px;}
 #header .nav-util {position:absolute;right:0;top:0;}
 #header .nav-gnb {position:absolute;right:0;bottom:16px;}

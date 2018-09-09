@@ -1,14 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>회원가입</title>
-		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"  %>
-</head>
+<title>연금 보험</title>
+<script type="text/javascript" src="../www.googleadservices.com/pagead/f.txt">
+    
+</script>
 <style>
 input[type=text], select {
     width: 100%;
@@ -64,6 +62,7 @@ join {
     padding: 20px;
 }
 </style>
+<script type="text/javascript" src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js" charset="utf-8"></script>
 <script type="text/javascript">
 
    
@@ -193,18 +192,20 @@ function email_input(em, frm){
 	}
 } 
 </script>
+</head>
 <body>
-	<div id="wrapper">
-	
+    <div id="wrapper">
+   	 <!-- 머리 -->
 
-		<div id="container"> 
-			<%@ include file="../include/Head.jsp" %>
-			
-		<!-- 내용시작 -->
-		<div id="content">
+   	 <%@ include file="../include/header.jsp"%>
+   	 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
+   	 <div id="container">
+   		 <%@ include file="../include/Head.jsp"%>
+   		 <!-- page : content /////////////////////////////////////////////////// -->
+   		<div id="content">
 			<div><h1 class="heading">회원가입</h1></div>
 			<div class="join_wrap">   
-				<form name=memberFrm" method="post" action="../member/insertjoin.do" onsubmit="return mValidate(this);";" >
+				<form name=memberFrm" method="post" action="../product/insuTermAction.do" onsubmit="return mValidate(this);";" >
 					<div id="join" style="width: 500px; margin: 0 auto;" >
       				<tr> 
         				<td>아이디</td><br />
@@ -219,7 +220,7 @@ function email_input(em, frm){
 			      	</tr>
       				<tr>
 				        <td>비밀번호 확인</td>
-				        <td><input type=password name=pass2 size=15 maxlength=15></td>
+				        <td><input type=password name="pass2" size=15 maxlength=15></td>
 					</tr>   
 						<label for="name">이름</label>
 						<input type="text" id="name" name="name" placeholder="이름">
@@ -250,6 +251,31 @@ function email_input(em, frm){
 							    <option value="yahoo.com" >yahoo.com</option>
 	      					</select>
 	      				
+	      				<label for="phone">전화번호</label> <br />
+						<select name="mobile1" id="" style="width: 30%; height: 45px; position: relative; top: 2px;">
+							<option value="">선택하세요</option>
+							<option value="02">010</option>
+							<option value="031">031</option>
+							<option value="032">032</option>
+							<option value="033">033</option>
+							<option value="041">041</option>
+							<option value="042">042</option>
+							<option value="043">043</option>
+							<option value="044">044</option>
+							<option value="051">051</option>
+							<option value="052">052</option>
+							<option value="053">053</option>
+							<option value="054">054</option>
+							<option value="055">055</option>
+							<option value="061">061</option>
+							<option value="062">062</option>
+							<option value="063">063</option>
+							<option value="064">064</option>
+						</select> - 
+							<input type="text" id="phone" name="mobile2"  style="width: 30%;"> - 
+							<input type="text" id="phone" name="mobile3" maxlength=4 style="width: 31%;"><br />
+						
+						
 						<label for="phone">핸드폰 번호</label> <br />
 						<select name="mobile1" id="" style="width: 30%; height: 45px; position: relative; top: 2px;">
 							<option value="">선택하세요</option>
@@ -262,47 +288,74 @@ function email_input(em, frm){
 						</select> - 
 							<input type="text" id="phone" name="mobile2"  style="width: 30%;"> - 
 							<input type="text" id="phone" name="mobile3" maxlength=4 style="width: 31%;"><br />
-
-						<label for="birth">생년월일</label><br />
-							<select name="birth1" id="" style="width: 30%; height: 45px;">
-								<option value="">출생년도</option>
-								<%for(int i=1900; i<=2018; i++){ %>
-								<option value="<%=i%>"><%=i %></option>
-								<%} %>
-							</select>년 &nbsp;
-							<select name="birth2" id="" style="width: 30%; height: 45px;">
-								<option value="">월</option>
-								<%for(int i=1; i<=9; i++){ %>
-								<option value="0<%=i%>"><%=i %></option>
-								<%} %>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-							</select>월
-							<select name="birth3" id="" style="width: 29%; height: 45px;">
-								<option value="">일</option>
-								<%for(int i=1; i<=9; i++){ %>
-								<option value="0<%=i%>"><%=i %></option>
-								<%} %>
-								<%for(int i=10; i<=30; i++){ %>
-								<option value="<%=i%>"><%=i %></option>
-								<%} %>
-							</select>일    
-							<input type="submit" value="가입하기" onclick="">
+						
+						<label for="birth">운전여부</label><br />
+							<select name="drive" id="" style="width: 30%; height: 45px;">
+								<option value="">선택</option>
+								<option value="1">예</option>
+								<option value="0">아니오</option>
+							</select>&nbsp; <br />
+							
+						<label for="birth">흡연여부</label><br />
+						<select name="cigar" id="" style="width: 30%; height: 45px;">
+							<option value="">선택</option>
+							<option value="2">예</option>
+							<option value="0">아니오</option>
+						</select><br />
+						
+						<label for="birth">음주여부</label><br />
+						<select name="drink" id="" style="width: 30%; height: 45px;">
+							<option value="">선택</option>
+							<option value="2">예</option>
+							<option value="0">아니오</option>
+						</select><br /> <br />
+						<label for="name">키</label><br />
+						<input type="text" id="height" name="height" style="width: 90%">cm <br />
+						<label for="name">몸무게</label> <br />
+						<input type="text" id="weight" name="weight" style="width: 90%">kg <br />
+						
+						<label for="name">위험취미여부</label>
+						<input type="text" id="danhoby" name="danhoby" >
+						
+						<label for="name">월소득액</label>
+						<input type="text" id="income" name="income" style="width: 90%">만원 <br />
+						
+						<label for="birth">건강관련질문1</label><br />
+						<select name="hospit1" id="" style="width: 30%; height: 45px;">
+							<option value="">선택</option>
+							<option value="2">예</option>
+							<option value="0">아니오</option>
+						</select><br />
+						
+						<label for="birth">건강관련질문2</label><br />
+						<select name="hospit2" id="" style="width: 30%; height: 45px;">
+							<option value="">선택</option>
+							<option value="2">예</option>
+							<option value="0">아니오</option>
+						</select><br />
+						
+						<label for="birth">건강관련질문3</label><br />
+						<select name="hospit3" id="" style="width: 30%; height: 45px;">
+							<option value="">선택</option>
+							<option value="2">예</option>
+							<option value="0">아니오</option>
+						</select><br />
+						<input type="submit" value="가입하기" onclick="">
+					
 				</form>
 				<iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>
-			</div><!---div join-->
+			</div>
+			</div>
+			<!---div join-->
 		</div>
+   	 <!-- 머리끝 -->
 
-		<!-- 내용끝 -->
-		
-		</div>	
-		<!-- 머리끝 -->
-	<!-- 푸터시작 -->
-	<div id="footer">
-		<%@ include file="../include/footer.jsp"%>
-	</div>
-	<!-- 푸터끝 -->
+   	 <!-- 푸터시작 -->
+   	 <div id="footer">
+   		 <%@ include file="../include/footer.jsp"%>
+   	 </div>
+   	 <!-- 푸터끝 -->
 
-</div>
+    </div>
+</body>
 </html>
