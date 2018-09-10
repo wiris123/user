@@ -6,6 +6,7 @@
 <head>
 <%@ include file="./include/header.jsp"  %>
 <script>
+
 function moveCalc()
 {
 	var mode = document.getElementById("product");	
@@ -170,13 +171,13 @@ function moveCalc()
 								</a>
 							</li> -->
 							<li class="ic1 column7-box">
-								<a href="/product/pro_term" title="정기보험 바로가기">
+								<a href="./product/pro_term" title="정기보험 바로가기">
 									<h4>정기보험</h4>				
 									<p>가장의 필수보험</p>
 								</a>
 							</li>
 							<li class="ic6 column7-box">
-								<a href="/product/pro_annual" title="연금보험 바로가기">
+								<a href="./product/pro_annual" title="연금보험 바로가기">
 									<h4>연금보험</h4>				
 									<p>세액공제+투자<br/><span class="txt-smaller">(관련세법충족시)</span></p>
 								</a>
@@ -188,7 +189,7 @@ function moveCalc()
 								</a>
 							</li> -->
 							<li class="ic4 column7-box">
-								<a href="/product/pro_prop" title="실손보험 바로가기">
+								<a href="./product/pro_prop" title="실손보험 바로가기">
 									<h4>실손보험</h4>				
 									<p>질병ㆍ상해<br/>의료비보장</p>
 								</a>
