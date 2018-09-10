@@ -30,7 +30,10 @@
 		<servlet-name>appServlet</servlet-name>
 		<url-pattern>/</url-pattern>
 	</servlet-mapping>
-
+	<listener>
+		<listener-class>org.springframework.web.context.request.RequestContextListener</listener-class>
+	    <listener-class>controller1.VisitCounter</listener-class>
+	</listener>
 	<!-- 한글 깨짐 현상을 방자히가 위한 필터 설정 : 컨텍스트루트 하위의 모든 파일을 대상으로 UTF-8로 설정하겠다는 의미 -->
 	<filter>
 		<filter-name>encodingFilter</filter-name>
@@ -47,7 +50,9 @@
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-	</filter-mapping>
+
+	</filter-mapping>	
+
 	 <listener>
         <listener-class>com.kosmo.user.VisitorController</listener-class>
     </listener>

@@ -15,7 +15,7 @@
 		</ul>
 		<ul class="info">
 			<li>06620 서울특별시 금천구 가산디지털 2로 127</li>
-			<li>대표이사 김희탁</li>
+			<li>대표이사 김희태</li>
 			<li>사업자등록번호 104-81-26688</li>
 		</ul>
 
@@ -76,25 +76,25 @@
 	</div>
 	<!-- 패밀리사이트 -->
 	<div class="section-family ui-toggle">
-		<a href="#none" class="tit ui-toggle-btn">패밀리사이트 및 삼성계열사<span>열기</span></a>
+		<a href="#none" class="tit ui-toggle-btn">패밀리사이트 및 ISM계열사<span>열기</span></a>
 		<div class="list ui-toggle-con">
 			<ul>
 				<li><strong>패밀리사이트</strong>
 					<ul>
-						<li><a href="http://family.samsunglife.com/festival/main.do" target="_blank" title="새창열림">청소년 미술작품 공모전</a></li>
-						<li><a href="http://lifevalley.samsunglife.com/ie/safari.html" target="_blank" title="새창열림">라이프밸리</a></li>
+						<li><a href="http://www.kosmo.co.kr" target="_blank" title="새창열림">KOSMO</a></li>
+						<li><a href="http://www.google.co.kr" target="_blank" title="새창열림">구글</a></li>
 						<!-- <li><a href="http://www.smartlifedesign.co.kr" target="_blank" title="새창열림">스마트라이프디자인</a></li>-->
 					</ul></li>
 				<li><strong>소셜미디어</strong>
 					<ul>
-						<li><a href="http://www.samsunglifeblogs.com/" target="_blank" title="새창열림">삼성생명 블로그L</a></li>
-						<li><a href="http://twitter.com/samsunglife" target="_blank" title="새창열림">삼성생명 트위터</a></li>
-						<li><a href="https://www.facebook.com/samsunglife" target="_blank" title="새창열림">삼성생명 페이스북</a></li>
+						<li><a href="http://blog.naver.com/" target="_blank" title="새창열림">네이버 블로그</a></li>
+						<li><a href="http://twitter.com/" target="_blank" title="새창열림">트위터</a></li>
+						<li><a href="https://www.facebook.com/" target="_blank" title="새창열림">따봉북</a></li>
 					</ul></li>
-				<li><strong>삼성계열사</strong>
+				<li><strong>계열사</strong>
 					<ul>
-						<li><a href="http://www.samsungfire.com/" target="_blank" title="새창열림">삼성화재</a></li>
-						<li><a href="http://www.samsungpop.com/" target="_blank" title="새창열림">삼성증권</a></li>
+						<li><a href="http://www.119.go.kr" target="_blank" title="새창열림">화재에는 119</a></li>
+						<li><a href="http://www.krx.co.k" target="_blank" title="새창열림">한국거래소</a></li>
 						<li><a href="http://www.samsungcard.com/" target="_blank" title="새창열림">삼성카드</a></li>
 						<!-- <li><a href="http://www.samsungfund.com" target="_blank" title="새창열림">삼성자산운용</a></li>-->
 					</ul></li>

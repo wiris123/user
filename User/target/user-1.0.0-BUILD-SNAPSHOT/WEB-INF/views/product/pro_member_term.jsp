@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>연금 보험</title>
+<title>정기보험 가입하기</title>
 <script type="text/javascript" src="../www.googleadservices.com/pagead/f.txt">
     
 </script>
@@ -63,6 +63,8 @@ join {
 }
 </style>
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js" charset="utf-8"></script>
+ 	 <%@ include file="../include/header.jsp"%>
+</head>
 <script type="text/javascript">
 
    
@@ -105,20 +107,21 @@ function check_nick() {
 }*/
 
 // 빈 값 체크
-function mValidate(fn) {
+function mValidate(fn,mode) {
+	
 	if(fn.id.value==""){
       alert("아이디를 입력해주세요");
       fn.id.focus();
       return false;
 	}
 	
-  if(!document.join.pw.value) {
+  if(!document.join.pass.value) {
     window.alert('비밀번호를 입력해 주세요');
     document.join.pw.focus();
     return false;
    }
 
-  if(!document.join.pw2.value) {
+  if(!document.join.pass2.value) {
     window.alert('비밀번호 확인을 입력해 주세요');
     document.join.pw2.focus();
     return false;
@@ -168,10 +171,26 @@ function mValidate(fn) {
     document.join.phone.focus();
     return false;
   }*/
- 
+
  
 }
 
+function subCheck(mode)
+{
+	var fn = document.memberFrm;
+	
+	if(mode=="term")
+	{
+		fn.action = "../product/insuTermAction.do";
+		fn.submit();
+	}
+	else if(mode=="prop")
+	{
+		fn.action = "../product/insuPropAction.do";
+		fn.submit();
+	}	
+
+}
 function email_input(em, frm){
 	//선택한 select의 값이 빈값이 아닐때만 동작
 	if(em.value!=""){
@@ -191,13 +210,12 @@ function email_input(em, frm){
 		}
 	}
 } 
+
 </script>
-</head>
 <body>
     <div id="wrapper">
    	 <!-- 머리 -->
 
-   	 <%@ include file="../include/header.jsp"%>
    	 <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
    	 <div id="container">
    		 <%@ include file="../include/Head.jsp"%>
@@ -205,8 +223,20 @@ function email_input(em, frm){
    		<div id="content">
 			<div><h1 class="heading">회원가입</h1></div>
 			<div class="join_wrap">   
-				<form name=memberFrm" method="post" action="../product/insuTermAction.do" onsubmit="return mValidate(this);";" >
+				<form name="memberFrm" onsubmit="return mValidate(this);" method="post">
 					<div id="join" style="width: 500px; margin: 0 auto;" >
+					<input type="hid den" name="userInfo" id="userInfo" value='${basicInfo}'>
+					<input type="hid den" name="ins_name" value=
+					<%if(request.getParameter("mode").equals("term"))
+							{
+							%>
+					"인터넷 정기보험 4.0"
+					<%}
+					else
+					{%>
+					"인터넷 실손보험 1.0"
+					<%} %>
+					/>
       				<tr> 
         				<td>아이디</td><br />
         				<td><input type=text name="id" size=15 maxlength=15 id="chk_id1" style="width: 70%;">
@@ -252,7 +282,7 @@ function email_input(em, frm){
 	      					</select>
 	      				
 	      				<label for="phone">전화번호</label> <br />
-						<select name="mobile1" id="" style="width: 30%; height: 45px; position: relative; top: 2px;">
+						<select name="phone1" id="phone1" style="width: 30%; height: 45px; position: relative; top: 2px;">
 							<option value="">선택하세요</option>
 							<option value="02">010</option>
 							<option value="031">031</option>
@@ -272,8 +302,8 @@ function email_input(em, frm){
 							<option value="063">063</option>
 							<option value="064">064</option>
 						</select> - 
-							<input type="text" id="phone" name="mobile2"  style="width: 30%;"> - 
-							<input type="text" id="phone" name="mobile3" maxlength=4 style="width: 31%;"><br />
+							<input type="text" id="phone2" name="phone2"  style="width: 30%;"> - 
+							<input type="text" id="phone3" name="phone3" maxlength=4 style="width: 31%;"><br />
 						
 						
 						<label for="phone">핸드폰 번호</label> <br />
@@ -315,7 +345,7 @@ function email_input(em, frm){
 						<input type="text" id="weight" name="weight" style="width: 90%">kg <br />
 						
 						<label for="name">위험취미여부</label>
-						<input type="text" id="danhoby" name="danhoby" >
+						<input type="text" id="danhobby" name="danhobby" >
 						
 						<label for="name">월소득액</label>
 						<input type="text" id="income" name="income" style="width: 90%">만원 <br />
@@ -340,9 +370,9 @@ function email_input(em, frm){
 							<option value="2">예</option>
 							<option value="0">아니오</option>
 						</select><br />
-						<input type="submit" value="가입하기" onclick="">
-					
+						<input type="button" value="가입하기" onclick="subCheck('${mode}');">
 				</form>
+				
 				<iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>
 			</div>
 			</div>

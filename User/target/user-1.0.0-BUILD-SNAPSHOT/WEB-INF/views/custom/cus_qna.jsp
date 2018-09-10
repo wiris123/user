@@ -110,7 +110,7 @@
 				</script>
 				<!-- ## 상담방법목록 ## -->
 				<ul class="counsel-list">
-					<li class="list1"><a href="#" onclick="openPopCounsel('chat');"> <strong><span>채팅</span>상담</strong> <em name="chatStatus" class="icon-state off">OFF</em>
+					<li class="list1"><a href="../custom/chat/" onclick="openPopCounsel('chat');"> <strong><span>채팅</span>상담</strong> <em name="chatStatus" class="icon-state off">OFF</em>
 					</a></li>
 					<li class="list2"><a href="#" onclick="openPopCounsel('popCounselEmail', this)"> <strong><span>이메일</span>상담</strong> <em name="emailStatus" class="icon-state on">ON</em>
 					</a></li>

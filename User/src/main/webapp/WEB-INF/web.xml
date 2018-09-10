@@ -50,13 +50,11 @@
 	<filter-mapping>
 		<filter-name>encodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
-<<<<<<< HEAD
+
 	</filter-mapping>	
-=======
-	</filter-mapping>
+
 	 <listener>
         <listener-class>com.kosmo.user.VisitorController</listener-class>
     </listener>
 
->>>>>>> refs/remotes/origin/180907branch
 </web-app>

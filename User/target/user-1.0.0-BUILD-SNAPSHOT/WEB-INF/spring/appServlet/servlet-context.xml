@@ -3,9 +3,12 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:beans="http://www.springframework.org/schema/beans"
 	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:websocket="http://www.springframework.org/schema/websocket" 
 	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+		http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.1.xsd
+		">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
 	
@@ -36,5 +39,12 @@
 	
 	<!-- Naver로그인 컨트롤러의 위치 -->
 	<beans:bean id="naverLoginBO" class="com.kosmo.user.NaverLoginBO" />
+	
+	<!-- 스프링 채팅 -->
+	<beans:bean id="echoHandler" class="com.kosmo.user.EchoHandler"/>
+	<websocket:handlers>	
+	    <websocket:mapping handler="echoHandler" path="/echo" />
+	    <websocket:sockjs />	
+	</websocket:handlers>
 
 </beans:beans>
