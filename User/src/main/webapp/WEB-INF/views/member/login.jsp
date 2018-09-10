@@ -40,15 +40,17 @@
 				}
 			}
 		</script>
+		
+		<!-- 이름 : ${sessionScope.userInfo.name } -->
 		<div id="container">
 			<%@ include file="../include/Head.jsp"%>
 			<!-- 내용시작 -->
 			<c:choose>
-				<c:when test="${not empty rows }">
+				<c:when test="${not empty USER_ID }">
 					<div class="row" style="border: 2px solid #cccccc" padding="10px">
-						<h4>아이디 : ${sessionScope.userInfo.id } 이름 : ${sessionScope.userInfo.name }</h4>
+						<h4>아이디 : ${USER_ID } </h4> 님 환영합니다.
 						<br /> <br />
-						<button onclick="location.href='./logout.do'">로그아웃</button>
+						<button onclick="location.href='/logout'">로그아웃</button>
 						</h4>
 					</div>
 				</c:when>
@@ -62,7 +64,8 @@
 									<li><a href="#none" onclick="fn_setInputUi(1);" id="signTab1"><span>SOCIAL 로그인</span></a></li>
 									<li class="on"><a href="#none" onclick="fn_setInputUi(2);" id="signTab2"><span>로그인</span></a></li>
 								</ul>
-								<form name="form1" action="../member/loginAction.do" id="form1" autocomplete="off" method="post">
+								<c:url value="/loginAction" var="loginUrl"/>
+								<form name="form1" action="${loginUrl }" id="form1" autocomplete="off" method="post">
 									<fieldset id="field">
 										<legend>본인인증</legend>
 										<!-- ## 이름 ##-->

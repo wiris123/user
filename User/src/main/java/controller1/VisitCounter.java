@@ -19,7 +19,8 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 import org.springframework.web.context.support.WebApplicationContextUtils;
 
-public class VisitCounter implements HttpSessionListener {
+public class VisitCounter implements HttpSessionListener 
+{
 	Connection con; // 오라클 서버와 연결할때 사용
 	PreparedStatement psmt;// 오라클 서버와 쿼리전송 역할
 	ResultSet rs;

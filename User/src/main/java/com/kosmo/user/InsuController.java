@@ -85,6 +85,8 @@ public class InsuController
 		String paytime = req.getParameter("gopaytime");
 		String death = req.getParameter("death");
 		String prem = req.getParameter("gopayprem");
+		String mode = req.getParameter("mode");
+		
 		map.put("birth", birth);
 		map.put("instime", Integer.parseInt(instime)*12);
 		map.put("paytime", Integer.parseInt(paytime)*12);

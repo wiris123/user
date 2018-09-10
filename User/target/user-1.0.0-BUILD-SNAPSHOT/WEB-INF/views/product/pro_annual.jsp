@@ -4,22 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>연금 보험</title>
-<script type="text/javascript"
-	src="../www.googleadservices.com/pagead/f.txt">
-	
-</script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
 </head>
 <body>
-	<div id="wrapper">
- <!-- 머리 -->
-
-      <%@ include file="../include/header.jsp"%>
-      <link rel="stylesheet"
-         href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
+	<div id="wrapper"> <!-- 머리 -->
+  <%@ include file="../include/header.jsp"%>
+      <link rel="stylesheet"  href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
       <div id="container">
          <%@ include file="../include/Head.jsp"%>
          <!-- page : content /////////////////////////////////////////////////// -->
@@ -29,7 +21,11 @@
                <!-- # 상품기본정보 # -->
 <script type="text/javascript">
 
-$('#uiProductResult1').hide();
+
+$(function(){
+	$('.result-info-area').hide();
+		
+})
 
 function premCal()
 {
@@ -56,7 +52,7 @@ function premCal()
 					$('#resultAnnu').text(resp.result);		
 					$('#spanBonusAmount').text(resp.bonus);
 					$('#returnPer').text(resp.returnPer);
-					$('#uiProductResult1').show();
+					$('.result-info-area').show();
 					
 				},
 				error:function(errorData)
@@ -131,14 +127,13 @@ function premCal()
 
             <!-- 연금계산결과 -->
             <!-- ## 계산결과 /////////////////////////////////////////////////////////////////////////////////////// -->
-            <div class="product-result open" id="uiProductResult1"
-               style="display: block;" tabindex="0">
+            <div class="product-result open" id="uiProductResult1" tabindex="0">
                <!-- # 계산결과 출력 //////////////////////////////////////////////////////////////////////////// -->
                <div class="product-result-tab" data-tab="resultTab">
                   <div id="tabDirectPlan" class="on">직접 설계</div>
                   <div id="tabRecommendPlan">추천 설계</div>
                </div>
-				<input type="hid den" name="interest" id="interest" value="3" />
+				<input type="hidden" name="interest" id="interest" value="3" />
                <!-- tab1 직접 설계 -->
                <div data-tab-target="resultTab">
                   <div class="direct-planning">
@@ -245,8 +240,8 @@ function premCal()
                            <p>연락 주시면 전문상담원이 친절히 도와드립니다.</p>
                         </div>
                         <div class="advice-tel">
-                           <span class="tel-icon"><img
-                              src="resources/cms/pc/images/com/icon_telephone.png" alt="" /></span>
+                           <span class="tel-icon"><img src="resources/cms/pc/images/com/icon_telephone.png" alt="" /></span>
+
                            <strong>080-789-3300</strong> <span>평일 08:30~17:30 (무료)</span>
                         </div>
                      </div>

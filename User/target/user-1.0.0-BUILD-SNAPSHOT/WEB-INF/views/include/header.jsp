@@ -1,11 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<<<<<<< HEAD
 <%request.getSession(true);%>
-=======
-<%
-request.getSession(true); 
-%>
->>>>>>> refs/remotes/origin/180907branch
+
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="author" content="삼성생명, Samsung Life Insurance, 삼성생명 다이렉트"/>
@@ -13,10 +8,10 @@ request.getSession(true);
 <meta name="description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 삼성생명! " />
 <meta property="og:image" content="<%=request.getContextPath() %>resources/cms/mobile/images/com/visual_samsung2.gif" />
 <meta property="og:url" content="index-2.html" />
-<meta property="og:title" content="삼성생명 다이렉트" />
-<meta property="og:site_name" content="삼성생명 다이렉트" />
-<meta property="og:type" content="삼성생명" />
-<meta property="og:description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 삼성생명!" />
+<meta property="og:title" content="ISM 다이렉트" />
+<meta property="og:site_name" content="ISM 다이렉트" />
+<meta property="og:type" content="ISM" />
+<meta property="og:description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 ISM!" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
 <link rel="shortcut icon" href="<%=request.getContextPath() %>/resources/web/images/com/samsunglife.ico" />
@@ -209,8 +204,8 @@ request.getSession(true);
 	<!-- GNB -->
 	<ul class="nav-gnb">
 		<li><a href="/user/member/joinCheck" class="gnb1"><span>회원가입</span><em id="headerRecentPlanCount"></em></a></li>
-		<li><a href="#asideRecent" class="gnb1"><span>최근설계내역</span><em id="headerRecentPlanCount"></em></a></li>
-		<li><a href="/user/member/login.do" class="gnb4" title="로그인하기"><span>로그인하기</span></a></li>
+		<li><a href="/user/member/login.do" class="gnb1"><span>로그인</span><em id="headerRecentPlanCount"></em></a></li>
+		<li><a href="/user/member/mypage.do" class="gnb4" title="마이페이지"><span>마이페이지</span></a></li>
 		<!-- <li><a href="#asideMenu" class="gnb3" title="전체메뉴"><span>전체메뉴</span></a></li> -->
 	</ul>
 

@@ -204,8 +204,8 @@
 	<!-- GNB -->
 	<ul class="nav-gnb">
 		<li><a href="/user/member/joinCheck" class="gnb1"><span>회원가입</span><em id="headerRecentPlanCount"></em></a></li>
-		<li><a href="#asideRecent" class="gnb1"><span>최근설계내역</span><em id="headerRecentPlanCount"></em></a></li>
-		<li><a href="/user/member/login.do" class="gnb4" title="로그인하기"><span>로그인하기</span></a></li>
+		<li><a href="/user/member/login.do" class="gnb1"><span>로그인</span><em id="headerRecentPlanCount"></em></a></li>
+		<li><a href="/user/member/mypage.do" class="gnb4" title="마이페이지"><span>마이페이지</span></a></li>
 		<!-- <li><a href="#asideMenu" class="gnb3" title="전체메뉴"><span>전체메뉴</span></a></li> -->
 	</ul>
 

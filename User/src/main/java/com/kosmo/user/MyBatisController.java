@@ -1,5 +1,6 @@
 package com.kosmo.user;
 
+import java.security.Principal;
 import java.sql.Date;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -15,6 +16,8 @@ import javax.servlet.http.HttpSession;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -45,15 +48,37 @@ public class MyBatisController
 	
 	//로그인 리다이렉팅
 	@RequestMapping("/member/login.do")
-	public String login(Model model)
+	public String login()
 	{
+	
+		
 		return "member/login";
 	}
 		
-	
+	//로그인 성공시
+	@RequestMapping("/member/loginSuccess.do")
+	public String loginSuc(HttpSession session)
+	{
+		
+		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		UserDetails userDetails = (UserDetails)principal;
+
+		String user_id = userDetails.getUsername();
+		
+		session.setAttribute("USER_ID", user_id);
+		
+		return "member/login";
+		
+	}
+	//접근 거부 페이지
+	@RequestMapping("/member/accessDenied")
+	public String accessDenied() {
+		return "member/accessDenied";
+	}
+			
 	
 	//로그인 처리
-	@RequestMapping("/member/loginAction.do")
+	/*@RequestMapping("/member/loginAction.do")
 	public ModelAndView loginAction(HttpServletRequest req,HttpSession session)
 	{
 		ModelAndView mv = new ModelAndView();
@@ -68,11 +93,7 @@ public class MyBatisController
 			mv.setViewName("/member/login");
 			return mv;
 		}
-		else
-		{
-			
-		}
-		
+
 		
 		//로그인 성공 시
 		session.setAttribute("userInfo", vo);
@@ -81,7 +102,7 @@ public class MyBatisController
 		mv.setViewName("/member/login");
 		return mv;
 	}
-
+*/
 	
 	@RequestMapping("/member/insertjoin.do")	 
 	public String insertjoin(HttpServletRequest req,HttpSession session)

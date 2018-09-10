@@ -62,7 +62,7 @@
 									<li><a href="#none" onclick="fn_setInputUi(1);" id="signTab1"><span>SOCIAL 로그인</span></a></li>
 									<li class="on"><a href="#none" onclick="fn_setInputUi(2);" id="signTab2"><span>로그인</span></a></li>
 								</ul>
-								<form name="form1" action="../member/loginAction.do" id="form1" autocomplete="off" method="post">
+								<form name="form1" action="/loginAction" id="form1" autocomplete="off" method="post">
 									<fieldset id="field">
 										<legend>본인인증</legend>
 										<!-- ## 이름 ##-->

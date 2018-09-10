@@ -191,6 +191,7 @@ function subCheck(mode)
 	}	
 
 }
+
 function email_input(em, frm){
 	//선택한 select의 값이 빈값이 아닐때만 동작
 	if(em.value!=""){
@@ -227,7 +228,7 @@ function email_input(em, frm){
 					<div id="join" style="width: 500px; margin: 0 auto;" >
 					<input type="hid den" name="userInfo" id="userInfo" value='${basicInfo}'>
 					<input type="hid den" name="ins_name" value=
-					<%if(request.getParameter("mode").equals("term"))
+					<% if(request.getParameter("mode").equals("term"))
 							{
 							%>
 					"인터넷 정기보험 4.0"
@@ -370,9 +371,8 @@ function email_input(em, frm){
 							<option value="2">예</option>
 							<option value="0">아니오</option>
 						</select><br />
-						<input type="button" value="가입하기" onclick="subCheck('${mode}');">
-				</form>
-				
+						<input type="button" value="가입하기" onclick='subCheck("<%=request.getParameter("mode")%>");'>
+				</form>				
 				<iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>
 			</div>
 			</div>

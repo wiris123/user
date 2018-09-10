@@ -181,6 +181,7 @@ function premiPlus()
                         <input type="hidden" name="goinstime" id="goinstime"/>
                         <input type="hidden" name="gopaytime" id="gopaytime"/>
                         <input type="hidden" name="gopayprem" id="gopayprem"/>
+                        <input type="hidden" name="mode" value="term" />
                            <h4 class="heading">
                               <span>맞춤설계</span>
                               <strong><span>월</span><span id="resultPremium2">0,000</span>원</strong>
@@ -216,7 +217,7 @@ function premiPlus()
                               <div class="btn">
                                  <span class="img-gift"></span>
                                  <a href="#popSendEmail" class="btn-c1 adb-dist2" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'><span>메일발송</span></a>
-                                 <button type="submit"id="goPlan2"><span class="btn-c2">가입하기</span></button>
+                                 <button type="submit"id="goPlan2"  class="btn-c2"><span>가입하기</span></button>
                                  <input type="hidden" id="jsonResultData2" name="jsonResultData" />
                               </div>
                               <div class="btn btn-reset">

@@ -1,5 +1,7 @@
 package dto;
 
+import java.sql.Date;
+
 public class MyStatusDTO 
 {
 	private	String	num;
@@ -10,7 +12,51 @@ public class MyStatusDTO
 	private	String	paidprem;
 	private	String	prem;
 	private	String	contstat;
+	private Date regidate;
+	private String inssort;
+	private String death_ins;
 	
+	
+	public MyStatusDTO(String num, String id, String insname, String insnum, String remainpay, String paidprem,
+			String prem, String contstat, Date regidate, String inssort, String death_ins) 
+	{
+		this.num = num;
+		this.id = id;
+		this.insname = insname;
+		this.insnum = insnum;
+		this.remainpay = remainpay;
+		this.paidprem = paidprem;
+		this.prem = prem;
+		this.contstat = contstat;
+		this.regidate = regidate;
+		this.inssort = inssort;
+		this.death_ins = death_ins;
+	}
+
+	public Date getRegidate() {
+		return regidate;
+	}
+
+	public void setRegidate(Date regidate) {
+		this.regidate = regidate;
+	}
+
+	public String getInssort() {
+		return inssort;
+	}
+
+	public void setInssort(String inssort) {
+		this.inssort = inssort;
+	}
+
+	public String getDeath_ins() {
+		return death_ins;
+	}
+
+	public void setDeath_ins(String death_ins) {
+		this.death_ins = death_ins;
+	}
+
 	public MyStatusDTO() 
 	{
 	
