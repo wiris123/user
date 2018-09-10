@@ -34,7 +34,7 @@
 
 							<li>당첨자 발표일 : ${dto.regidate }</li>
 
-							<li class="last">조회수 : 함수명기억안나햏</li>
+							<li class="last">조회수 : ${dto.viewcnt }</li>
 						</ul>
 						<div class="info-btn">
 							<a href="#none" id="facebook" class="icon-sns sns2" title="페이스북 공유하기" title="새창">페이스북 공유하기</a> <a href="#none" id="naverBlog" class="icon-sns sns3" title="블로그 공유하기" title="새창">블로그 공유하기</a>
@@ -42,11 +42,8 @@
 					</div>
 					<!-- # 상세정보 # -->
 					<div class="wrap-img" id="eventBody">${dto.contents }</div>
-					<script type="text/javascript">
-						$('#eventBody')
-								.load(
-										'/resources/html/front/event/201809/cancer/cancer_pc.html');
-					</script>
+					<img src="/img/${dto.attfile}" alt="" />
+
 				</div>
 				<!-- # 응모하기 : 템플릿2 맞춤설계형 # -->
 				<div class="event-template2">
