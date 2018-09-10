@@ -6,6 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
+		<!-- 머리 -->
+		<%@ include file="../include/header.jsp"  %>
 </head>
 <style>
 input[type=text], select {
@@ -194,8 +196,7 @@ function email_input(em, frm){
 <body>
 	<div id="wrapper">
 	
-		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"  %>
+
 		<div id="container"> 
 			<%@ include file="../include/Head.jsp" %>
 			

@@ -10,23 +10,17 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.apache.ibatis.session.SqlSession;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.fasterxml.jackson.databind.util.JSONPObject;
 
 @Controller
 public class JsonController
 {
 	
-	@Autowired
-	private SqlSession sqlSession;
-	//로그인처리
-	
+
 	@RequestMapping("/product/termPrem.do")
 	@ResponseBody
 	public Map<String, String> termPrem(Model model,HttpServletRequest req) throws ParseException
@@ -34,13 +28,12 @@ public class JsonController
 		int paytime = Integer.parseInt(req.getParameter("paytime"));
 		int instime = Integer.parseInt(req.getParameter("instime"));
 		int death = Integer.parseInt(req.getParameter("death"));
-		int death_hid = Integer.parseInt(req.getParameter("death_hid"));
 		String birth = req.getParameter("birth");
 		
 		int gender1 = Integer.parseInt(req.getParameter("gender1"));
 		int gender2 = Integer.parseInt(req.getParameter("gender2"));
 		
-		int cal_death = 0;
+		
 		double result = 0;
 
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
@@ -65,22 +58,10 @@ public class JsonController
 		{
 			instime = instime - (int)age;
 		}
-		
-		if(death_hid< death)
-		{
-			cal_death= death;
-		}
-		else if(death_hid == death)
-		{
-			cal_death = 100000000;
-		}
-		else
-		{
-			cal_death= death_hid;
-		}
+
 			
 		// 맞춤설계
-		result = cal_death*Math.pow(1.05,instime+paytime)/Math.pow(1.03,instime);
+		result = death*Math.pow(1.05,instime+paytime)/Math.pow(1.03,instime);
 		result = (result/1000+paytime);
 		result = result*(1+(rprem*0.01))/12;
 		result = (int)Math.round(result);
@@ -179,4 +160,34 @@ public class JsonController
 		return obj;
 		
 	}
+	
+	@RequestMapping("/product/propPrem.do")
+	@ResponseBody
+	public Map<String, Object> propCal(HttpServletRequest req)
+	{
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		int hosp = Integer.parseInt(req.getParameter("hosp"));
+		int gohosp = Integer.parseInt(req.getParameter("gohosp"));
+		int sanghosp = Integer.parseInt(req.getParameter("sanghosp"));
+		int sgohosp = Integer.parseInt(req.getParameter("sgohosp"));
+		int chbedosu = Integer.parseInt(req.getParameter("chbedosu"));
+		int chbeinje = Integer.parseInt(req.getParameter("chbeinje"));
+		int chbemri = Integer.parseInt(req.getParameter("chbemri"));
+
+		
+		//보험료처리
+		int premium = hosp+gohosp+sanghosp+sgohosp+chbedosu+chbeinje+chbemri;
+		double result = 10000.;
+		result = 10000*(1+(premium*2*0.01));
+		DecimalFormat df = new DecimalFormat("#,###"); 
+			
+		map.put("result", df.format(result));
+		map.put("result2", (int)result);
+		map.put("prem", premium);
+
+		return map;
+	}
+	
+	
 }

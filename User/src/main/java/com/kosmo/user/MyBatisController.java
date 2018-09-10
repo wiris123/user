@@ -122,9 +122,7 @@ public class MyBatisController
 			e.printStackTrace();
 			System.out.println("실패");
 		}
-		
-		
-		
+	
 		return "redirect:/custom/cus_qna";
 	}
 	

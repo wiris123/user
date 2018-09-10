@@ -5,12 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>고객센터</title>
+ <%@ include file="../include/header.jsp"  %>
 </head>
 <body>
    <div id="wrapper">
    
       <!-- 머리 -->
-      <%@ include file="../include/header.jsp"  %>
+     
       <div id="container">
          <%@ include file="../include/Head.jsp" %>
          
@@ -115,8 +116,8 @@
 			<div class="paging"></div>
 		
 			<ul class="banner-type1 cust1">
-				<li><a href="../../guide/guideBefore.html">내 보험은 어떻게 시작해야 할까요?</a></li>
-				<li><a href="../../guide/guideAfter.html">내 보험은 어떻게 관리해야 할까요?</a></li>
+				<li><a href="../guide/gde_before">내 보험은 어떻게 시작해야 할까요?</a></li>
+				<li><a href="../guide/gde_after">내 보험은 어떻게 관리해야 할까요?</a></li>
 			</ul>
 		</div>
          </div>

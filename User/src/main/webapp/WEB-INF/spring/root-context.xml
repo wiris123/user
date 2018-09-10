@@ -6,7 +6,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>
-		<property name="url" value="jdbc:oracle:thin:@192.168.0.21:1521:orcl"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
 		<property name="username" value="insu"></property>
 		<property name="password" value="1234"></property>
 	</bean>	
@@ -24,7 +24,6 @@
          <property name="redirectUri" value="http://localhost:8080/user/oauth2callback" />
     </bean>
 
-	
 	<!-- 이메일 처리를 위한 빈즈 -->
 	<bean id="javaMailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
 		<property name="host" value="smtp.gmail.com" />

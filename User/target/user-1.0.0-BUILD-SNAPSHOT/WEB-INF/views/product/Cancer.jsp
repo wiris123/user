@@ -1,30 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>암보험</title>
+<!-- 머리 -->
+<%@ include file="../include/header.jsp"%>
 </head>
 <body>
 	<div id="wrapper">
-	
-		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"  %>
+
+
 		<div id="container">
-			<%@ include file="../include/Head.jsp" %>
-			
+			<%@ include file="../include/Head.jsp"%>
+
 			<!-- 내용시작 -->
-			<div id="content">
-			
-
-			dsadsadsadsadsa
-
-
-			</div>
+			<div id="content">dsadsadsadsadsa</div>
 			<!-- 내용끝 -->
-		
-		</div>	
+
+		</div>
 		<!-- 머리끝 -->
 		<!-- 푸터시작 -->
 		<div id="footer">

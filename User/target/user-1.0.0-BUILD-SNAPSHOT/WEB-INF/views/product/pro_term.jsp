@@ -2,51 +2,13 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<script>
-function premiPlus()
-{
-	
-		$.ajax
-		({
-			url:"./termPrem.do",
-			type : "post",
-			data : 
-			{
-				paytime : $('#paytime').val(),
-				instime : $('#instime').val(),
-				death_hid : $('#death_hid').val(),
-				birth : $('#birth').val(),
-				death : $('#death').val()
-			},
-			dataType : "html",
-			contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
-			success:function(resD)
-			{
-				alert("갔다왔어 시발놈아");
-				$('#resultPremium2').html(resD);		
-			},
-			error:function(errorData){
-				alert("오류발생 : "+errorData.status+":"+errorData.statusText);
-			}
-
-		});	
-
-}
-
-</script>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>정기 보험</title>
 </head>
-<<<<<<< HEAD
-<script type="text/javascript"
-	src="../www.googleadservices.com/pagead/f.txt">	
-</script>
-=======
 <!-- <script type="text/javascript"
 	src="../www.googleadservices.com/pagead/f.txt">	
 </script> -->
->>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
@@ -55,16 +17,13 @@ function premiPlus()
 	<div id="wrapper"> 
 		 <!-- 머리 -->
       <%@ include file="../include/header.jsp"%>
-<<<<<<< HEAD
-=======
-      <script>
+  <script>
 $(function()
 {
 	
 	$('.list-result').hide();
 
 });
-
 
 function premiPlus()
 {
@@ -102,7 +61,6 @@ function premiPlus()
 }
 
 </script>
->>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
       <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
       <div id="container">
          <%@ include file="../include/Head.jsp"%>
@@ -140,7 +98,7 @@ function premiPlus()
                                  </div>
                               </li>
                               <!-- 성별 -->
-                           <!--    <li>
+                              <li>
                                  <div class="label-radiobtn gender">
                                     <span>
                                        <label for="calcGender1">남자</label>
@@ -151,7 +109,7 @@ function premiPlus()
                                        <input type="radio" name="gender2" class="radio" id="calcGender2" value="2"/>
                                     </span>
                                  </div>
-                              </li> -->
+                              </li>
                               <!-- 보험기간 -->
                               <li>
                                  <span class="select-box">
@@ -249,7 +207,7 @@ function premiPlus()
                               <div class="btn">
                                  <span class="img-gift"></span>
                                  <a href="#popSendEmail" class="btn-c1 adb-dist2" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'><span>메일발송</span></a>
-                                 <a href="#none" class="btn-c2 adb-dist2" id="goPlan2" onclick="ga('send','event','Direct','Entry','term-top_list_2',1);"><span>가입하기</span></a>
+                                 <a href="#none" class="btn-c2 adb-dist2" id="goPlan2" onclick="location.href='../product/insert_term.do'"><span>가입하기</span></a>
                                  <input type="hidden" id="jsonResultData2" name="jsonResultData" />
                               </div>
                               <div class="btn btn-reset">
@@ -289,7 +247,7 @@ function premiPlus()
                   <!-- 유틸버튼 -->
                   <div class="area-util">
                      <a href="#none" class="icon-util print" title="인쇄하기" id="doPrintNew" onclick="fn_printEntire();">인쇄하기</a>
-                     <a href="#popSendEmail" class="icon-util email" title="이메일보내기" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'>이메일보내기</a>
+                     <a href="#popSendEmail" class="icon-util email" title="이메일보내기" onclick='clearMail("삼성생명 인터넷정기보험3.0(무배당)");'>이메일보내기</a>
                   </div>
                </div>
             </div>
