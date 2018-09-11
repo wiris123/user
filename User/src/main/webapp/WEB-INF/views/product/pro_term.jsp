@@ -82,6 +82,24 @@ function premiPlus()
                <p class="com2"><span>필요한만큼만 보장기간을 정해서 합리적인 보험료로 가입<br>(자사 동일유형 타상품대비)</span></p>
             </div>
                <!-- # 보험료 계산하기 # -->
+               <script>
+               function atag()
+               {
+	               	if(birth.value.length <=7){
+	               		alert("생년월일을 8개의 숫자로 작성해주세요.");
+	               	}	
+	               	else if(instime.value==""){
+	               		alert("보험기간을 선택해주세요.");
+	               	}
+	               	else if(paytime.value==""){
+	               		alert("납입기간을 선택해주세요.");
+	               	}
+	               	else{
+	               		premiPlus();
+	               	}
+               	return false;
+               };
+               </script>
                <form action="" id="formCalculator" onsubmit="premiPlus();">
                		<fieldset>
                      <legend>보험료계산기</legend>
@@ -136,7 +154,7 @@ function premiPlus()
                                  </span>
                               </li>
                            </ul>
-                           <a href="#" class="btn" onclick="premiPlus();"><span>내 보험료 확인 / 가입</span></a>
+                           <a href="#" class="btn" onclick="atag();"><span>내 보험료 확인 / 가입</span></a>
                         </div>            
                      </div>
                   </fieldset>

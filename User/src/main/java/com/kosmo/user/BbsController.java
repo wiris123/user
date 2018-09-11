@@ -78,5 +78,26 @@ public class BbsController {
 		model.addAttribute("vo", vo);
 		return "event/bbs_view";
 	}
-	
+	//1:1 응답 게시판
+		@RequestMapping("/custom/response")
+		public String response(Model model, HttpServletRequest req) {
+			String b_id = "response";
+			int totalRecordCount = sqlSession.getMapper(MyBbsDAOImpl.class).getTotalCount(b_id);
+			int pageSize = 10;
+			int blockPage = 5;
+			int nowPage = req.getParameter("nowPage")==null ? 1 :
+				Integer.parseInt(req.getParameter("nowPage"));
+			int start = (nowPage-1) * pageSize + 1;
+			int end = nowPage * pageSize;
+			
+			String pagingImg = PagingUtil.paging(totalRecordCount,
+					pageSize, blockPage, nowPage,req.getContextPath()+"/custom/bbs_response?");
+			
+			ArrayList<BoardVO> lists = sqlSession.getMapper(MyBbsDAOImpl.class).listPage(b_id, start, end);
+			model.addAttribute("totalCount", totalRecordCount);
+			model.addAttribute("list",lists);
+			model.addAttribute("pagingImg",pagingImg);
+			
+			return "event/bbs_response";
+		}
 }

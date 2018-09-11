@@ -80,7 +80,18 @@ function premCal()
                         class="notice">(관련세법 충족시)</span>
                   </p>
                </div>
-
+				<script>
+				 function atag()
+	               {
+		               	if(birth.value.length <=7){
+		               		alert("생년월일을 8개의 숫자로 작성해주세요.");
+		               	}	
+		               	else{
+		               		premCal();
+		               	}
+	               	return false;
+	               };
+				</script>
                <!-- # 보험료 계산하기 # -->
                <form action="#" id="formCalculator">
                   <fieldset>
@@ -118,7 +129,7 @@ function premCal()
                               </li>
 					
                            </ul>
-                           <a href="#none" class="btn" id="calcPremium" onclick="premCal();"><span>내 수령액 확인 / 가입</span></a>
+                           <a href="#none" class="btn" id="calcPremium" onclick="atag();"><span>내 수령액 확인 / 가입</span></a>
                         </div>
                      </div>
                   </fieldset>
