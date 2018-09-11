@@ -47,7 +47,7 @@ function premCal()
 			dataType : "json",
 			contentType : "text/html; charset:utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
 			success:function(responseData)
-			{					
+			{								
 				$('#result').text(responseData.result);
 				$('#premium').val(responseData.prem);
 				$('#payment').val(responseData.result2);
