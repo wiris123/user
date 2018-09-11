@@ -62,11 +62,10 @@
 									환영합니다.<br />
 								</p>
 								<ul class="tab">
-									<li><a href="./mypage.do"><span><em>마이 페이지로</em> 가기</span></a></li>
+									<li><a href="../member/mypage.do"><span><em>마이 페이지로</em> 가기</span></a></li>
 									<li><a href="../logout"><span><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그아웃</em></span></a></li>
 								</ul>
 							</div>
-					
 				</c:when>
 				<c:otherwise>
 					<div class="box-content4">
@@ -138,7 +137,6 @@
 		<%@ include file="../include/footer.jsp"%>
 	</div>
 	<!-- 푸터끝 -->
-
 	</div>
 </body>
 </html>

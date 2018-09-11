@@ -10,7 +10,6 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <link rel="stylesheet" href="../resources/css/mypage.css" />
-
 <style>
    h1 {
        padding: 50px 0;
@@ -69,7 +68,6 @@
        display: block;}
 	
 </style>
- 
 
 <body>
    <div id="wrapper">
@@ -147,15 +145,14 @@
 	            <li id="prodType9">   <h3 class="tit" id="simpleName9">실손보험</h3>   <p class="con">질병, 상해로부터<br>비급여와 급여 중 본인부담금을<br>보장하는 보험</p>   <div class="btn">      <a href="javascript:goPlan('9');" class="btn-type2 c1"><span>가입하기</span></a>   </div></li>
 	
 	         </ul>
-         
-    
     </section>
 
 	<!-- 보유계약조회 -->
     <section id="content2"> <br /><br />
-    	<h1 class="hd">보유계약 조회</h1>		
-			<!-- ## 검색결과 ## -->
-			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유보험이 총 <em id="count">0</em>건 조회되었습니다.</p>
+    	<h1 class="hd">보유계약 조회</h1>
+    		<!-- ##연금보험  보유 현황-->
+    		<!-- ## 검색결과 ## -->
+			<%-- <p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>연금보험</b>이 총 <em id="count">0</em>건 조회되었습니다.</p>
 
 			<!-- ## 보유계약조회 목록 ## -->
 			<table class="tbl-type2 list" cellspacing="0" summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">
@@ -165,22 +162,95 @@
 						<th scope="col">NO.</th>
 						<th scope="col">보험계약번호<br/></th>
 						<th scope="col">계약일자<br/>납입기간</th>
-						<th scope="col">최종 납입사항<br/>(남은횟수)${dto.remainpay }</th>
+						<th scope="col">최종 납입사항<br/>(남은횟수)</th>
+						<th scope="col">현재<br/>납입한 보험료</th>
+						<th scope="col">보험료</th>
+						<th scope="col">계약상태</th>
+						
+					</tr>
+					<tr>
+					<c:forEach items="${dto3 }" var="rows">
+						<th scope="col">${rows.num }</th>
+							<th scope="col" style="background-color: white;">${rows.insnum }</th>
+							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
+							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
+							<th scope="col" style="background-color: white;">${rows.paidprem }</th>
+							<th scope="col" style="background-color: white;">${rows.prem }</th>
+							<th scope="col" style="background-color: white;">${rows.contstat }</th>
+							
+					</tr>
+					</c:forEach>
+				</thead>
+				<tbody id="contractList">
+				</tbody>
+			</table> --%>
+			<br /><br /><br />
+    		<!-- ##정기보험  보유 현황-->
+    		<!-- ## 검색결과 ## -->
+			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>정기보험</b>이 총 <em id="count">0</em>건 조회되었습니다.</p>
+
+			<!-- ## 보유계약조회 목록 ## -->
+			<table class="tbl-type2 list" cellspacing="0" 
+				summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">
+				<caption>보유계약조회 목록</caption>
+				<thead>
+					<tr>
+						<th scope="col">NO.</th>
+						<th scope="col">보험계약번호<br/></th>
+						<th scope="col">계약일자<br/>납입기간</th>
+						<th scope="col">최종 납입사항<br/>(남은횟수)</th>
 						<th scope="col">현재<br/>납입한 보험료</th>
 						<th scope="col">보험료</th>
 						<th scope="col">계약상태</th>
 						<th scope="col">사망보험금</th>
 					</tr>
 					<tr>
-						<th scope="col">NO.</th>
-						<th scope="col">${dto2.insnum }</th>
-						<th scope="col">${dto2.remainpay }</th>
-						<th scope="col">${dto2.remainpay }</th>
-						<th scope="col">${dto2.paidprem }</th>
-						<th scope="col">${dto2.prem }</th>
-						<th scope="col">${dto2.contstat }</th>
-						<th scope="col">${dto2.death_ins }</th>
+					<c:forEach items="${dto }" var="rows">
+						<th scope="col" style="background-color: white;">${rows.num }</th>
+							<th scope="col" style="background-color: white;">${rows.insnum }</th>
+							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
+							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
+							<th scope="col" style="background-color: white;">${rows.paidprem }</th>
+							<th scope="col" style="background-color: white;">${rows.prem }</th>
+							<th scope="col" style="background-color: white;">${rows.contstat }</th>
+							<th scope="col" style="background-color: white;">${rows.death_ins }</th>
 					</tr>
+					</c:forEach>
+				</thead>
+				<tbody id="contractList">
+				</tbody>
+			</table>
+			<br /><br /><br />
+			<!-- ##실손보험  보유 현황-->		
+			<!-- ## 검색결과 ## -->
+			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>실손보험</b>이 총 <em id="count">0</em>건 조회되었습니다.</p>
+
+			<!-- ## 보유계약조회 목록 ## -->
+			<table class="tbl-type2 list" cellspacing="0" summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">
+				<caption>보유계약조회 목록</caption>
+				<thead>
+					<tr>
+						<th scope="col">NO.</th>
+						<th scope="col">보험계약번호<br/></th>
+						<th scope="col">계약일자<br/>납입기간</th>
+						<th scope="col">최종 납입사항<br/>(남은횟수)</th>
+						<th scope="col">현재<br/>납입한 보험료</th>
+						<th scope="col">보험료</th>
+						<th scope="col">계약상태</th>
+						<!-- <th scope="col">사망보험금</th> -->
+					</tr>
+					<tr>
+					<c:forEach items="${dto2 }" var="rows">
+						<th scope="col" style="background-color: white;">${rows.num }</th>
+							<th scope="col" style="background-color: white;">${rows.insnum }</th>
+							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
+							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
+							<th scope="col" style="background-color: white;">${rows.paidprem }</th>
+							<th scope="col" style="background-color: white;">${rows.prem }</th>
+							<th scope="col" style="background-color: white;">${rows.contstat }</th>
+							<%-- <th scope="col">${row.death_ins }</th> --%>
+					</tr>
+					</c:forEach>
 				</thead>
 				<tbody id="contractList">
 				</tbody>
@@ -190,7 +260,7 @@
     <section id="content3"> <br /><br />
         <h1 class="hd">가입 계속하기</h1>		
 			<!-- ## 검색결과 ## -->
-			<p class="txt-num tbl-info"><strong>권윤정</strong>님의 가입 진행 중인 보험이 총 <em id="count">0</em>건 조회되었습니다. (최대 30일까지 저장)</p>
+			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 가입 진행 중인 보험이 총 <em id="count">0</em>건 조회되었습니다. (최대 30일까지 저장)</p>
 
 			<!-- ## 보유계약조회 목록 ## -->
 			<table class="tbl-type2 list" cellspacing="0" summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">
@@ -238,7 +308,6 @@
 				</tbody>
 			</table>
     </section>
-    
     <!-- 나의 상담 -->
     <section id="content5"> <br /><br />
     <!-- ## 타이틀 ## -->
@@ -250,7 +319,6 @@
 				<li class="on"><a href="#tabCounsel1" onClick="getConsultList('2');"><span>이메일 상담</span></a></li>
 				<li><a href="#tabCounsel2" onClick="getConsultList('1');"><span>상담예약</span></a></li>
 			</ul>
-
 			<!-- ## 탭1 : 이메일 상담 ## /////////////////////////////////////// -->
 			<div id="tabCounsel1" class="ui-tab-con on">
 				<h2 class="hd">이메일상담</h2>
@@ -275,7 +343,6 @@
 					</tbody>
 				</table>
 			</div>
-
 			<!-- ## 탭2 : 상담예약 ## /////////////////////////////////////// -->
 			<div id="tabCounsel2" class="ui-tab-con">
 				<h2 class="hd">상담예약</h2>
@@ -311,7 +378,6 @@
 				});
 			//-->
 			</script>
-
 		</div>
     </section>
 </div>

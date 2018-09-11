@@ -152,7 +152,7 @@ function premCal()
                         <h3>
                            <span class="blind">보험료 계산결과</span>
                         </h3>
-                        <form action="#" id="formReCalculator">
+                        <form action="/product/annu_cal.do" id="formReCalculator">
                            <fieldset>
                               <legend>보험료 다시 계산하기</legend>
                               <div class="re-calculator-form">
@@ -243,7 +243,7 @@ function premCal()
                <div class="box-advice" id="areaBoxAdvice">
                   <div class="case1">
                      <h2>
-                        <span>친절안내</span>
+                        <span>안친절안내</span>
                      </h2>
                      <div class="box-row">
                         <div class="advice-txt-box">
@@ -253,7 +253,7 @@ function premCal()
                         <div class="advice-tel">
                            <span class="tel-icon"><img src="resources/cms/pc/images/com/icon_telephone.png" alt="" /></span>
 
-                           <strong>080-789-3300</strong> <span>평일 08:30~17:30 (무료)</span>
+                           <strong>010-1234-5678</strong> <span>평일 08:30~17:30 (무료)</span>
                         </div>
                      </div>
                   </div>

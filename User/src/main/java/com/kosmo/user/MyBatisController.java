@@ -63,7 +63,7 @@ public class MyBatisController
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
 
-		String user_id = userDetails.getUsername();
+		String user_id = userDetails.getUsername(); 
 		
 		session.setAttribute("USER_ID", user_id);
 		

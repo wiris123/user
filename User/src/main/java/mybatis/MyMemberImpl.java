@@ -1,6 +1,7 @@
 package mybatis;
 
 import java.sql.Date;
+import java.util.ArrayList;
 
 import dto.MyStatusDTO;
 
@@ -12,9 +13,9 @@ public interface MyMemberImpl
 	
 	public void EmailSender(String idx, String name, String mobile, String email, String contents, String flag);
 	
-	public MyStatusDTO selectMyPageTerm(String id);
+	public ArrayList<MyStatusDTO> selectMyPageTerm(String id);
 	
 	public MemberVO selectMyPageMember(String id);
 
-	public MyStatusDTO selectMyPageProp(String id);
+	public ArrayList<MyStatusDTO> selectMyPageProp(String id);
 }
