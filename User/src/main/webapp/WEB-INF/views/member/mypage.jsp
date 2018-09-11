@@ -173,21 +173,19 @@
 					</tr>
 					<tr>
 						<th scope="col">NO.</th>
-						<th scope="col">${dto.insnum }</th>
-						<th scope="col">${dto.remainpay }</th>
-						<th scope="col">${dto.remainpay }</th>
-						<th scope="col">${dto.paidprem }</th>
-						<th scope="col">${dto.prem }</th>
-						<th scope="col">${dto.contstat }</th>
-						<th scope="col">${dto.death_ins }</th>
+						<th scope="col">${dto2.insnum }</th>
+						<th scope="col">${dto2.remainpay }</th>
+						<th scope="col">${dto2.remainpay }</th>
+						<th scope="col">${dto2.paidprem }</th>
+						<th scope="col">${dto2.prem }</th>
+						<th scope="col">${dto2.contstat }</th>
+						<th scope="col">${dto2.death_ins }</th>
 					</tr>
 				</thead>
 				<tbody id="contractList">
 				</tbody>
 			</table>
-
     </section>
-	
 	<!-- 가입 계속하기 -->
     <section id="content3"> <br /><br />
         <h1 class="hd">가입 계속하기</h1>		

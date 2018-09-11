@@ -39,16 +39,19 @@ public class memberController {
 
 		ModelAndView mv = new ModelAndView();
 		String id = session.getAttribute("USER_ID").toString();
-		
+		System.out.println("id="+id);
 		//정기보험의 가입현황 조회
 		MyStatusDTO dto = sqlSession.getMapper(MyMemberImpl.class).selectMyPageTerm(id);
+		
 		//회원정보 객체
 		MemberVO memVO = sqlSession.getMapper(MyMemberImpl.class).selectMyPageMember(id);
+		
 		//실손보험 가입현황 조회
+		MyStatusDTO dto2 = sqlSession.getMapper(MyMemberImpl.class).selectMyPageProp(id);
 		
-		
-		mv.addObject("dto", dto);	
+		mv.addObject("dto", dto);
 		mv.addObject("member",memVO);
+		mv.addObject("dto2", dto2);
 		mv.setViewName("member/mypage");
 		
 		return mv;

@@ -47,12 +47,26 @@
 			<!-- 내용시작 -->
 			<c:choose>
 				<c:when test="${not empty USER_ID }">
-					<div class="row" style="border: 2px solid #cccccc" padding="10px">
+					<%-- <div class="row" style="border: 2px solid #cccccc" padding="10px">
 						<h4>아이디 : ${USER_ID } </h4> 님 환영합니다.
 						<br /> <br />
-						<button onclick="location.href='/logout'">로그아웃</button>
+						<button onclick="location.href='../logout'">로그아웃</button>
 						</h4>
-					</div>
+					</div> --%>
+					<div id="content" class="page-guide">
+							<!-- ## 페이지타이틀 ## -->
+							<h1 class="hd">가입 후 가이드</h1>
+							<div class="visual-top">
+								<p> <br />
+									<strong>${USER_ID }</strong>님
+									환영합니다.<br />
+								</p>
+								<ul class="tab">
+									<li><a href="./mypage.do"><span><em>마이 페이지로</em> 가기</span></a></li>
+									<li><a href="../logout"><span><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그아웃</em></span></a></li>
+								</ul>
+							</div>
+					
 				</c:when>
 				<c:otherwise>
 					<div class="box-content4">

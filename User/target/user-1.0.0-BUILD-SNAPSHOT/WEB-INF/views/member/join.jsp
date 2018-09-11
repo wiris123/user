@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>회원가입</title>
 		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"  %>
+		<%@ include file="../include/header.jsp" %>
 </head>
 <style>
 input[type=text], select {
@@ -65,112 +65,101 @@ join {
 }
 </style>
 <script type="text/javascript">
-
-   
-// 아이디 중복 체크
+//아이디 중복 체크
 function check_id() {
-  document.getElementById("chk_id2").value=0;
-  var id=document.getElementById("chk_id1").value;
-
-  if(!document.join.id.value) {
-    window.alert('아이디를 입력해 주세요');
-    document.join.id.focus();
-    return false;
-   }
-
-  /* ifrm1.location.href="m_join_check.php?id="+id; */
+if(!document.join.id.value) {
+ window.alert('아이디를 입력해 주세요');
+ document.join.id.focus();
+ return false;
 }
 
-// 닉네임 중복 체크
+/* ifrm1.location.href="m_join_check.php?id="+id; */
+}
+
+//닉네임 중복 체크
 function check_nick() {
-  document.getElementById("chk_nick2").value=0;
-  var nick=document.getElementById("chk_nick1").value;
+document.getElementById("chk_nick2").value=0;
+var nick=document.getElementById("chk_nick1").value;
 
-  if(!document.join.nick.value) {
-    window.alert('닉네임을 입력해 주세요');
-    document.join.nick.focus();
-    return false;
-   }
+if(!document.join.nick.value) {
+ window.alert('닉네임을 입력해 주세요');
+ document.join.nick.focus();
+ return false;
+}
 
-  /* ifrm1.location.href="m_join_check_nick.php?nick="+nick; */
+/* ifrm1.location.href="m_join_check_nick.php?nick="+nick; */
 }
 
 //핸드폰 번호 체크
 /*function check_phone(){
-  var phone = document.getElementById("phone").value;
-  if(!(phone>=0 && phone<=10000000000000)){
-    window.alert('핸드폰번호를 다시 입력하세요');
-    document.join.phone.focus();
-    return false;
-  }
+var phone = document.getElementById("phone").value;
+if(!(phone>=0 && phone<=10000000000000)){
+ window.alert('핸드폰번호를 다시 입력하세요');
+ document.join.phone.focus();
+ return false;
+}
 }*/
 
-// 빈 값 체크
+//빈 값 체크
 function mValidate(fn) {
 	if(fn.id.value==""){
-      alert("아이디를 입력해주세요");
-      fn.id.focus();
-      return false;
+   alert("아이디를 입력해주세요");
+   fn.id.focus();
+   return false;
 	}
 	
-  if(!document.join.pw.value) {
-    window.alert('비밀번호를 입력해 주세요');
-    document.join.pw.focus();
-    return false;
-   }
+if(!document.join.pw.value) {
+ window.alert('비밀번호를 입력해 주세요');
+ document.join.pw.focus();
+ return false;
+}
 
-  if(!document.join.pw2.value) {
-    window.alert('비밀번호 확인을 입력해 주세요');
-    document.join.pw2.focus();
-    return false;
-  }
+if(!document.join.pw2.value) {
+ window.alert('비밀번호 확인을 입력해 주세요');
+ document.join.pw2.focus();
+ return false;
+}
 
- if( (document.join.pw.value) != (document.join.pw2.value) )  {
-    window.alert('비밀번호가 같지 않습니다.');
-    document.join.pw2.focus();
-    return false;
-  }
+if( (document.join.pw.value) != (document.join.pw2.value) )  {
+ window.alert('비밀번호가 같지 않습니다.');
+ document.join.pw2.focus();
+ return false;
+}
 
-  
- if(fn.name.value==""){
-     alert("이름을 입력해주세요");
-     fn.name.focus();
-     return false;
-  }
-  
-  if(!document.join.nick.value) {
-    window.alert('닉네임을 입력해 주세요');
-    document.join.nick.focus();
-    return false;
-  }
 
-  if(!document.join.birth.value) {
-    window.alert('생년월일을 입력해 주세요');
-    document.join.birth.focus();
-    return false;
-  }
-  
-  if(!document.join.email.value) {
-    window.alert('이메일을 입력해 주세요');
-    document.join.email.focus();
-    return false;
-  }    
- 
- if(!document.join.phone.value) {
-    window.alert('핸드폰 번호를 입력해 주세요');
-    document.join.phone.focus();
-    return false;
-  }
+if(fn.name.value==""){
+  alert("이름을 입력해주세요");
+  fn.name.focus();
+  return false;
+}
 
- 
- /*핸드폰, 이메일, 생년월일 검사*/
- /* if(document.join.phone.value<0 || document.join.phone.value>999999999999) {
-    window.alert('핸드폰 번호를 제대로 입력해주세요');
-    document.join.phone.focus();
-    return false;
-  }*/
- 
- 
+if(!document.join.birth.value) {
+ window.alert('생년월일을 입력해 주세요');
+ document.join.birth.focus();
+ return false;
+}
+
+if(!document.join.email.value) {
+ window.alert('이메일을 입력해 주세요');
+ document.join.email.focus();
+ return false;
+}    
+
+if(!document.join.phone.value) {
+ window.alert('핸드폰 번호를 입력해 주세요');
+ document.join.phone.focus();
+ return false;
+}
+
+
+/*핸드폰, 이메일, 생년월일 검사*/
+/* if(document.join.phone.value<0 || document.join.phone.value>999999999999) {
+ window.alert('핸드폰 번호를 제대로 입력해주세요');
+ document.join.phone.focus();
+ return false;
+}*/
+
+
 }
 
 function email_input(em, frm){

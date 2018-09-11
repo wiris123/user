@@ -13,8 +13,12 @@
    	<select id="selectMyPageTerm" resultType="dto.MyStatusDTO">
    		select * from member_term_my where id=#{0} order by remainpay desc
    	</select>
+   	<select id="selectMyPageProp" resultType="dto.MyStatusDTO">
+   		select * from member_prop_my where id=#{0} order by remainpay desc
+   	</select>
    	<select id="selectMyPageMember" resultType="mybatis.MemberVO">
    		select * from member where id=#{0}
    	</select>
+   	
    	
 </mapper>
