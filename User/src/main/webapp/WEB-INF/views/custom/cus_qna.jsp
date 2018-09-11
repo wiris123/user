@@ -130,8 +130,7 @@ function qnaCheck(fn) {
 															$('.pop-modal3')
 																	.removeClass(
 																			"open");
-															$(
-																	"#popCounselTelOverlay")
+															$("#popCounselTelOverlay")
 																	.css(
 																			'display',
 																			'none');

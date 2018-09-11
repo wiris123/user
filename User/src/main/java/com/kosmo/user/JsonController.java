@@ -156,6 +156,8 @@ public class JsonController
 		obj.put("payt", (int)remainDays);
 		obj.put("result", df.format(result));
 		obj.put("bonus", df.format(bonus));
+		obj.put("gobonus", bonus);
+		obj.put("gomonthann", result);
 		obj.put("returnPer", (int)Math.round(returnPer));
 		return obj;
 		

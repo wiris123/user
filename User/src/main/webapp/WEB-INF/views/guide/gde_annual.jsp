@@ -31,11 +31,11 @@
 							<!-- box -->
 							<dl class="box box1 on">
 								<dt class="stit">
-									<em>추천상품 1</em><strong>13월의 보너스</strong>를 위한<br /> <strong class="ac">연금저축보험</strong>
+									<em>추천상품 1</em><strong>13월의 보너스</strong>를 위한<br /> <strong class="ac">실손험</strong>
 								</dt>
 								<dd class="txt">
-									<strong>노후준비<br> + <br /></strong>최대 <strong>66만원 세액공제</strong> 혜택!<br />
-									<span>(관련 세법요건 충족시)</span> <span>* 최대 66만원(52만원) 세액공제(16.5%/13.2%)</span>
+									<strong>급여보장<br> + <br /></strong>비급여 <strong>입원 및 통원보장</strong> 혜택!<br />
+									상해입원 5,000만원까지 보장!
 								</dd>
 								<dd class="btn">
 									<a href="#">상세혜택확인</a>
@@ -62,13 +62,13 @@
 							<!-- box -->
 							<dl class="box box3">
 								<dt class="stit">
-									<em>추천상품 3</em><strong>목돈 or 연금</strong> 골라 받는<br>
+									<em>추천상품 3</em><strong>27% 저렴한 보험료로</strong> 위험 대비를!
 									<strong class="ac">정기보험</strong>
 								</dt>
 								<dd class="txt">
-									한 달만 지나도 <strong>원금보장<br>연복리, 비과세 혜택<br>
-									<span>(사업비 차감 후 부리, 관련 세법요건 충족시)</span>+<br>노후 연금전환
-									</strong>가능!<br>
+									다이렉트로 가입하니까 <strong>27%<br>저럼한 보험료!<br>
+									<span>(사업비 차감 후 부리, 관련 세법요건 충족시)</span>+<br>만기 환급금 지금
+									</strong><br>
 								</dd>
 								<dd class="btn">
 									<a href="../product/pro_term">Click</a>
@@ -114,7 +114,7 @@
 								<div class="leftarea">
 									<dl>
 										<dt>
-											<strong>ISM <em>인터넷연금저축보험</em></strong><br>미리 준비할수록 든든한 노후준비 + 연말정산 세액공제까지!
+											<strong>ISM <em>인터넷연금보험</em></strong><br>미리 준비할수록 든든한 노후준비 + 연말정산 세액공제까지!
 										</dt>
 										<dd>
 											<div>
