@@ -140,7 +140,7 @@ public class InsuController
 
 		sqlSession.getMapper(MyInsuImpl.class).insertMemberTerm(id,  pass,  name,  phone,  mobile,  email,  drive,
 				cigar,  drink,  height,  weight,  danhobby,  income,  hospit1,
-				 hospit2,  hospit3,  "0",  "2", ins_name);
+				 hospit2,  hospit3,  "2", ins_name);
 	
 		//입력완료
 		
@@ -202,11 +202,13 @@ public class InsuController
 		//map to json을 위한 로직 + 매퍼 포함
 		String jsonMap ="";
 		ObjectMapper mapper = new ObjectMapper();	
+		
 		try
 		{
 			jsonMap = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map).replaceAll("\r\n|| ","");
 		}
-		catch (Exception e) {
+		catch (Exception e) 
+		{
 			e.printStackTrace();
 		}
 		
@@ -281,4 +283,52 @@ public class InsuController
 		
 		return mv;
 	}
+	
+	@RequestMapping("/product/annu_cal.do")
+	public ModelAndView insertMemAnnu(HttpServletRequest req) 
+	{
+		Map<String, Object> map = new HashMap<String, Object>(); 
+		ModelAndView mv = new ModelAndView();
+		
+		int hosp = Integer.parseInt(req.getParameter("hosp"));
+		int gohosp = Integer.parseInt(req.getParameter("gohosp"));
+		int sanghosp = Integer.parseInt(req.getParameter("sanghosp"));
+		int sgohosp = Integer.parseInt(req.getParameter("sgohosp"));
+		int chbedosu = Integer.parseInt(req.getParameter("chbedosu"));
+		int chbeinje = Integer.parseInt(req.getParameter("chbeinje"));
+		int chbemri = Integer.parseInt(req.getParameter("chbemri"));
+		String mode = req.getParameter("mode");
+		String payment = req.getParameter("payment");
+		
+		map.put("hosp", hosp);
+		map.put("gohosp", gohosp);
+		map.put("sanghosp", sanghosp);
+		map.put("sgohosp", sgohosp);
+		map.put("chbedosu", chbedosu);
+		map.put("chbeinje", chbeinje);
+		map.put("chbemri", chbemri);
+		map.put("payment", payment);
+		
+		//map to json을 위한 로직 + 매퍼 포함
+		String jsonMap ="";
+		ObjectMapper mapper = new ObjectMapper();	
+		
+		try
+		{
+			jsonMap = mapper.writerWithDefaultPrettyPrinter().writeValueAsString(map).replaceAll("\r\n|| ","");
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+		}
+		
+		mv.addObject("basicInfo", jsonMap);
+		mv.addObject("mode", mode);
+		
+		mv.setViewName("/product/pro_member_term");
+		return mv;
+	}
+	
+	
+	
 }

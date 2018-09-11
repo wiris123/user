@@ -3,7 +3,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>암보험</title>
+<title>가입 완료</title>
 <!-- 머리 -->
 <%@ include file="../include/header.jsp"%>
 </head>

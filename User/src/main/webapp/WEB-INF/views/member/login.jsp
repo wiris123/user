@@ -124,7 +124,6 @@
 		<%@ include file="../include/footer.jsp"%>
 	</div>
 	<!-- 푸터끝 -->
-
 	</div>
 </body>
 </html>
