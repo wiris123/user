@@ -105,7 +105,6 @@
 											</dd>
 										</dl>
 									</fieldset>
-
 									<div id="naver">
 										<img src="/resources/img/naver_Bn_Green.PNG" alt="" /><a href="../snslogin/naverlogin.do">cfgcfgcfgcfg</a>
 									</div>
@@ -127,9 +126,7 @@
 	</div>
 	</c:otherwise>
 	</c:choose>
-
 	<!-- 내용끝 -->
-
 	</div>
 	<!-- 머리끝 -->
 	<!-- 푸터시작 -->

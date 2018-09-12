@@ -77,7 +77,7 @@
 		<security:form-login 
 			login-page="/member/login.do" 
 			login-processing-url="/loginAction"
-			default-target-url="/member/mypage"
+			default-target-url="/member/mypage.do"
 			authentication-success-forward-url="/member/loginSuccess.do"
 			authentication-failure-forward-url="/member/login.do" 
 			username-parameter="id" 
@@ -110,10 +110,9 @@
 	 
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<security:jdbc-user-service data-source-ref="dataSource" role-prefix="ROLE_" 
+			<security:jdbc-user-service data-source-ref="dataSource" role-prefix="" 
 				users-by-username-query="SELECT id, pass, enabled FROM member WHERE id=?" 
 				authorities-by-username-query="SELECT id, authority FROM member WHERE id=?"/>
 		</security:authentication-provider>
 	</security:authentication-manager>
-	
 </beans>

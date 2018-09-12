@@ -143,7 +143,6 @@
 	            <li id="prodType7">   <h3 class="tit" id="simpleName7">연금보험</h3>   <p class="con">한 살이라도 빨리 준비할 수록 <br>적은 부담으로 <br>높은 연금 수령 가능!</p>   <div class="btn">      <a href="javascript:goPlan('7');" class="btn-type2 c1"><span>가입하기</span></a>   </div></li>
 	            <li id="prodType2">   <h3 class="tit" id="simpleName2">정기보험</h3>   <p class="con">사랑하는 가족의<br>꿈과 미래를 지켜주는<br>가족보험!</p>   <div class="btn">      <a href="javascript:goPlan('2');" class="btn-type2 c1"><span>가입하기</span></a>   </div></li>
 	            <li id="prodType9">   <h3 class="tit" id="simpleName9">실손보험</h3>   <p class="con">질병, 상해로부터<br>비급여와 급여 중 본인부담금을<br>보장하는 보험</p>   <div class="btn">      <a href="javascript:goPlan('9');" class="btn-type2 c1"><span>가입하기</span></a>   </div></li>
-	
 	         </ul>
     </section>
 
@@ -152,7 +151,7 @@
     	<h1 class="hd">보유계약 조회</h1>
     		<!-- ##연금보험  보유 현황-->
     		<!-- ## 검색결과 ## -->
-			<%-- <p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>연금보험</b>이 총 <em id="count">0</em>건 조회되었습니다.</p>
+			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>연금보험</b>이 총 <em id="count">0</em>건 조회되었습니다.</p>
 
 			<!-- ## 보유계약조회 목록 ## -->
 			<table class="tbl-type2 list" cellspacing="0" summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">
@@ -169,7 +168,7 @@
 						
 					</tr>
 					<tr>
-					<c:forEach items="${dto3 }" var="rows">
+					<%-- <c:forEach items="${dto3 }" var="rows">
 						<th scope="col">${rows.num }</th>
 							<th scope="col" style="background-color: white;">${rows.insnum }</th>
 							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
