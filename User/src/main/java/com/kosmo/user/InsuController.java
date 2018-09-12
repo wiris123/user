@@ -369,7 +369,7 @@ public class InsuController
 		
 		
 		// member_annu 삽입
-		sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu(name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
+		sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu(id,name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
 				String.valueOf(hospit2),"3",ins_name,monthann, String.valueOf(riskPremium));
 		//입력완료
 		
