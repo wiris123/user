@@ -46,7 +46,9 @@
 			<%@ include file="../include/Head.jsp"%>
 			<!-- 내용시작 -->
 			<c:choose>
+				
 				<c:when test="${not empty USER_ID }">
+				
 					<%-- <div class="row" style="border: 2px solid #cccccc" padding="10px">
 						<h4>아이디 : ${USER_ID } </h4> 님 환영합니다.
 						<br /> <br />
@@ -62,7 +64,7 @@
 									환영합니다.<br />
 								</p>
 								<ul class="tab">
-									<li><a href="../member/mypage.do"><span><em>마이 페이지로</em> 가기</span></a></li>
+									<li><a href="<%=request.getContextPath() %>/member/mypage.do"><span><em>마이 페이지로</em> 가기</span></a></li>
 									<li><a href="../logout"><span><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그아웃</em></span></a></li>
 								</ul>
 							</div>

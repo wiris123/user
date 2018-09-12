@@ -1,15 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+<title>연금 보험</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
-	charset="utf-8"></script>
+   src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
+   charset="utf-8"></script>
 </head>
 <body>
-	<div id="wrapper"> <!-- 머리 -->
+   <div id="wrapper"> <!-- 머리 -->
   <%@ include file="../include/header.jsp"%>
       <link rel="stylesheet"  href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
       <div id="container">
@@ -20,52 +21,47 @@
             <div class="product-basic page-change">
                <!-- # 상품기본정보 # -->
 <script type="text/javascript">
-
-
 $(function(){
-	$('.result-info-area').hide();
-		
+   $('.result-info-area').hide();
+      
 })
-
 function premCal()
 {
-	$(function()
-	{
-			$.ajax
-			({
-				url:"./annuPrem.do",
-				type : "post",
-				data : 
-				{
-					payment : $('#payment').val(),
-					instart : $('#instart').val(),
-					interest : $('#interest').val(),
-					birth : $('#birth').val(),
-					gender : $('#calcGender1').val() + $('#calcGender2').val(),
-					paytime : $('#paytime').val(),
-				},
-				dataType : "json",
-				contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
-				success:function(resp)
-				{	//성공 시 월납입액, 납부연한에 값 입력
-					
-					$('#resultAnnu').text(resp.result);		
-					$('#spanBonusAmount').text(resp.bonus);
-					$('#returnPer').text(resp.returnPer);
-					$('.result-info-area').show();
-					$('#gobirth').val($('#birth').val())
-					$('#gomonthann').val(resp.gomonthann);
-					$('#gobonus').val(resp.bonus);
-					
-				},
-				error:function(errorData)
-				{
-					
-				}
-
-			});	
-
-		});	
+   $(function()
+   {
+         $.ajax
+         ({
+            url:"./annuPrem.do",
+            type : "post",
+            data : 
+            {
+               payment : $('#payment').val(),
+               instart : $('#instart').val(),
+               interest : $('#interest').val(),
+               birth : $('#birth').val(),
+               gender : $('#calcGender1').val() + $('#calcGender2').val(),
+               paytime : $('#paytime').val(),
+            },
+            dataType : "json",
+            contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
+            success:function(resp)
+            {   //성공 시 월납입액, 납부연한에 값 입력
+               
+               $('#resultAnnu').text(resp.result);      
+               $('#spanBonusAmount').text(resp.bonus);
+               $('#returnPer').text(resp.returnPer);
+               $('.result-info-area').show();
+               $('#gobirth').val($('#birth').val())
+               $('#gomonthann').val(resp.gomonthann);
+               $('#gobonus').val(resp.bonus);
+               
+            },
+            error:function(errorData)
+            {
+               
+            }
+         });   
+      });   
 }
 </script>
                <!-- CMS 영역 -->
@@ -83,18 +79,18 @@ function premCal()
                         class="notice">(관련세법 충족시)</span>
                   </p>
                </div>
-				<script>
-				 function atag()
-	               {
-		               	if(birth.value.length <=7){
-		               		alert("생년월일을 8개의 숫자로 작성해주세요.");
-		               	}	
-		               	else{
-		               		premCal();
-		               	}
-	               	return false;
-	               };
-				</script>
+            <script>
+             function atag()
+                  {
+                        if(birth.value.length <=7){
+                           alert("생년월일을 8개의 숫자로 작성해주세요.");
+                        }   
+                        else{
+                           premCal();
+                        }
+                     return false;
+                  };
+            </script>
                <!-- # 보험료 계산하기 # -->
                <form action="#" id="formCalculator">
                   <fieldset>
@@ -130,7 +126,7 @@ function premCal()
                                     </span>
                                  </div>
                               </li>
-					
+               
                            </ul>
                            <a href="#none" class="btn" id="calcPremium" onclick="atag();"><span>내 수령액 확인 / 가입</span></a>
                         </div>
@@ -149,11 +145,11 @@ function premCal()
                </div>
 
                <!-- tab1 직접 설계 -->
-    			<form action="../product/annu_cal.do"id="formReCalculator">
-    			<input type="hidden" name="interest" id="interest" value="3" />
-				<input type="hid den" name="gobirth" id="gobirth" />
-				<input type="hid den" name="gomonthann" id="gomonthann" />
-				<input type="hid den" name="gobonus" id="gobonus"/>
+             <form action="../product/annu_cal.do"id="formReCalculator">
+             <input type="hidden" name="interest" id="interest" value="3" />
+            <input type="hidden" name="gobirth" id="gobirth" />
+            <input type="hidden" name="gomonthann" id="gomonthann" />
+            <input type="hidden" name="gobonus" id="gobonus"/>
                <div data-tab-target="resultTab">
                   <div class="direct-planning">
                      <div class="result-area">
@@ -214,29 +210,29 @@ function premCal()
                                  </button>
                               </div>
                              <div class="result-info-area">
-								<div class="result-info">
-									<div class="info-header">연금개시 시 <strong>장기유지보너스 </strong><strong><span id="spanBonusAmount">000</span>원 </strong>추가적립!
-										<div class="tooltip-area">
-											<a href="#none" class="icon-tip big" rel="history">장기유지보너스 지급</a>
-											<div class="tooltip">
-												<div>
-													<p>※ 계약일로부터 5년/10년/연금개시시점 최대 3회 지급(계약 요건 충족시)</p>
-												</div>
-											</div>
-										</div>
-									</div>
-									<div class="info-content">
-										<strong>평생받는</strong> 예상 <strong class="annually-refund">연금수령액은 매월 <span id="resultAnnu">000</span>원</strong>입니다<br>
-    									(<strong class="refund">환급률 <span><span id="returnPer">000</span>%</span></strong>)
-    								</div>
-									<div class="info-footer"><p class="tit">※해당예시는 현재 공시이율 지속 가정시이며, 공시이율 변동에 따라 바뀔 수 있습니다. (공시이율 매월 변동)</p></div>
-								</div>
-								
-								<div class="join-refund">
-									<a href="#none" class="btn-join" id="goPlan2" rel="history"><button type="submit"><img src="../resources/cms/pc/images/com/btn_join_refund.png" alt="바로 가입하기"></button>
-									</a>
-								</div>								
-							</div>
+                        <div class="result-info">
+                           <div class="info-header">연금개시 시 <strong>장기유지보너스 </strong><strong><span id="spanBonusAmount">000</span>원 </strong>추가적립!
+                              <div class="tooltip-area">
+                                 <a href="#none" class="icon-tip big" rel="history">장기유지보너스 지급</a>
+                                 <div class="tooltip">
+                                    <div>
+                                       <p>※ 계약일로부터 5년/10년/연금개시시점 최대 3회 지급(계약 요건 충족시)</p>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="info-content">
+                              <strong>평생받는</strong> 예상 <strong class="annually-refund">연금수령액은 매월 <span id="resultAnnu">000</span>원</strong>입니다<br>
+                               (<strong class="refund">환급률 <span><span id="returnPer">000</span>%</span></strong>)
+                            </div>
+                           <div class="info-footer"><p class="tit">※해당예시는 현재 공시이율 지속 가정시이며, 공시이율 변동에 따라 바뀔 수 있습니다. (공시이율 매월 변동)</p></div>
+                        </div>
+                        
+                        <div class="join-refund">
+                           <a href="#none" class="btn-join" id="goPlan2" rel="history"><button type="submit"><img src="../resources/cms/pc/images/com/btn_join_refund.png" alt="바로 가입하기"></button>
+                           </a>
+                        </div>                        
+                     </div>
                            </fieldset>
                        </form>
                      </div>
@@ -271,12 +267,12 @@ function premCal()
       </div>
       <!-- 머리끝 -->
 
-		<!-- 푸터시작 -->
-		<div id="footer">
-			<%@ include file="../include/footer.jsp"%>
-		</div>
-		<!-- 푸터끝 -->
+      <!-- 푸터시작 -->
+      <div id="footer">
+         <%@ include file="../include/footer.jsp"%>
+      </div>
+      <!-- 푸터끝 -->
 
-	</div>
+   </div>
 </body>
 </html>

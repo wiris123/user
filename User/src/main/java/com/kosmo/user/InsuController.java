@@ -172,6 +172,7 @@ public class InsuController
 		mv.setViewName("/product/pro_success");
 		
 		return mv;
+		
 	}
 	
 	@RequestMapping("/product/prop_cal")
@@ -293,7 +294,7 @@ public class InsuController
 		String birth = req.getParameter("gobirth");
 		String monthann = req.getParameter("gomonthann");
 		String bonus = req.getParameter("gobonus");
-		String payment = req.getParameter("payment");
+		int payment = Integer.parseInt(req.getParameter("payment"))*10000;
 		String instart = req.getParameter("instart");
 		String paytime = req.getParameter("paytime");
 	
@@ -322,8 +323,9 @@ public class InsuController
 		}
 		
 		mv.addObject("basicInfo", jsonMap);
-		
 		mv.setViewName("/product/pro_member_annu");
+		
+		
 		return mv;
 	}
 	
@@ -334,6 +336,7 @@ public class InsuController
 		
 		ModelAndView mv = new ModelAndView();
 		ObjectMapper mapper = new ObjectMapper();
+		//json 처리
 		Map<String, Object> map = new HashMap<String, Object>();
 		String userInfo = req.getParameter("userInfo");
 		try
@@ -352,7 +355,7 @@ public class InsuController
 		String insnum = req.getParameter("insnum");
 		String email = req.getParameter("email1")+"@"+req.getParameter("email2");
 		String prem = req.getParameter("prem");
-		String monthann = map.get("paytime").toString();
+		String monthann = map.get("monthann").toString();
 		String contstat = req.getParameter("contstat");
 		int drive = Integer.parseInt(req.getParameter("drive"));
 		int cigar = Integer.parseInt(req.getParameter("cigar"));
@@ -364,25 +367,20 @@ public class InsuController
 		String paidprem = "0";
 
 		//위험률을 계산하여 저장
-		int riskPremium =   drive+ cigar+ hospit1+ hospit2+  hospit3;
+		int riskPremium =   drive+ cigar+ hospit1+ hospit2+ hospit3;
 		
-		// 
+		
+		// member_annu 삽입
 		sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu(name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
-				String.valueOf(hospit2),"3",ins_name,monthann,String.valueOf(riskPremium));
-	
-		
-		
+				String.valueOf(hospit2),"3",ins_name,monthann, String.valueOf(riskPremium));
 		//입력완료
 		
-		//member_term_my 테이블에 입력하기
-		
-		
-		//json 처리 완료
-		
+
 		//마이페이지에서 조회할 수 있는 MyStatus
 		String ctm = String.valueOf(System.currentTimeMillis());
+		String payment = map.get("payment").toString();
 		
-		sqlSession.getMapper(MyInsuImpl.class).insertStatusAnnu(id, ins_name, ctm, String.valueOf(remainpay), paidprem, monthann, map.get("instart").toString(), "E", String.valueOf(remainpay));
+		sqlSession.getMapper(MyInsuImpl.class).insertStatusAnnu(id, ins_name, ctm, String.valueOf(remainpay), paidprem, payment, monthann, map.get("instart").toString(), "E", String.valueOf(remainpay));
 		
 
 		mv.addObject("ins_num", ctm);

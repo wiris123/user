@@ -110,7 +110,8 @@ public class JsonController
 		int interest = Integer.parseInt(req.getParameter("interest"));
 		String birth = req.getParameter("birth"); //생일 8자리값
 		int gender = Integer.parseInt(req.getParameter("gender"));
-			
+		System.out.println(gender);
+		
 		DecimalFormat df = new DecimalFormat("#,###");
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 		Date begin = new Date();

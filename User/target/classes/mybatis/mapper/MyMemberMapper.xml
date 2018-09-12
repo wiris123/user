@@ -21,5 +21,9 @@
    	<select id="selectMyPageProp" resultType="dto.MyStatusDTO">
    		select * from member_prop_my where id=#{0} order by remainpay desc
    	</select>
+   	
+   	<select id="selectMyPageAnnu" resultType="dto.MyStatusDTO">
+   		select * from member_annu_my where id=#{0} order by remainpay desc
+   	</select>
 
 </mapper>

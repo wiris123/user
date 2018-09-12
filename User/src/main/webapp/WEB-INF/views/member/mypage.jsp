@@ -168,7 +168,7 @@
 						
 					</tr>
 					<tr>
-					<%-- <c:forEach items="${dto3 }" var="rows">
+					<c:forEach items="${dto3 }" var="rows">
 						<th scope="col">${rows.num }</th>
 							<th scope="col" style="background-color: white;">${rows.insnum }</th>
 							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
@@ -182,7 +182,7 @@
 				</thead>
 				<tbody id="contractList">
 				</tbody>
-			</table> --%>
+			</table>
 			<br /><br /><br />
     		<!-- ##정기보험  보유 현황-->
     		<!-- ## 검색결과 ## -->
@@ -236,6 +236,7 @@
 						<th scope="col">현재<br/>납입한 보험료</th>
 						<th scope="col">보험료</th>
 						<th scope="col">계약상태</th>
+						<th scope="col">계약해지</th>
 						<!-- <th scope="col">사망보험금</th> -->
 					</tr>
 					<tr>
@@ -247,6 +248,9 @@
 							<th scope="col" style="background-color: white;">${rows.paidprem }</th>
 							<th scope="col" style="background-color: white;">${rows.prem }</th>
 							<th scope="col" style="background-color: white;">${rows.contstat }</th>
+							<!-- <th scope="col" style="background-color: white;">
+								<button type="submit" value="계약해지">계약해지</button>
+							</th> -->
 							<%-- <th scope="col">${row.death_ins }</th> --%>
 					</tr>
 					</c:forEach>

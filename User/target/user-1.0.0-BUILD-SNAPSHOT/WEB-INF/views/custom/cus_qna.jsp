@@ -6,59 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>고객센터</title>
-<script>
-function qnaCheck(fn) {
-	if(fn.name.value == "") {
-		alert("이름을 입력하세요.");
-    	fn.name.focus();
-    
-    return false;
-	}
-	
-	if(fn.mobile1.value == "") {
-		alert("연락처를 선택하세요.");
-    	fn.mobile1.focus();
-    
-    return false;
-	}
-	
-	if(fn.mobile2.value == "") {
-		alert("연락처를 입력하세요.");
-    	fn.mobile2.focus();
-    
-    return false;
-	}
-	
-	if(fn.mobile2.value.length == "" || (fn.mobile2.value.length<8 && fn.mobile2.value.length<7)) {
-		alert("연락처를 7~8개의 숫자로 입력하세요.");
-    	fn.mobile2.focus();
-    
-    return false;
-	}
-	
-	if(fn.email1.value == "") {
-		alert("이메일을 입력하세요.");
-    	fn.email1.focus();
-    
-    return false;
-	}
-	
-	if(fn.email2.value == "") {
-		alert("이메일을 선택하세요.");
-    	fn.email2.focus();
-    
-    return false;
-	}
-	
-	if(fn.contents.value == "") {
-		alert("내용을 입력하세요.");
-    	fn.contents.focus();
-    
-    return false;
-	}
-	
-}
-</script>
 <%@ include file="../include/header.jsp"%>
 </head>
 <%
