@@ -3,7 +3,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-
 <title>map</title>
 <%@ include file="../include/header.jsp"  %>
 </head>
