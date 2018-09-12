@@ -18,12 +18,12 @@
 		insert into member_prop_my (num,id, insname, insnum, remainpay, paidprem,prem,contstat,inssort) values 
 			(prop_my_seq.NEXTVAL, #{0},#{1},#{2},#{3},#{4},to_number(#{5}),#{6},'prop')
 	</insert>
-	<insert id="insterMemberAnnu">
-		insert into member_annu(name,phone,	mobile,	email,	drive,	cigar,	hospit1,hospit2,instype,ins_name,monthann,riskPremium)
-		values (#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9},#{10},#{11})
+	<insert id="insertMemberAnnu">
+		insert into member_annu(idx,name,phone,	mobile,	email,	drive,	cigar,	hospit1,hospit2,instype,ins_name,monthann,rprem)
+		values (annu_mem_seq.NEXTVAL,#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9},#{10},#{11})
 	</insert>
-	<insert id="insterStatusAnnu">
-		insert into member_annu_my (num,id,insname,insnum,remainpay,paidprem,prem,monthann,instart,contstat)
-		values (annu_my_seq,#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9})
+	<insert id="insertStatusAnnu">
+		insert into member_annu_my(num,id,insname,insnum,remainpay,paidprem,prem,monthann,instart,contstat,paytime)
+		values (annu_my_seq.nextval,#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9})
 	</insert>
 </mapper>

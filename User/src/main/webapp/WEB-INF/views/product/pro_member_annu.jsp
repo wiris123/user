@@ -333,7 +333,7 @@ function email_input(em, frm){
 							<option value="0">아니오</option>
 						</select><br />
 						
-						<input type="hid den" name="rprem" value=""/>
+						<!-- <input type="hid den" name="rprem" value=""/> -->
 						
 						
 						<input type="button" value="가입하기" onclick='subCheck();'>
