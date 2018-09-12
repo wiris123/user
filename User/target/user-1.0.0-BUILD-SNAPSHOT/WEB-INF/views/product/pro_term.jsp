@@ -82,6 +82,24 @@ function premiPlus()
                <p class="com2"><span>필요한만큼만 보장기간을 정해서 합리적인 보험료로 가입<br>(자사 동일유형 타상품대비)</span></p>
             </div>
                <!-- # 보험료 계산하기 # -->
+               <script>
+               function atag()
+               {
+	               	if(birth.value.length <=7){
+	               		alert("생년월일을 8개의 숫자로 작성해주세요.");
+	               	}	
+	               	else if(instime.value==""){
+	               		alert("보험기간을 선택해주세요.");
+	               	}
+	               	else if(paytime.value==""){
+	               		alert("납입기간을 선택해주세요.");
+	               	}
+	               	else{
+	               		premiPlus();
+	               	}
+               	return false;
+               };
+               </script>
                <form action="" id="formCalculator" onsubmit="premiPlus();">
                		<fieldset>
                      <legend>보험료계산기</legend>
@@ -136,7 +154,7 @@ function premiPlus()
                                  </span>
                               </li>
                            </ul>
-                           <a href="#" class="btn" onclick="premiPlus();"><span>내 보험료 확인 / 가입</span></a>
+                           <a href="#" class="btn" onclick="atag();"><span>내 보험료 확인 / 가입</span></a>
                         </div>            
                      </div>
                   </fieldset>
@@ -217,7 +235,7 @@ function premiPlus()
                               <div class="btn">
                                  <span class="img-gift"></span>
                                  <a href="#popSendEmail" class="btn-c1 adb-dist2" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'><span>메일발송</span></a>
-                                 <button type="submit"id="goPlan2"  class="btn-c2"><span>가입하기</span></button>
+                                 <button type="submit"id="goPlan2" ><a href="#" class="btn-c2 adb-dist2"><span>가입하기</span></a></button>
                                  <input type="hidden" id="jsonResultData2" name="jsonResultData" />
                               </div>
                               <div class="btn btn-reset">

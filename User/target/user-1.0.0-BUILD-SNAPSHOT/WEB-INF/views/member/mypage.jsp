@@ -101,15 +101,15 @@
             <div class="info-personal">
                <!-- CASE1 : 고객정보 있을경우 -->
                
-               <h2 class="heading"><strong>${USER_ID }</strong> 고객님 기본정보 <a href="../logout" class="btn-type4 logout"><span>본인인증 종료</span></a></h2>
+               <h2 class="heading"><strong>${member.name }</strong> 고객님 기본정보 <a href="../logout" class="btn-type4 logout"><span>본인인증 종료</span></a></h2>
                <!-- <p class="txt"><span>최근 접속 일시</span> 2018-09-03 21:36:43</p> -->
               
              
                <ul>
-                  <li><span>생년월일</span>1993.11.09</li>
-                  <li><span>휴대폰</span>--****</li>
-                  <li><span>이메일</span>@</li>
-                  <li><span>주소</span> </li>
+                  <li><span>생년월일</span>${member.birth }</li>
+                  <li><span>휴대폰</span>${member.mobile }</li>
+                  <li><span>이메일</span>${member.email }</li>
+                  <li><span>주소</span> 니네집</li>
                </ul>
             </div>
             <div class="bottom">
@@ -155,7 +155,7 @@
     <section id="content2"> <br /><br />
     	<h1 class="hd">보유계약 조회</h1>		
 			<!-- ## 검색결과 ## -->
-			<p class="txt-num tbl-info"><strong>권윤정</strong>님의 보유보험이 총 <em id="count">0</em>건 조회되었습니다.</p>
+			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유보험이 총 <em id="count">0</em>건 조회되었습니다.</p>
 
 			<!-- ## 보유계약조회 목록 ## -->
 			<table class="tbl-type2 list" cellspacing="0" summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">
@@ -163,13 +163,23 @@
 				<thead>
 					<tr>
 						<th scope="col">NO.</th>
-						<th scope="col">보험계약번호<br/>상품명</th>
+						<th scope="col">보험계약번호<br/></th>
 						<th scope="col">계약일자<br/>납입기간</th>
-						<th scope="col">최종 납입사항<br/>(남은횟수)</th>
+						<th scope="col">최종 납입사항<br/>(남은횟수)${dto.remainpay }</th>
 						<th scope="col">현재<br/>납입한 보험료</th>
 						<th scope="col">보험료</th>
 						<th scope="col">계약상태</th>
-						<th scope="col">상세보기 및<br/>문서다운로드</th>
+						<th scope="col">사망보험금</th>
+					</tr>
+					<tr>
+						<th scope="col">NO.</th>
+						<th scope="col">${dto.insnum }</th>
+						<th scope="col">${dto.remainpay }</th>
+						<th scope="col">${dto.remainpay }</th>
+						<th scope="col">${dto.paidprem }</th>
+						<th scope="col">${dto.prem }</th>
+						<th scope="col">${dto.contstat }</th>
+						<th scope="col">${dto.death_ins }</th>
 					</tr>
 				</thead>
 				<tbody id="contractList">

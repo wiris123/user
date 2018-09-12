@@ -59,10 +59,41 @@ function premCal()
 			{
 				
 			}
+			$.ajax
+			({
+				url:"./annuPrem.do",
+				type : "post",
+				data : 
+				{
+					payment : $('#payment').val(),
+					instart : $('#instart').val(),
+					interest : $('#interest').val(),
+					birth : $('#birth').val(),
+					gender : $('#calcGender1').val() + $('#calcGender2').val(),
+					paytime : $('#paytime').val(),
+				},
+				dataType : "json",
+				contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
+				success:function(resp)
+				{	//성공 시 월납입액, 납부연한에 값 입력
+					
+					$('#resultAnnu').text(resp.result);		
+					$('#spanBonusAmount').text(resp.bonus);
+					$('#returnPer').text(resp.returnPer);
+					$('.result-info-area').show();
+					$('#gobirth').val($('#birth').val())
+					$('#gomonthann').val(resp.gomonthann);
+					$('#gobonus').val(resp.bonus);
+					
+				},
+				error:function(errorData)
+				{
+					
+				}
+
+			});	
 
 		});	
-
-	});	
 }
 </script>
                <!-- CMS 영역 -->
@@ -149,15 +180,19 @@ function premCal()
                   <div id="tabDirectPlan" class="on">직접 설계</div>
                   <div id="tabRecommendPlan">추천 설계</div>
                </div>
-				<input type="hidden" name="interest" id="interest" value="3" />
+
                <!-- tab1 직접 설계 -->
+    			<form action="../product/annu_cal.do"id="formReCalculator">
+    			<input type="hidden" name="interest" id="interest" value="3" />
+				<input type="hid den" name="gobirth" id="gobirth" />
+				<input type="hid den" name="gomonthann" id="gomonthann" />
+				<input type="hid den" name="gobonus" id="gobonus"/>
                <div data-tab-target="resultTab">
                   <div class="direct-planning">
                      <div class="result-area">
                         <h3>
                            <span class="blind">보험료 계산결과</span>
                         </h3>
-                        <form action="#" id="formReCalculator">
                            <fieldset>
                               <legend>보험료 다시 계산하기</legend>
                               <div class="re-calculator-form">
@@ -224,19 +259,19 @@ function premCal()
 										</div>
 									</div>
 									<div class="info-content">
-										<strong>평생받는</strong> 예상 <strong class="annually-refund">연금수령액은 매년<span id="resultAnnu">000</span>원</strong>입니다<br>
+										<strong>평생받는</strong> 예상 <strong class="annually-refund">연금수령액은 매월 <span id="resultAnnu">000</span>원</strong>입니다<br>
     									(<strong class="refund">환급률 <span><span id="returnPer">000</span>%</span></strong>)
     								</div>
 									<div class="info-footer"><p class="tit">※해당예시는 현재 공시이율 지속 가정시이며, 공시이율 변동에 따라 바뀔 수 있습니다. (공시이율 매월 변동)</p></div>
 								</div>
 								
 								<div class="join-refund">
-									<a href="#none" class="btn-join" id="goPlan2" onclick="ga('send','event','Direct','Entry','iannuity-top_list_2',1);" rel="history">
-									<img src="../resources/cms/pc/images/com/btn_join_refund.png" alt="바로 가입하기"></a>
+									<a href="#none" class="btn-join" id="goPlan2" rel="history"><button type="submit"><img src="../resources/cms/pc/images/com/btn_join_refund.png" alt="바로 가입하기"></button>
+									</a>
 								</div>								
 							</div>
                            </fieldset>
-                        </form>
+                       </form>
                      </div>
                      <!-- resultArea end -->
                   </div>
@@ -248,17 +283,17 @@ function premCal()
                <div class="box-advice" id="areaBoxAdvice">
                   <div class="case1">
                      <h2>
-                        <span>친절안내</span>
+                        <span>안 친절안내</span>
                      </h2>
                      <div class="box-row">
                         <div class="advice-txt-box">
                            <strong class="advice-tit">어떻게 설계할지 고민 되시나요?</strong>
-                           <p>연락 주시면 전문상담원이 친절히 도와드립니다.</p>
+                           <p>연락 주시면 조장님이 친절히 도와드립니다.</p>
                         </div>
                         <div class="advice-tel">
                            <span class="tel-icon"><img src="resources/cms/pc/images/com/icon_telephone.png" alt="" /></span>
 
-                           <strong>080-789-3300</strong> <span>평일 08:30~17:30 (무료)</span>
+                           <strong>010-1234-5678</strong> <span>평일 08:30~17:30 (무료)</span>
                         </div>
                      </div>
                   </div>
@@ -274,7 +309,7 @@ function premCal()
 			<%@ include file="../include/footer.jsp"%>
 		</div>
 		<!-- 푸터끝 -->
-</div>
 
+	</div>
 </body>
 </html>

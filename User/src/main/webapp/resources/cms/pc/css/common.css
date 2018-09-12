@@ -1898,6 +1898,7 @@ div.box-content4 {width:485px;margin:0 auto;}
 .board-list > li .tit strong {display:inline-block;color:#474e5c;vertical-align:top;font-size:15px;font-family:"SECGCM";font-weight:normal;word-wrap:break-word;word-break:break-all;}
 .board-list > li .tit strong img {margin-left:10px;vertical-align:middle;}
 .board-list > li .tit .num {display:inline-block;position:absolute;left:0;top:12px;width:60px;text-align:center;font-family:"SECGCM";font-weight:normal;}
+.board-list > li .tit .check {display:inline-block;position:absolute;right:190px;top:12px;width:60px;text-align:center;font-family:"SECGCM";font-weight:normal;}
 .board-list > li .tit .date {position:absolute;right:absolute;right:80px;top:12px;display:inline-block;width:90px;margin:0 0 0 15px;background:url(../images/com/bul_1x14_ccc.gif) no-repeat 0 45%;font-size:13px;text-align:right;font-weight:normal;}
 .board-list > li .tit:hover strong {color:#0096eb;}
 .board-list > li .con {display:none;padding:17px 20px;background:#fff;}

@@ -63,7 +63,7 @@ public class MyBatisController
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
 
-		String user_id = userDetails.getUsername();
+		String user_id = userDetails.getUsername(); 
 		
 		session.setAttribute("USER_ID", user_id);
 		
@@ -103,7 +103,7 @@ public class MyBatisController
 		return mv;
 	}
 */
-	
+	//회
 	@RequestMapping("/member/insertjoin.do")	 
 	public String insertjoin(HttpServletRequest req,HttpSession session)
 	{
@@ -112,7 +112,7 @@ public class MyBatisController
 		Date dat = Date.valueOf(birth);
 		
 		sqlSession.getMapper(MyMemberImpl.class).insertjoin
-				(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat);
+		(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat);
 
 		return "redirect:/member/login.do";
 	}

@@ -56,20 +56,20 @@
 <style type="text/css">
 .provision_wrap {
 	margin: 0 auto;
-	width: 800px;
+	width: 785px;
 	height: 740px;
 	border: 1px solid #eee;
-	background: #f7f7f7;
+	background: white;
 }
 
 .agree {
-	margin: auto;
+	margin: 0 auto;
 	float: left;
 	width: 700px;
 	padding: 20px;
 	font-family: 돋움;
 	font-size: 11pt;
-	color: #252525;
+	color: black;
 	font-weight: bold;
 }
 
@@ -79,7 +79,7 @@
 
 .provision {
 	margin: 0 auto;
-	width: 750px;
+	width: 730px;
 	height: 200px;
 	overflow: auto;
 	padding: 5px;
@@ -90,6 +90,7 @@
 	line-height: 170%;
 	border: 1px solid #f2f2f2;
 	resize: none;
+	margin-left: 20px;
 }
 
 .yesno_wrap {
@@ -147,13 +148,11 @@
 }
 
 .checkbox-wrap input[type=checkbox]:checked+.check-icon {
-	background-image: url(../resources/images/radio_btn2.PNG);
+	background-image: url(../resources/images/btn_2.png);
 }
 </style>
 <body>
 	<div id="wrapper">
-
-
 		<div id="container">
 			<%@ include file="../include/Head.jsp"%>
 

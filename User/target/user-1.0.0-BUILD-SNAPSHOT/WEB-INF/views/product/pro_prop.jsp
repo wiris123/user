@@ -368,9 +368,7 @@ function premCal()
 											</span></li>								
 									</ul>
 									<div class="btn">
-									<a href="#none"
-									class="btn-c1" id="goPlan2"
-									rel="history"><button type="submit"><span>가입하기</span></button></a> 
+									<button type="submit"id="goPlan2" ><a href="#" class="btn-c2 adb-dist2"><span>가입하기</span></a></button>
 									<a href="#none" class="btn-c2" id="reCalcPremium"
 									rel="history" onclick="premCal();"><span>재계산하기</span></a>
 									</div>
@@ -464,10 +462,8 @@ function premCal()
 				</div>
 			</div>
 			<!-- 내용끝 -->
-
 		</div>
 		<!-- 머리끝 -->
-
 		<!-- 푸터시작 -->
 		<div id="footer">
 			<%@ include file="../include/footer.jsp"%>
