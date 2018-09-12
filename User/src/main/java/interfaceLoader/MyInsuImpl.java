@@ -13,7 +13,7 @@ public interface MyInsuImpl
 	public void insertStatusProp(String id, String	insname, String	insnum, String remainpay,String	paidprem,String	prem, String contstat);
 	
 	
-	public void insertMemberAnnu (String name,String phone,String mobile,String email,String drive,String cigar,String hospit1, String hospit2,String instype,String ins_name,String monthann,String riskPremium);
+	public void insertMemberAnnu (String id, String name,String phone,String mobile,String email,String drive,String cigar,String hospit1, String hospit2,String instype,String ins_name,String monthann,String riskPremium);
 	
 	public void insertStatusAnnu(String id,String insname,String insnum,String remainpay,String paidprem,String prem ,String monthann, String instart,String contstat,String paytime);
 }
