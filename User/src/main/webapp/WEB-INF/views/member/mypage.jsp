@@ -68,7 +68,11 @@
        display: block;}
 	
 </style>
+<script>
 
+
+
+</script>
 <body>
    <div id="wrapper">
       <!-- 머리 -->

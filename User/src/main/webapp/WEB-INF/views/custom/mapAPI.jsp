@@ -8,14 +8,13 @@
 </head>
 <body>
 	<div id="wrapper"> 
-	
 		<!-- 머리 시작 -->
 		<div id="container">
 			<%@ include file="../include/Head.jsp" %>
 			<!-- 내용 시작 -->
 			<div id="content">
 			<div id="map" style="width:100%;height:350px;"></div>
-				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a7ae288dbc4d9f905fac3f833a19964&APIKEY&libraries=services,clusterer,drawing"></script>
+				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=18ef362ec63641ef95e64b53e3e5a7a4&APIKEY&libraries=services,clusterer,drawing"></script>
 				<script>
 				// 마커를 클릭하면 장소명을 표출할 인포윈도우 입니다
 				var infowindow = new daum.maps.InfoWindow({zIndex:1});

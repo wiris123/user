@@ -14,11 +14,15 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
+import org.junit.experimental.theories.DataPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
@@ -54,7 +58,9 @@ public class MyBatisController
 		
 		return "member/login";
 	}
-		
+	
+	
+	
 	//로그인 성공시
 	@RequestMapping("/member/loginSuccess.do")
 	public String loginSuc(HttpSession session)
@@ -70,6 +76,9 @@ public class MyBatisController
 		return "member/login";
 		
 	}
+	
+	
+	
 	//접근 거부 페이지
 	@RequestMapping("/member/accessDenied")
 	public String accessDenied() {
@@ -77,7 +86,7 @@ public class MyBatisController
 	}
 			
 	
-	//로그인 처리
+	//로그인 처리 - 시큐리티를 사용하지 않은 로그인 처리
 	/*@RequestMapping("/member/loginAction.do")
 	public ModelAndView loginAction(HttpServletRequest req,HttpSession session)
 	{
@@ -103,20 +112,6 @@ public class MyBatisController
 		return mv;
 	}
 */
-	//회
-	@RequestMapping("/member/insertjoin.do")	 
-	public String insertjoin(HttpServletRequest req,HttpSession session)
-	{
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");	
-		String birth = (req.getParameter("birth1")+"-"+req.getParameter("birth2")+"-"+req.getParameter("birth3"));
-		Date dat = Date.valueOf(birth);
-		
-		sqlSession.getMapper(MyMemberImpl.class).insertjoin
-		(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat);
-
-		return "redirect:/member/login.do";
-	}
-	
 	
 	//메일 처리를 위한 컨트롤러 매핑
 	@RequestMapping("custom/mailTest.do")
@@ -129,9 +124,9 @@ public class MyBatisController
 	    String contents = req.getParameter("contents");
 	    String flag = "mail";
 	    String mailcontent = name+"</br>"+mobile+"</br>"+email+"</br>"+contents;
-	    System.out.println(name);
-	    System.out.println(contents);
+
 		try {
+			
 			sqlSession.getMapper(MyMemberImpl.class).EmailSender(req.getParameter("idx"),req.getParameter("name"),(req.getParameter("mobile1")+req.getParameter("mobile2")),(req.getParameter("email1")+"@"+req.getParameter("email2")),contents,flag);
 			MimeMessage message = javaMailSender.createMimeMessage(); // 메일 생성
 			message.setSubject("Mail Test");	// 제목 설정
@@ -148,3 +143,22 @@ public class MyBatisController
 	}
 	
 }
+
+
+/*@Service
+public class UserSerivce implements UserDetailsService 
+{
+
+    @Override
+    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        CustomUser customUser = null;
+        // ... DB 등을 통해 사용자 정보를 셋팅
+
+        return customUser;
+}
+    
+@DataPoint
+public class CustomUser implements UserDetails 
+{
+    // ...
+}*/

@@ -226,7 +226,7 @@ function premiPlus()
                               </div>
                               <div class="btn">
                                  <span class="img-gift"></span>
-                                 <a href="#popSendEmail" class="btn-c1 adb-dist2" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'><span>메일발송</span></a>
+                                 <a href="#popSendEmail" class="btn-c1 adb-dist2" onclick='atag();'><span>재계산하기</span></a>
                                  <button type="submit"id="goPlan2" ><a href="#" class="btn-c2 adb-dist2"><span>가입하기</span></a></button>
                                  <input type="hidden" id="jsonResultData2" name="jsonResultData" />
                               </div>

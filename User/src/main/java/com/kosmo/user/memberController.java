@@ -1,6 +1,8 @@
 package com.kosmo.user;
 
 import java.security.Principal;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -61,4 +63,20 @@ public class memberController {
 		
 		return mv;
 	}
+	
+	//회원가입
+	@RequestMapping("/member/insertjoin.do")	 
+	public String insertjoin(HttpServletRequest req,HttpSession session)
+	{
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");	
+		String birth = (req.getParameter("birth1")+"-"+req.getParameter("birth2")+"-"+req.getParameter("birth3"));
+		Date dat = Date.valueOf(birth);
+		
+		sqlSession.getMapper(MyMemberImpl.class).insertjoin
+		(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat);
+
+		return "redirect:/member/login.do";
+	}
+	
+		
 }
