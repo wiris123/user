@@ -31,38 +31,38 @@ function premCal()
 {
 	$(function()
 	{
-			$.ajax
-			({
-				url:"./annuPrem.do",
-				type : "post",
-				data : 
-				{
-					payment : $('#payment').val(),
-					instart : $('#instart').val(),
-					interest : $('#interest').val(),
-					birth : $('#birth').val(),
-					gender : $('#calcGender1').val() + $('#calcGender2').val(),
-					paytime : $('#paytime').val(),
-				},
-				dataType : "json",
-				contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
-				success:function(resp)
-				{	//성공 시 월납입액, 납부연한에 값 입력
-					
-					$('#resultAnnu').text(resp.result);		
-					$('#spanBonusAmount').text(resp.bonus);
-					$('#returnPer').text(resp.returnPer);
-					$('.result-info-area').show();
-					
-				},
-				error:function(errorData)
-				{
-					
-				}
-
-			});	
+		$.ajax
+		({
+			url:"./annuPrem.do",
+			type : "post",
+			data : 
+			{
+				payment : $('#payment').val(),
+				instart : $('#instart').val(),
+				interest : $('#interest').val(),
+				birth : $('#birth').val(),
+				gender : $('#calcGender1').val() + $('#calcGender2').val(),
+				paytime : $('#paytime').val(),
+			},
+			dataType : "json",
+			contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
+			success:function(resp)
+			{	//성공 시 월납입액, 납부연한에 값 입력
+				
+				$('#resultAnnu').text(resp.result);		
+				$('#spanBonusAmount').text(resp.bonus);
+				$('#returnPer').text(resp.returnPer);
+				$('.result-info-area').show();
+				
+			},
+			error:function(errorData)
+			{
+				
+			}
 
 		});	
+
+	});	
 }
 </script>
                <!-- CMS 영역 -->
@@ -81,16 +81,21 @@ function premCal()
                   </p>
                </div>
 				<script>
-				 function atag()
-	               {
-		               	if(birth.value.length <=7){
-		               		alert("생년월일을 8개의 숫자로 작성해주세요.");
-		               	}	
-		               	else{
-		               		premCal();
-		               	}
+				function atag()
+	            {	
+					//생년월일 유효성 검사
+	               	if(birth.value.length <=7){
+	               		alert("생년월일을 8개의 숫자로 작성해주세요.");
+	               	}
+					//성별 유효성 검사
+	               	else if(!($("#male").hasClass("on")||$("#female").hasClass("on"))){
+	               		alert("성별을 선택해주세요.")
+	               	}
+	               	else{
+	               		premCal();
+	               	}
 	               	return false;
-	               };
+	            };
 				</script>
                <!-- # 보험료 계산하기 # -->
                <form action="#" id="formCalculator">
@@ -118,10 +123,10 @@ function premCal()
                               <!-- 성별 -->
                               <li>
                                  <div class="label-radiobtn gender">
-                                    <span> <label for="calcGender1">남자</label> <input
+                                    <span> <label for="calcGender1" id="male">남자</label> <input
                                        type="radio" name="pgender" class="radio" id="calcGender1"
                                        value="1" />
-                                    </span> <span> <label for="calcGender2">여자</label> <input
+                                    </span> <span> <label for="calcGender2" id="female">여자</label> <input
                                        type="radio" name="pgender" class="radio" id="calcGender2"
                                        value="2" />
                                     </span>
@@ -138,7 +143,7 @@ function premCal()
 
             <!-- 연금계산결과 -->
             <!-- ## 계산결과 /////////////////////////////////////////////////////////////////////////////////////// -->
-            <div class="product-result open" id="uiProductResult1" tabindex="0">
+            <div class="product-result" id="uiProductResult1" tabindex="0">
                <!-- # 계산결과 출력 //////////////////////////////////////////////////////////////////////////// -->
                <div class="product-result-tab" data-tab="resultTab">
                   <div id="tabDirectPlan" class="on">직접 설계</div>
@@ -269,7 +274,7 @@ function premCal()
 			<%@ include file="../include/footer.jsp"%>
 		</div>
 		<!-- 푸터끝 -->
+</div>
 
-	</div>
 </body>
 </html>

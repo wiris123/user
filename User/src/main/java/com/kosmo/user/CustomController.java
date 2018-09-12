@@ -38,6 +38,15 @@ public class CustomController {
 		return "custom/cus_qna_email";
 	}
 	
+	@RequestMapping("/custom/mapAPI")
+	public String map_api() {
+		
+		
+		
+		
+		return "custom/mapAPI";
+	}
+	
 	
 	
 	@RequestMapping("/custom/sendemail")

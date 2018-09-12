@@ -388,7 +388,7 @@ function qnaCheck(fn) {
 					<div class="content">
 						<!-- # 상담신청입력폼 # -->
 						<h3 class="mes-top">이메일 주소와 상담하실 내용을 입력해 주세요.</h3>
-						<form id="form" src="<%=request.getContextPath()%>/custom/sendemail" method="post" action="mailTest.do">
+						<form id="form" src="<%=request.getContextPath()%>/custom/sendemail" method="post" action="mailTest.do" onSubmit="return qnaCheck(this)">
 							<fieldset class="form-content3">
 								<legend>이메일상담 신청정보입력</legend>
 								<dl>
@@ -533,7 +533,8 @@ function qnaCheck(fn) {
 
 							<!-- # 하단버튼 # -->
 							<div class="btn-area">
-								<a href="#none" class="btn-type2 ui-close"><span>취소</span></a> <a href="#send" class="btn-type2 c1" id="send"><span>상담신청</span></a>
+								<a href="#none" class="btn-type2 ui-close"><span>취소</span></a> 
+								<a href="#send" class="btn-type2 c1" id="send"><span>상담신청</span></a>
 							</div>
 						</form>
 					</div>

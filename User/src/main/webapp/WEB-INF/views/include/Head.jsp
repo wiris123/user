@@ -30,6 +30,7 @@
 				<ul class="list-option">
 					<li><a href="<%=request.getContextPath() %>/custom/cus_faq"><strong>자주하는 질문</strong></a></li>
 					<li><a href="<%=request.getContextPath() %>/custom/cus_qna"><strong>고객상담신청</strong></a></li>
+					<li><a href="<%=request.getContextPath() %>/custom/mapAPI"><strong>지도</strong></a></li>
 				</ul></li>
 			<li class="list-ban">
 				<div class="ba-img01">
