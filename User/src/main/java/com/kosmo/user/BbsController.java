@@ -11,6 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import mybatis.BoardCommVO;
 import mybatis.BoardVO;
 import mybatis.MyBbsDAOImpl;
 import mybatis.PagingUtil;
@@ -93,7 +94,7 @@ public class BbsController {
 			String pagingImg = PagingUtil.paging(totalRecordCount,
 					pageSize, blockPage, nowPage,req.getContextPath()+"/custom/bbs_response?");
 			
-			ArrayList<BoardVO> lists = sqlSession.getMapper(MyBbsDAOImpl.class).listPage(b_id, start, end);
+			ArrayList<BoardCommVO> lists = sqlSession.getMapper(MyBbsDAOImpl.class).listresPage(b_id, start, end);
 			model.addAttribute("totalCount", totalRecordCount);
 			model.addAttribute("list",lists);
 			model.addAttribute("pagingImg",pagingImg);
