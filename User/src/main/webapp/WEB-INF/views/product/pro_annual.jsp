@@ -109,7 +109,7 @@ function premCal()
                                  <div class="form-wrap1">
                                     <label for="birthday" class="label">생년월일 <span>(예
                                           : 19851015 )</span></label> <input type="text" autocomplete="off"
-                                       class="text placeholder numOnly" id="birth"
+                                       class="text placeholder numOnly" id="birth" value="${param.birthday }"
                                        maxlength="8" />
                                  </div>
                               </li>

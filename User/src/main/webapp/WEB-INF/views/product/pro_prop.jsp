@@ -93,19 +93,19 @@
 					$(
 							function() {
 
-								$("#formCalculator")
-										.find('input[name=mdcrRcbfrYn]')
-										.on(
-												"click",
-												function() {
-													if ($(this).prop('checked')) {
-														mdcrRcbfrYn.value = 'Y';
-														alert("의료수급권자인경우,\n보험료 할인을 위해 증명할 수 있는 서류(의료급여증 사본 또는\n의료급여증명서 등)를 제출해 주셔야 합니다.\n\n청약심사 중 담당자를 통해 전화를 드리고 다시한번 안내드리오니\n이점 양해해 주시기 바랍니다.");
-													} else {
-														mdcrRcbfrYn.value = 'N';
-													}
-												});
-							})
+						$("#formCalculator")
+						.find('input[name=mdcrRcbfrYn]')
+						.on(
+						"click",
+						function() {
+							if ($(this).prop('checked')) {
+								mdcrRcbfrYn.value = 'Y';
+								alert("의료수급권자인경우,\n보험료 할인을 위해 증명할 수 있는 서류(의료급여증 사본 또는\n의료급여증명서 등)를 제출해 주셔야 합니다.\n\n청약심사 중 담당자를 통해 전화를 드리고 다시한번 안내드리오니\n이점 양해해 주시기 바랍니다.");
+							} else {
+							mdcrRcbfrYn.value = 'N';
+						}
+						});
+					})
 				</script>
 				<!-- # 보험료 계산하기 # -->
 				<form action="#" id="formCalculator">
@@ -126,7 +126,7 @@
 										<div class="form-wrap1">
 											<label for="birthday" class="label">생년월일 <span>(예
 													: 19851015 )</span></label> <input type="text" autocomplete="off"
-												class="text placeholder numOnly" maxlength="8" id="birth"
+												class="text placeholder numOnly" maxlength="8" id="birth" value="${param.birthday }"
 												name="birth" />
 										</div>
 									</li>

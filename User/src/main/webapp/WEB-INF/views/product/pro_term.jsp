@@ -109,7 +109,7 @@ function premiPlus()
                               <li>
                                  <div class="form-wrap1">
                                     <label for="birthday" class="label">생년월일 <span>(예 : 19851015 )</span></label>
-                                    <input type="text" autocomplete="off" class="text placeholder numOnly" id="birth" maxlength="8" placeholder=""/>
+                                    <input type="text" autocomplete="off" class="text placeholder numOnly" id="birth" maxlength="8" placeholder="" value="${param.birthday }"/>
                                  </div>
                               </li>
                               <!-- 성별 -->

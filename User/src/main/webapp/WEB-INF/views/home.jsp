@@ -7,10 +7,15 @@
 <%@ include file="./include/header.jsp"  %>
 <script>
 
-function moveCalc()
+function moveCalc(frm)
 {
-	var mode = document.getElementById("product");	
-	location.href="/user/product/pro_"+mode.value;
+	var mode = document.getElementById("product");
+	var birthday = document.getElementById("birthday");
+	
+	/* location.href="/user/product/pro_"+mode.value+"?birthday="+birthday; */
+	frm.action = "/user/product/pro_"+mode.value;
+	frm.submit();
+	
 }
 
 </script>
@@ -25,7 +30,6 @@ function moveCalc()
 			<%@ include file="./include/Head.jsp" %>
 			
 			<!-- 내용시작 -->
-
 			<div id="content" class="page-main">
 			<h1 class="hd">삼성생명 다이렉트 홈</h1>
 				<!-- ## 개인화 및 계산기영역 ////////////////////////////////// -->
@@ -51,7 +55,7 @@ function moveCalc()
 				</div>
 				<div class="main-calculator">
 				<!-- ## 보험료 계산하기 ## -->
-				<form action="#none" id="formCalculator" onsubmit="return false">
+				<form method="get" id="formCalculator" onsubmit="moveCalc(this);" name="mainform">
 					<fieldset>
 						<legend>보험료계산기</legend>
 						<div class="calculator-main">
@@ -59,7 +63,7 @@ function moveCalc()
 								<!-- 배너있을경우 추가 -->						
 							<h2><span>보험료를 간편하게 설계해보세요</span></h2>
 							</div>
-							<div class="form" style="width:700px;">
+							<div class="form">
 								<ul>
 									<!-- 보험상품-->
 									<li>
@@ -85,16 +89,16 @@ function moveCalc()
 									</li>
 									
 									<!-- 생년월일 -->
-								<!-- 	<li>
+									<li>
 										<h3>생년월일 입력</h3>
 										<div class="form-wrap1">
 											<label for="pbirthday" class="label">생년월일 (예 : 19851015 )</label>
-											<input type="text" autocomplete="off" class="text placeholder numOnly" id="pbirthday" maxlength="8"/>
+											<input type="text" autocomplete="off" class="text placeholder numOnly" id="pbirthday" name="birthday" maxlength="8"/>
 										</div>
-									</li> -->
+									</li>
 									
 									<!-- 성별 -->
-									<!-- <li>
+									<li>
 										<h3>성별 선택</h3>
 										<div class="label-radiobtn gender">
 											<span>
@@ -106,9 +110,9 @@ function moveCalc()
 												<input type="radio" name="pgender" class="radio" id="calcGender2" value="2"/>
 											</span>
 										</div>
-									</li> -->
+									</li>
 								</ul>
-								<a href="javascript:moveCalc();" class="btn" name="planApply" id="planApply"><span>확인</span></a>
+								<a href="#" class="btn" name="planApply" id="planApply"><button type="submit">확인</button></a>
 							</div>
 						</div>
 					</fieldset>
