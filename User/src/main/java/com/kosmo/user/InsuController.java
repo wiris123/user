@@ -298,8 +298,7 @@ public class InsuController
 		String instart = req.getParameter("instart");
 		String paytime = req.getParameter("paytime");
 	
-		
-		
+
 		map.put("birth", birth);
 		map.put("monthann", monthann);
 		map.put("bonus", bonus);
@@ -307,8 +306,7 @@ public class InsuController
 		map.put("instart", instart);
 		map.put("paytime", paytime);
 		
-		
-		
+
 		//map to json을 위한 로직 + 매퍼 포함
 		String jsonMap ="";
 		ObjectMapper mapper = new ObjectMapper();	

@@ -219,11 +219,12 @@ function email_input(em, frm){
 				<form name="memberFrm" onsubmit="return mValidate(this);" method="post">
 					<div id="join" style="width: 500px; margin: 0 auto;" >
 					<input type="hid den" name="userInfo" id="userInfo" value='${basicInfo}'>
-					<input type="text" name="ins_name" value="인터넷 연금보험 3.0(무배당)"/>
 					
+					
+					<input type="text" name="ins_name" value="인터넷 연금보험 3.0(무배당)"/>
       				<tr> 
         				<td>아이디</td><br />
-        				<td><input type=text name="id" size=15 maxlength=15 id="chk_id1" style="width: 70%;">
+        				<td><input type=text name="id" size=15 maxlength=15 id="chk_id1" style="width: 70%;" value="${USER_ID }" readonly>
         					<input type=button value="중복검사" id="idOverlap" onclick="check_id();" style="width: 29%; position: relative;top: 2px;"></td>
         					<input type=hidden id="chk_id2" name=chk_id2" value="0">
       				</tr>
