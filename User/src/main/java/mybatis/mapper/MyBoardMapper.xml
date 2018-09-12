@@ -25,6 +25,9 @@
  		SELECT * FROM (SELECT Tb.*, rownum rNum FROM (SELECT * FROM multiboard where b_id=#{param1}order by num desc) Tb)
  		WHERE rNum BETWEEN #{param2} and #{param3}
  	</select>
+ 	<select id="listresPage" resultType="mybatis.BoardCommVO">
+ 		SELECT * FROM (SELECT e.*, rownum rnum FROM (select multiboard.*, board_comm.* from multiboard left outer join board_comm on multiboard.num = board_comm.board_idx where 1=1 and b_id = #{0 } ORDER BY num desc ) e) where rNum BETWEEN #{1 } AND #{2}
+ 	</select>
  	<select id="listView" resultType="mybatis.BoardVO">
  	select * from multiboard where num = #{param1}
  	</select>

@@ -3,12 +3,18 @@
 <mapper namespace="mybatis.MyMemberImpl">
 	<select id="login" resultType="mybatis.MemberVO">
 		select * from member where id=#{0} and pass=#{1}
-	</select>
-	
+	</select>	
 	<insert id="insertjoin">
 		insert into member(id,pass,name,email,mobile,birth) values (#{0},#{1},#{2},#{3},#{4},#{5})
    </insert>
    <insert id="EmailSender">
 		insert into booking(idx,name,mobile,regidate,email,contents,flag) values (book_seq.NEXTVAL,#{param2},#{param3},sysdate,#{param4},#{param5},#{param6})
    	</insert>
+   	<select id="selectMyPageTerm" resultType="dto.MyStatusDTO">
+   		select * from member_term_my where id=#{0} order by remainpay desc
+   	</select>
+   	<select id="selectMyPageMember" resultType="mybatis.MemberVO">
+   		select * from member where id=#{0}
+   	</select>
+   	
 </mapper>

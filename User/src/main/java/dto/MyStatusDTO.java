@@ -94,6 +94,7 @@ public class MyStatusDTO
 		this.paidprem = paidprem;
 		this.prem = prem;
 		this.contstat = contstat;
+		
 	}
 
 	public String getNum() {
@@ -171,6 +172,4 @@ public class MyStatusDTO
 	public void setContstat(String contstat) {
 		this.contstat = contstat;
 	}
-	
-	
 }
