@@ -6,11 +6,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>실손 보험</title>
 </head>
-<script type="text/javascript"
-	src="../www.googleadservices.com/pagead/f.txt">
-	
-</script>
-
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
@@ -18,10 +14,8 @@
 </head>
 <body>
 	<div id="wrapper">
-		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"%>
-		<link rel="stylesheet"
-			href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
+	<!-- 머리 -->
+	<%@ include file="../include/header.jsp"%>
 		<div id="container">
 			<%@ include file="../include/Head.jsp"%>
 <script>
@@ -30,6 +24,9 @@ $(function()
 		$('#uiProductResult1').hide();
 		
 });
+
+
+
 function premCal()
 {
 
@@ -43,14 +40,14 @@ function premCal()
 				gohosp : $('#gohosp').val(),
 				sanghosp : $('#sanghosp').val(),
 				sgohosp : $('#sgohosp').val(),
-				chbedosu : $('#chbedosu').val(),
-				chbeinje : $('#chbeinje').val(),
-				chbemri : $('#chbemri').val()
+				chbedosu : $('#treaty1-1:checked').val(),
+				chbeinje : $('#treaty1-2:checked').val(),
+				chbemri : $('#treaty1-3:checked').val()
 			},
 			dataType : "json",
 			contentType : "text/html; charset:utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
 			success:function(responseData)
-			{					
+			{								
 				$('#result').text(responseData.result);
 				$('#premium').val(responseData.prem);
 				$('#payment').val(responseData.result2);
@@ -63,8 +60,6 @@ function premCal()
 			}
 
 		});	
-
-
 }
 
 </script>
@@ -308,7 +303,7 @@ function premCal()
 								</div>
 							</div>
 							<!-- 특약 재계산 ////////////////////////////////////////////////////////////// -->
-							<div class="box box-result2 on">
+							<div class="box box-result1 on">
 								<h4 class="heading">
 									<strong>※ 원하는 특약을 <em class="txt-c1">선택</em>하세요.
 									</strong>
@@ -352,27 +347,26 @@ function premCal()
 											<li><span>비급여 도수치료ㆍ체외충격파치료ㆍ증식치료</span> <span
 												class="label-check"> <label for="treaty1-1"
 													class="on">선택</label> <input type="checkbox" class="check"
-													title="특약리스트" onclick="setReCalculator()" value="3" id="chbedosu" name="chbedosu"
+													title="특약리스트" onclick="premCal();" value="3" id="treaty1-1" name="chbedosu"
 													checked="checked">
 											</span></li>
 											<li><span>비급여 주사료</span> <span class="label-check">
 													<label for="treaty1-2" class="on">선택</label> <input
-													type="checkbox" class="check" title="특약리스트" id="chbeinje" name="chbeinje"
-													value="1" onclick="setReCalculator()" checked="checked">
+													type="checkbox" class="check" title="특약리스트" id="treaty1-2" name="chbeinje"
+													value="1" onclick="premCal();" checked="checked">
 											</span></li>
 											<li><span>비급여 자기공명영상진단(MRI/MRA)</span> <span
 												class="label-check"> <label for="treaty1-3"
-													class="on">선택</label> <input type="checkbox" class="check"value="2" 
-													title="특약리스트" onclick="setReCalculator()"  id="chbemri" name="chbemri"
+													class="on">선택</label> <input type="checkbox" class="check" value="2" 
+													title="특약리스트" onclick="premCal();" id="treaty1-3" name="chbemri"
 													checked="checked">
-											</span></li>								
+											</span></li> 						
 									</ul>
 									<div class="btn">
-									<button type="submit"id="goPlan2" ><a href="#" class="btn-c2 adb-dist2"><span>가입하기</span></a></button>
-									<a href="#none" class="btn-c2" id="reCalcPremium"
-									rel="history" onclick="premCal();"><span>재계산하기</span></a>
+									<button type="submit"id="goPlan2" ><a href="#" class="btn-c1 adb-dist2"><span>가입하기</span></a></button>
+									<a href="#none" class="btn-c2 adb-dist2" id="reCalcPremium" onclick="premCal();"><span>재계산하기</span></a>
 									</div>
-								</div>
+								</div>								
 								</form>
 							</div>
 						</div>
@@ -394,10 +388,10 @@ function premCal()
 					<!-- 유틸버튼 -->
 					<div class="area-util">
 						<!-- <a href="#none" class="icon-util print" title="인쇄하기" id="doPrint">인쇄하기</a> -->
-						<a href="#none" class="icon-util print" title="인쇄하기"
+						<!-- <a href="#none" class="icon-util print" title="인쇄하기"
 							id="doPrintNew" onclick="fn_printEntire();" rel="history">인쇄하기</a>
 						<a href="#popSendEmail" class="icon-util email" title="이메일보내기"
-							onclick="clearMail(&quot;인터넷실손의료비보장보험1.0&quot;);" rel="history">이메일보내기</a>
+							onclick="clearMail(&quot;인터넷실손의료비보장보험1.0&quot;);" rel="history">이메일보내기</a> -->
 						<!-- <a href="#none" class="icon-util email" title="이메일보내기" id="sendEmail">이메일보내기</a> -->
 						<!-- <a href="#none" class="icon-util sms" title="SMS보내기" id="sendSms">SMS보내기</a> -->
 					</div>

@@ -66,8 +66,6 @@
 	      <filter-name>springSecurityFilterChain</filter-name>
 	      <url-pattern>/*</url-pattern>
 	   </filter-mapping>
-
-
 	 <listener>
         <listener-class>com.kosmo.user.VisitorController</listener-class>
     </listener>

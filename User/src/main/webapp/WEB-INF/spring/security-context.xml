@@ -65,7 +65,7 @@
 		<security:intercept-url pattern="/member/login.do" access="permitAll"/>
 		
 		<!-- /admin/하위는 ADMIN권한 ex)마이페이지-->
-		<security:intercept-url pattern="/member/mypage" access="hasRole('USER')"/>
+		<security:intercept-url pattern="/member/mypage.do" access="hasRole('USER')"/>
 		<!-- /security2/하위는 USER 혹은 ADMIN권한 중 하나만 획득하면 접근 가능 -->
 		
 		<!-- 그 외는 누구나 접근 가능 -->
@@ -79,11 +79,11 @@
 			login-processing-url="/loginAction"
 			default-target-url="/member/mypage"
 			authentication-success-forward-url="/member/loginSuccess.do"
-			authentication-failure-forward-url="/member/login.do?error" 
+			authentication-failure-forward-url="/member/login.do" 
 			username-parameter="id" 
 			password-parameter="pass"/>
 		<security:logout logout-url="/logout" logout-success-url="/member/login.do"/>
-		<security:access-denied-handler error-page="/member/accessDenied"/>
+		<security:access-denied-handler error-page="/member/login.do"/>
 		<security:csrf disabled="true"/> 
 	</security:http>
 	

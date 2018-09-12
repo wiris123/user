@@ -156,6 +156,8 @@ public class JsonController
 		obj.put("payt", (int)remainDays);
 		obj.put("result", df.format(result));
 		obj.put("bonus", df.format(bonus));
+		obj.put("gobonus", bonus);
+		obj.put("gomonthann", result);
 		obj.put("returnPer", (int)Math.round(returnPer));
 		return obj;
 		
@@ -171,13 +173,28 @@ public class JsonController
 		int gohosp = Integer.parseInt(req.getParameter("gohosp"));
 		int sanghosp = Integer.parseInt(req.getParameter("sanghosp"));
 		int sgohosp = Integer.parseInt(req.getParameter("sgohosp"));
-		int chbedosu = Integer.parseInt(req.getParameter("chbedosu"));
-		int chbeinje = Integer.parseInt(req.getParameter("chbeinje"));
-		int chbemri = Integer.parseInt(req.getParameter("chbemri"));
+		String chbedosu = req.getParameter("chbedosu");
+		String chbeinje = req.getParameter("chbeinje");
+		String chbemri = req.getParameter("chbemri");
 
 		
-		//보험료처리
-		int premium = hosp+gohosp+sanghosp+sgohosp+chbedosu+chbeinje+chbemri;
+		
+		int premium = hosp+gohosp+sanghosp+sgohosp;
+		//보험료처리//||chbeinje==null||chbemri==null
+		if(chbedosu!=null)
+		{
+			premium += Integer.parseInt(chbedosu);
+		}
+		if(chbeinje!=null)
+		{
+			premium += Integer.parseInt(chbeinje);
+		}
+		if(chbemri!=null)
+		{
+			premium += Integer.parseInt(chbemri);
+		}
+		
+		
 		double result = 10000.;
 		result = 10000*(1+(premium*2*0.01));
 		DecimalFormat df = new DecimalFormat("#,###"); 

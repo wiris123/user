@@ -15,8 +15,29 @@ public class MyStatusDTO
 	private Date regidate;
 	private String inssort;
 	private String death_ins;
+	private String paytime;
+	private String instart;
 	
-	
+	public MyStatusDTO(String num, String id, String insname, String insnum, String remainpay, String paidprem,
+			String prem, String contstat, Date regidate, String inssort, String death_ins, String paytime,
+			String instart) 
+	{
+		super();
+		this.num = num;
+		this.id = id;
+		this.insname = insname;
+		this.insnum = insnum;
+		this.remainpay = remainpay;
+		this.paidprem = paidprem;
+		this.prem = prem;
+		this.contstat = contstat;
+		this.regidate = regidate;
+		this.inssort = inssort;
+		this.death_ins = death_ins;
+		this.paytime = paytime;
+		this.instart = instart;
+	}
+
 	public MyStatusDTO(String num, String id, String insname, String insnum, String remainpay, String paidprem,
 			String prem, String contstat, Date regidate, String inssort, String death_ins) 
 	{
@@ -73,6 +94,7 @@ public class MyStatusDTO
 		this.paidprem = paidprem;
 		this.prem = prem;
 		this.contstat = contstat;
+		
 	}
 
 	public String getNum() {
@@ -150,6 +172,4 @@ public class MyStatusDTO
 	public void setContstat(String contstat) {
 		this.contstat = contstat;
 	}
-	
-	
 }

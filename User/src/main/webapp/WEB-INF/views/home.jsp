@@ -59,7 +59,7 @@ function moveCalc()
 								<!-- 배너있을경우 추가 -->						
 							<h2><span>보험료를 간편하게 설계해보세요</span></h2>
 							</div>
-							<div class="form">
+							<div class="form" style="width:700px;">
 								<ul>
 									<!-- 보험상품-->
 									<li>
