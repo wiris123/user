@@ -59,41 +59,10 @@ function premCal()
 			{
 				
 			}
-			$.ajax
-			({
-				url:"./annuPrem.do",
-				type : "post",
-				data : 
-				{
-					payment : $('#payment').val(),
-					instart : $('#instart').val(),
-					interest : $('#interest').val(),
-					birth : $('#birth').val(),
-					gender : $('#calcGender1').val() + $('#calcGender2').val(),
-					paytime : $('#paytime').val(),
-				},
-				dataType : "json",
-				contentType : "application/x-www-form-urlencoded;charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
-				success:function(resp)
-				{	//성공 시 월납입액, 납부연한에 값 입력
-					
-					$('#resultAnnu').text(resp.result);		
-					$('#spanBonusAmount').text(resp.bonus);
-					$('#returnPer').text(resp.returnPer);
-					$('.result-info-area').show();
-					$('#gobirth').val($('#birth').val())
-					$('#gomonthann').val(resp.gomonthann);
-					$('#gobonus').val(resp.bonus);
-					
-				},
-				error:function(errorData)
-				{
-					
-				}
-
-			});	
 
 		});	
+
+	});	
 }
 </script>
                <!-- CMS 영역 -->

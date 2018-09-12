@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>고객센터</title>
-dsadsaadas
 <script>
 function qnaCheck(fn) {
 	if(fn.name.value == "") {
