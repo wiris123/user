@@ -3,7 +3,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -12,6 +11,8 @@
 </head>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" href="../resources/css/mypage.css" />
+
 <style>
    h1 {
        padding: 50px 0;
@@ -86,9 +87,11 @@
       background-color: #1f75d9;
     }
     
-   
+    .btn-type4 logout:hover{
+       color:#1f75d9;
+    }
 </style>
-<script>
+<<script>
 function contactEdit(mode,insnum,product)
 {
    var   modeSel = mode;
@@ -112,9 +115,6 @@ function contactEdit(mode,insnum,product)
    }
    
 }
-
-
-
 </script>
 <body>
    <div id="wrapper">
@@ -148,8 +148,6 @@ function contactEdit(mode,insnum,product)
                
                <h2 class="heading"><strong>${member.name }</strong> 고객님 기본정보 <a href="../logout" class="btn-type4 logout"><span>본인인증 종료</span></a></h2>
                <!-- <p class="txt"><span>최근 접속 일시</span> 2018-09-03 21:36:43</p> -->
-              
-             
                <ul>
                   <li><span>생년월일</span>${member.birth }</li>
                   <li><span>휴대폰</span>${member.mobile }</li>
@@ -161,10 +159,14 @@ function contactEdit(mode,insnum,product)
              <form:form method="post" action="../logout">
                      <input type="submit" value="로그아웃" />
                </form:form>
-               <p class="txt">개인정보 변경은 삼성생명 사이버창구를 이용해주시기 바랍니다.</p>
                <div class="btn-sub">
-                  <a href="https://pcyber.samsunglife.com/pcyber/person/person/baseInfoChng/addressPhone.do" class="btn-type2 c3 arr" target="_blank" title="새창) 삼성생명 사이버창구"><span>사이버창구 이동</span></a>
+               <a href="../member/modifygo.do" class="btn-type2 c3 arr" target="_blank" title="새창) ISM생명 사이버창구"><span>회원정보수정</span></a>
+               <a href="../member/delete.do" class="btn-type2 c3 arr" target="_blank" title="새창) ISM생명 사이버창구"><span>회원탈퇴</span></a>
                </div>
+               <p class="txt">개인정보 변경은 ISM 사이버창구를 이용해주시기 바랍니다.</p>
+               <!-- <div class="btn-sub">
+                  <a href="https://pcyber.samsunglife.com/pcyber/person/person/baseInfoChng/addressPhone.do" class="btn-type2 c3 arr" target="_blank" title="새창) 삼성생명 사이버창구"><span>사이버창구 이동</span></a>
+               </div> -->
             </div>
             <div class="line"></div>
          </div>
@@ -212,10 +214,11 @@ function contactEdit(mode,insnum,product)
                   <th scope="col">현재<br/>납입한 보험료</th>
                   <th scope="col">보험료</th>
                   <th scope="col">계약상태</th>
-                  <th scope="col">납입유예</th>
                   <th scope="col">계약해지</th>
+                  <th scope="col">납입중지</th>
                   
                </tr>
+               <tr>
                <c:forEach items="${dto3 }" var="rows">
                <form method="get">
                   <tr>
@@ -264,20 +267,19 @@ function contactEdit(mode,insnum,product)
                   <th scope="col">계약해지</th>
                </tr>
                <tr>
-               <c:forEach items="${dto }" var="rows">
+              <c:forEach items="${dto }" var="rows">
                   <th scope="col" style="background-color: white;">${rows.num }</th>
                      <th scope="col" style="background-color: white;">${rows.insnum }</th>
                      <th scope="col" style="background-color: white;">${rows.remainpay }</th>
                      <th scope="col" style="background-color: white;">${rows.remainpay }</th>
                      <th scope="col" style="background-color: white;">${rows.paidprem }</th>
-                     <th scope="col" style="background-color: white;"><fmt:formatNumber value="${rows.prem }" type="currency" currencySymbol="￦" /></th>
+                     <th scope="col" style="background-color: white;">${rows.prem }</th>
                      <th scope="col" style="background-color: white;">${rows.contstat }</th>
-                     <th scope="col" style="background-color: white;"><fmt:formatNumber value="${rows.death_ins }" type="currency" currencySymbol="￦" /></th>
+                     <th scope="col" style="background-color: white;">${row.death_ins }</th>
                      <th scope="col" style="background-color: white;">
-                        <a href="javascript:contactEdit('cancel',${rows.insnum },'term')" class="btn blue"
+                        <a href="javascript:contactEdit('cancel', ${rows.insnum },'prop')" class="btn blue"
                         ><span style="color:white;">계약해지</span></a>
-                     </th>   
-                     
+                     </th>  
                </tr>
                </c:forEach>
             </thead>
@@ -287,7 +289,7 @@ function contactEdit(mode,insnum,product)
          <br /><br /><br />
          <!-- ##실손보험  보유 현황-->      
          <!-- ## 검색결과 ## -->
-         <p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>실손보험</b>이 총 <em id="count">${fn:length(dto2)}</em>건 조회되었습니다.</p>
+         <p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>연금보험</b>이 총 <em id="count">${fn:length(dto2)} </em>건 조회되었습니다.</p>
 
          <!-- ## 보유계약조회 목록 ## -->
          <table class="tbl-type2 list" cellspacing="0" summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">
@@ -305,7 +307,7 @@ function contactEdit(mode,insnum,product)
                   <!-- <th scope="col">사망보험금</th> -->
                </tr>
                <tr>
-               <c:forEach items="${dto2 }" var="rows">
+              <c:forEach items="${dto2 }" var="rows">
                   <th scope="col" style="background-color: white;">${rows.num }</th>
                      <th scope="col" style="background-color: white;">${rows.insnum }</th>
                      <th scope="col" style="background-color: white;">${rows.remainpay }</th>
@@ -329,7 +331,7 @@ function contactEdit(mode,insnum,product)
     <section id="content3"> <br /><br />
         <h1 class="hd">가입 계속하기</h1>      
          <!-- ## 검색결과 ## -->
-         <p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 가입 진행 중인 보험이 총 <em id="count">0</em>건 조회되었습니다. (최대 30일까지 저장)</p>
+         <p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>연금보험</b>이 총 <em id="count">${fn:length(dto2)} </em>건 조회되었습니다.</p>
 
          <!-- ## 보유계약조회 목록 ## -->
          <table class="tbl-type2 list" cellspacing="0" summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">

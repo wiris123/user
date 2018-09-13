@@ -53,7 +53,7 @@ public class GoogleloginController
 	{
 		System.out.println("여기는 googleCallback");
 
-		return "snslogin/googleSuccess";
+		return "member/mypage";
 	}
 	
 	/*@RequestMapping("/snslogin/google.do")

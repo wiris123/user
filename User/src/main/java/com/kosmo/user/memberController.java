@@ -65,13 +65,13 @@ public class memberController {
 		//연금보험 가입 현황 조회
 		ArrayList<MyStatusDTO> list3 = sqlSession.getMapper(MyMemberImpl.class).selectMyPageAnnu(id);
 		
-		mv.addObject("dto", list1);
+		mv.addObject("dto", list1); //정기
 		
 		mv.addObject("member",memVO);
 		
-		mv.addObject("dto2", list2);
+		mv.addObject("dto2", list2); //실손
 		
-		mv.addObject("dto3", list3);
+		mv.addObject("dto3", list3); //연금
 		
 		mv.addObject("gen", gen);
 		
@@ -88,8 +88,7 @@ public class memberController {
 		String birth = (req.getParameter("birth1")+"-"+req.getParameter("birth2")+"-"+req.getParameter("birth3"));
 		Date dat = Date.valueOf(birth);
 		
-		sqlSession.getMapper(MyMemberImpl.class).insertjoin
-		(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat);
+		sqlSession.getMapper(MyMemberImpl.class).insertjoin(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat, req.getParameter("zipcode")+req.getParameter("zipcode1")+req.getParameter("zipcode2"));
 
 		return "redirect:/member/login.do";
 	}
