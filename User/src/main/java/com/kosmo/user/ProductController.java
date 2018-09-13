@@ -14,6 +14,13 @@ public class ProductController
 	//JDBC 템플릿
 	JdbcTemplate template;
 	
+	@RequestMapping("/product/pro_annual2")
+	public String pro_annual2() 
+	{
+		
+		return "product/pro_annual2";
+	}
+	
 	@RequestMapping("/product/pro_annual")
 	public String pro_annual() 
 	{
