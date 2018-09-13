@@ -226,7 +226,7 @@ function email_input(em, frm){
         				<td>아이디</td><br />
         				<td><input type=text name="id" size=15 maxlength=15 id="chk_id1" style="width: 70%;" value="${USER_ID }" readonly>
         					<input type=button value="중복검사" id="idOverlap" onclick="check_id();" style="width: 29%; position: relative;top: 2px;"></td>
-        					<input type=hidden id="chk_id2" name=chk_id2 value="0">
+        					<input type=hidden id="chk_id2" name=chk_id2" value="0">
       				</tr>
       				
 						<tr>

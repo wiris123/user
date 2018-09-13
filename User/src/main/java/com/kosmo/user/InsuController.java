@@ -367,9 +367,14 @@ public class InsuController
 		//위험률을 계산하여 저장
 		int riskPremium =   drive+ cigar+ hospit1+ hospit2+ hospit3;
 		
+
+		
+		// member_annu 삽입
+
 		System.out.println("id"+id+"name"+name+"phone"+phone+"mobile"+	mobile+"email"+	email+"drive"+	String.valueOf(drive)+"cigar"+	String.valueOf(cigar)+"ho1"+	String.valueOf(hospit1)+"ho2"+
 				String.valueOf(hospit2)+"ho3"+"3"+"insname"+ins_name+"mothann"+monthann+"rprem"+ String.valueOf(riskPremium));
 		// member_annu 삽입(12개)
+
 		sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu(id,name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
 				String.valueOf(hospit2),"3",ins_name,monthann, String.valueOf(riskPremium));
 		//입력완료

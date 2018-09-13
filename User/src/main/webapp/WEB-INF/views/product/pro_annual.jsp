@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>연금 보험</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script type="text/javascript"
    src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"

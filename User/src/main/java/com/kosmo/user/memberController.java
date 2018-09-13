@@ -53,11 +53,16 @@ public class memberController {
 		//실손보험 가입현황 조회
 		ArrayList<MyStatusDTO> list2 = sqlSession.getMapper(MyMemberImpl.class).selectMyPageProp(id);
 		
+		//연금보험 가입 현황 조회
+		ArrayList<MyStatusDTO> list3 = sqlSession.getMapper(MyMemberImpl.class).selectMyPageAnnu(id);
+		
 		mv.addObject("dto", list1);
 		
 		mv.addObject("member",memVO);
 		
 		mv.addObject("dto2", list2);
+		
+		mv.addObject("dto3", list3);
 		
 		mv.setViewName("member/mypage");
 		

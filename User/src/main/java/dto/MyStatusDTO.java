@@ -3,7 +3,8 @@ package dto;
 import java.sql.Date;
 
 public class MyStatusDTO 
-{
+{	
+	//멤버변수
 	private	String	num;
 	private	String	id;
 	private	String	insname;
@@ -17,6 +18,7 @@ public class MyStatusDTO
 	private String death_ins;
 	private String paytime;
 	private String instart;
+	
 	
 	public MyStatusDTO(String num, String id, String insname, String insnum, String remainpay, String paidprem,
 			String prem, String contstat, Date regidate, String inssort, String death_ins, String paytime,
@@ -78,10 +80,7 @@ public class MyStatusDTO
 		this.death_ins = death_ins;
 	}
 
-	public MyStatusDTO() 
-	{
-	
-	}
+	public MyStatusDTO() {}
 
 	public MyStatusDTO(String num, String id, String insname, String insnum, String remainpay, String paidprem,
 			String prem, String contstat) {
@@ -97,10 +96,6 @@ public class MyStatusDTO
 		
 	}
 
-	public String getNum() {
-		return num;
-	}
-
 	public MyStatusDTO(String id, String insname, String insnum, String remainpay, String paidprem, String prem,
 			String contstat) {
 		super();
@@ -113,6 +108,10 @@ public class MyStatusDTO
 		this.contstat = contstat;
 	}
 
+	public String getNum() {
+		return num;
+	}
+	
 	public void setNum(String num) {
 		this.num = num;
 	}

@@ -18,4 +18,7 @@ public interface MyMemberImpl
 	public MemberVO selectMyPageMember(String id);
 
 	public ArrayList<MyStatusDTO> selectMyPageProp(String id);
+	
+	public ArrayList<MyStatusDTO> selectMyPageAnnu(String id);
+
 }
