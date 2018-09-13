@@ -84,13 +84,11 @@
       background-color: #1f75d9;
     }
     
-	
+    .btn-type4 logout:hover{
+    	color:#1f75d9;
+    }
 </style>
-<script>
 
-
-
-</script>
 <body>
    <div id="wrapper">
       <!-- 머리 -->
@@ -123,8 +121,6 @@
                
                <h2 class="heading"><strong>${member.name }</strong> 고객님 기본정보 <a href="../logout" class="btn-type4 logout"><span>본인인증 종료</span></a></h2>
                <!-- <p class="txt"><span>최근 접속 일시</span> 2018-09-03 21:36:43</p> -->
-              
-             
                <ul>
                   <li><span>생년월일</span>${member.birth }</li>
                   <li><span>휴대폰</span>${member.mobile }</li>
@@ -148,7 +144,7 @@
             <h2 class="hd">추천보험</h2>
             <div class="info-suggest">
                <p id="keyWordSubTitle">
-                  <strong><span>20대 남성</span> 추천 보험 키워드</strong>
+                  <strong><span>${gen }대 남성</span> 추천 보험 키워드</strong>
                <span class="txt">보험은 부담이 아닌 편안한 노후와 건강한 삶을 위한 든든한 미래의 자산입니다.  </span></p>
                <ul id="KeyWordList"><li class="bg1"><strong>세액공제</strong><span>직장인 필수보험, 세액공제 매년 최대 66만원 환급으로 현재와 미래를 함께 대비!    </span></li><li class="bg2"><strong>저축    </strong><span>저금리 시대, 절세는 필수! 연복리 운영, 이자소득세 15.4% 비과세까지!           </span></li><li class="bg3"><strong>건강    </strong><span>대한민국 국민 사망원인 1위 암! 건강할 때 미리 준비하고 더 크게 보장받고!      </span></li></ul>
             </div>
