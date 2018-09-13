@@ -1,5 +1,7 @@
 package com.kosmo.user;
 
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -7,6 +9,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.catalina.mapper.Mapper;
 import org.apache.ibatis.session.SqlSession;
@@ -367,25 +370,22 @@ public class InsuController
 		//위험률을 계산하여 저장
 		int riskPremium =   drive+ cigar+ hospit1+ hospit2+ hospit3;
 		
-
-		
-		// member_annu 삽입
-
-		System.out.println("id"+id+"name"+name+"phone"+phone+"mobile"+	mobile+"email"+	email+"drive"+	String.valueOf(drive)+"cigar"+	String.valueOf(cigar)+"ho1"+	String.valueOf(hospit1)+"ho2"+
-				String.valueOf(hospit2)+"ho3"+"3"+"insname"+ins_name+"mothann"+monthann+"rprem"+ String.valueOf(riskPremium));
 		// member_annu 삽입(12개)
 
-		sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu(id,name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
+		sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu
+		(id,name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
 				String.valueOf(hospit2),"3",ins_name,monthann, String.valueOf(riskPremium));
 		//입력완료
 		
 		
-
+		
 		//마이페이지에서 조회할 수 있는 MyStatus
 		String ctm = String.valueOf(System.currentTimeMillis());
 		String payment = map.get("payment").toString();
+		int minusPayment = (int)(Integer.parseInt(payment)-Integer.parseInt(payment)*(0.005*riskPremium));
 		
-		sqlSession.getMapper(MyInsuImpl.class).insertStatusAnnu(id, ins_name, ctm, String.valueOf(remainpay), paidprem, payment, monthann, map.get("instart").toString(), "E", String.valueOf(remainpay));
+		sqlSession.getMapper(MyInsuImpl.class).insertStatusAnnu
+		(id, ins_name, ctm, String.valueOf(remainpay), paidprem, String.valueOf(minusPayment), monthann, map.get("instart").toString(), "E", String.valueOf(remainpay));
 		
 
 		mv.addObject("ins_num", ctm);
@@ -394,6 +394,35 @@ public class InsuController
 		mv.setViewName("/product/pro_success");
 		
 		return mv;
+	}
+	
+	@RequestMapping("/product/pro_status")
+	public String editContstat(HttpServletRequest req,HttpServletResponse resp) throws IOException
+	{
+		ModelAndView mv = new ModelAndView();
+		resp.setContentType("text/html; charset=UTF-8");
+
+		String insnum = req.getParameter("insnum"); 
+		String mode = req.getParameter("mode");
+		String product = req.getParameter("product");
+		
+		int aff=0;
+		if(mode.equals("pause"))
+		{
+			aff = sqlSession.getMapper(MyInsuImpl.class).updateStatus(insnum,product);
+		}
+		else if (mode.equals("cancel"))
+		{
+			aff = sqlSession.getMapper(MyInsuImpl.class).updateStatusDelete(insnum,product);
+		}
+		
+		PrintWriter out = resp.getWriter();
+		
+/*		out.println("<script>alert('납입중지 신청이 완료되었습니다.'); location.href="/member/mypage.do"</script>");
+		out.flush();
+		*/
+		
+		return "redirect:/member/mypage.do";
 	}
 	
 	

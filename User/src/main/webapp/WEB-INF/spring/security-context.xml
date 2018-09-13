@@ -110,7 +110,7 @@
 	 
 	<security:authentication-manager>
 		<security:authentication-provider>
-			<security:jdbc-user-service data-source-ref="dataSource" role-prefix="" 
+			<security:jdbc-user-service data-source-ref="dataSource" role-prefix="ROLE_" 
 				users-by-username-query="SELECT id, pass, enabled FROM member WHERE id=?" 
 				authorities-by-username-query="SELECT id, authority FROM member WHERE id=?"/>
 		</security:authentication-provider>

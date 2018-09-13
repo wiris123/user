@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,7 +12,6 @@
 </head>
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js" ></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link rel="stylesheet" href="../resources/css/mypage.css" />
 <style>
    h1 {
        padding: 50px 0;
@@ -87,6 +89,29 @@
 	
 </style>
 <script>
+function contactEdit(mode,insnum,product)
+{
+	var	modeSel = mode;
+	var insnumber = insnum;
+	var prod = product;
+	
+	if(modeSel=='cancel')
+	{
+		if(confirm("선택한 상품을 해지하시겠습니까?"))
+		{
+			location.href="../product/pro_status?insnum="+insnumber+"&mode="+mode+"&product="+prod;	
+		}
+	
+	}
+	else if(modeSel=='pause')
+	{
+		if(confirm("선택한 상품의 납입을 유예하시겠습니까?"))
+		{
+			location.href="../product/pro_status?insnum="+insnumber+"&mode="+mode+"&product="+prod;	
+		}
+	}
+	
+}
 
 
 
@@ -173,7 +198,7 @@
     	<h1 class="hd">보유계약 조회</h1>
     		<!-- ##연금보험  보유 현황-->
     		<!-- ## 검색결과 ## -->
-			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>연금보험</b>이 총 <em id="count">0</em>건 조회되었습니다.</p>
+			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>연금보험</b>이 총 <em id="count">${fn:length(dto3)} </em>건 조회되었습니다.</p>
 
 			<!-- ## 보유계약조회 목록 ## -->
 			<table class="tbl-type2 list" cellspacing="0" summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">
@@ -187,26 +212,31 @@
 						<th scope="col">현재<br/>납입한 보험료</th>
 						<th scope="col">보험료</th>
 						<th scope="col">계약상태</th>
+						<th scope="col">납입유예</th>
 						<th scope="col">계약해지</th>
-						<th scope="col">납입중지</th>
 						
 					</tr>
-					<tr>
 					<c:forEach items="${dto3 }" var="rows">
-						<th scope="col" style="background-color: white;">${rows.num }</th>
-							<th scope="col" style="background-color: white;">${rows.insnum }</th>
-							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
-							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
-							<th scope="col" style="background-color: white;">${rows.paidprem }</th>
-							<th scope="col" style="background-color: white;">${rows.prem }</th>
-							<th scope="col" style="background-color: white;">${rows.contstat }</th>
-							<th scope="col" style="background-color: white;">
-								<a href="" class="btn blue"><span style="color:white;">계약해지</span></a>
-							</th>
-							<th scope="col" style="background-color: white;">
-								<a href="" class="btn blue"><span style="color:white;">납입중지</span></a>
-							</th>
-					</tr>
+					<form method="get">
+						<tr>
+							<th scope="col" style="background-color: white;">${rows.num }</th>
+								<th scope="col" style="background-color: white;"><span name="insnum">${rows.insnum }</span></th>
+								<th scope="col" style="background-color: white;">${rows.remainpay }</th>
+								<th scope="col" style="background-color: white;">${rows.remainpay }</th>
+								<th scope="col" style="background-color: white;">${rows.paidprem }</th>
+								<th scope="col" style="background-color: white;"><fmt:formatNumber value="${rows.prem }" type="currency" currencySymbol="￦" />
+								</th>
+								<th scope="col" style="background-color: white;">${rows.contstat }</th>
+								<th scope="col" style="background-color: white;">
+									<a href="javascript:contactEdit('pause',${rows.insnum },'annu')" class="btn blue"
+									><span style="color:white;">납입유예</span></a>
+								</th>
+								<th scope="col" style="background-color: white;">
+									<a href="javascript:contactEdit('cancel',${rows.insnum },'annu')" class="btn blue"
+									><span style="color:white;">계약해지</span></a>
+								</th>						
+						</tr>
+					</form>
 					</c:forEach>
 				</thead>
 				<tbody id="contractList">
@@ -215,7 +245,7 @@
 			<br /><br /><br />
     		<!-- ##정기보험  보유 현황-->
     		<!-- ## 검색결과 ## -->
-			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>정기보험</b>이 총 <em id="count">0</em>건 조회되었습니다.</p>
+			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>정기보험</b>이 총 <em id="count">${fn:length(dto)}</em>건 조회되었습니다.</p>
 
 			<!-- ## 보유계약조회 목록 ## -->
 			<table class="tbl-type2 list" cellspacing="0" 
@@ -240,12 +270,13 @@
 							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
 							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
 							<th scope="col" style="background-color: white;">${rows.paidprem }</th>
-							<th scope="col" style="background-color: white;">${rows.prem }</th>
+							<th scope="col" style="background-color: white;"><fmt:formatNumber value="${rows.prem }" type="currency" currencySymbol="￦" /></th>
 							<th scope="col" style="background-color: white;">${rows.contstat }</th>
-							<th scope="col" style="background-color: white;">${rows.death_ins }</th>
+							<th scope="col" style="background-color: white;"><fmt:formatNumber value="${rows.death_ins }" type="currency" currencySymbol="￦" /></th>
 							<th scope="col" style="background-color: white;">
-								<a href="" class="btn blue"><span style="color:white;">계약해지</span></a>
-							</th>
+								<a href="javascript:contactEdit('cancel',${rows.insnum },'term')" class="btn blue"
+								><span style="color:white;">계약해지</span></a>
+							</th>	
 							
 					</tr>
 					</c:forEach>
@@ -256,7 +287,7 @@
 			<br /><br /><br />
 			<!-- ##실손보험  보유 현황-->		
 			<!-- ## 검색결과 ## -->
-			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>실손보험</b>이 총 <em id="count">0</em>건 조회되었습니다.</p>
+			<p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>실손보험</b>이 총 <em id="count">${fn:length(dto2)}</em>건 조회되었습니다.</p>
 
 			<!-- ## 보유계약조회 목록 ## -->
 			<table class="tbl-type2 list" cellspacing="0" summary="보유계약목록 : 보유계약의 보험계약번호/상품명, 계약기간/납입기간, 최종 납입사항(남은횟수), 현재 납입한 보험료, 보험료, 계약상태, 보험관련 문서 다운로드 안내">
@@ -280,11 +311,12 @@
 							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
 							<th scope="col" style="background-color: white;">${rows.remainpay }</th>
 							<th scope="col" style="background-color: white;">${rows.paidprem }</th>
-							<th scope="col" style="background-color: white;">${rows.prem }</th>
+							<th scope="col" style="background-color: white;"><fmt:formatNumber value="${rows.prem }" type="currency" currencySymbol="￦" /></th>
 							<th scope="col" style="background-color: white;">${rows.contstat }</th>
 							<th scope="col" style="background-color: white;">
-								<a href="" class="btn blue"><span style="color:white;">계약해지</span></a>
-							</th>
+								<a href="javascript:contactEdit('cancel', ${rows.insnum },'prop')" class="btn blue"
+								><span style="color:white;">계약해지</span></a>
+							</th>	
 							<%-- <th scope="col">${row.death_ins }</th> --%>
 					</tr>
 					</c:forEach>
