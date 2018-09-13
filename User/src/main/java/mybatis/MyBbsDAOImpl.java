@@ -1,6 +1,7 @@
 package mybatis;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Param;
 
@@ -20,6 +21,9 @@ public interface MyBbsDAOImpl
 	
 	//4.View 딴 가져오기(내용가져오기)
 	public BoardVO listView (String num);
+	
+	
+	
 	//public void write( String name,  String contents,  String id);
 /*	public void write(@Param("_name") String name, @Param("_contents") String contents, @Param("_id") String id);
 	

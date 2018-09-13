@@ -10,7 +10,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-<title>회원가입</title>
+<title>수정하기</title>
 		<%@ include file="../include/header.jsp"  %>
 </head>
 	<!-- 머리 -->
@@ -74,51 +74,9 @@ join {
 </style>
 <script type="text/javascript">
 
-	
-//캡챠 그림 새로고침
-function imgRefresh()
-{
-	$.ajax({    	
-    	url:"../captcha.do",
-    	type:"get",
-    	success:function(result){
-   		
-    		    $("#captchaImg").attr("src", "../captcha.do?id=" + Math.random()); 			
-    			
-    	}    	
-    });
-
-}
-
-$(document).ready(function(){
-	
-	$("#confirm").click(function(){
-		var captcha=$("#captcha").val();
-		
-		$.ajax({
-			url:"../capCharConfirm.do?capcha="+captcha,
-		   	type:"get",
-	    	success:function(result){
-				if(result=="SUCCESS"){		
-					$("#captchaConfirmvalue").text("로봇이 아닙니다.");
-					$("#captcha").val("");
-					$("#captchadiv").hide();
-					
-				}else{
-					$("#captcha").val("");
-					imgRefresh();
-				}
-			}
-		});
-
-		
-	});
-	
-});	
-
 
 /*  우편번호 */
-function zipcodeFind(){
+/* function zipcodeFind(){
     new daum.Postcode({
         oncomplete: function(data) {
             var fn = document.memberFrm;
@@ -131,15 +89,7 @@ function zipcodeFind(){
 
 function mValidate() {
 	
-	if(idcheck==false){
-		document.getElementById("idDiv").innerHTML =
-			" 중복 검사를 통과하지 못했습니다.";
-		document.getElementById("idDiv").style.color=
-			'red';
-		document.getElementById("id").focus();
-		
-		return false;
-	} 
+	
 	//비밀번호에 입력한 값과 비밀번호 확인에 입력한 값이
 	//일치 하지 않으면 서버로 전송하지 않도록
 	var pass = document.getElementById("pass");
@@ -205,7 +155,7 @@ function mValidate() {
 		 return false;
 		}
 }
-
+ */
 
 function email_input(em, frm){
 	//선택한 select의 값이 빈값이 아닐때만 동작
@@ -227,43 +177,8 @@ function email_input(em, frm){
 	}
 } 
  
-function idCheck()
-{   
-	$.ajax({
-		
-		url : "../member/idCheck.do",
-		type : 'get',
-		data : 
-		{
-			id : $('#id').val()
-		}
-		,		
-		dataType : "json",
-		contentType : "text/html;charset=utf-8",
-		success : function(data) {
-			
-			if (data.aff==1) 
-			{ 
-				
-
-				$("#id").css("border",'solid red'); 
-			}
-			else
-			{ 
-				
-				$("#id").css("border",'solid green');  
-				$("#id").focus();
-			}
-		},
-		error : function(errorData)
-		{
-			alert("오류"+errorData.status+" "+errorData.statusText);
-		}
-	});	
-}
-
 </script>
-<body onload= "document.getElementById('id').focus();">
+<body onload= "document.getElementById('pass').focus();">
 	<div id="wrapper">
 	
 	
@@ -272,19 +187,21 @@ function idCheck()
 			
 		<!-- 내용시작 -->
 		<div id="content">
-			<div><a href="${pageContext.request.contextPath}/user/register"><h3 class="box-title">회원가입</h3></a></div>
+			<div><h3 class="box-title">수정하기</h3></a></div>
 			<div class="join_wrap">   
-
-				<form name="memberFrm" method="post" action="../member/.do" onsubmit="return mValidate();";" >
+				
+				<c:if test="${sessionScope.siteUserInfo.id ne boardDto.id }">
+				<!-- 작성자 본인이 아니라면 리스트로 돌려보낸다. -->
+				<script>
+					alert("작성자 본인만 수정하실수 있습니다");
+					location.href="list.do";
+				</script>
+				</c:if>	
+				
+				<form name="memberFrm" method="get" action="../member/modify.do" onsubmit="" ><!-- return mValidate();"; -->
 					<div id="join" style="width: 500px; margin: 0 auto;" >
-      				<tr> 
-        				<td>아이디</td><br />
-        				<td>
-        					<input type=text name="id" size=15 maxlength=15 id="id" onkeyup="idCheck();" required="required">
-        					
-        				</td>		
-      				</tr>
-      				<p></p>
+      				
+      			
       				<tr> 
 			        	<td>비밀번호</td>
 			        	<td><input type=password name="pass" id="pass" size=15 maxlength=15 required="required"></td>
@@ -294,7 +211,7 @@ function idCheck()
 				        <td><input type=password name=pass2 id="pass2" size=15 maxlength=15 required="required"></td>
 					</tr>   
 						<label for="name">이름</label>
-						<input type="text" id="name" name="name" pattern="([a-z, A-Z, 가-힣]){2,}" required="required" title="이름은 문자 2자 이상입니다.">
+						<input type="text" id="name" name="name" pattern="([a-z, A-Z, 가-힣]){2,}" required="required" title="이름은 문자 2자 이상입니다."/>
 				     	<label for="email">이메일</label><br />
 						<input type="text"  name="email1" placeholder="이메일을 입력하세요" style="width: 33%;">  @ 
 						<input type="text"  class="pass" name="email2" style="width: 31%" readonly />
@@ -334,53 +251,29 @@ function idCheck()
 						</select> - 
 							<input type="text" id="phone" name="mobile2"  style="width: 30%;"> - 
 							<input type="text" id="phone" name="mobile3" maxlength=4 style="width: 31%;"><br />
-
-						<label for="birth">생년월일</label><br />
-							<select name="birth1" id="" style="width: 30%; height: 45px;">
-								<option value="">출생년도</option>
-								<%for(int i=1900; i<=2018; i++){ %>
-								<option value="<%=i%>"><%=i %></option>
-								<%} %>
-							</select>년 &nbsp;
-							<select name="birth2" id="" style="width: 30%; height: 45px;">
-								<option value="">월</option>
-								<%for(int i=1; i<=9; i++){ %>
-								<option value="0<%=i%>"><%=i %></option>
-								<%} %>
-								<option value="10">10</option>
-								<option value="11">11</option>
-								<option value="12">12</option>
-							</select>월
-							<select name="birth3" id="" style="width: 29%; height: 45px;">
-								<option value="">일</option>
-								<%for(int i=1; i<=9; i++){ %>
-								<option value="0<%=i%>"><%=i %></option>
-								<%} %>
-								<%for(int i=10; i<=30; i++){ %>
-								<option value="<%=i%>"><%=i %></option>
-								<%} %>
-							</select>일<br />
 						<tr>
+				        	<td>생년월일</td>
+				        	<td><input type=text name=birth value="${birth }" id="birth" size=15 maxlength=15 readonly></td>
+						</tr>  
+						<!-- <tr>
 							<td>주소</td><br />
 							<td>
 								<input type="text" name="zipcode" id="zipcode" value=""  class="join_input" style="width:100px;" />
 								<a href="javascript:;" title="새 창으로 열림" onclick="zipcodeFind();" onkeypress="">[우편번호검색]</a><br/>
-								<input type="text" name="zipcode1" value="" id="zipcode1" class="join_input" style="width:550px; margin-top:5px;" /><br>
-								<input type="text" name="zipcode2" value="" id="zipcode2" class="join_input" style="width:550px; margin-top:5px;" />
+								<input type="text" name="addr1" value="" id="addr1" class="join_input" style="width:550px; margin-top:5px;" /><br>
+								<input type="text" name="addr2" value="" id="addr2" class="join_input" style="width:550px; margin-top:5px;" />
 							</td>	
 						</tr>	
+							 -->
 							
-							
-						<div id="captchadiv" style="margin: 10px 0px 30px 0px">	
+						<!-- <div id="captchadiv" style="margin: 10px 0px 30px 0px">	
 						<img src="../captcha.do" id="captchaImg" alt="captcha img">
 						<input type="text" placeholder="보안문자를 입력하세요" name="captcha"  id="captcha">
 						<a href="#" onclick="imgRefresh()" id="refreshBtn" ><i class="glyphicon glyphicon-refresh"></i>새로고침</a>					
-						</a></div>
-						<span id="captchaConfirmvalue" style="color:red;"></span><a href="#" id="confirm">확인</button>
-							
-							
-							
-							<input type="submit" value="가입하기" onclick="">
+						</a></div> -->
+						<!-- <span id="captchaConfirmvalue" style="color:red;"></span><a href="#" id="confirm">확인</button> -->
+						
+						<input type="submit" value="수정하기" onclick="">
 				</form>
 				<iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>
 			</div><!---div join-->

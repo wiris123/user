@@ -63,7 +63,7 @@ public class LoginController
 		model.addAttribute("result", apiResult);
 
         /* 네이버 로그인 성공 페이지 View 호출 */
-		return "snslogin/naverSuccess";
+		return "member/mypage";
 	}
 	
 	/*@RequestMapping("/snslogin/naver.do")

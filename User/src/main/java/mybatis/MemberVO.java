@@ -12,6 +12,7 @@ public class MemberVO {
 	private String mobile;
 	private java.sql.Date birth;
 	private Date regidate;
+	private String zipcode;
 	
 	//기본 생성자
 	public MemberVO() 
@@ -21,7 +22,7 @@ public class MemberVO {
 	
 	//인자 생성자
 
-	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth, Date regidate) {
+	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth, Date regidate, String zipcode) {
 		super();
 		this.id = id;
 		this.pass = pass;
@@ -30,10 +31,11 @@ public class MemberVO {
 		this.mobile = mobile;
 		this.birth = birth;
 		this.regidate = regidate;
+		this.zipcode = zipcode;
 	}
 
 
-	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth) {
+	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth, String zipcode) {
 		super();
 		this.id = id;
 		this.pass = pass;
@@ -41,6 +43,15 @@ public class MemberVO {
 		this.email = email;
 		this.mobile = mobile;
 		this.birth = birth;
+		this.zipcode = zipcode;
+	}
+
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
 	}
 
 	public String getId() {
