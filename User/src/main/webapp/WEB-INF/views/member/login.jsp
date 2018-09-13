@@ -9,8 +9,6 @@
 </head>
 <body>
 	<div id="wrapper">
-
-
 		<script>
 			$(function() {
 

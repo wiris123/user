@@ -17,18 +17,18 @@
 
 			<!-- 내용시작 -->
 			<div id="content">
-	<!-- //계산결과 -->
+	<!-- <!-- //계산결과 -->
 						
-						<!-- 팝업링크 -->
+						팝업링크
 						<div class="view-pop">
 							<a href="#popProResult" class="link-type1"
 								onclick="clickDetailTab(1);"><span>보장내용보기</span></a> <a
 								href="#popProResult" class="link-type1"
 								onclick="clickDetailTab(2);"><span>해지환급금</span></a>
 						</div>
-						<!-- ## POPUP : 계산결과 상세보기 -->
+						## POPUP : 계산결과 상세보기
 
-						<!-- 유틸버튼 -->
+						유틸버튼
 						<div class="area-util">
 							<a href="#none" class="icon-util print" title="인쇄하기"
 								id="doPrintNew" onclick="fn_printEntire();">인쇄하기</a> <a
@@ -39,14 +39,14 @@
 				</div>
 
 				<div id="popProResult" class="ui-pop-call">
-					<!-- open클래스는 스크립트를 통해 추가됨 -->
+					open클래스는 스크립트를 통해 추가됨
 					<div class="header">
 						<button type="button" class="ui-close">
 							보장내용/해지환급금 닫기<span></span>
 						</button>
 					</div>
 					<div class="content pop-proresult">
-						<!-- ## 상단영역 ## -->
+						## 상단영역 ##
 						<div class="top">
 							<h2>삼성생명 인터넷정기보험4.0(무배당)</h2>
 							<ul class="txt-type2 list" id="detailCustInfo">
@@ -58,25 +58,25 @@
 							<div class="btn">
 								<a href="#none" class="btn-round3 down" title="약관 다운로드"
 									onclick="policyDown(true);"><span>약관 다운로드</span></a>
-								<!-- 
+								
 								<span class="ico">
 									<a href="#popSendEmail" class="icon-util2 email" title="이메일보내기" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'>이메일보내기</a>
 									<a href="#none" class="icon-util2 print" title="인쇄하기" id="doPrintPop">인쇄하기</a>
 								</span>
-								 -->
+								
 							</div>
 						</div>
-						<!-- ## 탭 ## -->
+						## 탭 ##
 						<ul class="tab-type3">
 							<li class="on"><a href="#tabResult1" id="detailTab1"
 								onClick="n_logging('term','guaranteeDetail','','');"><span>보장내용</span></a></li>
 							<li><a href="#tabResult2" id="detailTab2"
 								onClick="n_logging('term','refundDetail','','');"><span>해지환급금</span></a></li>
 						</ul>
-						<!-- ## 스크롤영역 : @select-dataN으로 선택한 항목 클래스 설정 ## -->
+						## 스크롤영역 : @select-dataN으로 선택한 항목 클래스 설정 ##
 
 						<div class="tab-wrap select-data1">
-							<!-- # 탭1 : 보장내용 ## -->
+							# 탭1 : 보장내용 ##
 							<div id="tabResult1" class="wrap-scroll on" tabindex="0">
 								<div class="section">
 									<h3 class="tit-sub1">[ 사망보험금 ]</h3>
@@ -124,7 +124,7 @@
 									<a href="#none" class="btn-type2 ui-close"><span>확인</span></a>
 								</div>
 							</div>
-							<!-- # 탭2 : 해지환급금 ## -->
+							# 탭2 : 해지환급금 ##
 							<div id="tabResult2" class="wrap-scroll" tabindex="0">
 								<div class="tb-toggle">
 									<table cellspacing="0"
@@ -387,7 +387,7 @@
 
 
 
-
+ -->
 
 
 

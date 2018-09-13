@@ -112,7 +112,7 @@ function moveCalc(frm)
 										</div>
 									</li>
 								</ul>
-								<a href="#" class="btn" name="planApply" id="planApply"><button type="submit">확인</button></a>
+								<a href="#" class="btn" name="planApply" id="planApply"><button type="submit"><span>확인</span></button></a>
 							</div>
 						</div>
 					</fieldset>
