@@ -7,6 +7,20 @@
 <!-- 머리 -->
 <%@ include file="../include/header.jsp"%>
 </head>
+<script>
+function moveCalc(frm)
+{
+	var mode = document.getElementById("product");	
+	var birthday = document.getElementById("birthday");
+	
+	
+	/* location.href="/user/product/pro_"+mode.value+"?birthday="+birthday; */
+	frm.action = "/user/product/pro_"+mode.value+"?birthday="+birthday;;
+	frm.submit();
+	
+}
+
+</script>
 <body>
 	<div id="wrapper">
 
@@ -31,7 +45,7 @@
 							<!-- box -->
 							<dl class="box box1 on">
 								<dt class="stit">
-									<em>추천상품 1</em><strong>13월의 보너스</strong>를 위한<br /> <strong class="ac">실손험</strong>
+									<em>추천상품 1</em><strong>갑작스러운 병원비</strong>를 위한 <strong class="ac">실손보험</strong>
 								</dt>
 								<dd class="txt">
 									<strong>급여보장<br> + <br /></strong>비급여 <strong>입원 및 통원보장</strong> 혜택!<br />
@@ -84,29 +98,28 @@
 
 							<div class="in">
 								<p class="stit">간 편 계 산 기</p>
-
+								<form method="get" onsubmit="moveCalc(this);">
 								<div class="inbox">
 									<div class="sel">
-										<select class="select" id="prodSelBox" title="상품 선택">
-											<option selected="" value="1">인터넷연금저축보험</option>
-											<option value="2">인터넷연금보험</option>
-											<option value="3">인터넷저축보험</option>
+										<select class="select" id="product" title="상품 선택">
+											<option selected="" value="prop">인터넷실손보장보험</option>
+											<option value="annual">인터넷연금보험</option>
+											<option value="term">인터넷정기보험</option>
 										</select>
 									</div>
-
-									<input type="text" id="inputBirthday" class="txt" onfocus="this.value=''" onblur="if(this.value == '') this.value='생년월일 (예:19800101)';" value="생년월일 (예:19800101)">
-
+									<input type="text" id="birthday" name="birthday" class="txt" onfocus="this.value=''" onblur="if(this.value == '') this.value='생년월일 (예:19800101)';" value="생년월일 (예:19800101)">
 									<div class="rawrap">
 										<p class="ra1">
-											<label><input name="radioGender" value="남자" type="radio" checked="" style="position: absolute; z-index: -1; visibility: hidden;"><span class="jquery-checkbox jquery-checkbox-checked"><span class="mark"><img src="<%=request.getContextPath()%>/resources/cms/pc/images/guide/gda_empty.png"></span></span></label>
+											<label><input name="radioGender" value="1" type="radio" checked="" style="position: absolute; z-index: -1; visibility: hidden;"><span class="jquery-checkbox jquery-checkbox-checked"><span class="mark"><img src="<%=request.getContextPath()%>/resources/cms/pc/images/guide/gda_empty.png"></span></span></label>
 										</p>
 										<p class="ra2">
-											<label><input name="radioGender" value="여자" type="radio" style="position: absolute; z-index: -1; visibility: hidden;"><span class="jquery-checkbox"><span class="mark"><img src="<%=request.getContextPath()%>/resources/cms/pc/images/guide/gda_empty.png"></span></span></label>
+											<label><input name="radioGender" value="2" type="radio" style="position: absolute; z-index: -1; visibility: hidden;"><span class="jquery-checkbox"><span class="mark"><img src="<%=request.getContextPath()%>/resources/cms/pc/images/guide/gda_empty.png"></span></span></label>
 										</p>
 									</div>
 
-									<a href="#none" id="planApply" class="btn">내 수령액 확인/가입</a>
+									<a href="#" id="" class="btn"><button type="submit"><span>내 수령액 확인/가입</span></button></a>
 								</div>
+								</form>
 							</div>
 
 							<!-- box1 -->
