@@ -21,6 +21,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.social.google.connect.GoogleConnectionFactory;
+import org.springframework.social.oauth2.GrantType;
+import org.springframework.social.oauth2.OAuth2Operations;
+import org.springframework.social.oauth2.OAuth2Parameters;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Service;
 import org.springframework.ui.Model;
@@ -40,6 +44,7 @@ import mybatis.MyBbsDAOImpl;
 public class MyBatisController 
 {
 
+	MyMemberImpl inter;
 	
 	@Autowired
 	private SqlSession sqlSession;
@@ -47,18 +52,49 @@ public class MyBatisController
 	@Autowired
 	private JavaMailSender javaMailSender;
 	
-	//로그인처리
-
 	
+
+	//로그인처리
+	/* NaverLoginBO */
+	private NaverLoginBO naverLoginBO;
+	private String apiResult = null;
+	
+	@Autowired
+	private void setNaverLoginBO(NaverLoginBO naverLoginBO) {
+		this.naverLoginBO = naverLoginBO;
+	}
+	/* GoogleLogin */
+	@Autowired
+	private GoogleConnectionFactory googleConnectionFactory;
+	
+	@Autowired
+	private OAuth2Parameters googleOAuth2Parameters;
+
 	//로그인 리다이렉팅
 	@RequestMapping("/member/login.do")
-	public String login()
+	public String login(HttpSession session,Model model)
 	{
-	
+		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
+		String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
 		
+		//https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=sE***************&
+		//redirect_uri=http%3A%2F%2F211.63.89.90%3A8090%2Flogin_project%2Fcallback&state=e68c269c-5ba9-4c31-85da-54c16c658125
+		System.out.println("네이버:" + naverAuthUrl);
+		
+		//네이버 
+		model.addAttribute("url", naverAuthUrl);
+		
+		/* 구글code 발행 */
+		OAuth2Operations oauthOperations = googleConnectionFactory.getOAuthOperations();
+		String url = oauthOperations.buildAuthorizeUrl(GrantType.AUTHORIZATION_CODE, googleOAuth2Parameters);
+
+		System.out.println("구글:" + url);
+
+		model.addAttribute("google_url", url);
+
 		return "member/login";
 	}
-	
+
 	
 	
 	//로그인 성공시
@@ -140,6 +176,70 @@ public class MyBatisController
 		}
 	
 		return "redirect:/custom/cus_qna";
+	}
+	
+	
+	//유저정보 수정
+    @RequestMapping("member/modifygo.do")
+    public String modify(HttpServletRequest req) {
+    	return "member/modify";
+    }
+    
+    @RequestMapping("member/modify.do")
+    public String update(HttpServletRequest req,HttpSession session)
+    {
+    	String id = session.getAttribute("USER_ID").toString();
+    	String name = req.getParameter("name");
+        String pass = req.getParameter("pass");        
+        String email = req.getParameter("email1")+"@"+req.getParameter("email2");
+        String mobile = req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3");
+       
+        System.out.println(id+pass+name+email+mobile);
+        System.out.println("들어가자");
+    
+        sqlSession.getMapper(MyMemberImpl.class).update(id,pass,name,email, mobile);
+        
+        return "redirect:/member/mypage.do";
+    }	
+
+    //수정,삭제전 패스워드 확인페이지
+    @RequestMapping("/member/delete.do")
+	public String PwCheckform(HttpSession session, HttpServletRequest request, Model model) {
+		
+		String pass = (String) session.getAttribute("pass");
+		String id = request.getParameter("id");
+		
+		model.addAttribute("pass", pass);
+		model.addAttribute("id", id);
+		
+		System.out.println("checkpw id/pass/type>>" + id + "/" + pass + "/");
+		return "member/delete";
+	}
+
+	
+    
+
+	//패스워드 검증
+	@RequestMapping("/member/deletemember.go")
+	public ModelAndView passwordAction(HttpServletRequest req,MemberVO vo){
+		ModelAndView mv = new ModelAndView();
+		//파라미터 받기
+		String id = req.getParameter("id");
+		String pass = req.getParameter("pass");
+		
+		vo = sqlSession.getMapper(MyMemberImpl.class).passCheck(pass);
+		
+		if(vo==null)
+		{
+			mv.addObject("LoginNG");
+			mv.setViewName("member/delete");
+		}
+		
+		sqlSession.getMapper(MyMemberImpl.class).delete(id);
+		mv.setViewName("/member/login");
+		
+		return mv;
+		
 	}
 	
 }

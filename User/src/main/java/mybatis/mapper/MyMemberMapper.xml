@@ -5,7 +5,7 @@
 		select * from member where id=#{0} and pass=#{1}
 	</select>	
 	<insert id="insertjoin">
-		insert into member(id,pass,name,email,mobile,birth) values (#{0},#{1},#{2},#{3},#{4},#{5})
+		insert into member(id,pass,name,email,mobile,birth,zipcode) values (#{0},#{1},#{2},#{3},#{4},#{5},#{6})
    </insert>
    <insert id="EmailSender">
 		insert into booking(idx,name,mobile,regidate,email,contents,flag) values (book_seq.NEXTVAL,#{param2},#{param3},sysdate,#{param4},#{param5},#{param6})
@@ -26,4 +26,20 @@
    		select * from member_annu_my where id=#{0} order by remainpay desc
    	</select>
 
+	<select id="idCheck" resultType="int">
+		SELECT COUNT(*) FROM member WHERE id=#{0}
+	</select>
+    
+    <!-- 회원정보 수정 -->
+    <update id="update">
+        UPDATE member SET name = #{param3}, email = #{param4}, mobile = #{param5},pass = #{param2}  WHERE id = #{param1} 
+    </update>
+    
+    <select id="passCheck" resultType="mybatis.MemberVO">
+		SELECT * FROM member WHERE pass=#{0}
+	</select>
+    
+    <delete id="delete">
+		delete from member where id=#{param1}
+	</delete>
 </mapper>

@@ -9,7 +9,7 @@ public interface MyMemberImpl
 {
 	public MemberVO login(String id, String pass);
 	
-	public void insertjoin(String id, String pass, String name, String email, String mobile, Date birth);
+	public void insertjoin(String id, String pass, String name, String email, String mobile, Date birth, String zipcode);
 	
 	public void EmailSender(String idx, String name, String mobile, String email, String contents, String flag);
 	
@@ -20,5 +20,14 @@ public interface MyMemberImpl
 	public ArrayList<MyStatusDTO> selectMyPageProp(String id);
 	
 	public ArrayList<MyStatusDTO> selectMyPageAnnu(String id);
+	
+	public int idCheck(String id);
+	
+	public void update(String id, String pass,String name,String email,String mobile);
+	
+	public MemberVO passCheck(String pass);
+	
+	public void delete(String id);
+	
 
 }

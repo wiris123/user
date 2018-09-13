@@ -10,10 +10,13 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import mybatis.MyMemberImpl;
 
 
 @Controller
@@ -21,6 +24,9 @@ public class JsonController
 {
 	
 
+	@Autowired
+	org.apache.ibatis.session.SqlSession SqlSession;
+	
 	@RequestMapping("/product/termPrem.do")
 	@ResponseBody
 	public Map<String, String> termPrem(Model model,HttpServletRequest req) throws ParseException
@@ -206,6 +212,22 @@ public class JsonController
 
 		return map;
 	}
+	
+	@ResponseBody
+	@RequestMapping("/member/idCheck.do")
+	public Map<String, Object> idChk(HttpServletRequest req)
+	{
+		Map<String, Object> map = new HashMap<String, Object>();
+		
+		String id = req.getParameter("id");
+		
+		int affected= SqlSession.getMapper(MyMemberImpl.class).idCheck(id);
+	
+		map.put("aff", affected);
+		System.out.println("아이디체크");
+		return map;
+	}
+
 	
 	
 }

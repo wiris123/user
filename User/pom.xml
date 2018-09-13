@@ -16,6 +16,11 @@
 	</properties>
 	<repositories>
 		<repository>
+ 			<id>enonic</id>
+ 			<name>Enonic Repository</name>
+ 			<url>http://repo.enonic.com/public/</url>
+		</repository>
+		<repository>
 			<id>codelds</id>
 			<url>https://code.lds.org/nexus/content/groups/main-repo</url>
 		</repository>
@@ -34,6 +39,29 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/nl.captcha/simplecaptcha -->
+		<dependency>
+			 <groupId>nl.captcha</groupId>
+			 <artifactId>simplecaptcha</artifactId>
+			 <version>1.2.1</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${org.springframework-version}</version>
+		</dependency>
+		
+		
+		<!-- jackson-mapper -->
+		<dependency> 
+			 <groupId>org.codehaus.jackson</groupId>
+			 <artifactId>jackson-mapper-asl</artifactId> 
+		 	 <version>1.9.13</version> 
+		</dependency>
+
+		
 		<dependency>
 			<groupId>org.springframework</groupId>
 			<artifactId>spring-webmvc</artifactId>
@@ -45,6 +73,14 @@
 			<artifactId>aspectjrt</artifactId>
 			<version>${org.aspectj-version}</version>
 		</dependency>
+		
+		<!-- gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.0</version>
+		</dependency>
+		
 		<!-- Logging -->
 		<dependency>
 			<groupId>org.slf4j</groupId>
@@ -87,6 +123,12 @@
 			</exclusions>
 			<scope>runtime</scope>
 		</dependency>
+		
+		
+
+	    <!--자동 가입 방지  -->
+	    
+		
 		<!-- Google Login API -->
 		
        <dependency>
@@ -107,6 +149,23 @@
 			<artifactId>scribejava-core</artifactId>
 			<version>2.8.1</version>
 		</dependency>
+		
+		<!-- Spring security -->
+      <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>4.2.1.RELEASE</version>
+         </dependency>
+         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>4.2.1.RELEASE</version>
+         </dependency>
+         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-taglibs</artifactId>
+            <version>4.2.1.RELEASE</version>
+         </dependency>
 		
 		<!-- @Inject -->
 		<dependency>
@@ -131,6 +190,27 @@
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
+		</dependency>
+		
+		<!--Spring3 Chatting  -->		
+		<dependency>      
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-websocket</artifactId>
+			<version>4.1.6.RELEASE</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.websocket</groupId>
+			<artifactId>javax.websocket-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<!-- gson -->
+		<dependency>
+			<groupId>com.google.code.gson</groupId>
+			<artifactId>gson</artifactId>
+			<version>2.8.0</version>
 		</dependency>
 		
 		<!-- Test -->
@@ -172,7 +252,6 @@
             <artifactId>spring-websocket</artifactId>
             <version>4.1.6.RELEASE</version>
         </dependency>
-        
         
 		<!-- 스프링 시큐리티 -->
 		<dependency>
