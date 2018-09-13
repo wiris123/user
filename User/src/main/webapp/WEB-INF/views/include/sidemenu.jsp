@@ -116,7 +116,7 @@ function qnaCheck(fn) {
          </div>
       </dd>
       <dd class="m2">
-         <a href="#none" onclick="openPopCounsel('chat');ga('send','event','Direct','Etc','Rightside-Navi_Chat',1);" title="새창">
+         <a href="<%=request.getContextPath() %>/custom/chat2" onclick="window.open(this.href, "chat","width=800, height=800");return false;" target="_blank" onclick="openPopCounsel('chat');ga('send','event','Direct','Etc','Rightside-Navi_Chat',1);" title="새창">
             <em name="chatStatus" class="icon-state1 off">[OFF]</em><span>채팅상담</span>
          </a>
       </dd>
@@ -133,7 +133,7 @@ function qnaCheck(fn) {
          </a>
       </dd>
       <dd class="m4">
-         <a href="../custom/response">
+         <a href="<%=request.getContextPath() %>/custom/response">
             <em name="telReserveStatus" class="icon-state1 on">[ON]</em>
             <span>1:1문의요청</span>
          </a>
@@ -160,8 +160,8 @@ function qnaCheck(fn) {
 					<div class="content">
 						<!-- # 상담신청입력폼 # -->
 						<h3 class="mes-top">이메일 주소와 상담하실 내용을 입력해 주세요.</h3>
-						<form id="form" src="/user/custom/sendemail" method="post" action="mailTest.do">
-							<fieldset class="form-content3">
+						<form id="form" src="/user/custom/sendemail" method="post" action="<%=request.getContextPath() %>/custom/mailTest.do">
+							<fieldset class="form-content3"> 
 								<legend>이메일상담 신청정보입력</legend>
 								<dl>
 									<dt class="heading">
