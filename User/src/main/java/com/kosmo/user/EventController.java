@@ -20,4 +20,21 @@ public class EventController {
 		return "event/bbs_notice";
 	}*/
 	
+	@RequestMapping("/bottommenu/terms")
+	public String botm_terms() {
+		
+		return "bottommenu/terms";
+	}
+	
+	@RequestMapping("/bottommenu/privacy")
+	public String botm_privacy() {
+		
+		return "bottommenu/privacy";
+	}
+	
+	@RequestMapping("/bottommenu/elecfinance")
+	public String botm_elecfinance() {
+		
+		return "bottommenu/elecfinance";
+	}
 }
