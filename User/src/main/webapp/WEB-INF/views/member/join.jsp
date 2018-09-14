@@ -162,6 +162,7 @@ function mValidate() {
       return false;
    }
 
+<<<<<<< HEAD
    if(fn.id.value==""){
          alert("아이디를 입력해주세요");
          fn.id.focus();
@@ -173,6 +174,20 @@ function mValidate() {
        document.join.pw.focus();
        return false;
       }
+=======
+	/*  	if(fn.id.value=="")
+	 	{
+		   alert("아이디를 입력해주세요");
+		   fn.id.focus();
+		   return false;
+		}
+			
+		if(!document.join.pw.value) {
+		 window.alert('비밀번호를 입력해 주세요');
+		 document.join.pw.focus();
+		 return false;
+		}
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 
       if(!document.join.pass2.value) {
        window.alert('비밀번호 확인을 입력해 주세요');
@@ -199,11 +214,28 @@ function mValidate() {
        return false;
       }    
 
+<<<<<<< HEAD
       if(!document.join.phone.value) {
        window.alert('핸드폰 번호를 입력해 주세요');
        document.join.phone.focus();
        return false;
       }
+=======
+		if(!document.join.phone.value) {
+		 window.alert('핸드폰 번호를 입력해 주세요');
+		 document.join.phone.focus();
+		 return false;
+		}
+		  */
+		if(!$("#captresult").val()) 
+		{
+		 alert('캡챠를 입력해 주세요');
+		 document.captcha.focus();
+		 return false;
+		}
+			
+		
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 }
 
 

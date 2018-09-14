@@ -240,19 +240,11 @@ function email_input(em, frm){
 					/>
       				<tr> 
         				<td>아이디</td><br />
-        				<td><input type=text name="id" size=15 maxlength=15 id="chk_id1" style="width: 70%;">
+        				<td><input type=text name="id" size=15 maxlength=15 id="chk_id1" value="${USER_ID }" style="width: 70%;">
         					<input type=button value="중복검사" id="idOverlap" onclick="check_id();" style="width: 29%; position: relative;top: 2px;"></td>
         					<input type=hidden id="chk_id2" name=chk_id2 value="0">
       				</tr>
       				<p></p>
-      				<tr> 
-			        	<td>비밀번호</td>
-			        	<td><input type=password name="pass" size=15 maxlength=15></td>
-			      	</tr>
-      				<tr>
-				        <td>비밀번호 확인</td>
-				        <td><input type=password name="pass2" size=15 maxlength=15></td>
-					</tr>   
 						<label for="name">이름</label>
 						<input type="text" id="name" name="name" placeholder="이름">
 				     	<label for="email">이메일</label><br />

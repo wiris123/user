@@ -2,12 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="interfaceLoader.MyInsuImpl">
 	<insert id="insertMemberTerm">
+<<<<<<< HEAD
 			insert into member_term (id,pass,name,phone,mobile,email,drive,cigar,drink,
 			height,weight,danhobby,income,hospit1,hospit2,hospit3,instype,ins_name) values 
 			(#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9},#{10},#{11},#{12},#{13},#{14},#{15},#{16},#{17})
+=======
+			insert into member_term (id,name,phone,mobile,email,drive,cigar,drink,
+			height,weight,danhobby,income,hospit1,hospit2,hospit3,enabled,instype,ins_name) values 
+			(#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9},#{10},#{11},#{12},#{13},#{14},#{15},#{16})
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 	   </insert>
 	<insert id="insertStatusTerm">
-		insert into member_term_my (num,id, insname, insnum, remainpay,paidprem, prem,contstat,inssort, death_ins) values 
+		insert into member_term_my (num,id,insname, insnum, remainpay,paidprem,prem,contstat,inssort, death_ins) values 
 			(term_my_seq.NEXTVAL, #{0},#{1},#{2},#{3},#{4},to_number(#{5},'999999'),#{6},'term', #{7})
 	</insert>
 	<insert id="insertMemberProp">
@@ -15,7 +21,7 @@
 			(prop_mem_seq.NEXTVAL,#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9})
 	   </insert>
 	<insert id="insertStatusProp">
-		insert into member_prop_my (num,id, insname, insnum, remainpay, paidprem,prem,contstat,inssort) values 
+		insert into member_prop_my (num,id, insname, insnum, remainpay, paidprem, prem,contstat,inssort) values 
 			(prop_my_seq.NEXTVAL, #{0},#{1},#{2},#{3},#{4},to_number(#{5}),#{6},'prop')
 	</insert>
 	<insert id="insertMemberAnnu">

@@ -123,7 +123,6 @@ public class InsuController
 		//member_term 테이블에 입력하기 
 		String id = req.getParameter("id");
 		String name = req.getParameter("name");
-		String pass = req.getParameter("pass");
 		String phone = (req.getParameter("phone1")+"-"+req.getParameter("phone2")+"-"+req.getParameter("phone3"));
 		String mobile = (req.getParameter("mobile1")+"-"+req.getParameter("mobile2")+"-"+req.getParameter("mobile3"));
 		String email = req.getParameter("email1")+"@"+req.getParameter("email2");
@@ -141,7 +140,7 @@ public class InsuController
 		String ins_name = req.getParameter("ins_name");
 
 
-		sqlSession.getMapper(MyInsuImpl.class).insertMemberTerm(id,  pass,  name,  phone,  mobile,  email,  drive,
+		sqlSession.getMapper(MyInsuImpl.class).insertMemberTerm(id,  name,  phone,  mobile,  email,  drive,
 				cigar,  drink,  height,  weight,  danhobby,  income,  hospit1,
 				 hospit2,  hospit3,  "2", ins_name);
 	

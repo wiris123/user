@@ -84,7 +84,7 @@ public class MemberVO {
 	public void setMobile(String mobile) {
 		this.mobile = mobile;
 	}
-	public java.sql.                                                              Date getBirth() {
+	public java.sql.Date getBirth() {
 		return birth;
 	}
 	public void setBirth(java.sql.Date birth) {
