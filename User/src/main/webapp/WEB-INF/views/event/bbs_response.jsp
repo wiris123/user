@@ -25,23 +25,7 @@
 				<!-- ## 상단 중요공지사항 : @2015-12-02 : 신규추가 ## -->
 
 
-				<!-- ## 상단검색 ## -->
-				<div class="form-search">
-					<fieldset>
-						<legend>게시물검색</legend>
-						<span class="select-box"> <select id="searchWhere" name="searchWhere" title="검색조건">
-								<option value="all">전체</option>
-								<option value="subject">제목</option>
-								<option value="content">내용</option>
-							</select>
-						</span> <span class="form-wrap1"> <label for="searchText" class="label">검색어를 입력해보세요.</label> <input type="text" id="searchText" name="searchText" class="text placeholder" value="" title="게시물검색 검색어" autocomplete="off">
-						</span> <a href="#none" class="btn-type2 c1" id="noticeSearch" rel="history"><span>검색</span></a>
-					</fieldset>
-				</div>
 
-				<p class="txt-num">
-					총 <em id="total">${totalCount }</em>건
-				</p>
 
 				<!-- ## 게시물출력 ## -->
 				<ul class="board-list" id="noticeList">
@@ -70,10 +54,11 @@
 							</li>
 					</c:forEach>
 				</ul>
-
+									<ul class="nav-gnb">
+				<li><a href="/user/member/joinCheck" class="gnb1"><span>글쓰기</span><em id="headerRecentPlanCount"></em></a></li>
+				</ul>
 				<!-- ## 페이징 ## -->
 				<div class="paging">${pagingImg}</div>
-
 			</div>
 			<!-- 내용끝 -->
 
