@@ -47,10 +47,10 @@ $(document).ready(function(){
 										
 									</fieldset>
 
-									<div class="btn-area">
-										<input type="button" value="취소" onclick="location='member/login'">
-										<input type="button" value="탈퇴" id="btnDelete"/> 
-									</div>
+								<div class="btn-sub">
+                             		 <a href="" class="btn-type2 c3 arr" id="btnDelete" value="탈퇴" target="_blank" ><span>회원탈퇴</span></a>
+                                    <a href="../member/mypage" class="btn-type2 c3 arr" value="취소" target="_blank" ><span>취소</span></a>
+                                 </div>
 								</form>
 							</div>
 						</div>

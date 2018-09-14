@@ -159,13 +159,10 @@ function contactEdit(mode,insnum,product)
              <form:form method="post" action="../logout">
                      <input type="submit" value="로그아웃" />
                </form:form>
+              <p class="txt">개인정보 변경은 ISM생명 사이버창구를 더이상 사용을 원하시지 않으시면 회원탈퇴를 이용해주시기 바랍니다.</p>
                <div class="btn-sub">
-					<a href="../member/modifygo.do" class="btn-type2 c3 arr" target="_blank" title="새창) ISM생명 사이버창구"><span>회원정보수정</span></a>
-					<a href="../member/delete.do" class="btn-type2 c3 arr" target="_blank" title="새창) ISM생명 사이버창구"><span>회원탈퇴</span></a>
-               </div>
-               <p class="txt">개인정보 변경은 삼성생명 사이버창구를 이용해주시기 바랍니다.</p>
-               <div class="btn-sub">
-                  <a href="https://pcyber.samsunglife.com/pcyber/person/person/baseInfoChng/addressPhone.do" class="btn-type2 c3 arr" target="_blank" title="새창) 삼성생명 사이버창구"><span>사이버창구 이동</span></a>
+	               <a href="../member/modifygo.do" class="btn-type2 c3 arr" target="_blank" title="새창) ISM생명 사이버창구"><span>사이버창구 이동</span></a>
+	               <a href="../member/delete.do" class="btn-type2 c3 arr" target="_blank" title="새창) ISM생명 사이버창구"><span>회원탈퇴</span></a>
                </div>
             </div>
             <div class="line"></div>
