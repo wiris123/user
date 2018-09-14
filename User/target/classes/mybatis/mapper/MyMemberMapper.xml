@@ -5,7 +5,7 @@
 		select * from member where id=#{0} and pass=#{1}
 	</select>	
 	<insert id="insertjoin">
-		insert into member(id,pass,name,email,mobile,birth,zipcode) values (#{0},#{1},#{2},#{3},#{4},#{5},#{6})
+		insert into member(id,pass,name,email,mobile,birth,address) values (#{0},#{1},#{2},#{3},#{4},#{5},#{6})
    </insert>
    <insert id="EmailSender">
 		insert into booking(idx,name,mobile,regidate,email,contents,flag) values (book_seq.NEXTVAL,#{param2},#{param3},sysdate,#{param4},#{param5},#{param6})

@@ -209,9 +209,9 @@ function mValidate(fn) {
 		 
 		if(!$("#captresult").val()) 
 		{
-			 alert('캡챠를 입력해 주세요');
-			 document.captcha.focus();
-			 return false;
+		 alert('캡챠를 입력해 주세요');
+		 document.captcha.focus();
+		 return false;
 		}
 			
 		
@@ -349,7 +349,7 @@ function idCheck()
 						<label for="birth">생년월일</label><br />
 							<select name="birth1" id="" style="width: 30%; height: 45px;">
 								<option value="">출생년도</option>
-								<%for(int i=1900; i<=2018; i++){ %>
+								<%for(int i=1940; i<=2018; i++){ %>
 								<option value="<%=i%>"><%=i %></option>
 								<%} %>
 							</select>년 &nbsp;
