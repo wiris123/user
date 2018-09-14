@@ -103,6 +103,7 @@ $(document).ready(function(){
 					$("#captchaConfirmvalue").text("로봇이 아닙니다.");
 					$("#captcha").val("");
 					$("#captchadiv").hide();
+					$("#captresult").val(result);
 					
 				}else{
 					$("#captcha").val("");
@@ -123,13 +124,13 @@ function zipcodeFind(){
         oncomplete: function(data) {
             var fn = document.memberFrm;
             fn.zipcode.value = data.zonecode;//우편번호
-            fn.addr1.value = data.address;//기본주소
-            fn.addr2.focus();//상세주소로 포커스 이동
+            fn.zipcode1.value = data.address;//기본주소
+            fn.zipcode2.focus();//상세주소로 포커스 이동
         }
     }).open();
 }
 
-function mValidate() {
+function mValidate(fn) {
 	
 	if(idcheck==false){
 		document.getElementById("idDiv").innerHTML =
@@ -162,11 +163,12 @@ function mValidate() {
 		return false;
 	}
 
-	if(fn.id.value==""){
+	 	if(fn.id.value=="")
+	 	{
 		   alert("아이디를 입력해주세요");
 		   fn.id.focus();
 		   return false;
-			}
+		}
 			
 		if(!document.join.pw.value) {
 		 window.alert('비밀번호를 입력해 주세요');
@@ -204,6 +206,15 @@ function mValidate() {
 		 document.join.phone.focus();
 		 return false;
 		}
+		 
+		if(!$("#captresult").val()) 
+		{
+		 alert('캡챠를 입력해 주세요');
+		 document.captcha.focus();
+		 return false;
+		}
+			
+		
 }
 
 
@@ -275,7 +286,7 @@ function idCheck()
 			<div><a href="${pageContext.request.contextPath}/user/register"><h3 class="box-title">회원가입</h3></a></div>
 			<div class="join_wrap">   
 
-				<form name="memberFrm" method="post" action="../member/.do" onsubmit="return mValidate();";" >
+				<form name="memberFrm" method="post" action="../member/insertjoin.do" onsubmit="return mValidate(this);" >
 					<div id="join" style="width: 500px; margin: 0 auto;" >
       				<tr> 
         				<td>아이디</td><br />
@@ -338,7 +349,7 @@ function idCheck()
 						<label for="birth">생년월일</label><br />
 							<select name="birth1" id="" style="width: 30%; height: 45px;">
 								<option value="">출생년도</option>
-								<%for(int i=1900; i<=2018; i++){ %>
+								<%for(int i=1940; i<=2018; i++){ %>
 								<option value="<%=i%>"><%=i %></option>
 								<%} %>
 							</select>년 &nbsp;
@@ -372,14 +383,12 @@ function idCheck()
 							
 							
 						<div id="captchadiv" style="margin: 10px 0px 30px 0px">	
+						<input type="hidden" id="captresult" name="captresult" />
 						<img src="../captcha.do" id="captchaImg" alt="captcha img">
 						<input type="text" placeholder="보안문자를 입력하세요" name="captcha"  id="captcha">
 						<a href="#" onclick="imgRefresh()" id="refreshBtn" ><i class="glyphicon glyphicon-refresh"></i>새로고침</a>					
-						</a></div>
-						<span id="captchaConfirmvalue" style="color:red;"></span><a href="#" id="confirm">확인</button>
-							
-							
-							
+						<a href="#" id="confirm">확인</button></a></div>
+						<span id="captchaConfirmvalue" style="color:red;"></span>	
 							<input type="submit" value="가입하기" onclick="">
 				</form>
 				<iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>

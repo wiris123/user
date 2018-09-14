@@ -123,13 +123,6 @@
 							</div>
 						</div>
 						<dl>
-											<dt class="heading">
-												<label ><button><a href="./sendpw.do">비밀번호찾기</a></button></label>
-											</dt>
-											<dt class="heading">
-												<label ><button>아이디찾기</button></label>
-											</dt>
-										</dl>
 						<div class="line"></div>
 						<a href="" class="ban-mypage"><img src="resources/cms/pc/images/event/1808_mypage_ban.jpg" alt=""></a>
 						
