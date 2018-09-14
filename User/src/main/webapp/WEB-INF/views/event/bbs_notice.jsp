@@ -38,7 +38,7 @@
 				</div>
 
 				<p class="txt-num">
-					총 <em id="total">20</em>건
+					총 <em id="total">${totalCount }</em>건
 				</p>
 
 				<!-- ## 게시물출력 ## -->

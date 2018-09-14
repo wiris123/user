@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta property="og:url"
-	content="http://192.168.0.82:8080/user/event/bbs_view?num=31&nowPage=1" />
+	content="http://192.168.0.82:8080/user/event/bbs_view?num=10&nowPage=1" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="ISM" />
 <meta property="og:description" content="공유!!" />
@@ -30,7 +30,7 @@
 					<!-- # 기본정보 : 제목/기간/조회수/당첨자발표일/SNS링크 # -->
 					<div class="heading">
 
-						<h1>${dto.title }<em class="icon-state2 icon1"><span>진행전</span></em>
+						<h1>${dto.title }
 						</h1>
 
 
@@ -57,7 +57,7 @@
 							}(document, 'script', 'facebook-jssdk'));
 						</script>
 						<div class="fb-share-button"
-							data-href="http://192.168.0.122:8080/user/event/bbs_view?num=31&nowPage=1"
+							data-href="http://192.168.0.122:8080/user/event/bbs_view?num=10&nowPage=1"
 							data-layout="button" data-size="large" data-mobile-iframe="true">
 							<a target="_blank"
 								href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2Fuser%2Fevent%2Fbbs_event&amp;src=sdkpreparse"

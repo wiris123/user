@@ -62,9 +62,9 @@
 			<%@ include file="../include/Head.jsp"%>
 			<!-- 내용 시작 -->
 			<div id="content">
-				<div id="agency_00" style="width: 100%; height: 400px;"></div>
+					<div id="agency_00" style="width: 100%; height: 400px;"></div>
 				<!-- 맵이들어간 부분 css - widht, height 주기-->
-				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=18ef362ec63641ef95e64b53e3e5a7a4&APIKEY&libraries=services,clusterer,drawing"></script>
+				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a7ae288dbc4d9f905fac3f833a19964&APIKEY&libraries=services,clusterer,drawing"></script>
 
 				<script>
 					var mapContainer = document.getElementById('agency_00'), // 지도를 표시할 div 

@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>연금 보험</title>
 <script type="text/javascript" src="../www.googleadservices.com/pagead/f.txt">
-	
+<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
 </script>
 
 <script type="text/javascript" src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js" charset="utf-8"></script>
@@ -16,7 +16,7 @@
 <body>
 	<div id="wrapper">
 
-		<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
+		
 		<div id="container">
 			<%@ include file="../include/Head.jsp"%>
 			<!-- page : content /////////////////////////////////////////////////// -->

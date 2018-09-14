@@ -61,7 +61,7 @@
 								</p>
 								<ul class="tab">
 									<li><a href="<%=request.getContextPath() %>/member/mypage.do"><span><em>마이 페이지로</em> 가기</span></a></li>
-									<li><a href="../logout"><span><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그아웃</em></span></a></li>
+									<li><a href="<%=request.getContextPath() %>/logout"><span><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그아웃</em></span></a></li>
 								</ul>
 							</div>
 				</c:when>

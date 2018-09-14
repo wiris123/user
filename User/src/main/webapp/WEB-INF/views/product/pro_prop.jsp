@@ -189,7 +189,7 @@
 									<%-- premium --%>
 									<input type="hidden" name="mode" value="prop" />
 									<%-- mode --%>
-									<input type="hid den" name="payment" id="payment" />
+									<input type="hidden" name="payment" id="payment" />
 									<h4 class="heading">
 										<span id="prdtgb"></span> <strong><span>월납</span><span
 											id="result">0,000</span>원</strong> <a href="#popProductCart"

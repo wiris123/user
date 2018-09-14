@@ -91,7 +91,7 @@
        color:#1f75d9;
     }
 </style>
-<<script>
+<script>
 function contactEdit(mode,insnum,product)
 {
    var   modeSel = mode;
@@ -145,18 +145,26 @@ function contactEdit(mode,insnum,product)
             <div class="line" id="field"></div>
             <div class="info-personal">
                <!-- CASE1 : 고객정보 있을경우 -->
-               
-               <h2 class="heading"><strong>${member.name }</strong> 고객님 기본정보 <a href="../logout" class="btn-type4 logout"><span>본인인증 종료</span></a></h2>
+               <script type="text/javascript">
+            $(document).ready(function() {
+               var name = ${result}.response.name;
+               var email = ${result}.response.email;
+               $("#name").html("환영합니다. "+name);
+               $("#email").html(email);
+             });
+                       
+               </script>
+               <h2 class="heading"><strong id="name">${member.name } </strong> 고객님 기본정보 <a href="../logout" class="btn-type4 logout"><span>본인인증 종료</span></a></h2>
                <!-- <p class="txt"><span>최근 접속 일시</span> 2018-09-03 21:36:43</p> -->
                <ul>
                   <li><span>생년월일</span>${member.birth }</li>
                   <li><span>휴대폰</span>${member.mobile }</li>
-                  <li><span>이메일</span>${member.email }</li>
-                  <li><span>주소</span> 니네집</li>
+                  <li><span>이메일</span><span id="email"></span>${member.email }</li>
+                  <li><span>주소</span > 니네집</li>
                </ul>
             </div>
             <div class="bottom">
-             <form:form method="post" action="../logout">
+             <form:form method="post" action="../user/logout">
                      <input type="submit" value="로그아웃" />
                </form:form>
               <p class="txt">개인정보 변경은 ISM생명 사이버창구를 더이상 사용을 원하시지 않으시면 회원탈퇴를 이용해주시기 바랍니다.</p>
@@ -168,6 +176,31 @@ function contactEdit(mode,insnum,product)
             <div class="line"></div>
          </div>
          <!--## 추천보험 ## -->
+     	<c:if test="${gen eq  50}">
+         <div class="box-content2 line">
+            <h2 class="hd">추천보험</h2>
+            <div class="info-suggest">
+               <p id="keyWordSubTitle">
+                  <strong><span>${gen }대 남성</span> 추천 보험 키워드</strong>
+               <span class="txt">보험은 부담이 아닌 편안한 노후와 건강한 삶을 위한 든든한 미래의 자산입니다.  </span></p>
+               <ul id="KeyWordList"><li class="bg1"><strong>세액공제</strong><span>직장인 필수보험, 세액공제 매년 최대 66만원 환급으로 현재와 미래를 함께 대비!    </span></li><li class="bg2"><strong>저축    </strong><span>저금리 시대, 절세는 필수! 연복리 운영, 이자소득세 15.4% 비과세까지!           </span></li><li class="bg3"><strong>건강    </strong><span>대한민국 국민 사망원인 1위 암! 건강할 때 미리 준비하고 더 크게 보장받고!      </span></li></ul>
+            </div>
+            <div class="bottom">
+               <p class="txt">보험과 관련된 다양한 정보를 뉴스레터로 전달받으세요.</p>
+               <div class="btn-sub">
+                  <a href="#none" onclick="popMypage5El.openOutput();"class="btn-type2 c3 arr" ><span>뉴스레터 신청</span></a>
+               </div>
+            </div>
+           <div class="line"></div>
+         </div>
+            <ul class="box-content3 list-product" id="productList" style="width: 1000px; margin:0 auto;">
+               <!-- case1 : 미가입시 -->
+               <li id="prodType7">   <h3 class="tit" id="simpleName7">정기보험</h3>   <p class="con">한 살이라도 빨리 준비할 수록 <br>적은 부담으로 <br>높은 연금 수령 가능!</p>   <div class="btn">      <a href="javascript:goPlan('7');" class="btn-type2 c1"><span>가입하기</span></a>   </div></li>
+               <li id="prodType2">   <h3 class="tit" id="simpleName2">암보험</h3>   <p class="con">50대 사망률 1위 암의<br> 완전한 보장! 꿈과 미래를 지켜주는<br>가족보험!</p>   <div class="btn">      <a href="javascript:goPlan('2');" class="btn-type2 c1"><span>가입하기</span></a>   </div></li>
+               <li id="prodType9">   <h3 class="tit" id="simpleName9">치아보험</h3>   <p class="con">다 썩어가는 이로부터<br>당신의 치아를 지키는<br> 보험</p>   <div class="btn">      <a href="javascript:goPlan('9');" class="btn-type2 c1"><span>가입하기</span></a>   </div></li>
+            </ul>
+        </c:if>
+        <c:if test="${gen eq  20}">
          <div class="box-content2 line">
             <h2 class="hd">추천보험</h2>
             <div class="info-suggest">
@@ -190,6 +223,7 @@ function contactEdit(mode,insnum,product)
                <li id="prodType2">   <h3 class="tit" id="simpleName2">정기보험</h3>   <p class="con">사랑하는 가족의<br>꿈과 미래를 지켜주는<br>가족보험!</p>   <div class="btn">      <a href="javascript:goPlan('2');" class="btn-type2 c1"><span>가입하기</span></a>   </div></li>
                <li id="prodType9">   <h3 class="tit" id="simpleName9">실손보험</h3>   <p class="con">질병, 상해로부터<br>비급여와 급여 중 본인부담금을<br>보장하는 보험</p>   <div class="btn">      <a href="javascript:goPlan('9');" class="btn-type2 c1"><span>가입하기</span></a>   </div></li>
             </ul>
+            </c:if>
     </section>
 
    <!-- 보유계약조회 -->

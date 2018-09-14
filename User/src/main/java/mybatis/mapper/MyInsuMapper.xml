@@ -3,7 +3,7 @@
 <mapper namespace="interfaceLoader.MyInsuImpl">
 	<insert id="insertMemberTerm">
 			insert into member_term (id,pass,name,phone,mobile,email,drive,cigar,drink,
-			height,weight,danhobby,income,hospit1,hospit2,hospit3,enabled,instype,ins_name) values 
+			height,weight,danhobby,income,hospit1,hospit2,hospit3,instype,ins_name) values 
 			(#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9},#{10},#{11},#{12},#{13},#{14},#{15},#{16},#{17})
 	   </insert>
 	<insert id="insertStatusTerm">

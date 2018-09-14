@@ -27,7 +27,7 @@
 
 					<c:forEach items="${list }" var="rows">
 
-						<li class="state1"><a href="<%=request.getContextPath() %>/event/bbs_view?num=${rows.num }&nowPage=${param.nowPage}"> <span class="visual"><img src="/img/${rows.attfile }" alt="18.9월 보험료 결과발송 이벤트"> </span> <strong class="tit">${rows.title }</strong><em class="icon-state2 icon1"><span>진행중</span></em> <span> ${rows.title }&nbsp;</span> <em class="date">${rows.regidate }</em>
+						<li class="state1"><a href="<%=request.getContextPath() %>/event/bbs_view?num=${rows.num }&nowPage=${param.nowPage}"> <span class="visual"><img src="/img/${rows.attfile }" alt="18.9월 보험료 결과발송 이벤트"> </span> <strong class="tit">${rows.title }</strong><span> ${rows.title }&nbsp;</span> <em class="date">${rows.regidate }</em>
 						</a>
 							<div class="btn"></div></li>
 					</c:forEach>

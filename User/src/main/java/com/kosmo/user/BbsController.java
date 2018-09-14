@@ -37,7 +37,7 @@ public class BbsController {
 		String pagingImg = PagingUtil.paging(totalRecordCount,
 				pageSize, blockPage, nowPage,req.getContextPath()+"/event/bbs_notice?");
 		
-		ArrayList<BoardVO> lists = sqlSession.getMapper(MyBbsDAOImpl.class).listPage(b_id, start, end);
+		ArrayList<BoardVO> lists = sqlSession.getMapper(MyBbsDAOImpl.class).listPage(b_id, start, end); 
 		model.addAttribute("totalCount", totalRecordCount);
 		model.addAttribute("list",lists);
 		model.addAttribute("pagingImg",pagingImg);

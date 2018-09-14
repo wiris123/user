@@ -81,17 +81,18 @@ public class memberController {
 	}
 	
 	//회원가입
-	@RequestMapping("/member/insertjoin.do")	 
-	public String insertjoin(HttpServletRequest req,HttpSession session)
-	{
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");	
-		String birth = (req.getParameter("birth1")+"-"+req.getParameter("birth2")+"-"+req.getParameter("birth3"));
-		Date dat = Date.valueOf(birth);
-		
-		sqlSession.getMapper(MyMemberImpl.class).insertjoin(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat, req.getParameter("zipcode")+req.getParameter("zipcode1")+req.getParameter("zipcode2"));
+	   @RequestMapping("/member/insertjoin.do")    
+	   public String insertjoin(HttpServletRequest req,HttpSession session)
+	   {
+	      SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");   
+	      String birth = (req.getParameter("birth1")+"-"+req.getParameter("birth2")+"-"+req.getParameter("birth3"));
+	      Date dat = Date.valueOf(birth);
+	      
+	      sqlSession.getMapper(MyMemberImpl.class).insertjoin(req.getParameter("id"), req.getParameter("pass"), req.getParameter("name"), req.getParameter("email1")+"@"+req.getParameter("email2"), req.getParameter("mobile1")+req.getParameter("mobile2")+req.getParameter("mobile3") ,dat, req.getParameter("address")+req.getParameter("address1")+req.getParameter("address2"));
 
-		return "redirect:/member/login.do";
-	}
+	      return "redirect:/member/login.do";
+	   }
 	
-		
+	
+	
 }

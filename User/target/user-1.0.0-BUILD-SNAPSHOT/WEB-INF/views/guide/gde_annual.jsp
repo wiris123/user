@@ -7,6 +7,20 @@
 <!-- 머리 -->
 <%@ include file="../include/header.jsp"%>
 </head>
+<script>
+function moveCalc(frm)
+{
+	var mode = document.getElementById("product");	
+	var birthday = document.getElementById("birthday");
+	
+	
+	/* location.href="/user/product/pro_"+mode.value+"?birthday="+birthday; */
+	frm.action = "/user/product/pro_"+mode.value+"?birthday="+birthday;;
+	frm.submit();
+	
+}
+
+</script>
 <body>
 	<div id="wrapper">
 
@@ -31,11 +45,11 @@
 							<!-- box -->
 							<dl class="box box1 on">
 								<dt class="stit">
-									<em>추천상품 1</em><strong>13월의 보너스</strong>를 위한<br /> <strong class="ac">연금저축보험</strong>
+									<em>추천상품 1</em><strong>갑작스러운 병원비</strong>를 위한 <strong class="ac">실손보험</strong>
 								</dt>
 								<dd class="txt">
-									<strong>노후준비<br> + <br /></strong>최대 <strong>66만원 세액공제</strong> 혜택!<br />
-									<span>(관련 세법요건 충족시)</span> <span>* 최대 66만원(52만원) 세액공제(16.5%/13.2%)</span>
+									<strong>급여보장<br> + <br /></strong>비급여 <strong>입원 및 통원보장</strong> 혜택!<br />
+									상해입원 5,000만원까지 보장!
 								</dd>
 								<dd class="btn">
 									<a href="#">상세혜택확인</a>
@@ -62,13 +76,13 @@
 							<!-- box -->
 							<dl class="box box3">
 								<dt class="stit">
-									<em>추천상품 3</em><strong>목돈 or 연금</strong> 골라 받는<br>
+									<em>추천상품 3</em><strong>27% 저렴한 보험료로</strong> 위험 대비를!
 									<strong class="ac">정기보험</strong>
 								</dt>
 								<dd class="txt">
-									한 달만 지나도 <strong>원금보장<br>연복리, 비과세 혜택<br>
-									<span>(사업비 차감 후 부리, 관련 세법요건 충족시)</span>+<br>노후 연금전환
-									</strong>가능!<br>
+									다이렉트로 가입하니까 <strong>27%<br>저럼한 보험료!<br>
+									<span>(사업비 차감 후 부리, 관련 세법요건 충족시)</span>+<br>만기 환급금 지금
+									</strong><br>
 								</dd>
 								<dd class="btn">
 									<a href="../product/pro_term">Click</a>
@@ -84,29 +98,28 @@
 
 							<div class="in">
 								<p class="stit">간 편 계 산 기</p>
-
+								<form method="get" onsubmit="moveCalc(this);">
 								<div class="inbox">
 									<div class="sel">
-										<select class="select" id="prodSelBox" title="상품 선택">
-											<option selected="" value="1">인터넷연금저축보험</option>
-											<option value="2">인터넷연금보험</option>
-											<option value="3">인터넷저축보험</option>
+										<select class="select" id="product" title="상품 선택">
+											<option selected="" value="prop">인터넷실손보장보험</option>
+											<option value="annual">인터넷연금보험</option>
+											<option value="term">인터넷정기보험</option>
 										</select>
 									</div>
-
-									<input type="text" id="inputBirthday" class="txt" onfocus="this.value=''" onblur="if(this.value == '') this.value='생년월일 (예:19800101)';" value="생년월일 (예:19800101)">
-
+									<input type="text" id="birthday" name="birthday" class="txt" onfocus="this.value=''" onblur="if(this.value == '') this.value='생년월일 (예:19800101)';" value="생년월일 (예:19800101)">
 									<div class="rawrap">
 										<p class="ra1">
-											<label><input name="radioGender" value="남자" type="radio" checked="" style="position: absolute; z-index: -1; visibility: hidden;"><span class="jquery-checkbox jquery-checkbox-checked"><span class="mark"><img src="<%=request.getContextPath()%>/resources/cms/pc/images/guide/gda_empty.png"></span></span></label>
+											<label><input name="radioGender" value="1" type="radio" checked="" style="position: absolute; z-index: -1; visibility: hidden;"><span class="jquery-checkbox jquery-checkbox-checked"><span class="mark"><img src="<%=request.getContextPath()%>/resources/cms/pc/images/guide/gda_empty.png"></span></span></label>
 										</p>
 										<p class="ra2">
-											<label><input name="radioGender" value="여자" type="radio" style="position: absolute; z-index: -1; visibility: hidden;"><span class="jquery-checkbox"><span class="mark"><img src="<%=request.getContextPath()%>/resources/cms/pc/images/guide/gda_empty.png"></span></span></label>
+											<label><input name="radioGender" value="2" type="radio" style="position: absolute; z-index: -1; visibility: hidden;"><span class="jquery-checkbox"><span class="mark"><img src="<%=request.getContextPath()%>/resources/cms/pc/images/guide/gda_empty.png"></span></span></label>
 										</p>
 									</div>
 
-									<a href="#none" id="planApply" class="btn">내 수령액 확인/가입</a>
+									<a href="#" id="" class="btn"><button type="submit"><span>내 수령액 확인/가입</span></button></a>
 								</div>
+								</form>
 							</div>
 
 							<!-- box1 -->
@@ -114,7 +127,7 @@
 								<div class="leftarea">
 									<dl>
 										<dt>
-											<strong>ISM <em>인터넷연금저축보험</em></strong><br>미리 준비할수록 든든한 노후준비 + 연말정산 세액공제까지!
+											<strong>ISM <em>인터넷연금보험</em></strong><br>미리 준비할수록 든든한 노후준비 + 연말정산 세액공제까지!
 										</dt>
 										<dd>
 											<div>

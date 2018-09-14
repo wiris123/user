@@ -90,6 +90,7 @@ public class VisitCounter implements HttpSessionListener
 		psmt.executeUpdate();
 
 	}
+	
 
 	private boolean check(String ip) throws SQLException {
 		String query = "select max(to_char(visit_date, 'YY/MM/DD' )) from visitor group by visit_ip having visit_ip = ?";

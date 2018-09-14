@@ -7,64 +7,76 @@
 <title>정기 보험</title>
 </head>
 <!-- <script type="text/javascript"
-	src="../www.googleadservices.com/pagead/f.txt">	
+   src="../www.googleadservices.com/pagead/f.txt">   
 </script> -->
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
-	charset="utf-8"></script>
-	 <%@ include file="../include/header.jsp"%>
+   src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
+   charset="utf-8"></script>
+    <%@ include file="../include/header.jsp"%>
 </head>
 <body>
-	<div id="wrapper"> 
-	 <!-- 머리 -->
+   <div id="wrapper"> 
+    <!-- 머리 -->
      
   <script>
 $(function()
 {
-	
-	$('.list-result').hide();
-
+   $('.list-result').hide();
 });
-
 function premiPlus()
 {
-	
-	$.ajax
-	({
-		url:"./termPrem.do",
-		type : "post",
-		data : 
-		{
-			paytime : $('#paytime').val(),
-			instime : $('#instime').val(),
-			gender1 : $('#calcGender1').val(),
-			gender2 : $('#calcGender2').val(),
-			birth : $('#birth').val(),
-			death : $('#death').val()
-		},
-		dataType : "json",
-		contentType : "application/x-www-form-urlencoded; charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
-		success:function(resD)
-		{
-			
-			$('#resultPremium0').text(resD.mini_result);
-			$('#resultPremium2').text(resD.custom_result);
-			$('#resultPremium1').text(resD.max_result);
-			$('#gobirth').val($('#birth').val()),
-			$('#goinstime').val($('#instime').val()),
-			$('#gopaytime').val($('#paytime').val()),
-			$('#gopayprem').val(resD.custom_result),
-			$('.list-result').show();
-		},
-		error:function(errorData){
-			alert("오류발생 : "+errorData.status+":"+errorData.statusText);
-		}
-
-	});	
-
+   
+   $.ajax
+   ({
+      url:"./termPrem.do",
+      type : "post",
+      data : 
+      {
+         paytime : $('#paytime').val(),
+         instime : $('#instime').val(),
+         gender1 : $('#calcGender1').val(),
+         gender2 : $('#calcGender2').val(),
+         birth : $('#birth').val(),
+         death : $('#death').val()
+      },
+      dataType : "json",
+      contentType : "application/x-www-form-urlencoded; charset=utf-8",//post타입의 content타입 : application/x-www-form-urlencoded;charset=utf-8
+      success:function(resD)
+      {
+         
+         $('#resultPremium0').text(resD.mini_result);
+         $('#resultPremium2').text(resD.custom_result);
+         $('#resultPremium1').text(resD.max_result);
+         $('#gobirth').val($('#birth').val()),
+         $('#goinstime').val($('#instime').val()),
+         $('#gopaytime').val($('#paytime').val()),
+         $('#gopayprem').val(resD.custom_result),
+         $('.list-result').show();
+      },
+      error:function(errorData){
+         alert("오류발생 : "+errorData.status+":"+errorData.statusText);
+      }
+   });   
 }
-
 </script>
+ <!-- # 보험료 계산하기 # -->
+  <script>
+     function atag() {
+        if (birth.value.length <= 7) {
+           alert("생년월일을 8개의 숫자로 작성해주세요.");
+        } else if (!($("#male").hasClass("on")||$("#female").hasClass("on"))){
+                 alert("성별을 선택해주세요.")
+        } else if (instime.value == "") {
+           alert("보험기간을 선택해주세요.");
+        } else if (paytime.value == "") {
+           alert("납입기간을 선택해주세요.");
+        } else {
+           premiPlus();
+        }
+        return false;
+     };
+  </script>
+  
       <link rel="stylesheet" href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
       <div id="container">
          <%@ include file="../include/Head.jsp"%>
@@ -81,27 +93,9 @@ function premiPlus()
                <p class="com1">다이렉트로 가입하니까!<br><strong>27% 더 저렴</strong>한 보험료로 사망보험금 준비<br><span class="notice">(자사동일유형 타상품대비)</span></p>
                <p class="com2"><span>필요한만큼만 보장기간을 정해서 합리적인 보험료로 가입<br>(자사 동일유형 타상품대비)</span></p>
             </div>
-               <!-- # 보험료 계산하기 # -->
-               <script>
-               function atag()
-               {
-	               	if(birth.value.length <=7){
-	               		alert("생년월일을 8개의 숫자로 작성해주세요.");
-	               	}	
-	               	else if(instime.value==""){
-	               		alert("보험기간을 선택해주세요.");
-	               	}
-	               	else if(paytime.value==""){
-	               		alert("납입기간을 선택해주세요.");
-	               	}
-	               	else{
-	               		premiPlus();
-	               	}
-               	return false;
-               };
-               </script>
+              
                <form action="" id="formCalculator" onsubmit="premiPlus();">
-               		<fieldset>
+                     <fieldset>
                      <legend>보험료계산기</legend>
                      <div class="calculator-form">
                         <div class="heading">
@@ -115,18 +109,18 @@ function premiPlus()
                               <li>
                                  <div class="form-wrap1">
                                     <label for="birthday" class="label">생년월일 <span>(예 : 19851015 )</span></label>
-                                    <input type="text" autocomplete="off" class="text placeholder numOnly" id="birth" maxlength="8" placeholder=""/>
+                                    <input type="text" autocomplete="off" class="text placeholder numOnly" id="birth" maxlength="8" placeholder="" value="${param.birthday }"/>
                                  </div>
                               </li>
                               <!-- 성별 -->
                               <li>
                                  <div class="label-radiobtn gender">
                                     <span>
-                                       <label for="calcGender1">남자</label>
+                                       <label for="calcGender1" id="male">남자</label>
                                        <input type="radio" name="gender1" class="radio" id="calcGender1" value="1"/>
                                     </span>
                                     <span>
-                                       <label for="calcGender2">여자</label>
+                                       <label for="calcGender2" id="female">여자</label>
                                        <input type="radio" name="gender2" class="radio" id="calcGender2" value="2"/>
                                     </span>
                                  </div>
@@ -135,7 +129,7 @@ function premiPlus()
                               <li>
                                  <span class="select-box">
                                     <select id="instime" name="instime" title="보험기간">
-                                    	<option value="">보험기간 선택</option>
+                                       <option value="">보험기간 선택</option>
                                        <option value="10">보험기간 : 10년</option>
                                        <option value="20">보험기간 : 20년</option>
                                        <option value="60">보험기간 : 60세까지</option>
@@ -160,9 +154,7 @@ function premiPlus()
                   </fieldset>
                </form>
             </div>
-           
-            
-            
+
             <!-- ## 계산결과 /////////////////////////////////////////////////////////////////////////////////////// -->
             <div class="product-result open" id="uiProductResult1" style="display:block;" tabindex="0">
                <!-- # 계산결과 출력 //////////////////////////////////////////////////////////////////////////// -->
@@ -234,7 +226,7 @@ function premiPlus()
                               </div>
                               <div class="btn">
                                  <span class="img-gift"></span>
-                                 <a href="#popSendEmail" class="btn-c1 adb-dist2" onclick='clearMail("삼성생명 인터넷정기보험4.0(무배당)");'><span>메일발송</span></a>
+                                 <a href="#popSendEmail" class="btn-c1 adb-dist2" onclick='atag();'><span>재계산하기</span></a>
                                  <button type="submit"id="goPlan2" ><a href="#" class="btn-c2 adb-dist2"><span>가입하기</span></a></button>
                                  <input type="hidden" id="jsonResultData2" name="jsonResultData" />
                               </div>
@@ -281,15 +273,22 @@ function premiPlus()
                   </div>
                </div>
             </div>
-         </div>
+            
+            <!-- # 계산영역으로 이동 ////////////////////////////////////////////////////////////////////////////// -->
+				<div class="product-skip">
+					<a href="#formCalculator">보험료계산 영역으로 이동<span></span></a>
+				</div>
+
+				
+<%@include file="../include/productSubscript.jsp" %>
          <!-- 머리끝 -->
 
-		</div>
-		<div id="footer">
-			<%@ include file="../include/footer.jsp"%>
-		</div>
-		<!-- 푸터끝 -->
-
-	</div>
+      </div>
+      <div id="footer">
+         <%@ include file="../include/footer.jsp"%>
+      </div>
+      <!-- 푸터끝 -->
+		
+   </div>
 </body>
 </html>

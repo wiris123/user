@@ -51,7 +51,33 @@ public class CustomController {
 		return "custom/mapAPI";
 	}
 	
-	
+	//1:1상담요청
+	@RequestMapping("/custom/sendonebyone")
+	public String sendeonebyone(HttpServletRequest request) {
+		String name =  request.getParameter("name"); 
+		String contents =  request.getParameter("contents"); 
+		
+		CounselDTO dto = new CounselDTO();
+		dto.setName(name);
+		dto.setContents(contents);
+		
+		CusQnaDAO dao = new CusQnaDAO();
+		
+		int affected = dao.qnaWrite(dto);		
+		
+		dao.close();
+		
+		if(affected==1)
+		{ 
+			System.out.println("Y");
+		}
+		else
+		{
+			System.out.println("N");
+		}
+		
+		return "custom/cus_qna";
+	}
 	
 	@RequestMapping("/custom/sendemail")
 	public String sendemail(HttpServletRequest request) {

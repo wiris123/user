@@ -218,7 +218,7 @@ function email_input(em, frm){
 			<div class="join_wrap">   
 				<form name="memberFrm" onsubmit="return mValidate(this);" method="post">
 					<div id="join" style="width: 500px; margin: 0 auto;" >
-					<input type="hid den" name="userInfo" id="userInfo" value='${basicInfo}'>
+					<input type="hidden" name="userInfo" id="userInfo" value='${basicInfo}'>
 					
 					
 					<input type="text" name="ins_name" value="인터넷 연금보험 3.0(무배당)"/>
@@ -313,28 +313,28 @@ function email_input(em, frm){
 							<option value="0">아니오</option>
 						</select><br />
 						
-						<label for="birth">건강관련질문1</label><br />
+						<label for="birth">당뇨, 고혈압, 고지혈증 혈관 관련 질환이 있으십니까?</label><br />
 						<select name="hospit1" id="" style="width: 30%; height: 45px;">
 							<option value="">선택</option>
 							<option value="2">예</option>
 							<option value="0">아니오</option>
 						</select><br />
 						
-						<label for="birth">건강관련질문2</label><br />
+						<label for="birth">폐렴, 천식 등 기관지 관련 질환이 있으십니까?</label><br />
 						<select name="hospit2" id="" style="width: 30%; height: 45px;">
 							<option value="">선택</option>
 							<option value="2">예</option>
 							<option value="0">아니오</option>
 						</select><br />
 						
-						<label for="birth">건강관련질문3</label><br />
+						<label for="birth">최근 3년간 위염, 위궤양, 역류성 식도염등의 질환이 있으십니까?</label><br />
 						<select name="hospit3" id="" style="width: 30%; height: 45px;">
 							<option value="">선택</option>
 							<option value="2">예</option>
 							<option value="0">아니오</option>
 						</select><br />
 						
-						<!-- <input type="hid den" name="rprem" value=""/> -->
+						<!-- <input type="hidden" name="rprem" value=""/> -->
 						
 						
 						<input type="button" value="가입하기" onclick='subCheck();'>

@@ -55,7 +55,7 @@
 					</c:forEach>
 				</ul>
 									<ul class="nav-gnb">
-				<li><a href="/user/member/joinCheck" class="gnb1"><span>글쓰기</span><em id="headerRecentPlanCount"></em></a></li>
+				<li><a href="#" class="gnb1" onclick="openPopCounsel('popCounselonebyone', this)"><span>글쓰기</span><em id="headerRecentPlanCount"></em></a></li>
 				</ul>
 				<!-- ## 페이징 ## -->
 				<div class="paging">${pagingImg}</div>

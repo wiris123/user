@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%request.getSession(true);%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="author" content="삼성생명, Samsung Life Insurance, 삼성생명 다이렉트"/>
@@ -25,7 +25,7 @@
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/dev.plugin.js" charset="utf-8"></script>
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/dev.common.js" charset="utf-8"></script>
 <!-- plan script -->
-<%-- <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/plan.js" charset="utf-8"></script> --%>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/plan.js" charset="utf-8"></script>
 
 <!-- 어도비 스크립트 -->
 <script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/adobeDtm.js" charset="utf-8"></script>
@@ -203,9 +203,21 @@
 
 	<!-- GNB -->
 	<ul class="nav-gnb">
-		<li><a href="/user/member/joinCheck" class="gnb1"><span>회원가입</span><em id="headerRecentPlanCount"></em></a></li>
-		<li><a href="/user/member/login.do" class="gnb1"><span>로그인</span><em id="headerRecentPlanCount"></em></a></li>
+		
+		<c:choose>
+			<c:when test="${USER_ID eq null }">
+				<li><a href="/user/member/joinCheck" class="gnb1"><span>회원가입</span><em id="headerRecentPlanCount"></em></a></li>
+				<li><a href="/user/member/login.do" class="gnb1"><span>로그인</span><em id="headerRecentPlanCount"></em></a></li>
+			</c:when>
+			<c:otherwise>
+				<li><a href="../logout" class="gnb1"><span>로그아웃</span><em id="headerRecentPlanCount"></em></a></li>
+			</c:otherwise>
+		</c:choose>
+		
+		
+		
 		<li><a href="/user/member/mypage.do" class="gnb4" title="마이페이지"><span>마이페이지</span></a></li>
+		
 		<!-- <li><a href="#asideMenu" class="gnb3" title="전체메뉴"><span>전체메뉴</span></a></li> -->
 	</ul>
 

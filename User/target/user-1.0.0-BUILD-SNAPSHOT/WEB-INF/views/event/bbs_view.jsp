@@ -30,7 +30,7 @@
 					<!-- # 기본정보 : 제목/기간/조회수/당첨자발표일/SNS링크 # -->
 					<div class="heading">
 
-						<h1>${dto.title }<em class="icon-state2 icon1"><span>진행전</span></em>
+						<h1>${dto.title }
 						</h1>
 
 

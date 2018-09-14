@@ -8,14 +8,13 @@
 			<img src="http://www.samsunglife.com/img/common/sslifeQRcode.jpg" alt="삼성생명 QR코드 : 삼성생명 모바일사이트로 이동(http://m.samsunglife.com)" />
 		</p>
 		<ul class="nav">
-			<li><a href="http://www.samsunglife.com/registe/withdraw/clause/withUsed2012YearAfter.html" target="_blank" title="(새창) 삼성생명 이용약관" id="tl_clause">이용약관</a></li>
-			<li><a href="http://www.samsunglife.com/registe/withdraw/privacy/web/withPrivacyHomepage.html" target="_blank" title="(새창) 삼성생명 개인정보처리방침" id="tl_privacy">개인정보처리방침</a></li>
-			<li><a href="http://www.samsunglife.com/registe/withdraw/elecfinance/basic/withElecFinanceBasic.html" target="_blank" title="(새창) 삼성생명 전자금융 거래표준약관" id="tl_elecfinance">전자금융거래표준약관</a></li>
-			<li><a href="https://pcyber.samsunglife.com/pcyber/comn/link.do?view=easySrvc/accident/guide/receiptGuide" target="_blank" title="(새창) 삼성생명 보험금청구안내" id="tl_elecReceip">보험금청구안내</a></li>
+			<li><a href="<%=request.getContextPath() %>/bottommenu/terms" title="(새창) 이용약관" id="tl_clause">이용약관</a></li>
+         <li><a href="<%=request.getContextPath() %>/bottommenu/privacy" title="(새창) 삼성생명 개인정보처리방침" id="tl_privacy">개인정보처리방침</a></li>
+         <li><a href="<%=request.getContextPath() %>/bottommenu/elecfinance" id="tl_elecfinance">전자금융거래표준약관</a></li>
 		</ul>
 		<ul class="info">
 			<li>06620 서울특별시 금천구 가산디지털 2로 127</li>
-			<li>대표이사 김희태</li>
+			<li>대표이사 김희택</li>
 			<li>사업자등록번호 104-81-26688</li>
 		</ul>
 
@@ -34,41 +33,27 @@
 			<ul>
 				<li><strong>상품소개</strong>
 					<ul>
-						<li><a href="iAnnuity.html"><span>연금보험</span></a></li>
-						<li><a href="annuity.html"><span>연금저축보험</span></a></li>
-						<li><a href="esaving.html"><span>저축보험</span></a></li>
-						<li><a href="variableSaving.html"><span>변액적립보험</span></a></li>
-						<li><a href="cancer.html"><span>암보험</span></a></li>
-						<li><a href="term.html"><span>정기보험</span></a></li>
-						<li><a href="accident.html"><span>상해보험</span></a></li>
-						<li><a href="medical.html"><span>실손보험</span></a></li>
-						<li><a href="guide/pension.html"><span>퇴직연금 IRP</span></a></li>
+						<li><a href="../product/pro_annual"><span>연금보험</span></a></li>
+						<li><a href="../product/pro_term"><span>정기보험</span></a></li>
+						<li><a href="../product/pro_prop"><span>실손보험</span></a></li>
 					</ul></li>
 				<li><strong>가입 전&middot;후 가이드</strong>
 					<ul>
 						<!-- <li><a href="#none"><span>내게 맞는 보험찾기</span></a></li> -->
-						<li><a href="guide/guideBefore.html"><span>가입 전</span></a></li>
-						<li><a href="guide/guideAfter.html"><span>가입 후</span></a></li>
+						<li><a href="../guide/gde_before"><span>가입 전</span></a></li>
+						<li><a href="../guide/gde_after"><span>가입 후</span></a></li>
 					</ul></li>
-				<li class="sub"><a href="guide/introduce.html"><strong>왜 삼성생명<br />다이렉트인가요?
-					</strong></a></li>
-				<li><strong>고객센터</strong>
+				
+				<li><strong>이벤트/공지/고객센터</strong>
 					<ul>
-						<li><a href="customerCenter/faq/list.html"><span>자주하는 질문</span></a></li>
-						<li><a href="customerCenter/counsel.html"><span>고객상담신청</span></a></li>
-						<li><a href="customerCenter/notice/list.html"><span>공지사항</span></a></li>
-						<li><a href="event/list.html"><span>이벤트</span></a></li>
-						<!-- <li><a href="/poll/list.eds"><span>설문조사</span></a></li> -->
-						<!-- <li><a href="/customerCenter/certification.eds"><span>모바일웹 인증서 안내</span></a></li> -->
-						<li><a href="customerCenter/security.html"><span>보안프로그램 설치</span></a></li>
-					</ul></li>
+						<li><a href="../event/bbs_event?nowPage=1"><span>이벤트</span></a></li>
+						<li><a href="../event/bbs_notice?nowPage=1"><span>공지사항</span></a></li>
+						<li><a href="../custom/cus_faq"><span>자주하는 질문</span></a></li>
+						<li><a href="../custom/cus_qna"><span>고객상담신청</span></a></li>
+					</ul></li>	
 				<li><strong>마이페이지</strong>
 					<ul>
-						<li><a href="myPageLogin.html"><span>보유계약 조회</span></a></li>
-						<!-- <li><a href="#none"><span>계약진행 조회</span></a></li> -->
-						<li><a href="myPageLogin.html"><span>가입 계속하기</span></a></li>
-						<li><a href="myPageLogin.html"><span>나의 이벤트</span></a></li>
-						<li><a href="myPageLogin.html"><span>나의 상담</span></a></li>
+						<li><a href="../member/mypage.do"><span>마이페이지</span></a></li>
 					</ul></li>
 			</ul>
 			<a href="#none" class="btn ui-toggle-close"><span>사이트맵 닫기</span></a>

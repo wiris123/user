@@ -42,4 +42,9 @@
     <delete id="delete">
 		delete from member where id=#{param1}
 	</delete>
+	
+	<insert id="calling">
+      insert into booking(idx,name,mobile,regidate,restime,contents,flag) values (book_seq.NEXTVAL,#{param2},#{param3},sysdate,to_date(#{param4},'yyyymmddhh24miss'),#{param5},#{param6})
+      </insert>
+	
 </mapper>

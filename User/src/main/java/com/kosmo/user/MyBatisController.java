@@ -242,6 +242,28 @@ public class MyBatisController
 		
 	}
 	
+	
+	@RequestMapping("custom/calling.do")
+	   public String calling(HttpServletRequest req, HttpServletResponse resp,EmailVO emailvo) {
+	      
+	       String idx = req.getParameter("idx");
+	       String name = req.getParameter("name");
+	       String mobile = req.getParameter("mobile1")+req.getParameter("mobile2");
+	       String telltime = req.getParameter("telltime1")+req.getParameter("telltime2")+req.getParameter("telltime3");
+	       String contents = req.getParameter("contents");
+	       String flag = "c";
+
+	      try {
+	         
+	         sqlSession.getMapper(MyMemberImpl.class).calling(idx, name, mobile, telltime, contents, flag);
+	         System.out.println("성공");
+	      } catch (Exception e) {
+	         e.printStackTrace();
+	         System.out.println("실패");
+	      }
+	   
+	      return "redirect:/custom/cus_qna";
+	   }
 }
 
 

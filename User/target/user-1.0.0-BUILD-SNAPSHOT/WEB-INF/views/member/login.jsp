@@ -9,8 +9,6 @@
 </head>
 <body>
 	<div id="wrapper">
-
-
 		<script>
 			$(function() {
 
@@ -47,12 +45,25 @@
 			<!-- 내용시작 -->
 			<c:choose>
 				<c:when test="${not empty USER_ID }">
-					<div class="row" style="border: 2px solid #cccccc" padding="10px">
+					<%-- <div class="row" style="border: 2px solid #cccccc" padding="10px">
 						<h4>아이디 : ${USER_ID } </h4> 님 환영합니다.
 						<br /> <br />
-						<button onclick="location.href='/logout'">로그아웃</button>
+						<button onclick="location.href='../logout'">로그아웃</button>
 						</h4>
-					</div>
+					</div> --%>
+					<div id="content" class="page-guide">
+							<!-- ## 페이지타이틀 ## -->
+							<h1 class="hd">가입 후 가이드</h1>
+							<div class="visual-top">
+								<p> <br />
+									<strong>${USER_ID }</strong>님
+									환영합니다.<br />
+								</p>
+								<ul class="tab">
+									<li><a href="<%=request.getContextPath() %>/member/mypage.do"><span><em>마이 페이지로</em> 가기</span></a></li>
+									<li><a href="../logout"><span><em>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;로그아웃</em></span></a></li>
+								</ul>
+							</div>
 				</c:when>
 				<c:otherwise>
 					<div class="box-content4">
@@ -91,30 +102,44 @@
 													</span> -->
 											</dd>
 										</dl>
+										
 									</fieldset>
 
-									<div id="naver">
-										<img src="/resources/img/naver_Bn_Green.PNG" alt="" /><a href="../snslogin/naverlogin.do">cfgcfgcfgcfg</a>
-									</div>
-									<div id="google">
-										<a href="../snslogin/googlelogin.do"><img src="/resources/img/btn_google.jpg" alt="" />cfgcfgcfgcf</a>
-									</div>
+									<div id="naver" style="text-align:center"><a href="${url}"><img width="223" src="${pageContext.request.contextPath}/resources/img/naver_Bn_Green.PNG"/></a></div>
+									<div id="google" style="text-align:center"><a href="${google_url}"><img width="230" src="${pageContext.request.contextPath}/resources/img/btn_google.jpg"/></a></div>
+									
 									<div class="btn-area">
-										<button class="btn-type2 c1" onClick='javascript:login();'>
-											<span>확인</span>
-										</button>
-									</div>
+		                              <button class="btn-type2 c1" onClick='javascript:login();'>
+		                                 <span>확인</span>
+		                              </button>
+		                              <button class="btn-type2 c1" onClick='javascript:login();'>
+		                                 <a href="./sendpw.do"><span>아이디찾기</span></a>
+		                              </button>
+		                              <button class="btn-type2 c1" onClick='javascript:login();'>
+		                                 <a href="./sendpw.do"><span>비밀번호찾기</span></a>
+		                              </button>
+		                           </div>
 								</form>
 							</div>
 						</div>
+						<dl>
+											<dt class="heading">
+												<label ><button><a href="./sendpw.do">비밀번호찾기</a></button></label>
+											</dt>
+											<dt class="heading">
+												<label ><button>아이디찾기</button></label>
+											</dt>
+										</dl>
 						<div class="line"></div>
 						<a href="" class="ban-mypage"><img src="resources/cms/pc/images/event/1808_mypage_ban.jpg" alt=""></a>
+						
 					</div>
+					
 		</div>
 	</div>
 	</c:otherwise>
 	</c:choose>
-
+	
 	<!-- 내용끝 -->
 
 	</div>
@@ -124,7 +149,6 @@
 		<%@ include file="../include/footer.jsp"%>
 	</div>
 	<!-- 푸터끝 -->
-
 	</div>
 </body>
 </html>

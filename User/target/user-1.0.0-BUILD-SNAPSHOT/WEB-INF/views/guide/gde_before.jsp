@@ -17,6 +17,20 @@
 <title>가입 전 가이드</title>
 		<!-- 머리 -->
 		<%@ include file="../include/header.jsp"  %>	
+		<script>
+		function moveCalc(frm)
+		{
+			var mode = document.getElementById("product");	
+			var birthday = document.getElementById("birthday");
+			
+			
+			/* location.href="/user/product/pro_"+mode.value+"?birthday="+birthday; */
+			frm.action = "/user/product/pro_"+mode.value;
+			frm.submit();
+			
+		}
+
+		</script>
 </head>
 <body>
 	<div id="wrapper">
@@ -26,7 +40,7 @@
 			<%@ include file="../include/Head.jsp" %>
 			<div id="content">
 			<!-- 내용시작 -->
-<body>
+
 		<!-- page : content /////////////////////////////////////////////////// -->
 		<div id="content" class="page-guide">
 			<!-- ## 페이지타이틀 ## -->
@@ -186,7 +200,8 @@
 								</dl>
 								<dl class="bh9">
 									<dt><a href="../accident.html" class="pen w199">실손의료비보장보험</a></dt>
-									<dd>질병, 상해로부터  비급여와 급여 중 <br><em>본인부담금을 보장</em>하는 보험</dd>												<dd>
+									<dd>질병, 상해로부터  비급여와 급여 중 <br><em>본인부담금을 보장</em>하는 보험</dd>												
+									<dd>
 										<ul>
 											<li>질병, 상해를 보장</li>
 											<li>100세까지 든든하게</li>
@@ -197,7 +212,8 @@
 								</dl>
 								<dl class="bh10">
 									<dt><a href="../dental.html" class="pen w88">치아보험</a></dt>
-									<dd>부담되는 치과치료<br><em>합리적으로 준비하세요</em></dd>												<dd>
+									<dd>부담되는 치과치료<br><em>합리적으로 준비하세요</em></dd>												
+									<dd>
 										<ul>
 											<li>소액치과치료 보철/보존치료 보장</li>
 											<li>만기 및 영구치 유지 보험금 지급</li>
@@ -264,7 +280,7 @@
 			//-->
 			</script>
 			<!-- ## 하단 계산기 ////////////////////////////////////////////// -->
-			<form action="#none" id="formCalculator">
+			<form id="formCalculator" onsubmit="moveCalc(this);">
 				<fieldset>
 					<legend>보험료계산기</legend>
 					<div class="calculator-form3">
@@ -277,41 +293,18 @@
 										<select id="product" name="product" title="상품 선택" msg="product" readonly="readonly">
 											<!-- 반복 리스트 -->
 											
-												<option value="5_20_75">
-												인터넷연금저축보험1.8(무배당)
+												<option value="annual">
+												인터넷연금보험3.0(무배당)
 												</option>
 											
-												<option value="4_20_65">
-												인터넷저축보험1.8(무배당)
-												</option>
-											
-												<option value="7_20_65">
-												인터넷연금보험1.5(무배당)
-												</option>
-											
-												<option value="8_20_65">
-												인터넷변액적립보험1.1(무배당)
-												</option>
-											
-												<option value="1_20_60">
-												인터넷암보험6.0(갱신형,무배당)
-												</option>
-											
-												<option value="2_20_49">
-												인터넷정기보험4.0(무배당)
-												</option>
-											
-												<option value="3_20_45">
-												인터넷상해보험4.0(무배당)
-												</option>
-											
-												<option value="9_20_60">
+												<option value="prop">
 												인터넷실손의료비보장보험1.0
 												</option>
 											
-												<option value="15_20_65">
-												인터넷치아보험(재가입형,무배당)
+												<option value="term">
+												인터넷정기보험4.0(무배당)
 												</option>
+											
 											
 											<!-- //반복 리스트 -->
 										</select>
@@ -321,7 +314,7 @@
 								<li>
 									<div class="form-wrap1">
 										<label for="pbirthday" class="label">생년월일 (예 : 19851015 )</label>
-										<input type="text" autocomplete="off" class="text placeholder numOnly" id="pbirthday" maxlength="8" title="생년월일(예 : 19851015 )"/>
+										<input type="text" autocomplete="off" class="text placeholder numOnly" id="pbirthday" name="birthday" maxlength="8" title="생년월일(예 : 19851015 )"/>
 									</div>
 								</li>
 								<!-- 성별 -->
@@ -338,7 +331,7 @@
 									</div>
 								</li>
 							</ul>
-							<a href="#none" class="btn btn-type2 c1" id="planApply"><span>내 수령액 확인 / 가입</span></a>
+							<a href="moveCalc()" class="btn btn-type2 c1" id="planApply"><button><span>내 수령액 확인 / 가입</span></button></a>
 						</div>
 					</div>
 				</fieldset>
