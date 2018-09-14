@@ -65,13 +65,13 @@ public class memberController {
 		//연금보험 가입 현황 조회
 		ArrayList<MyStatusDTO> list3 = sqlSession.getMapper(MyMemberImpl.class).selectMyPageAnnu(id);
 		
-		mv.addObject("dto", list1);
+		mv.addObject("dto", list1); //정기
 		
 		mv.addObject("member",memVO);
 		
-		mv.addObject("dto2", list2);
+		mv.addObject("dto2", list2); //실손
 		
-		mv.addObject("dto3", list3);
+		mv.addObject("dto3", list3); //연금
 		
 		mv.addObject("gen", gen);
 		
