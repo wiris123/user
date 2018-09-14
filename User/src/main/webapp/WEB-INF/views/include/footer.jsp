@@ -8,10 +8,9 @@
 			<img src="http://www.samsunglife.com/img/common/sslifeQRcode.jpg" alt="삼성생명 QR코드 : 삼성생명 모바일사이트로 이동(http://m.samsunglife.com)" />
 		</p>
 		<ul class="nav">
-			<li><a href="http://www.samsunglife.com/registe/withdraw/clause/withUsed2012YearAfter.html" target="_blank" title="(새창) 삼성생명 이용약관" id="tl_clause">이용약관</a></li>
-			<li><a href="http://www.samsunglife.com/registe/withdraw/privacy/web/withPrivacyHomepage.html" target="_blank" title="(새창) 삼성생명 개인정보처리방침" id="tl_privacy">개인정보처리방침</a></li>
-			<li><a href="http://www.samsunglife.com/registe/withdraw/elecfinance/basic/withElecFinanceBasic.html" target="_blank" title="(새창) 삼성생명 전자금융 거래표준약관" id="tl_elecfinance">전자금융거래표준약관</a></li>
-			<li><a href="https://pcyber.samsunglife.com/pcyber/comn/link.do?view=easySrvc/accident/guide/receiptGuide" target="_blank" title="(새창) 삼성생명 보험금청구안내" id="tl_elecReceip">보험금청구안내</a></li>
+			<li><a href="<%=request.getContextPath() %>/bottommenu/terms" title="(새창) 이용약관" id="tl_clause">이용약관</a></li>
+         <li><a href="<%=request.getContextPath() %>/bottommenu/privacy" title="(새창) 삼성생명 개인정보처리방침" id="tl_privacy">개인정보처리방침</a></li>
+         <li><a href="<%=request.getContextPath() %>/bottommenu/elecfinance" id="tl_elecfinance">전자금융거래표준약관</a></li>
 		</ul>
 		<ul class="info">
 			<li>06620 서울특별시 금천구 가산디지털 2로 127</li>

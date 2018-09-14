@@ -27,7 +27,11 @@ public class CustomController {
 		
 		return "custom/cus_qna";
 	}
-
+	
+	@RequestMapping("/custom/chat2")
+	public String chat() {
+		return "custom/cus_chat";
+	}
 	
 	@RequestMapping("/custom/cus_qna_email")
 	public String cus_qna_email() {
@@ -80,4 +84,6 @@ public class CustomController {
 		
 		return "custom/cus_qna";
 	}
+	
+	
 }
