@@ -66,6 +66,12 @@
 		
 		<!-- /admin/하위는 ADMIN권한 ex)마이페이지-->
 		<security:intercept-url pattern="/member/mypage.do" access="hasRole('USER')"/>
+		<security:intercept-url pattern="/product/annu_cal.do" access="hasRole('USER')"/>
+		<security:intercept-url pattern="/product/insert_term.do" access="hasRole('USER')"/>
+		<security:intercept-url pattern="/member/prop_cal.do" access="hasRole('USER')"/>
+		<security:intercept-url pattern="/custom/response" access="hasRole('USER')"/>
+		
+		
 		<!-- /security2/하위는 USER 혹은 ADMIN권한 중 하나만 획득하면 접근 가능 -->
 		
 		<!-- 그 외는 누구나 접근 가능 -->
