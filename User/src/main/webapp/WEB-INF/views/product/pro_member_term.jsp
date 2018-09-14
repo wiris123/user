@@ -343,26 +343,27 @@ function email_input(em, frm){
 						<label for="name">월소득액</label>
 						<input type="text" id="income" name="income" style="width: 90%">만원 <br />
 						
-						<label for="birth">건강관련질문1</label><br />
+						<label for="birth">당뇨, 고혈압, 고지혈증 혈관 관련 질환이 있으십니까?</label><br />
 						<select name="hospit1" id="" style="width: 30%; height: 45px;">
 							<option value="">선택</option>
 							<option value="2">예</option>
 							<option value="0">아니오</option>
 						</select><br />
 						
-						<label for="birth">건강관련질문2</label><br />
+						<label for="birth">폐렴, 천식 등 기관지 관련 질환이 있으십니까?</label><br />
 						<select name="hospit2" id="" style="width: 30%; height: 45px;">
 							<option value="">선택</option>
 							<option value="2">예</option>
 							<option value="0">아니오</option>
 						</select><br />
 						
-						<label for="birth">건강관련질문3</label><br />
+						<label for="birth">최근 3년간 위염, 위궤양, 역류성 식도염등의 질환이 있으십니까?</label><br />
 						<select name="hospit3" id="" style="width: 30%; height: 45px;">
 							<option value="">선택</option>
 							<option value="2">예</option>
 							<option value="0">아니오</option>
 						</select><br />
+
 						<input type="button" value="가입하기" onclick='subCheck("<%=request.getParameter("mode")%>");'>
 				</form>				
 				<iframe src="" id="ifrm1" scrolling=no fSrameborder=no width=0 height=0 name="ifrm1"></iframe>

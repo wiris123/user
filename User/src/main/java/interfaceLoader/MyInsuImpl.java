@@ -8,7 +8,7 @@ public interface MyInsuImpl
 
 	public void insertStatusTerm(String id, String	insname, String	insnum, String remainpay,String	paidprem,String	prem, String contstat, String death_ins);
 	
-	public void insertMemberProp(String id,String pass, String name,String phone,String mobile,String email,int riskPremium, String enabled,String instype,String ins_name);
+	public void insertMemberProp(String id, String name,String phone,String mobile,String email,int riskPremium, String enabled,String instype,String ins_name);
 	
 	public void insertStatusProp(String id, String	insname, String	insnum, String remainpay,String	paidprem,String	prem, String contstat);
 

@@ -3,7 +3,7 @@
 <mapper namespace="interfaceLoader.MyInsuImpl">
 	<insert id="insertMemberTerm">
 			insert into member_term (id,name,phone,mobile,email,drive,cigar,drink,
-			height,weight,danhobby,income,hospit1,hospit2,hospit3,enabled,instype,ins_name) values 
+			height,weight,danhobby,income,hospit1,hospit2,hospit3,instype,ins_name) values 
 			(#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9},#{10},#{11},#{12},#{13},#{14},#{15},#{16})
 	   </insert>
 	<insert id="insertStatusTerm">
@@ -11,8 +11,8 @@
 			(term_my_seq.NEXTVAL, #{0},#{1},#{2},#{3},#{4},to_number(#{5},'999999'),#{6},'term', #{7})
 	</insert>
 	<insert id="insertMemberProp">
-			insert into member_prop (idx,id,pass,name,phone,mobile,email,riskpremium,enabled,instype,ins_name) values 
-			(prop_mem_seq.NEXTVAL,#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8},#{9})
+			insert into member_prop (idx,id,name,phone,mobile,email,riskpremium,enabled,instype,ins_name) values 
+			(prop_mem_seq.NEXTVAL,#{0},#{1},#{2},#{3},#{4},#{5},#{6},#{7},#{8})
 	   </insert>
 	<insert id="insertStatusProp">
 		insert into member_prop_my (num,id, insname, insnum, remainpay, paidprem, prem,contstat,inssort) values 
