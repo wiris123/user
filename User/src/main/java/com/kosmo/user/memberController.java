@@ -50,6 +50,15 @@ public class memberController {
 		//회원정보 객체
 		MemberVO memVO = sqlSession.getMapper(MyMemberImpl.class).selectMyPageMember(id);
 		
+		//회원 연령대 구하기
+		SimpleDateFormat frm = new SimpleDateFormat("yyyy");
+		java.sql.Date sqlDate2 = memVO.getBirth();
+		java.sql.Date sqlDate = new java.sql.Date(new java.util.Date().getTime()); 
+		int today = Integer.parseInt(frm.format(sqlDate));
+		int bday = Integer.parseInt(frm.format(sqlDate2));
+		int dae = ((today-bday)/10);
+		int gen = dae*10;
+		
 		//실손보험 가입현황 조회
 		ArrayList<MyStatusDTO> list2 = sqlSession.getMapper(MyMemberImpl.class).selectMyPageProp(id);
 		
@@ -63,6 +72,8 @@ public class memberController {
 		mv.addObject("dto2", list2);
 		
 		mv.addObject("dto3", list3);
+		
+		mv.addObject("gen", gen);
 		
 		mv.setViewName("member/mypage");
 		

@@ -18,8 +18,34 @@ public class MyStatusDTO
 	private String death_ins;
 	private String paytime;
 	private String instart;
+	private String monthann;
 	
 	
+	
+	public String getPaytime() {
+		return paytime;
+	}
+
+	public void setPaytime(String paytime) {
+		this.paytime = paytime;
+	}
+
+	public String getInstart() {
+		return instart;
+	}
+
+	public void setInstart(String instart) {
+		this.instart = instart;
+	}
+
+	public String getMonthann() {
+		return monthann;
+	}
+
+	public void setMonthann(String monthann) {
+		this.monthann = monthann;
+	}
+
 	public MyStatusDTO(String num, String id, String insname, String insnum, String remainpay, String paidprem,
 			String prem, String contstat, Date regidate, String inssort, String death_ins, String paytime,
 			String instart) 

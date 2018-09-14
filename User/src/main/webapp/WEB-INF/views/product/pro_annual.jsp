@@ -12,6 +12,7 @@
 <body>
    <div id="wrapper"> <!-- 머리 -->
   <%@ include file="../include/header.jsp"%>
+  <link rel="stylesheet"  href="<%=request.getContextPath()%>/resources/cms/pc/css/page_main.css" />
       <link rel="stylesheet"  href="<%=request.getContextPath()%>/resources/cms/pc/css/calculator.css" />
       <div id="container">
          <%@ include file="../include/Head.jsp"%>
@@ -64,6 +65,9 @@ function premCal()
       });   
 }
 </script>
+<style>
+    
+</style>
                <!-- CMS 영역 -->
                <div class="info">
                   <h1>
@@ -100,6 +104,7 @@ function premCal()
                            <h2 class="cal-tit">
                               <span>생년월일만으로</span><strong>빠르고 간편하게</strong>
                            </h2>
+                           
                            <p class="txt">나의 보험료를 계산해 보세요.</p>
                            <!-- <p class="banner"><img src="../../images/tmp/@banner_calculator.png" alt="@관리자등록배너텍스트"/></p> -->
                         </div>
@@ -137,7 +142,7 @@ function premCal()
 
             <!-- 연금계산결과 -->
             <!-- ## 계산결과 /////////////////////////////////////////////////////////////////////////////////////// -->
-            <div class="product-result open" id="uiProductResult1" tabindex="0">
+            <div class="product-result open" id="uiProductResult1" tabindex="0" style="background-color: white;">
                <!-- # 계산결과 출력 //////////////////////////////////////////////////////////////////////////// -->
                <div class="product-result-tab" data-tab="resultTab">
                   <div id="tabDirectPlan" class="on">직접 설계</div>
@@ -254,17 +259,16 @@ function premCal()
                            <p>연락 주시면 조장님이 친절히 도와드립니다.</p>
                         </div>
                         <div class="advice-tel">
-                           <span class="tel-icon"><img src="resources/cms/pc/images/com/icon_telephone.png" alt="" /></span>
+                           <span class="tel-icon"><img src="../resources/cms/pc/images/com/icon_telephone.png" alt="" /></span>
 
                            <strong>010-1234-5678</strong> <span>평일 08:30~17:30 (무료)</span>
                         </div>
                      </div>
                   </div>
                </div>
-            </div>
-         </div>
-
-      </div>
+              <%@include file="../include/productSubscript.jsp" %>
+		
+</div>
       <!-- 머리끝 -->
 
       <!-- 푸터시작 -->

@@ -449,7 +449,7 @@
 							<dt>일반암</dt>
 							<dd class="case1">
 								<span>3천만원</span><em>66.4%</em> <img class="img-graph"
-									src="/resources/web/images/product/pro1_other1.gif" alt="">
+									src="../resources/web/images/product/pro1_other1.gif" alt="">
 							</dd>
 							<dd class="case2">
 								<span>2천만원</span><em>33.5%</em>
@@ -459,7 +459,7 @@
 							<dt>암사망</dt>
 							<dd class="case1">
 								<span>2천만원</span><em>27.0%</em> <img class="img-graph"
-									src="/resources/web/images/product/pro1_other2.gif" alt="">
+									src="../resources/web/images/product/pro1_other2.gif" alt="">
 							</dd>
 							<dd class="case2">
 								<span>6천만원</span><em>25.4%</em>
@@ -486,6 +486,14 @@
 					</div>
 				</div>
 			</div>
+			<div class="product-skip">
+					<a href="#formCalculator">보험료계산 영역으로 이동<span></span></a>
+				</div>
+
+ <%@include file="../include/productSubscript.jsp" %>
+
+					</div>
+			
 		</div>
 		<!-- 내용끝 -->
 	</div>

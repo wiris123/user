@@ -17,7 +17,7 @@
 <title>가입 전 가이드</title>
 		<!-- 머리 -->
 		<%@ include file="../include/header.jsp"  %>	
-		<<script>
+		<script>
 		function moveCalc(frm)
 		{
 			var mode = document.getElementById("product");	

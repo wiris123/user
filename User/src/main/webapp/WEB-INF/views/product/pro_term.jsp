@@ -273,7 +273,14 @@ function premiPlus()
                   </div>
                </div>
             </div>
-         </div>
+            
+            <!-- # 계산영역으로 이동 ////////////////////////////////////////////////////////////////////////////// -->
+				<div class="product-skip">
+					<a href="#formCalculator">보험료계산 영역으로 이동<span></span></a>
+				</div>
+
+				
+<%@include file="../include/productSubscript.jsp" %>
          <!-- 머리끝 -->
 
       </div>
@@ -281,7 +288,7 @@ function premiPlus()
          <%@ include file="../include/footer.jsp"%>
       </div>
       <!-- 푸터끝 -->
-
+		
    </div>
 </body>
 </html>

@@ -9,8 +9,6 @@
 </head>
 <body>
 	<div id="wrapper">
-
-
 		<script>
 			$(function() {
 
@@ -109,11 +107,18 @@
 
 									<div id="naver" style="text-align:center"><a href="${url}"><img width="223" src="${pageContext.request.contextPath}/resources/img/naver_Bn_Green.PNG"/></a></div>
 									<div id="google" style="text-align:center"><a href="${google_url}"><img width="230" src="${pageContext.request.contextPath}/resources/img/btn_google.jpg"/></a></div>
+									
 									<div class="btn-area">
-										<button class="btn-type2 c1" onClick='javascript:login();'>
-											<span>확인</span>
-										</button>
-									</div>
+		                              <button class="btn-type2 c1" onClick='javascript:login();'>
+		                                 <span>확인</span>
+		                              </button>
+		                              <button class="btn-type2 c1" onClick='javascript:login();'>
+		                                 <a href="./sendpw.do"><span>아이디찾기</span></a>
+		                              </button>
+		                              <button class="btn-type2 c1" onClick='javascript:login();'>
+		                                 <a href="./sendpw.do"><span>비밀번호찾기</span></a>
+		                              </button>
+		                           </div>
 								</form>
 							</div>
 						</div>
