@@ -228,7 +228,7 @@ function contactEdit(mode,insnum,product)
 
    <!-- 보유계약조회 -->
     <section id="content2"> <br /><br />
-       <h1 class="hd">보유계약 조회</h1>
+       <h1 class="hd">보유계약 조회</h1>		
           <!-- ##연금보험  보유 현황-->
           <!-- ## 검색결과 ## -->
          <p class="txt-num tbl-info"><strong>${USER_ID }</strong>님의 보유 <b>연금보험</b>이 총 <em id="count">${fn:length(dto3)} </em>건 조회되었습니다.</p>
