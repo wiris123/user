@@ -253,7 +253,7 @@ public class InsuController
 		int riskPremium =   drive+ cigar+  drink+  height+  weight+ income+  hospit1+ hospit2+  hospit3;
 		
 		// 
-		sqlSession.getMapper(MyInsuImpl.class).insertMemberProp(id,  pass,  name,  phone,  mobile,  email, riskPremium,  "0",  "3", ins_name);
+		sqlSession.getMapper(MyInsuImpl.class).insertMemberProp(id, name,  phone,  mobile,  email, riskPremium,  "0",  "3", ins_name);
 	
 		//입력완료
 		
