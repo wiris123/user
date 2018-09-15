@@ -2,6 +2,7 @@ package com.kosmo.user;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.sql.SQLException;
 import java.text.DateFormat;
 import java.util.Date;
 import java.util.HashMap;
@@ -10,6 +11,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.jsp.JspWriter;
 
 import org.apache.catalina.mapper.Mapper;
 import org.apache.ibatis.session.SqlSession;
@@ -17,7 +19,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -29,6 +35,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import dto.TermMemDTO;
 import interfaceLoader.MyInsuImpl;
+import interfaceLoader.MyInsuService;
 
 
 /**
@@ -43,6 +50,9 @@ public class InsuController
 	
 	@Autowired
 	private SqlSession sqlSession;
+	
+/*	@Autowired
+	DataSourceTransactionManager txmanager;*/
 	
 	//로그인처리
 
@@ -187,9 +197,9 @@ public class InsuController
 		int gohosp = Integer.parseInt(req.getParameter("gohosp"));
 		int sanghosp = Integer.parseInt(req.getParameter("sanghosp"));
 		int sgohosp = Integer.parseInt(req.getParameter("sgohosp"));
-		int chbedosu = Integer.parseInt(req.getParameter("chbedosu"));
-		int chbeinje = Integer.parseInt(req.getParameter("chbeinje"));
-		int chbemri = Integer.parseInt(req.getParameter("chbemri"));
+		String chbedosu = req.getParameter("chbedosu");
+		String chbeinje = req.getParameter("chbeinje");
+		String chbemri = req.getParameter("chbemri");
 		String mode = req.getParameter("mode");
 		String payment = req.getParameter("payment");
 		
@@ -224,7 +234,7 @@ public class InsuController
 	
 	
 	@RequestMapping("/product/insuPropAction.do")
-	public ModelAndView insuPropAction(HttpServletRequest req) 
+	public ModelAndView insuPropAction(HttpServletRequest req,HttpServletResponse resp)
 	{	
 		
 		ModelAndView mv = new ModelAndView();
@@ -232,7 +242,6 @@ public class InsuController
 		//member_term 테이블에 입력하기 
 		String id = req.getParameter("id");
 		String name = req.getParameter("name");
-		String pass = req.getParameter("pass");
 		String phone = (req.getParameter("phone1")+"-"+req.getParameter("phone2")+"-"+req.getParameter("phone3"));
 		String mobile = (req.getParameter("mobile1")+"-"+req.getParameter("mobile2")+"-"+req.getParameter("mobile3"));
 		String email = req.getParameter("email1")+"@"+req.getParameter("email2");
@@ -248,14 +257,11 @@ public class InsuController
 		int hospit3 = Integer.parseInt(req.getParameter("hospit3"));
 		String userInfo = req.getParameter("userInfo");
 		String ins_name = req.getParameter("ins_name");
-
-		//위험률을 계산하여 저장
-		int riskPremium =   drive+ cigar+  drink+  height+  weight+ income+  hospit1+ hospit2+  hospit3;
 		
-		// 
-		sqlSession.getMapper(MyInsuImpl.class).insertMemberProp(id, name,  phone,  mobile,  email, riskPremium,  "0",  "3", ins_name);
-	
-		//입력완료
+		
+		//위험률을 계산하여 저장
+		int riskPremium =   drive+ cigar+  drink+ income+  hospit1+ hospit2+  hospit3;
+		
 		
 		//member_term_my 테이블에 입력하기
 		ObjectMapper mapper = new ObjectMapper();
@@ -276,15 +282,48 @@ public class InsuController
 		String ctm = String.valueOf(System.currentTimeMillis());
 		int remainpay = Integer.parseInt(map.get("payment").toString())*12;
 		String paidprem = "0";
-		sqlSession.getMapper(MyInsuImpl.class).insertStatusProp(id, ins_name, ctm, String.valueOf(remainpay), paidprem, map.get("payment").toString(), "E");
 		
+		try
+		{
+			//member_prop에 삽입
+			sqlSession.getMapper(MyInsuService.class).insertMemberProp(id, name,  phone,  mobile,  email, riskPremium, "3", ins_name);
+			//member_prop_my에 삽입
+			sqlSession.getMapper(MyInsuService.class).insertStatusProp(id, ins_name, ctm, String.valueOf(remainpay), paidprem, map.get("payment1").toString(), "E");
 
-		mv.addObject("ins_num", ctm);
-		mv.addObject("ins_name",ins_name);
-		mv.addObject("name",name);
-		mv.setViewName("/product/pro_success");
+			mv.addObject("ins_num", ctm);
+			mv.addObject("ins_name",ins_name);
+			mv.addObject("name",name);
+			mv.setViewName("/product/pro_success");
+			
+			return mv;
+			
+		}
+		catch (RuntimeException e) 
+		{
+			
+			
+			mv.addObject("msg","가입에 실패하였습니다. 고객센터에 문의하세요");
+			mv.addObject("url", "../product/pro_prop");
+			mv.setViewName("/product/pro_success");
+			
+			e.printStackTrace();
+			
+			return mv;
+
+		}
+		catch (Exception e) 
+		{
+			mv.addObject("msg","가입에 실패하였습니다. 고객센터에 문의하세요");
+			mv.addObject("url", "../product/pro_prop");
+			mv.setViewName("/product/pro_success");
+			
+			
+			e.printStackTrace();
+			return mv;	
+								
+
+		}
 		
-		return mv;
 	}
 	
 	@RequestMapping("/product/annu_cal.do")

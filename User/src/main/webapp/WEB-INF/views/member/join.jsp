@@ -1,10 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
-
-
-
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -102,6 +98,7 @@ $(document).ready(function(){
             if(result=="SUCCESS"){      
                $("#captchaConfirmvalue").text("로봇이 아닙니다.");
                $("#captcha").val("");
+               $("#captconf").val()
                $("#captchadiv").hide();
                
             }else{
@@ -129,8 +126,10 @@ function zipcodeFind(){
     }).open();
 }
 
-function mValidate() {
+function mValidate(form) {
    
+	var fn = form;
+	
    if(idcheck==false){
       document.getElementById("idDiv").innerHTML =
          " 중복 검사를 통과하지 못했습니다.";
@@ -140,6 +139,13 @@ function mValidate() {
       
       return false;
    } 
+   
+   if(!$("#captconf").val("confirmed")) 
+	{
+		 alert('캡챠를 입력해 주세요');
+		 document.captcha.focus();
+		 return false;
+	}
    //비밀번호에 입력한 값과 비밀번호 확인에 입력한 값이
    //일치 하지 않으면 서버로 전송하지 않도록
    var pass = document.getElementById("pass");
@@ -162,7 +168,7 @@ function mValidate() {
       return false;
    }
 
-<<<<<<< HEAD
+
    if(fn.id.value==""){
          alert("아이디를 입력해주세요");
          fn.id.focus();
@@ -174,7 +180,7 @@ function mValidate() {
        document.join.pw.focus();
        return false;
       }
-=======
+
 	/*  	if(fn.id.value=="")
 	 	{
 		   alert("아이디를 입력해주세요");
@@ -187,7 +193,7 @@ function mValidate() {
 		 document.join.pw.focus();
 		 return false;
 		}
->>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
+		>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 
       if(!document.join.pass2.value) {
        window.alert('비밀번호 확인을 입력해 주세요');
@@ -214,28 +220,15 @@ function mValidate() {
        return false;
       }    
 
-<<<<<<< HEAD
-      if(!document.join.phone.value) {
-       window.alert('핸드폰 번호를 입력해 주세요');
-       document.join.phone.focus();
-       return false;
-      }
-=======
 		if(!document.join.phone.value) {
 		 window.alert('핸드폰 번호를 입력해 주세요');
 		 document.join.phone.focus();
 		 return false;
 		}
 		  */
-		if(!$("#captresult").val()) 
-		{
-		 alert('캡챠를 입력해 주세요');
-		 document.captcha.focus();
-		 return false;
-		}
-			
 		
->>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
+			
+
 }
 
 
@@ -307,7 +300,7 @@ function idCheck()
          <div><a href="${pageContext.request.contextPath}/user/register"><h3 class="box-title">회원가입</h3></a></div>
          <div class="join_wrap">   
 
-            <form name="memberFrm" method="post" action="../member/insertjoin.do" onsubmit="return mValidate();";" >
+            <form name="memberFrm" method="post" action="../member/insertjoin.do" onsubmit="return mValidate();" >
                <div id="join" style="width: 500px; margin: 0 auto;" >
                   <tr> 
                     <td>아이디</td><br />
@@ -408,6 +401,7 @@ function idCheck()
                   <input type="text" placeholder="보안문자를 입력하세요" name="captcha"  id="captcha">
                   <a href="#" onclick="imgRefresh()" id="refreshBtn" ><i class="glyphicon glyphicon-refresh"></i>새로고침</a>               
                   </a></div>
+                  <input type="hid den" name="captconf" id="captconf" />
                   <span id="captchaConfirmvalue" style="color:red;"></span><a href="#" id="confirm">확인</button>
                      
                      

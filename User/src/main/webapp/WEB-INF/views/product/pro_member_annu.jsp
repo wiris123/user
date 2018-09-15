@@ -231,7 +231,7 @@ function email_input(em, frm){
       				
 						<tr>
 							<label for="name">이름</label>
-							<input type="text" id="name" name="name" placeholder="이름">						
+							<input type="text" id="name" name="name" placeholder="이름" value="${USER_NAME }">						
 						</tr>
 					
 				     	<label for="email">이메일</label><br />

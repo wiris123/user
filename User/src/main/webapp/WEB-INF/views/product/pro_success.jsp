@@ -13,6 +13,15 @@
 			<%@ include file="../include/Head.jsp"%>
 			<!-- 내용시작 -->
 			<div id="content" class="page-guide">
+			<script type="text/javascript"> 
+				var message = '${msg}'; 
+				var returnUrl = '${url}'; 
+				if(message!="")
+				{
+					alert(message);
+					document.location.href = returnUrl; 
+				}
+			</script>
 							<!-- ## 페이지타이틀 ## -->
 							<h1 class="hd">가입 후 가이드</h1>
 							<div class="visual-top">

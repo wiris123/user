@@ -70,6 +70,7 @@ public class MyBatisController
 	@Autowired
 	private OAuth2Parameters googleOAuth2Parameters;
 
+	
 	//로그인 리다이렉팅
 	@RequestMapping("/member/login.do")
 	public String login(HttpSession session,Model model)
@@ -107,7 +108,12 @@ public class MyBatisController
 
 		String user_id = userDetails.getUsername(); 
 		
+		MemberVO memVO = sqlSession.getMapper(MyMemberImpl.class).selectMyPageMember(user_id);
+		
 		session.setAttribute("USER_ID", user_id);
+		session.setAttribute("USER_NAME", memVO.getName());
+		session.setAttribute("USER_EMAIL", memVO.getEmail());
+		session.setAttribute("USER_BIRTH", memVO.getBirth());
 		
 		return "member/login";
 		

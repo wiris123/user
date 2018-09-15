@@ -246,7 +246,7 @@ function email_input(em, frm){
       				</tr>
       				<p></p>
 						<label for="name">이름</label>
-						<input type="text" id="name" name="name" placeholder="이름">
+						<input type="text" id="name" name="name" value="${USER_NAME }" placeholder="이름">
 				     	<label for="email">이메일</label><br />
 						<input type="text"  name="email1" placeholder="이메일을 입력하세요" style="width: 33%;">  @ 
 						<input type="text"  class="pass" name="email2" style="width: 31%" readonly />
