@@ -22,8 +22,13 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionException;
+import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -48,12 +53,24 @@ public class InsuController
 	private static final Logger logger = LoggerFactory.getLogger(InsuController.class);
 
 	
-	@Autowired
+
+/*    @Autowired
+	PlatformTransactionManager transactionManager;
+    DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+    
+	TransactionStatus status = transactionManager.getTransaction();
+	*/
+    @Autowired
 	private SqlSession sqlSession;
-	
-/*	@Autowired
-	DataSourceTransactionManager txmanager;*/
-	
+    
+    MyInsuService service;
+   /* @Autowired
+    public void setTransactionManager(PlatformTransactionManager transactionManager) {
+		this.transactionManager = transactionManager;
+	}
+    */
+
+  
 	//로그인처리
 
 	
@@ -234,7 +251,7 @@ public class InsuController
 	
 	
 	@RequestMapping("/product/insuPropAction.do")
-	public ModelAndView insuPropAction(HttpServletRequest req,HttpServletResponse resp)
+	public ModelAndView insuPropAction(HttpServletRequest req,HttpServletResponse resp) throws Exception
 	{	
 		
 		ModelAndView mv = new ModelAndView();
@@ -286,19 +303,21 @@ public class InsuController
 		try
 		{
 			//member_prop에 삽입
-			sqlSession.getMapper(MyInsuService.class).insertMemberProp(id, name,  phone,  mobile,  email, riskPremium, "3", ins_name);
+			sqlSession.getMapper(MyInsuImpl.class).insertMemberProp(id, name,  phone,  mobile,  email, riskPremium, "3", ins_name);
 			//member_prop_my에 삽입
-			sqlSession.getMapper(MyInsuService.class).insertStatusProp(id, ins_name, ctm, String.valueOf(remainpay), paidprem, map.get("payment1").toString(), "E");
+			sqlSession.getMapper(MyInsuImpl.class).insertStatusProp(id, ins_name, ctm, String.valueOf(remainpay), paidprem, map.get("payment1").toString(), "E"); 
+			
 
 			mv.addObject("ins_num", ctm);
 			mv.addObject("ins_name",ins_name);
 			mv.addObject("name",name);
 			mv.setViewName("/product/pro_success");
-			
+		/*	transactionManager.commit(status);*/
+
 			return mv;
 			
 		}
-		catch (RuntimeException e) 
+		/*catch (RuntimeException e) 
 		{
 			
 			
@@ -310,15 +329,15 @@ public class InsuController
 			
 			return mv;
 
-		}
+		}*/
 		catch (Exception e) 
 		{
 			mv.addObject("msg","가입에 실패하였습니다. 고객센터에 문의하세요");
 			mv.addObject("url", "../product/pro_prop");
 			mv.setViewName("/product/pro_success");
-			
-			
+
 			e.printStackTrace();
+			/*transactionManager.rollback(status);*/
 			return mv;	
 								
 
