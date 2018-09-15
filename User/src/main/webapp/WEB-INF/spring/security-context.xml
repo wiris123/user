@@ -68,7 +68,7 @@
 		<security:intercept-url pattern="/member/mypage.do" access="hasRole('USER')"/>
 		<security:intercept-url pattern="/product/annu_cal.do" access="hasRole('USER')"/>
 		<security:intercept-url pattern="/product/insert_term.do" access="hasRole('USER')"/>
-		<security:intercept-url pattern="/member/prop_cal" access="hasRole('USER')"/>
+		<security:intercept-url pattern="/product/prop_cal" access="hasRole('USER')"/>
 		<security:intercept-url pattern="/custom/response" access="hasRole('USER')"/>
 		
 		

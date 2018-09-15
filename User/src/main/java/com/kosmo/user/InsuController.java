@@ -313,7 +313,7 @@ public class InsuController
 			mv.addObject("name",name);
 			mv.setViewName("/product/pro_success");
 		/*	transactionManager.commit(status);*/
-
+			
 			return mv;
 			
 		}
@@ -330,19 +330,18 @@ public class InsuController
 			return mv;
 
 		}*/
-		catch (Exception e) 
+		catch (RuntimeException e) 
 		{
+
 			mv.addObject("msg","가입에 실패하였습니다. 고객센터에 문의하세요");
 			mv.addObject("url", "../product/pro_prop");
 			mv.setViewName("/product/pro_success");
 
 			e.printStackTrace();
-			/*transactionManager.rollback(status);*/
-			return mv;	
-								
-
+			//transactionManager.rollback(status);
+			throw e;
 		}
-		
+
 	}
 	
 	@RequestMapping("/product/annu_cal.do")
