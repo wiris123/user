@@ -51,26 +51,5 @@
         </property>
 	</bean>
 
-	<!-- 트랜잭션 매니져-->	
- 	 <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
-		<property name="dataSource" ref="dataSource"/>
-	 </bean>
-
- 	<tx:annotation-driven transaction-manager="transactionManager"/>
- 		  
-	<!-- 트랜잭션 사용을 위한 AOP설정 -->
-	<aop:config proxy-target-class="true">
-	    <aop:pointcut id="serviceOperation" expression="execution(* com.kosmo.user..*.*(..))" />	 	
-	    <aop:advisor pointcut-ref="serviceOperation" advice-ref="txAdvice"/>
-	</aop:config>
-  
-	<!-- 트랜잭션 advice 설정 -->
- 	<tx:advice id="txAdvice" transaction-manager="transactionManager">
-		<tx:attributes>
-			<tx:method name="insert*" rollback-for="Exception,RuntimeException" propagation="REQUIRED"/>
-			<tx:method name="insu*" rollback-for="Exception"/>
-			<tx:method name="*" rollback-for="Exception,RuntimeException" propagation="REQUIRED"/>
-		</tx:attributes>
-	</tx:advice>
 	
 </beans>
