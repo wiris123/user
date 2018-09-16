@@ -23,12 +23,9 @@ function moveCalc(frm)
 </head>
 <body>
 	<div id="wrapper"> 
-	
 		<!-- 머리 -->
-		
 		<div id="container">
 			<%@ include file="./include/Head.jsp" %>
-			
 			<!-- 내용시작 -->
 			<div id="content" class="page-main">
 			<h1 class="hd">삼성생명 다이렉트 홈</h1>
@@ -95,8 +92,7 @@ function moveCalc(frm)
 											<label for="pbirthday" class="label">생년월일 (예 : 19851015 )</label>
 											<input type="text" autocomplete="off" class="text placeholder numOnly" id="pbirthday" name="birthday" maxlength="8"/>
 										</div>
-									</li>
-									
+									</li>				
 									<!-- 성별 -->
 									<li>
 										<h3>성별 선택</h3>
@@ -118,7 +114,6 @@ function moveCalc(frm)
 					</fieldset>
 				</form>
 			</div>
-				
 			<!-- CMS 영역 -->
 			<!--%@ include file="/resources/cms/pc/main/product/index.jsp" %> -->
 			<div class="main-product">
@@ -224,7 +219,6 @@ function moveCalc(frm)
 			</div>
 		</div>
 		<!-- 내용끝 -->
-		
 		</div>	
 		<!-- 머리끝 -->
 		<!-- 푸터시작 -->
