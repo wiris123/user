@@ -23,6 +23,14 @@
                <!-- # 상품기본정보 # -->
 <script type="text/javascript">
 $(function(){
+	var temp = ${param.pgender}2;
+	var gender = (temp==2?"0":temp);
+	if(gender==12){
+		$('#pgender1').addClass("on");
+	}
+	else if(gender==22){
+		$('#pgender2').addClass("on");
+	}
    $('.result-info-area').hide();
       
 })
@@ -113,7 +121,7 @@ function premCal()
                               <!-- 생년월일 -->
                               <li>
                                  <div class="form-wrap1">
-                                    <label for="birthday" class="label">생년월일 <span>(예
+                                    <label for="birth" class="label">생년월일 <span>(예
                                           : 19851015 )</span></label> <input type="text" autocomplete="off"
                                        class="text placeholder numOnly" id="birth" value="${param.birthday }"
                                        maxlength="8" />
@@ -122,10 +130,10 @@ function premCal()
                               <!-- 성별 -->
                               <li>
                                  <div class="label-radiobtn gender">
-                                    <span> <label for="calcGender1">남자</label> <input
+                                    <span> <label for="calcGender1" id="pgender1">남자</label> <input
                                        type="radio" name="pgender" class="radio" id="calcGender1"
                                        value="1" />
-                                    </span> <span> <label for="calcGender2">여자</label> <input
+                                    </span> <span> <label for="calcGender2" id="pgender2">여자</label> <input
                                        type="radio" name="pgender" class="radio" id="calcGender2"
                                        value="2" />
                                     </span>

@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
-import org.junit.experimental.theories.DataPoint;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -114,6 +113,8 @@ public class MyBatisController
 		session.setAttribute("USER_NAME", memVO.getName());
 		session.setAttribute("USER_EMAIL", memVO.getEmail());
 		session.setAttribute("USER_BIRTH", memVO.getBirth());
+		System.out.println("dsds"+memVO.getAddress());
+		session.setAttribute("USER_ADDR", memVO.getAddress());
 		
 		return "member/login";
 		
@@ -168,8 +169,12 @@ public class MyBatisController
 	    String mailcontent = name+"</br>"+mobile+"</br>"+email+"</br>"+contents;
 
 		try {
-			
-			sqlSession.getMapper(MyMemberImpl.class).EmailSender(req.getParameter("idx"),req.getParameter("name"),(req.getParameter("mobile1")+req.getParameter("mobile2")),(req.getParameter("email1")+"@"+req.getParameter("email2")),contents,flag);
+			if(req.getParameter("id")==null) {
+				sqlSession.getMapper(MyMemberImpl.class).EmailSender(req.getParameter("idx"),req.getParameter("name"),(req.getParameter("mobile1")+req.getParameter("mobile2")),(req.getParameter("email1")+"@"+req.getParameter("email2")),contents,flag);
+			}
+			else {
+				sqlSession.getMapper(MyMemberImpl.class).EmailSender2(req.getParameter("idx"),req.getParameter("name"),(req.getParameter("mobile1")+req.getParameter("mobile2")),(req.getParameter("email1")+"@"+req.getParameter("email2")),contents,flag, req.getParameter("id"));
+			}
 			MimeMessage message = javaMailSender.createMimeMessage(); // 메일 생성
 			message.setSubject("Mail Test");	// 제목 설정
 			message.setText(mailcontent,"UTF-8","html");	// 내용(html 준수)
@@ -260,8 +265,15 @@ public class MyBatisController
 	       String flag = "c";
 
 	      try {
+	    	  System.out.println(req.getParameter("id"));
+	    	  if(req.getParameter("id")==null) {
+	    		  sqlSession.getMapper(MyMemberImpl.class).calling(idx, name, mobile, telltime, contents, flag);
+	    	  }
+	    	  else {
+	    		  sqlSession.getMapper(MyMemberImpl.class).calling2(idx, name, mobile, telltime, contents, flag, req.getParameter("id"));
+	    	  }
 	         
-	         sqlSession.getMapper(MyMemberImpl.class).calling(idx, name, mobile, telltime, contents, flag);
+	         
 	         System.out.println("성공");
 	      } catch (Exception e) {
 	         e.printStackTrace();

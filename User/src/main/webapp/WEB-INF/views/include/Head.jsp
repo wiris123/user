@@ -18,7 +18,6 @@
 				<ul class="list-option">
 					<li><a href="<%=request.getContextPath() %>/guide/gde_before" onclick="ga('send', 'event', 'Direct', 'Etc', 'GNB_menu_before-guide', 1);"><strong>가입 전.후 가이드</strong></a></li>
 					<li><a href="<%=request.getContextPath() %>/guide/gde_annual"><strong>연금 가입 가이드</strong></a></li>
-					<li><a href="<%=request.getContextPath() %>/guide/gde_myproduct"><strong>내게 맞는 상품 찾기</strong></a></li>
 				</ul></li>
 			<li class="list-path3"><a href="#none" onclick="toggleGNB();"><p class="headline">이벤트/공지</p></a>
 				<ul class="list-option">
@@ -30,7 +29,7 @@
 				<ul class="list-option">
 					<li><a href="<%=request.getContextPath() %>/custom/cus_faq"><strong>자주하는 질문</strong></a></li>
 					<li><a href="<%=request.getContextPath() %>/custom/cus_qna"><strong>고객상담신청</strong></a></li>
-					<li><a href="<%=request.getContextPath() %>/custom/mapAPI"><strong>지도</strong></a></li>
+					<li><a href="<%=request.getContextPath() %>/custom/mapAPI"><strong>지점 소개</strong></a></li>
 				</ul></li>
 			<li class="list-ban">
 				<div class="ba-img01">

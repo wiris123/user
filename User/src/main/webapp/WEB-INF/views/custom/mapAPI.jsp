@@ -61,10 +61,15 @@
 		<div id="container">
 			<%@ include file="../include/Head.jsp"%>
 			<!-- 내용 시작 -->
-			<div id="content">
-					<div id="agency_00" style="width: 100%; height: 400px;"></div>
+			<div id="content" class="page-notice">
+				<!-- ## 페이지타이틀 ## -->
+				<div class="tit-page">
+					<h1>지점 소개</h1>
+				</div>
+
+				<div id="agency_00" style="width: 100%; height: 400px;"></div>
 				<!-- 맵이들어간 부분 css - widht, height 주기-->
-				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=2a7ae288dbc4d9f905fac3f833a19964&APIKEY&libraries=services,clusterer,drawing"></script>
+				<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=18ef362ec63641ef95e64b53e3e5a7a4&libraries=services,clusterer,drawing"></script>
 
 				<script>
 					var mapContainer = document.getElementById('agency_00'), // 지도를 표시할 div 
@@ -237,6 +242,53 @@
 
 					}
 				</script>
+				
+
+				<!-- ## 게시물출력 ## -->
+            <ul class="board-list" id="noticeList">
+               
+               
+                  <li id="view_1859" class=""><a href="#" class="tit" title="상세내용열기"> <span class="num">1</span>ISM 본점 소개<em class="date" style="width:120px">T.010-3234-9239</em>
+                  </a>
+                     <div class="con">
+                        <div class="wrap-admin">
+                           주소 : 서울특별시 금천구 가산디지털2로 127-33 <br /> 영업시간 : 9:00 ~ 17:00  
+                        </div>
+                     </div></li>
+               
+
+                  <li id="view_1859" class=""><a href="#" class="tit" title="상세내용열기"> <span class="num">2</span>인천 지점 소개<em class="date" style="width:120px">T.010-3234-9239</em>
+                  </a>
+                     <div class="con">
+                        <div class="wrap-admin">
+                           주소 : 인천광역시 연수구 솔샘로 120 <br /> 영업시간 : 9:00 ~ 17:00 
+                        </div>
+                     </div></li>
+                  
+                  <li id="view_1859" class=""><a href="#" class="tit" title="상세내용열기"> <span class="num">3</span>강릉 지점 소개<em class="date" style="width:120px">T.010-3234-9239</em>
+                  </a>
+                     <div class="con">
+                        <div class="wrap-admin">
+                           주소 : 강원도 강릉시 옥천동 331 <br /> 영업시간 : 9:00 ~ 17:00 
+                        </div>
+                     </div></li>
+                     
+                  <li id="view_1859" class=""><a href="#" class="tit" title="상세내용열기"> <span class="num">4</span>광주 지점 소개<em class="date" style="width:120px">T.010-3234-9239</em>
+                  </a>
+                     <div class="con">
+                        <div class="wrap-admin">
+                           주소 : 광주광역시 서구 치평동 1240-1 <br /> 영업시간 : 9:00 ~ 17:00 
+                        </div>
+                     </div></li>
+                     
+                  <li id="view_1859" class=""><a href="#" class="tit" title="상세내용열기"> <span class="num">5</span>대구 지점 소개<em class="date" style="width:120px">T.010-3234-9239</em>
+                  </a>
+                     <div class="con">
+                        <div class="wrap-admin">
+                           주소 : 대구광역시 달서구 진천로 18-10 <br /> 영업시간 : 9:00 ~ 17:00 
+                        </div>
+                     </div></li>
+            </ul>
 			</div>
 			<!-- 내용 끝 -->
 		</div>

@@ -1,12 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="dto" value="${vo }" />
+<c:set var="success" value="${success }"/>
+
+	<c:if test="${success eq 1}">
+		<script>
+			alert("응모 완료");
+		</script>
+		<c:remove var="success" />
+	</c:if>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta property="og:url"
-	content="http://192.168.0.82:8080/user/event/bbs_view?num=10&nowPage=1" />
+	content="http://192.168.0.82:8080/user/event/bbs_view?num=${param.num }&nowPage=1" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="ISM" />
 <meta property="og:description" content="공유!!" />
@@ -57,7 +66,7 @@
 							}(document, 'script', 'facebook-jssdk'));
 						</script>
 						<div class="fb-share-button"
-							data-href="http://192.168.0.122:8080/user/event/bbs_view?num=10&nowPage=1"
+							data-href="http://192.168.0.122:8080/user/event/bbs_view?num=${param.num }&nowPage=1"
 							data-layout="button" data-size="large" data-mobile-iframe="true">
 							<a target="_blank"
 								href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A8080%2Fuser%2Fevent%2Fbbs_event&amp;src=sdkpreparse"
@@ -65,9 +74,21 @@
 						</div>
 					</div>
 					<!-- # 상세정보 # -->
-					<div class="wrap-img" id="eventBody">${dto.contents }</div>
 					<img src="/img/${dto.attfile}" alt="" />
-
+					<div class="wrap-img" id="eventBody">${dto.contents }</div>
+					<div style="text-align:center;padding-bottom:20px">
+						<a href="#go" name="go" class="btn-type1 c2" style="text-align:center;"onclick="return really()"><span>응모하기</span></a>
+						<script>
+						function really(){
+							if(confirm("이벤트에 응모하시겠습니까?")){
+								location.href="/user/event/bbs_eventgo?num=${param.num }&regidate=${dto.regidate}"
+							}
+							else{
+								return false;
+							}
+						}
+						</script>
+					</div>
 				</div>
 				<!-- # 응모하기 : 템플릿2 맞춤설계형 # -->
 				<div class="event-template2">

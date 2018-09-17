@@ -19,6 +19,13 @@ public class BoardCommVO {
 	private Date com_regidate;
 	private String com_content;
 	private String board_idx;
+	private int rnum;
+	public int getRnum() {
+		return rnum;
+	}
+	public void setRnum(int rnum) {
+		this.rnum = rnum;
+	}
 	//생성자
 	public BoardCommVO() {};
 	public BoardCommVO(String num, String id, String name, String title, String contents, Date regidate, String viewcnt,

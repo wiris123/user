@@ -1,18 +1,28 @@
 package com.kosmo.user;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.apache.ibatis.session.SqlSession;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import controller1.CusQnaDAO;
 import dto.CounselDTO;
+import mybatis.BoardVO;
+import mybatis.MyBbsDAOImpl;
+import mybatis.onebyoneVO;
 
 @Controller
 public class CustomController {
+	
+	@Autowired
+	private SqlSession sqlSession;
 	
 	@RequestMapping("/custom/cus_faq")
 	public String cus_faq() {
@@ -52,31 +62,23 @@ public class CustomController {
 	}
 	
 	//1:1상담요청
-	@RequestMapping("/custom/sendonebyone")
-	public String sendeonebyone(HttpServletRequest request) {
+	@RequestMapping("/custom/onebyone.do")
+	public ModelAndView  sendeonebyone(HttpServletRequest request) {
+		System.out.println("ss");
 		String name =  request.getParameter("name"); 
 		String contents =  request.getParameter("contents"); 
+		String id = request.getParameter("id");
+		String title = request.getParameter("title");
 		
-		CounselDTO dto = new CounselDTO();
+		onebyoneVO dto = new onebyoneVO();
+		dto.setId(id);
 		dto.setName(name);
 		dto.setContents(contents);
+		dto.setTitle(title);
 		
-		CusQnaDAO dao = new CusQnaDAO();
+		sqlSession.getMapper(MyBbsDAOImpl.class).response(dto); 
 		
-		int affected = dao.qnaWrite(dto);		
-		
-		dao.close();
-		
-		if(affected==1)
-		{ 
-			System.out.println("Y");
-		}
-		else
-		{
-			System.out.println("N");
-		}
-		
-		return "custom/cus_qna";
+		return new ModelAndView("redirect:/custom/response");
 	}
 	
 	@RequestMapping("/custom/sendemail")
@@ -107,6 +109,9 @@ public class CustomController {
 		{
 			System.out.println("N");
 		}
+		
+		
+		
 		
 		return "custom/cus_qna";
 	}

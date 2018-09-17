@@ -1,5 +1,12 @@
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.util.Date"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+Date date = new Date();
+SimpleDateFormat frm = new SimpleDateFormat("YY/MM/dd");
+String today = frm.format(date);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -79,6 +86,10 @@ function qnaCheck(fn) {
                      $("#popCounselTelOverlay").css('display', '');
                      $("#popCounselEmail").addClass("open");
                   }
+                  function openOnePop() {
+                      $("#popCounselTelOverlay").css('display', '');
+                      $("#popCounselonebyone").addClass("open");
+                   }
                   $(".ui-close").click(function() {
                      $('.pop-modal3').removeClass("open");
                      $("#popCounselTelOverlay").css('display', 'none');
@@ -89,15 +100,17 @@ function qnaCheck(fn) {
                   });
                   openTelPopj = openTelPop;
                   openMailPopj = openMailPop;
+                  openOnePopj = openOnePop;
                });
 
    function openPopCounsel(type, form) {
-      if (type == 'telReserve') {
+	  if (type == 'telReserve') {
          openTelPopj();
       } else if (type == 'popCounselEmail') {
          openMailPopj();
+      } else if(type =='popCounselonebyone'){
+    	  openOnePopj();
       }
-
    }
 </script>
 <div id="uiNavQuick" >
@@ -133,7 +146,7 @@ function qnaCheck(fn) {
          </a>
       </dd>
       <dd class="m4">
-         <a href="../custom/response">
+         <a href="<%=request.getContextPath() %>/custom/response">
             <em name="telReserveStatus" class="icon-state1 on">[ON]</em>
             <span>1:1문의요청</span>
          </a>
@@ -150,9 +163,9 @@ function qnaCheck(fn) {
 
 <!-- 이메일 상담 -->
 <a name="con"></a>
-<div id="popCounselEmail" class="pop-modal3">
+<div id="popCounselonebyone" class="pop-modal3">
                <div class="header">
-                  <h2>이메일 상담</h2>
+                  <h2>1:1 상담</h2>
                   <button type="button" class="ui-close">
                      이메일 상담 닫기<span></span>
                   </button>
@@ -160,7 +173,8 @@ function qnaCheck(fn) {
                <div class="content">
                   <!-- # 상담신청입력폼 # -->
                   <h3 class="mes-top">이메일 주소와 상담하실 내용을 입력해 주세요.</h3>
-                  <form id="form" src="/user/custom/sendemail" method="post" action="mailTest.do">
+                  <form id="form2" src="/user/custom/sendonebyone" method="post" action="<%=request.getContextPath() %>/custom/onebyone.do">
+                     <input type="hidden" name="id" value="${USER_ID }" />
                      <fieldset class="form-content3">
                         <legend>이메일상담 신청정보입력</legend>
                         <dl>
@@ -171,7 +185,98 @@ function qnaCheck(fn) {
                               <input type="text" class="text" name="name" id="applyUserName" title="신청인 이름" style="ime-mode: active;" maxlength="30"> 
                               &nbsp;
                               <span class="heading"><label for="applyUserName">작성일</label></span> 
-                              <input type="text" class="text" id="applyUserName" title="신청날짜" style="ime-mode: active;" maxlength="30" name="regidate" value="18/09/11">
+                              <input type="text" class="text" id="applyUserName" title="신청날짜" style="ime-mode: active;" maxlength="30" name="regidate" value="<%=today %>" readonly>
+                           </dd>
+                        </dl>
+                        <dl>
+                           <dt class="heading">
+                              <span class="label">제목</span>
+                           </dt>
+                           <dd class="wrap">
+                               <input type="text" class="text" name="title" id="applyUserName2" title="제목" style="ime-mode: active;width:92%;" maxlength="100" > 
+                           </dd>
+                        </dl>
+                        <dl class="block">
+                           <dt class="hd">문의내용</dt>
+                           <dd class="wrap">
+                              <div class="form-wrap1 textform">
+                                 <label for="popEmailapplyCounselMemo" class="label">상담에 대한 간략한 내용과 함께 문의가 필요한 보험상품과<br>본인 정보등을 함께 작성해 주시면, 보다 빠른 상담이 가능합니다.
+                                 </label>
+                                 <textarea rows="4" name="contents" cols="20" id="popEmailapplyCounselMemo" class="textarea placeholder valueon" title="문의내용(2000자까지 입력가능)" maxlength="2000" onkeyup="checkByte2(this, '2000', 'popEmailContentLength')" style="ime-mode: active;"> - 문의내용 : </textarea>
+                              </div>
+                              <div class="txt-sub">
+                                 <span class="txt-num">(<em id="popEmailContentLength">0</em>/2000자)
+                                 </span>
+                              </div>
+                           </dd>
+                        </dl>
+                     </fieldset>
+                     <!-- # 개인정보동의  # -->
+                     <div class="form-agree3">
+                        <fieldset>
+                           <legend>개인정보를 위한 이용자 동의사항 안내입니다.</legend>
+                           <div class="box-scroll" tabindex="0">
+                              <div class="con-policy">
+                                 <h3 class="tit1">개인정보 수집 및 이용에 관한 동의</h3>
+                                 <p>당사는 개인정보보호법에 따라 본 서비스와 관련하여 고객님의 개인 정보를 다음과 같이 수집/이용하고자 합니다.</p>
+                                 <h4 class="tit2">1. 수집 및 이용목적</h4>
+                                 <p>본인의 확인 및 해당 서비스 이용</p>
+                                 <h4 class="tit2">2. 수집하는 개인정보 항목</h4>
+                                 <ul>
+                                    <li>개인식별정보(성명, e-mail)</li>
+                                    <li>홈페이지 접속정보 및 서비스 이용정보</li>
+                                 </ul>
+                                 <h4 class="tit2">3. 보유 및 이용기간</h4>
+                                 <p>동의일로부터 1년</p>
+                                 <p>고객님이 삼성생명보험주식회사에 대하여 '별도의 개인(신용)정보에 관한 동의'를 한 경우 (금융거래 등 상거래의 체결 유지 관리 목적 등)로서 해당 동의목적으로 위 개인정보가 수집 및 이용되는 경우에는 해당 동의에 따른 보유 및 이용기간이 적용됩니다.</p>
+                              </div>
+                           </div>
+                           <div class="btn">
+                              <span class="label-radio"> <label for="counselAgreechk1" class="on">동의함</label> <input type="radio" name="mailAgree" class="radio" id="counselAgreechk1" checked="checked" title="개인정보 수집 및 이용에 관한 동의 동의함">
+                              </span> <span class="label-radio"> <label for="counselAgreechk2">동의하지 않음</label> <input type="radio" name="mailAgree" class="radio" id="counselAgreechk2" title="개인정보 수집 및 이용에 관한 동의 동의하지 않음">
+                              </span>
+                           </div>
+                        </fieldset>
+                     </div>
+                     <script type="text/javascript">
+                        $(function() {
+                           $('#send2').click(function() {
+                        	  
+                              $('#form2').submit();
+                           });
+                        });
+                     </script>
+
+                     <!-- # 하단버튼 # -->
+                     <div class="btn-area">
+                        <a href="#none" class="btn-type2 ui-close"><span>취소</span></a> <a href="#send" class="btn-type2 c1" id="send2"><span>상담신청</span></a>
+                     </div>
+                  </form>
+               </div>
+            </div>
+<div id="popCounselEmail" class="pop-modal3">
+               <div class="header">
+                  <h2>이메일 상담</h2>
+                  <button type="button" class="ui-close">
+                     이메일 상담 닫기<span></span>
+                  </button>
+               </div>
+               <div class="content">
+                  <!-- # 상담신청입력폼 # -->
+                  <h3 class="mes-top">이메일 주소와 상담하실 내용을 입력해 주세요.</h3>
+                  <form id="form" src="/user/custom/sendemail" method="post" action="/user/custom/mailTest.do">
+                  	<input type="hidden" name="id" value="${USER_ID }"/>
+                     <fieldset class="form-content3">
+                        <legend>이메일상담 신청정보입력</legend>
+                        <dl>
+                           <dt class="heading">
+                              <label for="applyUserName">이름</label>
+                           </dt>
+                           <dd class="wrap">
+                              <input type="text" class="text" name="name" id="applyUserName" title="신청인 이름" style="ime-mode: active;" maxlength="30"> 
+                              &nbsp;
+                              <span class="heading"><label for="applyUserName">작성일</label></span> 
+                              <input type="text" class="text" id="applyUserName" title="신청날짜" style="ime-mode: active;" maxlength="30" name="regidate" value="<%=today %>" readonly>
                            </dd>
                         </dl>
                         <dl>
@@ -255,11 +360,7 @@ function qnaCheck(fn) {
                                  <label for="popEmailapplyCounselMemo" class="label">상담에 대한 간략한 내용과 함께 문의가 필요한 보험상품과<br>본인 정보등을 함께 작성해 주시면, 보다 빠른 상담이 가능합니다.
                                  </label>
                                  <textarea rows="4" name="contents" cols="20" id="popEmailapplyCounselMemo" class="textarea placeholder valueon" title="문의내용(2000자까지 입력가능)" maxlength="2000" onkeyup="checkByte2(this, '2000', 'popEmailContentLength')" style="ime-mode: active;">아래 내용을 기입
-- 문의상품 :
-- 생년월일 :
-- 성       별 :
-- 문의내용 :
-                              </textarea>
+- 문의내용 : </textarea>
                               </div>
                               <div class="txt-sub">
                                  <span class="txt-num">(<em id="popEmailContentLength">0</em>/2000자)
@@ -321,9 +422,25 @@ function qnaCheck(fn) {
                <div class="content">
                   <!-- # 상담신청입력폼 # -->
                   <h3 class="mes-top">상담을 신청하는 분과 원하시는 예약 정보를 입력해 주세요.</h3>
-                  <form id="form1" src="" method="post" action="calling.do">
+                  <form id="form1" src="" method="post" action="<%=request.getContextPath() %>/custom/calling.do">
+                 
                   <fieldset class="form-content3">
                      <legend>전화상담예약 신청정보입력</legend>
+                     <c:choose>
+	                  <c:when test="${USER_ID == null }">
+	                  	
+	                  </c:when>
+	                  <c:otherwise>
+	                  	 <dl>
+                           <dt class="heading">
+                           <label for="applyUserName">아이디</label>
+                           <dd class="wrap">
+                           	<input type="text" class="text" name="id" id="id" title="아이디" value="${USER_ID}" readonly /> 
+                           </dd>
+                           </dt>
+                        </dl>
+	                  </c:otherwise>
+                  	 </c:choose>
                      <dl>
                            <dt class="heading">
                               <label for="applyUserName">이름</label>
@@ -332,7 +449,7 @@ function qnaCheck(fn) {
                               <input type="text" class="text" name="name" id="applyUserName" title="신청인 이름" style="ime-mode: active;" maxlength="30"> 
                               &nbsp;
                               <span class="heading"><label for="applyUserName">작성일</label></span> 
-                              <input type="text" class="text" id="applyUserName" title="신청날짜" style="ime-mode: active;" maxlength="30" name="regidate" value="18/09/11">
+                              <input type="text" class="text" id="applyUserName" title="신청날짜" style="ime-mode: active;" maxlength="30" name="regidate" value="<%=today %>" readonly>
                            </dd>
                         </dl>
                         <dl>

@@ -329,6 +329,8 @@ p.txt-type5, ul.txt-type5 > li {padding-left:0.615em;background:url(../images/co
 .info-suggest > ul li.bg1 {background:url(../images/mypage/icon_set1_1.png) no-repeat 50% 15px;letter-spacing:-1px;}
 .info-suggest > ul li.bg2 {background:url(../images/mypage/icon_set1_2.png) no-repeat 50% 15px;letter-spacing:-1px;}
 .info-suggest > ul li.bg3 {background:url(../images/mypage/icon_set1_3.png) no-repeat 50% 15px;}
+.info-suggest > ul li.bg4 {background:url(../images/mypage/icon_word3.png) no-repeat 50% 15px;}
+.info-suggest > ul li.bg5 {background:url(../images/mypage/icon_word4.png) no-repeat 50% 15px;}
 
 /* 상품목록 */
 .list-product {margin-top:40px;}

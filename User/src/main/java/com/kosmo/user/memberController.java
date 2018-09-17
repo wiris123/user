@@ -16,10 +16,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import dto.BookingDTO;
 import dto.MyStatusDTO;
 import interfaceLoader.MyInsuImpl;
 import mybatis.MemberVO;
 import mybatis.MyMemberImpl;
+import mybatis.MyeventVO;
 
 @Controller
 public class memberController {
@@ -65,6 +67,15 @@ public class memberController {
 		//연금보험 가입 현황 조회
 		ArrayList<MyStatusDTO> list3 = sqlSession.getMapper(MyMemberImpl.class).selectMyPageAnnu(id);
 		
+		//이벤트 응모현황
+		ArrayList<MyeventVO> list6 = sqlSession.getMapper(MyMemberImpl.class).selectMyevent(id);
+		
+		//이메일 상담 내역
+		ArrayList<BookingDTO> list4 = sqlSession.getMapper(MyMemberImpl.class).selectMyMail(id);
+		
+		//전화 상담 내역
+		ArrayList<BookingDTO> list5 = sqlSession.getMapper(MyMemberImpl.class).selectMycall(id);
+		
 		mv.addObject("dto", list1); //정기
 		
 		mv.addObject("member",memVO);
@@ -72,6 +83,12 @@ public class memberController {
 		mv.addObject("dto2", list2); //실손
 		
 		mv.addObject("dto3", list3); //연금
+		
+		mv.addObject("dto4", list4); //이메일
+		
+		mv.addObject("dto5", list5);//전화
+		
+		mv.addObject("dto6", list6);
 		
 		mv.addObject("gen", gen);
 		

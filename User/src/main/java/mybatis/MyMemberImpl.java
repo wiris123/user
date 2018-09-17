@@ -3,6 +3,7 @@ package mybatis;
 import java.sql.Date;
 import java.util.ArrayList;
 
+import dto.BookingDTO;
 import dto.MyStatusDTO;
 
 public interface MyMemberImpl 
@@ -13,6 +14,8 @@ public interface MyMemberImpl
 	
 	public void EmailSender(String idx, String name, String mobile, String email, String contents, String flag);
 	
+	public void EmailSender2(String idx, String name, String mobile, String email, String contents, String flag, String id);
+	
 	public ArrayList<MyStatusDTO> selectMyPageTerm(String id);
 	
 	public MemberVO selectMyPageMember(String id);
@@ -20,6 +23,12 @@ public interface MyMemberImpl
 	public ArrayList<MyStatusDTO> selectMyPageProp(String id);
 	
 	public ArrayList<MyStatusDTO> selectMyPageAnnu(String id);
+	
+	public ArrayList<BookingDTO> selectMyMail(String id);
+	
+	public ArrayList<BookingDTO> selectMycall(String id);
+	
+	public ArrayList<MyeventVO> selectMyevent(String id);
 	
 	public int idCheck(String id);
 	
@@ -30,4 +39,6 @@ public interface MyMemberImpl
 	public void delete(String id);
 	
 	public void calling(String idx, String name, String mobile, String telltime, String contents, String flag);
+	
+	public void calling2(String idx, String name, String mobile, String telltime, String contents, String flag, String id);
 }

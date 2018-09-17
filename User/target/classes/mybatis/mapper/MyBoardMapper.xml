@@ -21,16 +21,26 @@
  		select count(*) from multiboard where b_id=#{param1}
  	</select>
  	
+ 	<select id="getTotalCount2" resultType="int">
+ 		select count(*) from multiboard where b_id=#{param1} and id=#{param2}
+ 	</select>
+ 	
  	<select id="listPage" resultType="mybatis.BoardVO">
  		SELECT * FROM (SELECT Tb.*, rownum rNum FROM (SELECT * FROM multiboard where b_id=#{param1}order by num desc) Tb)
  		WHERE rNum BETWEEN #{param2} and #{param3}
  	</select>
  	<select id="listresPage" resultType="mybatis.BoardCommVO">
- 		SELECT * FROM (SELECT e.*, rownum rnum FROM (select multiboard.*, board_comm.* from multiboard left outer join board_comm on multiboard.num = board_comm.board_idx where 1=1 and b_id = #{0 } ORDER BY num desc ) e) where rNum BETWEEN #{1 } AND #{2}
+ 		SELECT * FROM (SELECT e.*, rownum rnum FROM (select multiboard.*, board_comm.* from multiboard left outer join board_comm on multiboard.num = board_comm.board_idx where 1=1 and b_id ='response' and id=#{0} ORDER BY num desc ) e) where rNum BETWEEN #{1} AND #{2}
  	</select>
  	<select id="listView" resultType="mybatis.BoardVO">
  	select * from multiboard where num = #{param1}
  	</select>
+ 	<insert id="eventgo" parameterType="mybatis.MemberQVO">
+ 	insert into member_q values(memberq_seq.nextval, #{name}, #{id}, #{prmobile}, #{regidate}, #{contents}, #{event})
+ 	</insert>
+ 	<insert id="response" parameterType="mybatis.onebyoneVO">
+ 	insert into multiboard values(board_seq.nextval, #{id}, #{name}, #{title}, #{contents}, sysdate, 0, null, 'response', 0)
+ 	</insert>
 <!--  	<insert id="write">
 		insert into myboard (idx,id,name,contents) values (myboard_seq.nextval,#{_id},#{_name},#{_contents})
  	</insert>

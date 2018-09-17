@@ -10,6 +10,9 @@
    <insert id="EmailSender">
 		insert into booking(idx,name,mobile,regidate,email,contents,flag) values (book_seq.NEXTVAL,#{param2},#{param3},sysdate,#{param4},#{param5},#{param6})
    	</insert>
+   <insert id="EmailSender2">
+		insert into booking(idx,name,mobile,regidate,email,contents,flag, id) values (book_seq.NEXTVAL,#{param2},#{param3},sysdate,#{param4},#{param5},#{param6},#{param7})
+   	</insert>
    	<select id="selectMyPageTerm" resultType="dto.MyStatusDTO">
    		select * from member_term_my where id=#{0} and contstat='Y' order by remainpay desc
    	</select>
@@ -25,7 +28,17 @@
    	<select id="selectMyPageAnnu" resultType="dto.MyStatusDTO">
    		select * from member_annu_my where id=#{0} and contstat='Y'  order by remainpay desc
    	</select>
-
+   	
+   	<select id="selectMyMail" resultType="dto.BookingDTO">
+   		select * from booking where id=#{0} and flag='mail'
+   	</select>
+   	
+   	<select id="selectMycall" resultType="dto.BookingDTO">
+   		select * from booking where id=#{0} and flag='c'
+   	</select>
+	<select id="selectMyevent" resultType="mybatis.MyeventVO">
+		select a.idx, b.title, a.regidate from member_q a, multiboard b where a.event = b.num and a.id=#{0}
+	</select>
 	<select id="idCheck" resultType="int">
 		SELECT COUNT(*) FROM member WHERE id=#{0}
 	</select>
@@ -45,6 +58,9 @@
 	
 	<insert id="calling">
       insert into booking(idx,name,mobile,regidate,restime,contents,flag) values (book_seq.NEXTVAL,#{param2},#{param3},sysdate,to_date(#{param4},'yyyymmddhh24miss'),#{param5},#{param6})
-      </insert>
+    </insert>
+	<insert id="calling2">
+      insert into booking(idx,name,mobile,regidate,restime,contents,flag,id) values (book_seq.NEXTVAL,#{param2},#{param3},sysdate,to_date(#{param4},'yyyymmddhh24miss'),#{param5},#{param6},#{param7})
+    </insert>
 	
 </mapper>

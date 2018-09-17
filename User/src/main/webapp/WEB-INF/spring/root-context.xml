@@ -12,7 +12,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>
-		<property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property> 
+		<property name="url" value="jdbc:oracle:thin:@192.168.0.34:1522:orcl"></property> 
 		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.0.34:1521:orcl"></property> -->
 		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.0.21:1521:orcl"></property> -->
 		<property name="username" value="insu"></property>
@@ -39,7 +39,7 @@
 		<property name="protocol" value ="smtp" /> <!-- 구글은 smtp, naver나 daum은 smtps로 알고 있음 -->
 		<property name="defaultEncoding" value ="UTF-8" /> <!-- 한글 설정 -->
 		<property name="username" value ="chambre1991@gmail.com" /> <!-- 자신의 email -->
-        <property name="password" value ="90230as0" /> <!-- 비밀 번호 -->
+        <property name="password" value ="asdf1234!@#$" /> <!-- 비밀 번호 -->
         <property name="javaMailProperties">
                 <props>
                         <prop key="mail.smtp.auth">true</prop> <!-- SMTP AUTH를 사용하여 SMTP 서버에 인증 할지 여부 -->

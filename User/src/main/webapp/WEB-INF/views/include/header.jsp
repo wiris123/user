@@ -1,37 +1,58 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%request.getSession(true);%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%
+	request.getSession(true);
+%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="author" content="삼성생명, Samsung Life Insurance, 삼성생명 다이렉트"/>
-<meta name="keywords" content="생명보험인터넷가입, 삼성생명인터넷가입, 인터넷보험라운지, 보험온라인가입, 인터넷보험견적, 삼성생명보험가입, 온라인다이렉트보험, 삼성보험회사, 생명보험다이렉트, 인터넷으로보험가입, 인터넷보험, 삼성라이프, 인터넷다이렉트보험, 보험인터넷가입, 인터넷보험가입, 인터넷보험상품, 삼성라운지, 보험료계산, 생명보험, 삼성생명, 건강보험, 삼성생명보험, 다이렉트보험, 보장성보험, 삼성생명다이렉트" />
-<meta name="description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 삼성생명! " />
-<meta property="og:image" content="<%=request.getContextPath() %>resources/cms/mobile/images/com/visual_samsung2.gif" />
+<meta name="author" content="삼성생명, Samsung Life Insurance, 삼성생명 다이렉트" />
+<meta name="keywords"
+	content="생명보험인터넷가입, 삼성생명인터넷가입, 인터넷보험라운지, 보험온라인가입, 인터넷보험견적, 삼성생명보험가입, 온라인다이렉트보험, 삼성보험회사, 생명보험다이렉트, 인터넷으로보험가입, 인터넷보험, 삼성라이프, 인터넷다이렉트보험, 보험인터넷가입, 인터넷보험가입, 인터넷보험상품, 삼성라운지, 보험료계산, 생명보험, 삼성생명, 건강보험, 삼성생명보험, 다이렉트보험, 보장성보험, 삼성생명다이렉트" />
+<meta name="description"
+	content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 삼성생명! " />
+<meta property="og:image"
+	content="<%=request.getContextPath()%>resources/cms/mobile/images/com/visual_samsung2.gif" />
 <meta property="og:url" content="index-2.html" />
 <meta property="og:title" content="ISM 다이렉트" />
 <meta property="og:site_name" content="ISM 다이렉트" />
 <meta property="og:type" content="ISM" />
-<meta property="og:description" content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 ISM!" />
+<meta property="og:description"
+	content="보험료는 줄이고 혜택과 장점은 그대로! 언제 어디서나 보험료 설계부터 가입까지 가능한, 인터넷 보험도 역시 ISM!" />
 <meta http-equiv="Pragma" content="no-cache" />
 <meta http-equiv="Cache-Control" content="no-cache" />
-<link rel="shortcut icon" href="<%=request.getContextPath() %>/resources/web/images/com/samsunglife.ico" />
+<link rel="shortcut icon"
+	href="<%=request.getContextPath()%>/resources/web/images/com/samsunglife.ico" />
 
 <!-- 공통 css -->
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/common.css" />
-<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/pc/css/content.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/cms/pc/css/common.css" />
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/cms/pc/css/content.css" />
 <!-- 공통 script -->
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/ui.plugin.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/ui.common.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/dev.plugin.js" charset="utf-8"></script>
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/dev.common.js" charset="utf-8"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/web/js/ui.plugin.js"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/web/js/ui.common.js"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/web/js/dev.plugin.js"
+	charset="utf-8"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/web/js/dev.common.js"
+	charset="utf-8"></script>
 <!-- plan script -->
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/plan.js" charset="utf-8"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/web/js/plan.js"
+	charset="utf-8"></script>
 
 <!-- 어도비 스크립트 -->
-<script type="text/javascript" src="<%=request.getContextPath() %>/resources/web/js/adobeDtm.js" charset="utf-8"></script>
-<script type="text/javascript" id="criteoScript" src="<%=request.getContextPath() %>/resources/js/ld.js" async="true"></script>
+<script type="text/javascript"
+	src="<%=request.getContextPath()%>/resources/web/js/adobeDtm.js"
+	charset="utf-8"></script>
+<script type="text/javascript" id="criteoScript"
+	src="<%=request.getContextPath()%>/resources/js/ld.js" async="true"></script>
 <!-- 타불라 스크립트 -->
-<script src="<%=request.getContextPath() %>/common/js/tfa.js"></script>
+<script src="<%=request.getContextPath()%>/common/js/tfa.js"></script>
 <!-- 타불라 스크립트 -->
 
 
@@ -196,28 +217,31 @@
 	<!-- 유틸메뉴 -->
 	<ul class="nav-util">
 
-		<li><a href="/user/guide/gde_before"><strong>왜 ISM 다이렉트인가요?</strong></a></li>
-		<li><a href="http://product.samsunglife.com/product/insu/product/common/insuDictionaryPopup.do?int=hp+org_sli_direct+insuDictionary+img_direct_main_high_btn2+_+_+_+_" target="_blank" title="(새창) 삼성생명 보험용어사전">보험용어사전</a></li>
-		<li><a href="http://www.samsunglife.com/disclosure/product/main/product_main.html?int=hp+org_sli_direct+disclosure_product+img_direct_main_high_btn3+_+_+_+_" target="_blank" title="(새창) 삼성생명 공시안내">공시실</a></li>
+		<li><a href="/user/guide/gde_before"><strong>왜 ISM
+					다이렉트인가요?</strong></a></li>
 	</ul>
 
 	<!-- GNB -->
 	<ul class="nav-gnb">
-		
+
 		<c:choose>
-			<c:when test="${USER_ID eq null }">
-				<li><a href="/user/member/joinCheck" class="gnb1"><span>회원가입</span><em id="headerRecentPlanCount"></em></a></li>
-				<li><a href="/user/member/login.do" class="gnb1"><span>로그인</span><em id="headerRecentPlanCount"></em></a></li>
+			<c:when
+				test="${USER_ID eq null and result eq null and person eq null}">
+				<li><a href="/user/member/joinCheck" class="gnb1"><span>회원가입</span><em
+						id="headerRecentPlanCount"></em></a></li>
+				<li><a href="/user/member/login.do" class="gnb1"><span>로그인</span><em
+						id="headerRecentPlanCount"></em></a></li>
 			</c:when>
 			<c:otherwise>
-				<li><a href="../logout" class="gnb1"><span>로그아웃</span><em id="headerRecentPlanCount"></em></a></li>
+				<li><a href="<%=request.getContextPath()%>/logout"
+					class="gnb1"><span>로그아웃</span><em id="headerRecentPlanCount"></em></a></li>
 			</c:otherwise>
 		</c:choose>
-		
-		
-		
+
+
+
 		<li><a href="/user/member/mypage.do" class="gnb4" title="마이페이지"><span>마이페이지</span></a></li>
-		
+
 		<!-- <li><a href="#asideMenu" class="gnb3" title="전체메뉴"><span>전체메뉴</span></a></li> -->
 	</ul>
 

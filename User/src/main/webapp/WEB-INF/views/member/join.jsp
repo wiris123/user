@@ -16,6 +16,7 @@
 
 input[type=text], select {
     width: 100%;
+    height:50px;
     padding: 15px 20px;
     margin: 8px 0;
     display: inline-block;
@@ -323,7 +324,7 @@ function idCheck()
                     <label for="email">이메일</label><br />
                   <input type="text"  name="email1" placeholder="이메일을 입력하세요" style="width: 33%;" required="required" title="이메일을 입력하세요.">  @ 
                   <input type="text"  class="pass" name="email2" style="width: 31%" readonly />
-                        <select name="" id="" onChange="email_input(this,this.form);" required="required" title="선택하세요." style="width: 31%; height: 45px; position: relative;top: 2px;">
+                        <select name="" id="" onChange="email_input(this,this.form);" required="required" title="선택하세요." style="width: 31%;  position: relative;top: 4px;">
                            <option selected="" value="">선택하세요</option>
                          <option value="1" >직접입력</option>
                          <option value="dreamwiz.com" >dreamwiz.com</option>
@@ -348,7 +349,7 @@ function idCheck()
                         </select>
                      
                   <label for="phone">핸드폰 번호</label> <br />
-                  <select name="mobile1" id="" style="width: 30%;  height: 45px; position: relative; top: 2px;">
+                  <select name="mobile1" id="" style="width: 30%;   position: relative; top: 2px;">
                      <option value="">선택하세요</option>
                      <option value="010">010</option>
                      <option value="011">011</option>
@@ -361,13 +362,13 @@ function idCheck()
                      <input type="text" id="phone" name="mobile3" maxlength="4" style="width: 31%;" pattern="(^[0-9]*$}" required="required" title="번호를 입력하세요."><br />
 
                   <label for="birth">생년월일</label><br />
-                     <select name="birth1" id="" style="width: 30%; height: 45px;">
+                     <select name="birth1" id="" style="width: 30%; ">
                         <option value="">출생년도</option>
                         <%for(int i=1930; i<=2018; i++){ %>
                         <option value="<%=i%>"><%=i %></option>
                         <%} %>
                      </select>년 &nbsp;
-                     <select name="birth2" id="" style="width: 30%; height: 45px;">
+                     <select name="birth2" id="" style="width: 30%; ">
                         <option value="">월</option>
                         <%for(int i=1; i<=9; i++){ %>
                         <option value="0<%=i%>"><%=i %></option>
@@ -376,7 +377,7 @@ function idCheck()
                         <option value="11">11</option>
                         <option value="12">12</option>
                      </select>월
-                     <select name="birth3" id="" style="width: 29%; height: 45px;">
+                     <select name="birth3" id="" style="width: 29%; ">
                         <option value="">일</option>
                         <%for(int i=1; i<=9; i++){ %>
                         <option value="0<%=i%>"><%=i %></option>
@@ -388,7 +389,7 @@ function idCheck()
                   <tr>
                      <td>주소</td><br />
                      <td>
-                        <input type="text" name="address" id="address" value=""  class="join_input" style="width:100px;" />
+                        <input type="text" name="address" id="address" value=""  class="join_input" style="width:100px;" readonly/>
                         <a href="javascript:;" title="새 창으로 열림" onclick="zipcodeFind();" onkeypress="">[우편번호검색]</a><br/>
                         <input type="text" name="address1" value="" id="address1" class="join_input" style="width:550px; margin-top:5px;" /><br>
                         <input type="text" name="address2" value="" id="address2" class="join_input" style="width:550px; margin-top:5px;" />
@@ -399,10 +400,10 @@ function idCheck()
                   <div id="captchadiv" style="margin: 10px 0px 30px 0px">   
                   <img src="../captcha.do" id="captchaImg" alt="captcha img">
                   <input type="text" placeholder="보안문자를 입력하세요" name="captcha"  id="captcha">
-                  <a href="#" onclick="imgRefresh()" id="refreshBtn" ><i class="glyphicon glyphicon-refresh"></i>새로고침</a>               
+                  <a href="#captconf" onclick="imgRefresh()" id="refreshBtn" ><i class="glyphicon glyphicon-refresh"></i>새로고침</a>               
                   </a></div>
-                  <input type="hid den" name="captconf" id="captconf" />
-                  <span id="captchaConfirmvalue" style="color:red;"></span><a href="#" id="confirm">확인</button>
+                  <input type="hidden" name="captconf" id="captconf" />
+                  <span id="captchaConfirmvalue" style="color:red;"></span><a href="#captconf" id="confirm">확인</button>
                      
                      
                      

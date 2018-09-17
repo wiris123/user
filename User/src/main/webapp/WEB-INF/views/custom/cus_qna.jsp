@@ -113,7 +113,7 @@ function qnaCheck(fn) {
                </a></li>
                <li class="list2"><a href="#" onclick="openPopCounsel('popCounselEmail', this)"> <strong><span>이메일</span>상담</strong> <em name="emailStatus" class="icon-state on">ON</em>
                </a></li>
-               <li class="list3"><a href="../custom/response" onclick="openPopCounsel('remote');"> <strong><span>1:1문의</span>요청</strong> <em name="remoteStatus" class="icon-state on">ON</em>
+               <li class="list3"><a href="<%=request.getContextPath() %>/custom/response" onclick="openPopCounsel('remote');"> <strong><span>1:1문의</span>요청</strong> <em name="remoteStatus" class="icon-state on">ON</em>
                </a></li>
             </ul>
             <p class="mes-type1">

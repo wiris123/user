@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<%@ include file="./include/header.jsp"  %>
+
 <script>
 
 function moveCalc(frm)
@@ -20,8 +20,10 @@ function moveCalc(frm)
 
 </script>
 <title>Home</title>
+
 </head>
 <body>
+<%@ include file="./include/header.jsp"  %>
 	<div id="wrapper"> 
 	
 		<!-- 머리 -->

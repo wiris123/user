@@ -11,14 +11,15 @@
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/web/js/planiAnnuity.js"
 	charset="utf-8"></script>
-
+<%@ include file="../include/header.jsp"%> 
 </head>
 <body>
 	<div id="wrapper">
 		<!-- 머리 -->
-		<%@ include file="../include/header.jsp"%>
+		
 		<div id="container">
 			<%@ include file="../include/Head.jsp"%>
+			
 			<script>
 				$(function() {
 					$('#uiProductResult1').hide();
@@ -124,7 +125,7 @@
 									<!-- 생년월일 -->
 									<li>
 										<div class="form-wrap1">
-											<label for="birthday" class="label">생년월일 <span>(예
+											<label for="birth" class="label">생년월일 <span>(예
 													: 19851015 )</span></label> <input type="text" autocomplete="off"
 												class="text placeholder numOnly" maxlength="8" id="birth" value="${param.birthday }"
 												name="birth" />
@@ -491,7 +492,7 @@
 				</div>
 
  <%@include file="../include/productSubscript.jsp" %>
-
+					<!-- 컨텐트 잡으면 이쪽 -->
 					</div>
 			
 		</div>
