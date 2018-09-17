@@ -1,26 +1,30 @@
-<%@page import="javax.naming.Context"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>암보험</title>
-<!-- 머리 -->
-	<%@ include file="../include/header.jsp"%>
+<title>Insert title here</title>
+<!-- 공통 css -->
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/mobile/css/common.css"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/mobile/css/content62ea.css"/>
+<%-- <link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/mobile/css/common.css?ver=1.2"/>
+<link rel="stylesheet" href="<%=request.getContextPath() %>/resources/cms/mobile/css/content.css?ver=1.2"/> --%>
+<!-- 공통 script -->
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/mobile/js/ui.plugin.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/mobile/js/ui.common.js"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/mobile/js/dev.plugin.js" charset="utf-8"></script>
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/mobile/js/dev.common.js" charset="utf-8"></script>
+
+<!-- 어도비 스크립트 -->
+<script type="text/javascript" src="<%=request.getContextPath() %>/resources/mobile/js/adobeDtm.js" charset="utf-8"></script>
+<script src="//assets.adobedtm.com/70e7c1e41a15664b7412b48a9e091675a718223f/satelliteLib-ca1e208783476d525a421be25e9cd460655f0fe0.js"></script>
+
+<!-- GTM헤더 스크립트 <head> 가능한 높은 위치 -->
 </head>
-
-
 <body>
-	<div id="wrapper">
-	<%@ include file="../include/Head.jsp"%>
-
-
-		<div id="container">
-		
-			<!-- 내용시작 -->
-			<div id="content">
-	<section id="productCalculator" class="product-calculator">
+<div class="wrapper">
+<section id="productCalculator" class="product-calculator">
 	<header class="hd">
 		<h2>
 			보험료 계산기
@@ -158,13 +162,50 @@
 		</fieldset>
 	</form>
 </section>
-		<!-- 머리끝 -->
-		<!-- 푸터시작 -->
-		<div id="footer">
-			<%@ include file="../include/footer.jsp"%>
-		</div>
-		<!-- 푸터끝 -->
 
-	</div>
+
+<!-- 결과 -->
+<div class="product-result open">
+					<!-- #결과목록 -->
+					<ul class="list-result pro4" id="annuityResult">
+						<!-- 맞춤설계 -->
+						<li class="on" style="display:list-item;">
+							<a href="#none">
+								<span>월 납입액</span>
+								<span>월</span><strong id="annuityMonthlyPremiumTitle1">34</strong><span>만원</span>
+							</a>
+							<div class="box on">
+								<ul class="con">
+									<li>
+										<div class="area-result">
+											<p>평생동안 매년 수령하는 <b>연금액</b></p>
+											<strong id="annuityAnnualMoney" style="font-size:2em">469</strong>
+											<span>만원</span>
+										</div>
+									</li>
+									<li>
+										<div class="ratio">
+											<span>(환급률</span>
+											<strong id="annuityreturnRatio1">224.2</strong>
+											<span>%)</span>
+										</div>
+									</li>
+								
+								</ul>
+								
+								<!-- #추가버튼 -->
+								
+								<div class="btn-area2" id="switchReCalc">
+							        <a href="#" class="btn-com c5" onclick="moveToCalculator();return false;">다시 설계하기</a>
+							        <a href="#none" class="btn-com c5" id="annuitySubscribe1">가입하기</a>
+							    </div>
+							    <div class="btn-area2" style="display:none;">
+							        
+							    </div>
+							</div>
+						</li>				
+					</ul>
+				</div>
+				</div>
 </body>
 </html>
