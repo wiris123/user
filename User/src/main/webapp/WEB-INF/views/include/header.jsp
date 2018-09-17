@@ -35,7 +35,6 @@
 <!-- 타불라 스크립트 -->
 
 
-
 <script type="text/javascript">
 	// Global Navigation Bar url에 따라 Bar list class on - 17.11.17
 	var urlPath = "";
