@@ -24,9 +24,7 @@ public class VisitorController implements HttpSessionListener
  
     private void execute(HttpSessionEvent sessionEve) 
     {
-        
-            
-    
+
     }
  
     @Override
