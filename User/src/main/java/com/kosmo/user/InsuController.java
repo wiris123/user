@@ -22,8 +22,13 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.stereotype.Controller;
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionException;
+import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -48,12 +53,24 @@ public class InsuController
 	private static final Logger logger = LoggerFactory.getLogger(InsuController.class);
 
 	
-	@Autowired
+
+/*    @Autowired
+	PlatformTransactionManager transactionManager;
+    DefaultTransactionDefinition def = new DefaultTransactionDefinition();
+    
+	TransactionStatus status = transactionManager.getTransaction();
+	*/
+    @Autowired
 	private SqlSession sqlSession;
-	
-/*	@Autowired
-	DataSourceTransactionManager txmanager;*/
-	
+    
+    MyInsuService service;
+   /* @Autowired
+    public void setTransactionManager(PlatformTransactionManager transactionManager) {
+		this.transactionManager = transactionManager;
+	}
+    */
+
+  
 	//로그인처리
 
 	
@@ -125,7 +142,7 @@ public class InsuController
 
 
 	@RequestMapping("/product/insuTermAction.do")
-	public ModelAndView insuTermAction(HttpServletRequest req) 
+	public ModelAndView insuTermAction(HttpServletRequest req) throws Exception 
 	{	
 		
 		ModelAndView mv = new ModelAndView();
@@ -150,9 +167,7 @@ public class InsuController
 		String ins_name = req.getParameter("ins_name");
 
 
-		sqlSession.getMapper(MyInsuImpl.class).insertMemberTerm(id,  name,  phone,  mobile,  email,  drive,
-				cigar,  drink,  height,  weight,  danhobby,  income,  hospit1,
-				 hospit2,  hospit3,  "2", ins_name);
+		
 	
 		//입력완료
 		
@@ -175,15 +190,34 @@ public class InsuController
 		String ctm = String.valueOf(System.currentTimeMillis());
 		String remainpay = map.get("paytime").toString();
 		String paidprem = "0";
-		sqlSession.getMapper(MyInsuImpl.class).insertStatusTerm(id, ins_name, ctm, remainpay, paidprem, map.get("prem").toString(), "E",map.get("death").toString());
+		try
+		{
+			//member_term
+			sqlSession.getMapper(MyInsuImpl.class).insertMemberTerm(id,  name,  phone,  mobile,  email,  drive,
+					cigar,  drink,  height,  weight,  danhobby,  income,  hospit1,
+					 hospit2,  hospit3,  "2", ins_name);
+			
+			//status
+			sqlSession.getMapper(MyInsuImpl.class).insertStatusTerm(id, ins_name, ctm, remainpay, paidprem, map.get("prem").toString(), "E",map.get("death").toString());
+			
+			
+			mv.addObject("ins_num", ctm);
+			mv.addObject("ins_name",ins_name);
+			mv.addObject("name",name);
+			mv.setViewName("/product/pro_success");
+			
+			return mv;
+		}
+		catch (Exception e) 
+		{
+			e.printStackTrace();
+			//transactionManager.rollback(status);
+			throw e;
+		}
+		
 		
 
-		mv.addObject("ins_num", ctm);
-		mv.addObject("ins_name",ins_name);
-		mv.addObject("name",name);
-		mv.setViewName("/product/pro_success");
-		
-		return mv;
+
 		
 	}
 	
@@ -234,7 +268,7 @@ public class InsuController
 	
 	
 	@RequestMapping("/product/insuPropAction.do")
-	public ModelAndView insuPropAction(HttpServletRequest req,HttpServletResponse resp)
+	public ModelAndView insuPropAction(HttpServletRequest req,HttpServletResponse resp) throws Exception
 	{	
 		
 		ModelAndView mv = new ModelAndView();
@@ -286,44 +320,45 @@ public class InsuController
 		try
 		{
 			//member_prop에 삽입
-			sqlSession.getMapper(MyInsuService.class).insertMemberProp(id, name,  phone,  mobile,  email, riskPremium, "3", ins_name);
+			sqlSession.getMapper(MyInsuImpl.class).insertMemberProp(id, name,  phone,  mobile,  email, riskPremium, "3", ins_name);
 			//member_prop_my에 삽입
-			sqlSession.getMapper(MyInsuService.class).insertStatusProp(id, ins_name, ctm, String.valueOf(remainpay), paidprem, map.get("payment1").toString(), "E");
+			sqlSession.getMapper(MyInsuImpl.class).insertStatusProp(id, ins_name, ctm, String.valueOf(remainpay), paidprem, map.get("paymen3t").toString(), "E"); 
+			
 
 			mv.addObject("ins_num", ctm);
 			mv.addObject("ins_name",ins_name);
 			mv.addObject("name",name);
 			mv.setViewName("/product/pro_success");
+		/*	transactionManager.commit(status);*/
 			
 			return mv;
 			
 		}
+		/*catch (RuntimeException e) 
+		{
+			
+			
+			mv.addObject("msg","가입에 실패하였습니다. 고객센터에 문의하세요");
+			mv.addObject("url", "../product/pro_prop");
+			mv.setViewName("/product/pro_success");
+			
+			e.printStackTrace();
+			
+			return mv;
+
+		}*/
 		catch (RuntimeException e) 
 		{
-			
-			
+
 			mv.addObject("msg","가입에 실패하였습니다. 고객센터에 문의하세요");
 			mv.addObject("url", "../product/pro_prop");
 			mv.setViewName("/product/pro_success");
-			
-			e.printStackTrace();
-			
-			return mv;
 
-		}
-		catch (Exception e) 
-		{
-			mv.addObject("msg","가입에 실패하였습니다. 고객센터에 문의하세요");
-			mv.addObject("url", "../product/pro_prop");
-			mv.setViewName("/product/pro_success");
-			
-			
 			e.printStackTrace();
-			return mv;	
-								
-
+			//transactionManager.rollback(status);
+			throw e;
 		}
-		
+
 	}
 	
 	@RequestMapping("/product/annu_cal.do")
@@ -370,7 +405,7 @@ public class InsuController
 	
 	
 	@RequestMapping("/product/insuAnnuAction.do")
-	public ModelAndView insuAnnuAction(HttpServletRequest req) 
+	public ModelAndView insuAnnuAction(HttpServletRequest req) throws Exception 
 	{	
 		
 		ModelAndView mv = new ModelAndView();
@@ -410,9 +445,7 @@ public class InsuController
 		
 		// member_annu 삽입(12개)
 
-		sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu
-		(id,name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
-				String.valueOf(hospit2),"3",ins_name,monthann, String.valueOf(riskPremium));
+		
 		//입력완료
 		
 		
@@ -422,16 +455,34 @@ public class InsuController
 		String payment = map.get("payment").toString();
 		int minusPayment = (int)(Integer.parseInt(payment)-Integer.parseInt(payment)*(0.005*riskPremium));
 		
-		sqlSession.getMapper(MyInsuImpl.class).insertStatusAnnu
-		(id, ins_name, ctm, String.valueOf(remainpay), paidprem, String.valueOf(minusPayment), monthann, map.get("instart").toString(), "E", String.valueOf(remainpay));
 		
+		try 
+		{
+			
+			
+			//member
+			sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu
+			(id,name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
+					String.valueOf(hospit2),"3",ins_name,monthann, String.valueOf(riskPremium));
+			//status
+			sqlSession.getMapper(MyInsuImpl.class).insertStatusAnnu
+			(id, ins_name, ctm, String.valueOf(remainpay), paidprem, String.valueOf(minusPayment), monthann, map.get("instart").toString(), "E", String.valueOf(remainpay));
+			
+			
+			mv.addObject("ins_num", ctm);
+			mv.addObject("ins_name",ins_name);
+			mv.addObject("name", name);
+			mv.setViewName("/product/pro_success");
+			
+			return mv;
+		}
+		catch (Exception e)
+		{
+			e.printStackTrace();
+			throw e;
+		}
 
-		mv.addObject("ins_num", ctm);
-		mv.addObject("ins_name",ins_name);
-		mv.addObject("name", name);
-		mv.setViewName("/product/pro_success");
-		
-		return mv;
+
 	}
 	
 	@RequestMapping("/product/pro_status")
@@ -461,6 +512,19 @@ public class InsuController
 		*/
 		
 		return "redirect:/member/mypage.do";
+	}
+	
+	@RequestMapping("/product/error.do")
+	public ModelAndView exceptRun()
+	{
+		ModelAndView mv = new ModelAndView();
+				
+		mv.addObject("msg", "입력이 실패");
+		mv.addObject("url", "../");
+		
+		mv.setViewName("../product/pro_success");
+		
+		return mv;
 	}
 	
 	

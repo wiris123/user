@@ -24,6 +24,7 @@
 	<listener>
 		<listener-class>controller1.VisitCounter</listener-class>
 	</listener>
+	
 	<!-- Processes application requests -->
 	<servlet>
 		<servlet-name>appServlet</servlet-name>

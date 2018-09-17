@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="interfaceLoader.MyInsuImpl">
+<mapper namespace="interfaceLoader.MyInsuService">
 	<insert id="insertMemberTerm">
 			insert into member_term (num,id,name,phone,mobile,email,drive,cigar,drink,
 			height,weight,danhobby,income,hospit1,hospit2,hospit3,instype,ins_name) values 
@@ -53,3 +53,4 @@
  	set contstat='N' where insnum=#{0} 
 	</update>
 </mapper>
+

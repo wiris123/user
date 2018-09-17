@@ -1,5 +1,10 @@
 package interfaceLoader;
 
+import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
+
+@Service
+@Repository
 public interface MyInsuImpl
 {
 	public void insertMemberTerm(String id,String name,String phone,String mobile,String email,String drive,String cigar,String drink,
