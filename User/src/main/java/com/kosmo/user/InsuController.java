@@ -322,7 +322,7 @@ public class InsuController
 			//member_prop에 삽입
 			sqlSession.getMapper(MyInsuImpl.class).insertMemberProp(id, name,  phone,  mobile,  email, riskPremium, "3", ins_name);
 			//member_prop_my에 삽입
-			sqlSession.getMapper(MyInsuImpl.class).insertStatusProp(id, ins_name, ctm, String.valueOf(remainpay), paidprem, map.get("payment").toString(), "E"); 
+			sqlSession.getMapper(MyInsuImpl.class).insertStatusProp(id, ins_name, ctm, String.valueOf(remainpay), paidprem, map.get("paymen3t").toString(), "E"); 
 			
 
 			mv.addObject("ins_num", ctm);
@@ -458,8 +458,6 @@ public class InsuController
 		
 		try 
 		{
-			
-			
 			//member
 			sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu
 			(id,name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
@@ -467,8 +465,7 @@ public class InsuController
 			//status
 			sqlSession.getMapper(MyInsuImpl.class).insertStatusAnnu
 			(id, ins_name, ctm, String.valueOf(remainpay), paidprem, String.valueOf(minusPayment), monthann, map.get("instart").toString(), "E", String.valueOf(remainpay));
-			
-			
+						
 			mv.addObject("ins_num", ctm);
 			mv.addObject("ins_name",ins_name);
 			mv.addObject("name", name);
@@ -512,6 +509,19 @@ public class InsuController
 		*/
 		
 		return "redirect:/member/mypage.do";
+	}
+	
+	@RequestMapping("/product/error.do")
+	public ModelAndView exceptRun()
+	{
+		ModelAndView mv = new ModelAndView();
+				
+		mv.addObject("msg", "입력이 실패");
+		mv.addObject("url", "../");
+		
+		mv.setViewName("../product/pro_success");
+		
+		return mv;
 	}
 	
 	

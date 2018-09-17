@@ -19,4 +19,36 @@ public class MobileController
 		
 		return "mobile/mobile_test";
 	}
+	
+	
+	@RequestMapping("/mobile/memberLogin.do")
+	@ResponseBody
+	public Map<String, Object> memberLogin(HttpServletRequest req)
+	{
+		Map<String, Object> memberMap  = new HashMap<String, Object>();
+		
+		String id = req.getParameter("id");
+		String pass = req.getParameter("pass");
+		
+		MemberVO memberVO = sqlSession.getMapper(MobileImpl.class).memberLogin(id, pass);
+		
+		if(memberVO==null)
+		{
+			//로그인 실패
+			memberMap.put("success", 0);
+		}
+		else
+		{
+			//로그인 성공
+			memberMap.put("success", 1);
+			memberMap.put("memberInfo", memberVO);
+			
+		}		
+		
+		return memberMap;
+		
+	}
+	
+	
+	
 }

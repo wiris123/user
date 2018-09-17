@@ -8,6 +8,7 @@
 <!-- 머리 -->
 <%@ include file="../include/header.jsp"%>
 </head>
+
 <body>
 	<div id="wrapper">
 		<div id="container">
