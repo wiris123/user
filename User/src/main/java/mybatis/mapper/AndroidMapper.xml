@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    
+    <!-- mybatis 패키지의 AndroidImpl 인터페이스를 기반으로 해당 Mapper 파일의 각 함수를 호출함. -->
+    <mapper namespace="mybatis.MobileImpl">
+	   <select id="memberList" resultType="mybatis.MemberVO">
+	   	select * from member order by regidate desc
+	   </select>
+	   
+	   <select id="memberLogin" resultType="mybatis.MemberVO">
+	   	select * from member where id=#{param1} and pass=#{param2}
+	   </select>
+    </mapper>
