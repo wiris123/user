@@ -178,6 +178,14 @@ function qnaCheck(fn) {
                      <fieldset class="form-content3">
                         <legend>이메일상담 신청정보입력</legend>
                         <dl>
+                        	<dt class="heading">
+                        	<label for="applyUserName">아이디</label>
+                        	<dd class="wrap">
+                        	<input type="text" class="text" name="id" id="id" title="아이디" style="ime-mode: active;" maxlength="30"> 
+                        	</dd>
+                        	</dt>
+                        </dl>
+                        <dl>
                            <dt class="heading">
                               <label for="applyUserName">이름</label>
                            </dt>

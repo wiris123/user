@@ -22,7 +22,7 @@ public class MemberVO {
 	
 	//인자 생성자
 
-	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth, Date regidate, String zipcode) {
+	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth, Date regidate, String address) {
 		super();
 		this.id = id;
 		this.pass = pass;
@@ -31,10 +31,14 @@ public class MemberVO {
 		this.mobile = mobile;
 		this.birth = birth;
 		this.regidate = regidate;
+<<<<<<< HEAD
+=======
+		this.address = address;
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 	}
 
 
-	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth, String zipcode) {
+	public MemberVO(String id, String pass, String name, String email, String mobile, java.sql.Date birth, String address) {
 		super();
 		this.id = id;
 		this.pass = pass;
@@ -42,13 +46,25 @@ public class MemberVO {
 		this.email = email;
 		this.mobile = mobile;
 		this.birth = birth;
+<<<<<<< HEAD
+=======
+		this.address = address;
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 	}
 
+<<<<<<< HEAD
 	public String getAddress() {
+=======
+	public String getaddress() {
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 		return address;
 	}
 
+<<<<<<< HEAD
 	public void setAddress(String address) {
+=======
+	public void setaddress(String address) {
+>>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 		this.address = address;
 	}
 

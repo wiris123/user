@@ -62,7 +62,7 @@
  		  
 	<!-- 트랜잭션 사용을 위한 AOP설정 -->
 	<aop:config proxy-target-class="true">
-	    <aop:pointcut id="serviceOperation" expression="execution(* com.kosmo.user..*.*(..))" />	 	
+	    <aop:pointcut id="serviceOperation" expression="execution(* com.kosmo.user..*Controller.*Action(..))" />	 	
 	    <aop:advisor id="transactionAdvisor" pointcut-ref="serviceOperation" advice-ref="txAdvice"/>
 	</aop:config>
   

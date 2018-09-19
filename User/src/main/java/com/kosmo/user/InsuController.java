@@ -442,8 +442,6 @@ public class InsuController
 		
 		try 
 		{
-			
-			
 			//member
 			sqlSession.getMapper(MyInsuImpl.class).insertMemberAnnu
 			(id,name,phone,	mobile,	email,	String.valueOf(drive),	String.valueOf(cigar),	String.valueOf(hospit1),
@@ -451,8 +449,7 @@ public class InsuController
 			//status
 			sqlSession.getMapper(MyInsuImpl.class).insertStatusAnnu
 			(id, ins_name, ctm, String.valueOf(remainpay), paidprem, String.valueOf(minusPayment), monthann, map.get("instart").toString(), "E", String.valueOf(remainpay));
-			
-			
+						
 			mv.addObject("ins_num", ctm);
 			mv.addObject("ins_name",ins_name);
 			mv.addObject("name", name);

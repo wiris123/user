@@ -1,0 +1,423 @@
+﻿@charset "utf-8";
+/* ----------------------------------------------------------
+	# 삼성생명 다이렉트 리뉴얼 2016
+	# 컨텐츠 페이지 : 청약
+---------------------------------------------------------- */
+
+/* ----------------------------------------------------------
+	청약 공통 레이아웃
+---------------------------------------------------------- */
+.page-step {padding:11.0rem 0 6.0rem;}
+.page-step > header {position:fixed;left:0;right:0;top:0;height:11.0rem;z-index:100;background:#8e95a1;padding:2.3rem 2rem;box-sizing:border-box;}
+.page-step > header h1 {color:#fff;font-size:2.2rem;}
+.page-step > header h1 > span:first-child {display:block;}
+.page-step > header h1 em {margin-left:0.4rem;font-size:1.6rem;font-weight:normal;}
+.page-step > header h1 > span:last-child {width:0;height:0;font-size:0;text-indent:-9999px;overflow:hidden;}
+.page-step > header nav {position:absolute;top:0;right:0;}
+.page-step > header nav > a {display:inline-block;vertical-align:middle;}
+.page-step > header nav > a:nth-child(1) {width:6.5rem;height:2.6rem;line-height:2.5rem;border:1px solid #fff;color:#fff;text-align:center;border-radius:15px;box-sizing:border-box;}
+.page-step > header nav > a:nth-child(2) {position:relative;width:5.4rem;height:5.2rem;text-indent:-9999px;font-size:0;vertical-align:middle;}
+.page-step > header nav > a:nth-child(2):before {content:'';position:absolute;left:0;top:0;right:0;bottom:0;background:url(../images/com/icon_layout.png) no-repeat 100% -54px;background-size:360px 190px;}
+
+.page-step > header .pop-info {top:4.75rem !important;padding:0;}
+.page-step > header .pop-info:before {border-color:#8e95a1;}
+.page-step > header .pop-info.open h2 {width:0;height:0;overflow:hidden;font-size:0;text-indent:-9999px;}
+.page-step > header .pop-info.open .con {position:relative;font-size:1.3rem;padding:0 0 1.0rem;border-bottom:1px solid #f3f3f3;}
+.page-step > header .pop-info.open .con > li {text-align:right;padding:0 2rem;overflow:hidden;}
+.page-step > header .pop-info.open .con > li > span {float:left;}
+.page-step > header .pop-info.open .con > li > strong {color:#2cbbff;}
+.page-step > header .pop-info.open .con > li:nth-child(1), .page-step > header .pop-info.open .con > li:nth-child(2) {line-height:4.5rem;}
+.page-step > header .pop-info.open .con > li:nth-child(1) {background:#8e95a1;color:#fff;font-size:1.4rem;text-align:center;border-radius:0.6rem 0.6rem 0 0;}
+.page-step > header .pop-info.open .con > li:nth-child(1) > span {display:none;}
+.page-step > header .pop-info.open .con > li:nth-child(1) > strong {font-weight:normal;color:#fff;}
+.page-step > header .pop-info.open .con > li:nth-child(2) {font-size:1.6rem;margin-bottom:1rem;color:#3c4449;font-weight:bold;border-bottom:1px solid #f3f3f3;}
+.page-step > header .pop-info.open .con > li:nth-child(2) > strong {font-size:2.4rem;margin-right:0.5rem;vertical-align:bottom;}
+.page-step > header .pop-info.open .btn-area {position:static;}
+
+/* 진행상태 */
+.page-step .tab-process {padding:2rem;margin:0 0 1.5rem;}
+.page-step .tab-process ol {overflow:hidden;position:relative;}
+.page-step .tab-process li {float:left;margin:0 0.4rem 0 0;font-size:3.9rem;color:#8e95a1;line-height:3.2rem;letter-spacing:-0.1rem;}
+.page-step .tab-process li > span {display:none;}
+.page-step .tab-process li:before {content:'/';padding:0 0.4rem 0 0;font-size:1.4rem;color:#b1b5be;vertical-align:middle;}
+.page-step .tab-process li:first-child:before {content:'';padding:0;}
+.page-step .tab-process li.on {color:#23b2f4;}
+.page-step .tab-process li.on > span {display:block;position:absolute;top:0;right:0;font-size:1.8rem;}
+
+.page-step .btn-area {margin:0;}
+.page-step .btn-area a, .page-step .btn-area button {border-radius:0;}
+.page-step .btn-area > a, .page-step .btn-area > button {width:50%;}
+.page-step .btn-area > a:only-child, .page-step .btn-area > button:only-child {width:100%;}
+
+.page-step .btn-area.double {margin: 2.4rem 2rem 1.2rem;}
+.page-step .btn-area.double .btn-com{font-size: 1.6rem;letter-spacing: -1px;line-height: 5.3rem;width:48%; height: 5.3rem;border-radius: 3px;background: #e96e5c;margin: 0 auto;text-align: center;}
+.page-step .btn-area .btn-com:before {content: '';display: inline-block;background: url(../images/com/grp_icon_set.png)no-repeat -60px 0;background-size: 300px 300px;}   
+.page-step .btn-area.double .btn-com.cer:before {width: 3.2rem;height: 3.1rem;margin-bottom: -1.2rem;background-position: 0 -174px;}
+.page-step .btn-area.double .btn-com.sim:before {width: 2.8rem;height: 2.7rem;margin-bottom: -0.9rem;margin-left: -0.4rem;background-position: -50px -175px;}
+
+/* ----------------------------------------------------------
+	청약 가입시작
+---------------------------------------------------------- */
+/* 청약가입안내 */
+#content.step-info > .section {position:relative;}
+.step-info .section > p {padding:0.6rem 0;font-size:2.0rem;line-height:1.15;color:#8e95a1;text-align:center;}
+.step-info .section .visual {overflow:hidden;}
+.step-info .section .visual li {width:100%;padding:0.5rem 0 1.2rem;font-size:0;text-indent:-9999px;}
+.step-info .section .visual li:after {content:'';display:block;width:8.5rem;height:6.5rem;margin:0 auto;background:url(../images/com/visual_step.png) no-repeat 0 0;background-size:auto 100%;}
+.step-info .section .visual li.ic1:after {background-position:0 0;}
+.step-info .section .visual li.ic2:after {background-position:-8.5rem 0;}
+.step-info .section .visual li.ic3:after {background-position:-17rem 0;}
+.step-info .section .list-info2 {font-size:1.1rem;color:#848484;text-align:left;border:1px solid #bdc0c7;border-radius:1rem;}
+.step-info .section .list-info2 > li {position:relative;padding:0.7rem 1.0rem 0.7rem 4.8rem;}
+.step-info .section .list-info2 > li:before {overflow:hidden;content:'';position:absolute;left:1.5rem;top:50%;width:1.9rem;height:1.9rem;margin:-0.8rem 0 0;background:url(../images/com/icon_form.png) no-repeat -69px 0;background-size:300px 300px;}
+.step-info .section .list-info2 > li:not(:first-child) {border-top:1px solid #bdc0c7;}
+.step-info .section .list-info2 > li strong {display:block;margin:0 0 0.5rem;font-size:1.3rem;color:#455062;}
+.step-info .section .list-info2 > li strong span {border-bottom:1px solid #455062;}
+.step-info .section .list-info2 a.btn-anysign{font-size: 1.1rem;line-height: 2rem;}
+
+@media all and (min-height:615px) {
+	.step-info .section .visual li {padding:2.5rem 0;}
+}
+
+@media all and (min-width:380px) and (min-height:620px) {
+	.step-info .section .visual li {padding:2.5rem 0;}
+	.step-info .section .list-info2 > li  {padding:1.6rem 1.0rem 1.6rem 4.8rem;}
+}
+
+/* 청약가입전안내 : 161103; */
+.step-info2{padding:4.4rem 0 6.0rem;}
+.step-info2 > .info-title {z-index:10;position:relative;height:22rem;font-size:1.6rem;text-align:center;color:#fff;background:none;border:0;}
+.step-info2 > .info-title:before, #content.step-info2 > .info-title:after {content:'';position:absolute;left:0;right:0;top:0;z-index:0;}
+.step-info2 > .info-title:before {bottom:8px;background:#727076;}
+.step-info2 > .info-title:after {bottom:0;background:url(../images/com/visual_info.png) no-repeat 0 100%;background-size:auto 274px;}
+.step-info2 > .info-title > h1, .step-info2 > .info-title > p {position:relative;z-index:1;}
+.step-info2 > .info-title > h1 {padding-top:8.6rem;font-size:3.0rem;font-weight:bold;}
+.step-info2 > .info-title > p {line-height:2.1rem;margin: 1rem 0 0 0;}
+
+/* 본인인증방식 선택 */
+.step-choice .section{padding: 1.5rem 0;}
+.step-choice .section h2{font-size: 2rem;text-align: center; color: #565d6d;line-height: 2.5rem;letter-spacing: -0.1rem;padding: 1rem 0;}    
+.step-choice .section h2 em{color: #2cbbff;}
+.step-choice .page-brand{background: #f8f8f8; border-top:1px solid #e5e5e5;}
+.step-choice .page-brand h3{position: absolute;left: 28%;font-size: 1.4rem;}
+.step-choice .page-brand .brand4{padding:0;margin-top:2rem;} 
+.step-choice .page-brand .brand4 li:after{display: inline-block;content: '';position: absolute;right: 2%;bottom: 0;width: 6.4rem;height: 5.3rem;background: url(../images/com/icon_join.png) no-repeat 0 0;background-size: 200px 125px;}
+.step-choice .page-brand .brand4 li.ic1:after{width: 6.4rem;background-position: 0 0;}
+.step-choice .page-brand .brand4 li.ic2:after{width: 6.4rem;background-position: -66px 0;}
+.step-choice .section .btn-area {padding:1rem 0 2rem;}
+.step-choice .section .btn-area ul li{width:31%;display:inline-block; border:2px solid #bdc0c7; border-radius: 1rem; height: 15rem; position:relative;}
+.step-choice .section .btn-area ul li.on{border:2px solid #565d6d;}
+.step-choice .section .btn-area ul li a{border-bottom:2px solid #bdc0c7; height:10rem;}
+.step-choice .section .btn-area ul li a:before{display: inline-block;content: '';position: absolute;left: 50%;top: 10%;background: url(../images/com/icon_subscription.png) no-repeat 0 0;background-size: 200px 125px;color: #000;}
+.step-choice .section .btn-area ul li a.img_ic1:before{background-position: -65px -50px;width: 5rem;height: 7rem;margin-left: -2.3rem;}
+.step-choice .section .btn-area ul li a.img_ic2:before{background-position: 0px -50px;width: 6.4rem; height: 7.4rem;margin-left:-2.6rem;}
+.step-choice .section .btn-area ul li a.img_ic3:before{background-position: -126px -50px;width: 6.4rem; height: 7.4rem;margin-left:-2.6rem;}
+.step-choice .section .btn-area .label-checkbox{position: absolute; bottom: 0;width: 100%; margin: 0 -50%;}
+.step-choice .section .btn-area .label-checkbox label {position: relative; box-shadow: none; border-top: 2px solid #bdc0c7; border-radius:0 0 0.6rem 0.6rem;display: block;text-align: center;font-size: 1.4rem;line-height: 2.0rem;height: 5.0rem;}
+.step-choice .section .btn-area .label-checkbox label:before {content: '';display: inline-block;position: absolute;top:0.6rem; left:0.6rem; width: 2rem;height: 2rem;background: url(../images/com/icon_form.png) no-repeat -89px 0px;background-size: 300px 300px;border: 0; transform: none;}
+.step-choice .section .btn-area .label-checkbox label em{font-weight: bold;position: absolute;top:0.6rem; left:3.2rem;}
+.step-choice .section .btn-area .label-checkbox label.on {background: #565d6d; border-top: 2px solid #565d6d;}
+.step-choice .section .btn-area .label-checkbox label.on:before {content: '';display: inline-block;width: 2rem;height: 2rem;background: url(../images/com/icon_form.png) no-repeat -109px 0px;background-size: 300px 300px;border: 0; transform: none;}
+.step-choice .btn-area.next{position: fixed; bottom:0;width:100%;}
+.step-choice .section .btn-area .label-checkbox label:after{display: none;}
+
+/* ----------------------------------------------------------
+	청약 1단계 : 공인인증
+---------------------------------------------------------- */
+.step1-1 .mes-type1 {padding:2.5rem 0;font-size:1.4rem;line-height:2.0rem;}
+.step1-1 .mes-type1:before {content:'';display:block;width:6.5rem;height:7.1rem;margin:0 auto 1rem;background:url(../images/com/icon_subscription.png) no-repeat 0 -54px;background-size:200px 125px;}
+.step1-1 .mes-type1 .block {font-size:2.0rem;margin:0 0 0.6rem;}
+.step1-1 .mes-type1 em {display:block;color:#455062;margin:0 0 0.4rem;}
+.step1-1 .list-content > .con {padding-bottom:3.5rem;background: #ffffff;}
+.step1-1 .form-wrap1 input[type="password"] {font-size:2.6rem;padding:0.4rem 1.0rem 0.2rem;}
+
+@media all and (min-width:361px) and (min-height:520px) {
+	.step1-1 .list-content > .con {padding:2rem 2rem 3rem;}
+}
+
+@media all and (min-width:380px) and (min-height:620px) {
+	.step1-1 .mes-type1 {padding:5.0rem 0;}
+	.step1-1 .list-content > .con {padding:2rem 2rem 3rem;}
+}
+
+/* 휴대폰(SMS)인증 방식 선택 */
+.step1-1.step-sms .mes-type1:before {content:'';display:block;width:5rem;height:7.1rem;margin:0 auto 1rem;background:url(../images/com/icon_subscription.png) no-repeat -65px -54px;background-size:200px 125px;}
+.step1-1.step-sms .mes-type1 strong.txt-c3{color:#565d6d;}
+.step1-1.step-sms .list-content > .con {padding-bottom:4.5rem;}
+.step1-1 .info-list {overflow:hidden;position:relative;padding:0 1.5rem;background: #f8f8f8;}
+.step1-1 .info-list > ul > li {position:relative;padding:1.4rem 2.0rem 1.4rem 4.2rem;font-size:1.3rem;color:#3c4449; border-bottom: 1px solid #e2e2e2;}
+.step1-1 .info-list > ul > li:last-child {border-bottom:none;}
+.step1-1 .info-list > ul > li:after {display:inline-block;content:'';position:absolute;left:1.2rem;top:1.4rem;width:1.9rem;height:1.9rem;background:#fff url(../images/com/icon_form.png) no-repeat -248px 0px;background-size:300px 300px;z-index:1;}
+.step1-1 .info-list > ul > li:last-child:after {bottom:3.6rem;}
+.step1-1 .info-list > ul > li > p{padding-bottom:1rem;}
+.step1-1 .info-list > ul > li em, .info-list > ul > li > p > em{color:#e96e5c;}
+.step1-1 .info-list .btn-set3{display: block;position: relative;padding: 1.1rem 1.5rem 1.2rem;font-weight: bold;font-size: 1.3rem;color: #455062;background: #fff;}
+.step1-1 .info-list .btn-set3:after{display: inline-block;content: '';position: absolute;right: 1.8rem;top: 50%;margin-top: -0.6rem;width: 1rem;height: 1rem;border-right: 1px solid #a9a9a9;border-bottom: 1px solid #a9a9a9;-webkit-transform: rotate(-45deg);-moz-transform: rotate(-45deg);transform: rotate(-45deg);}
+
+/* 카카오 인증 방식 선택 */
+.list-content.in-kakao > .con{border: 4px solid #e96e5c;border-top: 0;border-bottom: 0;margin-bottom: -1px;background: #ffffff;}
+.in-kakao .tab-type1 li a:before{content: '';display: inline-block; width:5.8rem; height:2rem;margin-bottom:-0.7rem;margin-right: 0.4rem; background: url(../images/com/icon_kakao.png)no-repeat 0 0;background-size: 120px 80px;}
+.in-kakao .tab-type1 li:first-child a:before{width:1.8rem; height:2.3rem; background-position: -22px -23px;}
+.in-kakao .tab-type1 li:first-child.on{background: #fff;}
+.in-kakao .tab-type1 li:first-child.on a:before{background-position: 0 -23px;}
+.in-kakao .tab-type1 li.on a:before{background-position: 0 0;}
+.in-kakao .tab-type1 li a:before{background-position: -63px 0;}
+.in-kakao .tab-type1 li > a{border-bottom: 4px solid #e96e5c;}
+.in-kakao .tab-type1 li.on > a{border: 4px solid #e96e5c;font-weight: bold; margin-bottom: -8px;}
+
+/* ----------------------------------------------------------
+	청약 1단계 : 정보입력/고객정보동의
+---------------------------------------------------------- */
+#popAgree1 .font-red {color:#e96e5c;}
+#popAgree1 .font-blue {color:#0096eb;}
+#popAgree1 p {word-wrap:break-word;word-break:keep-all}
+#popAgree1 p.small {font-size:0.9em}
+
+#popAgree2 .font-red {color:e96e5c;}
+#popAgree2 .font-blue {color:0096eb;}
+#popAgree2 p {word-wrap:break-word;word-break:keep-all}
+#popAgree2 p.small {font-size:0.9em}
+.step1-2 .mark {border-bottom: 0.3rem solid #67e8ff;border-radius: 0.5rem 0.2rem 0.5rem;display: inline-block;line-height: 1rem;width: 3rem;}
+
+/* ----------------------------------------------------------
+	청약 2단계 : 계약전 알릴 의무 작성
+---------------------------------------------------------- */
+/* 팝업 */
+.form-agree .box-more {position:relative;margin:2rem -2rem 0;padding:0.7rem 2rem 0;border-top:1px solid #e5e5e5;}
+.form-agree .box-more .m-wrap {position:relative;}
+.form-agree .box-more .m-wrap > span {position:absolute;top:0;right:0;line-height:2rem;}
+.form-agree .box-more .m-wrap .label {position:static;padding:0.5rem 15rem 0.5rem 0;font-size:1.4rem;font-weight:normal;}
+.step1-2 .form-con1 .form + .txt-type2 {margin-top:2rem;color:#9c9c9c;}
+#ANSWER13 {padding-top:11px;}
+
+/* ----------------------------------------------------------
+	청약 3단계 : 가입문서확인/결제
+---------------------------------------------------------- */
+/* 가입문서 확인체크 */
+.step3 .info-data {margin-top:-1.0rem;}
+
+.step3 .btn-area2 a.on {overflow:hidden;border-color:#0d9ce0;color:#0d9ce0;}
+.step3 .btn-area2 a.on:nth-of-type(1) {border-right:1px solid #0d9ce0;}
+.step3 .btn-area2 a.on:nth-of-type(2) {margin-left:-1px;border-left:1px solid #0d9ce0;}
+.step3 .btn-area2 a.on:after {display:inline-block;content:'';width:1.0rem;height:0.4rem;margin:1.4rem 0 0 0.4rem;border-left:0.1rem solid #0d9ce0;border-bottom:0.1rem solid #0d9ce0;vertical-align:top;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);}
+.step3 .btn-area2 a.on > .chk {display:inline-block;text-indent:-9999px;}
+.step3 .btn-areatip2 + .btn-area {margin-top:3.0rem;}
+
+.step3 .btn-area5 a.on {overflow:hidden;border-color:#0d9ce0;color:#0d9ce0;}
+.step3 .btn-area5 a.on:nth-of-type(1) {border-right:1px solid #0d9ce0;}
+.step3 .btn-area5 a.on:nth-of-type(2) {margin-left:-1px;border-left:1px solid #0d9ce0;}
+.step3 .btn-area5 a.on:after {display:inline-block;content:'';width:1.0rem;height:0.4rem;margin:1.4rem 0 0 0.4rem;border-left:0.1rem solid #0d9ce0;border-bottom:0.1rem solid #0d9ce0;vertical-align:top;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);}
+.step3 .btn-area5 a.on > .chk {display:inline-block;text-indent:-9999px;}
+
+.step3 .btn-area2 a.c3.on {background-color:#565d6d;border-color:#565d6d;color:#fff;}
+.step3 .btn-area2 a.c3.on:nth-of-type(1) {border-right:1px solid #8e95a1;}
+.step3 .btn-area2 a.c3.on:nth-of-type(2) {margin-left:-1px;border-left:1px solid #8e95a1;}
+.step3 .btn-area5 a.c3.on:last-child {margin-left:-1px;border-left:1px solid #8e95a1;}
+.step3 .btn-area2 a.c3.on:after {display:inline-block;content:'';width:1.0rem;height:0.4rem;margin:1.4rem 0 0 0.4rem;border-left:0.2rem solid #e96e5c;border-bottom:0.2rem solid #e96e5c;vertical-align:top;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);}
+
+.step3 .btn-area5 a.c3.on {overflow:hidden;border-color:#565d6d;color:#fff;background:#565d6d;}
+.step3 .btn-area5 a.c3.on:nth-of-type(1) {border-right:1px solid #8e95a1;}
+.step3 .btn-area5 a.c3.on:nth-of-type(2) {margin-left:-1px;border-left:1px solid #8e95a1;}
+.step3 .btn-area5 a.c3.on:last-child {margin-left:-1px;border-left:1px solid #8e95a1;}
+.step3 .btn-area5 a.c3.on:after {display:inline-block;content:'';width:1.0rem;height:0.4rem;margin:1.4rem 0 0 0.4rem;border-left:0.2rem solid #f66867;border-bottom:0.2rem solid #f66867; vertical-align:top;transform:rotate(-45deg);-webkit-transform:rotate(-45deg);-moz-transform:rotate(-45deg);}
+.step3 .btn-area5 a.c3.on > .chk {display:inline-block;text-indent:-9999px;}
+
+/* ----------------------------------------------------------
+	청약 4단계 : 청약가입 완료
+---------------------------------------------------------- */
+/* 가입완료 안내 */
+.step4 .list-step {padding:2rem 2rem 0;background:#f8f8f8;border-top:1px solid #eee;}
+.step4 .list-step ol {overflow:hidden;}
+.step4 .list-step li {position:relative;float:left;width:33.3%;padding:6rem 0 1.5rem;text-align:center;font-size:1.2rem;color:#3c4449;line-height:1.6rem;}
+.step4 .list-step li:first-child:nth-last-of-type(2), .list-step li:nth-of-type(2):nth-last-of-type(1) {width:50% !important;}
+.step4 .list-step li:after {display:block;content:'';position:absolute;left:0;top:50%;width:0;height:0;margin:-0.7rem 0 0 -1.2rem;border-bottom:1.4rem solid transparent;border-right:1.4rem solid #dfdfdf;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);transform:rotate(45deg);}
+.step4 .list-step li:first-child:after {display:none;}
+.step4 .list-step li:before {display:block;content:'';position:absolute;left:50%;top:0;width:5.3rem;height:5.0rem;margin-left:-2.6rem;background:url(../images/com/icon_subscription.png) no-repeat 0 0;background-size:200px 125px;}
+.step4 .list-step li.st1:before {background-position:0 0;}
+.step4 .list-step li.st2:before {background-position:-63px 0;}
+.step4 .list-step li.st3:before {background-position:-126px 0;}
+.step4 .list-step p {padding:1rem 0;border-top:1px solid #eee;text-align:center;font-size:1.2rem;color:#67777f;word-break:normal;}
+.step4 .btn-area2 {width:auto;margin:1.5rem 2rem;}
+.step4 .banner-area {height:8.5rem;margin:1.5rem 2rem;background:#eaeaea;}
+.step4 .banner-area.grp-banner {height:17rem;background: #fff;}
+.step4 .btn-area {margin: 0; position: fixed;width: 100%;bottom: 0;left: 0;right: auto;}
+
+/* ----------------------------------------------------------
+	팝업
+---------------------------------------------------------- */
+/* 주소찾기, 직업검색 */
+.pop-find .label-btn1 {margin:0 0 1.5rem;}
+.pop-find .mes-top {margin-top: 0;}
+
+/* 주소목록 */
+.label-list2.zip label > span {display:table-cell;}
+.label-list2.zip label > span:first-child {min-width:5.0rem;}
+
+/* 주소정보 */
+.info-zipcode {border:1px solid #dedfe3;border-radius:3px;padding:1.5rem 2.0rem;box-sizing:border-box;}
+.info-zipcode dt {position:absolute;left:-9999px;}
+.info-zipcode dd {display:block;}
+.info-zipcode dd a {display:block;padding:0.5rem 0;}
+.info-zipcode dt:first-child + dd {display:inline-block;min-width:5.0rem;margin:0;padding:0.3rem 0.2rem 0.1rem;border:1px solid #f66867;text-align:center;font-size:1.0rem;line-height:1.2rem;color:#f66867;}
+
+/* 직업검색 */
+#popFindJob dl.list-word {padding:0.8rem 0;}
+#popFindJob dl.list-word dt{display:block;margin: 0 0 0.6rem;}
+#popFindJob dl.list-word dd{margin: 0 0.1rem 0.4rem 0;border: 0.1rem solid #bdc0c7;border-radius: 0.3rem;}
+#popFindJob dl.list-word a{margin: 0 1.6rem;}
+#popFindJob dl.list-word dd:after {width:0; height:0;margin:0;background:none;}
+
+/* 가입문서확인 */
+#popDocument {position:fixed;left:0;right:0;top:0 !important;bottom:0;}
+.pop-document .nav-scroll ul li a {padding:0 2.3rem 0 0.2rem;margin:0 0 0 0.6rem;color:#848484;}
+.pop-document .nav-scroll ul li a:before {content:'';}
+.pop-document .nav-scroll ul li a:before, .pop-document .nav-scroll ul li a .chk {position:absolute;right:0.2rem;top:50%;display:block;width:1.9rem;height:1.9rem;margin:-1.0rem 0 0;background:url(../images/com/icon_form.png) no-repeat -90px 0;background-size:300px 300px;}
+.pop-document .nav-scroll ul li a .chk {overflow:hidden;text-indent:-9999px;background-position:-109px 0;background-color:#fff;}
+.pop-document .nav-scroll ul li.on a {color:#2cbbff;}
+.wrap-document .btnarea {position:relative;z-index:10;/*margin-top:1px;padding:1.2rem 9rem 1.2rem 1.2rem;background:#f8f8f8;border-bottom:1px solid #e5e5e5;*/}
+.wrap-document .btnarea em {text-decoration:underline;color:#2cbbff;}
+.wrap-document .btnarea .btn-area2 {position:absolute;top:0;right:1rem;width:24%; padding:1.2rem 0; margin:0;opacity: 0.9;}
+.wrap-document .btnarea .btn-area2 a{height:3.8rem;}
+.wrap-document .wrap-scroll {position:fixed;left:0;right:0;top:10.5rem;bottom:0;max-height:none;overflow-x:auto;}
+.wrap-document .wrap-scroll img {width:100%;}
+.wrap-document .bottom {position:absolute;bottom:0;width:100%;text-align:center;background: #23b2f4;}
+.wrap-document .bottom a {width:100%;line-height: 5rem;font-size: 1.6rem;}
+.wrap-document .bottom > span {position:absolute;right:50%;display:inline-block;margin:1.6rem 8.0rem 0 0;width:25px;height:19px;background:url(../images/com/icon_set.png) no-repeat -65px -65px;background-size:300px 300px;
+	animation-name:arrAni;animation-duration:0.8s;animation-iteration-count:infinite;animation-timing-function:linear;
+	-webkit-animation-name:arrAni;-webkit-animation-duration:0.8s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;
+}
+/* 가입문서확인 */
+.wrap-document .top {position:absolute;left:5.5rem;right:5.0rem;top:0.7rem;text-align:center;background:#8e95a1;}
+.wrap-document .top a {width:14rem;padding:0;}
+.wrap-document .top > span {position:absolute;right:50%;display:inline-block;margin:1rem 8.0rem 0 0;width:25px;height:19px;background:url(../images/com/icon_set.png) no-repeat -65px -65px;background-size:300px 300px;
+	animation-name:arrAni;animation-duration:0.8s;animation-iteration-count:infinite;animation-timing-function:linear;
+	-webkit-animation-name:arrAni;-webkit-animation-duration:0.8s;-webkit-animation-iteration-count:infinite;-webkit-animation-timing-function:linear;
+}
+
+@keyframes arrAni{
+	0% {margin-right:8.0rem;}
+	50% {margin-right:9.0rem;}
+	100% {margin-right:8.0rem;}
+}
+
+@-webkit-keyframes arrAni{
+	0% {margin-right:8.0rem;}
+	50% {margin-right:9.0rem;}
+	100% {margin-right:8.0rem;}
+}
+
+/* 추가확인필요안내 */
+.pop-modal4 .pop-mes .btn-area2 a:first-child {border-radius:3px 0 0 3px;}
+.pop-modal4 .pop-mes .btn-area2 a:last-child {border-radius:0 3px 3px 0;}
+
+/* ----------------------------------------------------------
+	변액청약 진입 1단계 : 가입성향진단 선택 
+---------------------------------------------------------- */
+.step001 .list-step {padding:2rem 2rem 0;background:#f8f8f8;border-top:1px solid #eee;}
+.step001 .list-step ol {overflow:hidden;}
+.step001 .list-step li {position:relative;float:left;width:33.3%;padding:6rem 0 1.5rem;text-align:center;font-size:1.2rem;color:#3c4449;line-height:1.6rem;}
+.step001 .list-step li:first-child:nth-last-of-type(2), .list-step li:nth-of-type(2):nth-last-of-type(1) {width:50% !important;}
+.step001 .list-step li:after {display:block;content:'';position:absolute;left:0;top:50%;width:0;height:0;margin:-0.7rem 0 0 -1.2rem;border-bottom:1.4rem solid transparent;border-right:1.4rem solid #dfdfdf;-webkit-transform:rotate(45deg);-moz-transform:rotate(45deg);transform:rotate(45deg);}
+.step001 .list-step li:first-child:after {display:none;}
+.step001 .list-step li:before {display:block;content:'';position:absolute;left:50%;top:0;width:5.3rem;height:5.0rem;margin-left:-2.6rem;background:url(../images/com/icon_subscription.png) no-repeat 0 0;background-size:200px 125px;}
+.step001 .list-step li.st1:before {background-position:0 0;}
+.step001 .list-step li.st2:before {background-position:-63px 0;}
+.step001 .list-step li.st3:before {background-position:-126px 0;}
+.step001 .list-step p {padding:1rem 0;border-top:1px solid #eee;text-align:center;font-size:1.2rem;color:#67777f;word-break:normal;}
+.step001 .line-up{border-top:1px solid #eee;}
+.step001 .section.no-top {padding-top:0rem;}
+.step001 .section p.txt-tip2{padding-top:1.2rem;position:relative;}
+.step001 .section p.txt-tip2 span{display:block;position:relative;line-height:1.5;text-align:left;padding:0rem 0rem 1.2rem 2rem;font-size:1.2rem;color:#848484;}
+.step001 .section p.txt-tip2 em {font-weight:bold;color:#f66867;}
+.step001 .section p.txt-tip2 span:before{position:absolute;content:"";display:inline-block;width:1.1rem;height:1.1rem;vertical-align:middle;margin-left:-1.5rem;margin-top:0.4rem;background:url(../images/com/icon_set.png) no-repeat -13px 0;background-size:300px 300px;}
+
+/* ----------------------------------------------------------
+	변액청약 진입 2단계 : 위험성향진단 질문지 
+---------------------------------------------------------- */
+.step021 h1.txt-c2{font-size:2rem;padding:2rem;letter-spacing:-0.1rem;}
+.step021 .label:before{visibility::hidden;}
+.step021 dl.txt-type1 dt.txt-c1{margin:0;}
+.page-step.step021 dl.txt-type1 dd{background: none;}
+.page-step.step021 dl.txt-type1 dd:before{background: none;}
+
+/* ----------------------------------------------------------
+	변액청약 진입 2단계 : 가입성향;
+---------------------------------------------------------- */
+/* 부적합/적합 */
+.step022-infit {letter-spacing:-0.1rem;}
+.step022-infit .test-answer .mes-type1{font-size:1.3rem;color:#455062;}
+.step022-infit .test-answer .mes-type1 span.block{font-size:1.6rem;font-weight:bold;line-height:2.2rem;margin-top:1.4rem;}
+.step022-infit .list-content{background:#f8f8f8;}
+.step022-infit .list-content .heading{background:#eee;font-size:1.7rem;text-align:center;}
+.step022-infit .list-content .list-info3 {font-size:1.1rem;color:#848484;text-align:left; padding:0.5rem 2rem;}
+.step022-infit .list-content .list-info3 > li {position:relative;padding:1rem 0rem;font-size:1.2rem;}
+.step022-infit .list-content .list-info3 > li:not(:first-child) {border-top:1px solid #bdc0c7;}
+.step022-infit .list-content .list-info3 > li strong {display:block;margin:0 0 0.5rem;font-size:1.4rem;color:#455062;}
+.step022-infit .list-content .list-info3 > li strong span {border-bottom:1px solid #455062;}
+.step022-infit .list-content .section{padding:0rem 1.5rem 1.5rem;}
+.step022-infit .list-content .section .box-mes1{border:1px solid #e5e5e5;border-radius:0.5rem; line-height:2rem;}
+
+/* 3개월 최근 가입성향진단조회 */
+.step01-2{letter-spacing:-0.1rem;}
+.step01-2 .tit-type1{font-size:1.8rem;color:#455062;}
+.step01-2 p.txt-tip2 {margin:1.5rem; position: relative;border-top:1px solid #e5e5e5;}
+.step01-2 p.txt-tip2 span {display: block;position: relative;padding: 2rem 0rem 0.5rem 2rem;font-size: 1.2rem;color: #848484;}
+.step01-2 p.txt-tip2 span:before {position: absolute;content: "";display: inline-block;width: 1.1rem;height: 1.1rem;vertical-align: middle;margin-left:-1.5rem;margin-top: 0.4rem;background: url(../images/com/icon_set.png) no-repeat -13px 0;background-size: 300px 300px;}
+
+/* 거부 */
+.step01-3{letter-spacing:-0.1rem;}
+.step01-3 .test-answer .mes-type1 span.block{font-size:1.6rem;line-height:2.2rem;font-weight:700;}
+.step01-3 .txt-check span{font-size:1.4rem;background:#eee;}
+.step01-3 p.txt-mark {padding:0 0 0 1.3rem;}
+.step01-3 p.txt-mark span:first-child {float:left;width:1.3rem;margin-left:-1.3rem;}
+
+/* ----------------------------------------------------------
+	변액청약 진입 3단계 : 펀드선택;
+---------------------------------------------------------- */
+.step03-1 .info-data{position:fixed;top:11.0rem;left:0;width:100%;z-index:1;}
+.step03-1 .info-data p{margin:0 auto; padding:1rem 1.5rem;font-size:1.6rem;border-bottom:1px solid #8295a1;text-align:right;background:#eee;}
+.step03-1 .info-data p.txt-check span{text-align:left;float:left;padding:0rem 2rem;font-size:1.6rem;}
+.step03-1 .section{padding:3rem 1rem;letter-spacing:-0.1rem;}
+.step03-1 .section .tit-type1{margin:4rem 0 0.6rem; color:#565d6d;font-size:1.8rem;}
+.step03-1 .section .btn-area2{margin:1rem 0 0;}
+.step03-1 .section p{text-align: left;}
+.step03-1 .box-fund .tbl-type3{margin:0;}
+.step03-1 .box-fund .tbl-type3 thead th{font-weight:normal;background:#565d6d;border:2px solid #565d6d;}
+.step03-1 .box-fund .tbl-type3 tbody th{font-size:1.4rem;background:#f4f4f4;letter-spacing:-0.1rem;}
+.step03-1 .box-fund .tbl-type3 tbody th.on {background:#2cbbff;color:#fff;}
+.step03-1 .box-fund .tbl-type3 tbody th.on a{color:#fff;}
+.step03-1 .box-fund .tbl-type3 .txt-area{letter-spacing:-0.1rem;font-size:1.1rem;padding-top:0.5rem;}
+.step03-1 .box-fund .tbl-type3 .txt-area .txt-small{color:#e96e5c;}
+.step03-1 .box-fund .tbl-type3.list tbody tr:last-child th, .tbl-type3.list tbody tr:last-child td {border-bottom: 1px solid #565D6D;}
+.step03-1 .info-data .txt-tip{text-align: left;position: absolute;font-size: 1.4rem;letter-spacing: -0.1rem;line-height: 2.4rem;}
+.fund-input .txt-type3, .fund-input .txt-type4 {margin-left:0.7rem} 
+.fund-input dt {font-weight:bold}
+
+/* ----------------------------------------------------------
+	청약 마지막 단계 : 저축보험 광고 팝업
+---------------------------------------------------------- */
+.pop-modal2.pop-last-ad .header{border: none;padding: 2rem;}
+.pop-modal2.pop-last-ad .content{padding:0 1.5rem 1.5rem 1.5rem;}
+.pop-modal2 .header button {height: 6rem;}
+.img-popad01{display:block; height: 100%;}
+.pop-modal2.pop-last-ad .btn-type2:before{content: '';display: inline-block;width: 2.4rem;height: 2.5rem;margin:0.7rem 1rem 0.7rem -1rem;background: url(../images/com/visual_main_com.png) no-repeat 0 0;background-size: 300px 100px;vertical-align: top;background-position: -30px -68px;}
+
+/* ----------------------------------------------------------
+	청약 2단계 : 상품가입 가까운 지점문의
+---------------------------------------------------------- */
+.img-helper{width:123px; height:auto; margin:1rem auto;}
+
+/* ----------------------------------------------------------
+	청약가입안내 : 실손 수정
+---------------------------------------------------------- */
+.page-step > header.pro9{line-height: 1.2;}
+.page-step > header.pro9 h1 em{display: block;}
+
+
+/*가까운 지점 문의 팝업*/
+.img-helper{width: 123px;margin: 20px auto;display: block;}
+
+/*카카오 인증 이벤트 안내*/
+.kakao-info{width: 100%; text-align: center;}
+.kakao-info em{width:90%; font-size: 1.2rem;letter-spacing: -0.1rem;line-height: 2.1rem;}
+.in-kakao.list-content > .con .kakao-info em strong{border: none;font-size: 1.6rem;color: #23b2f4;}

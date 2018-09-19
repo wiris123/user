@@ -167,7 +167,8 @@ public class MyBatisController
 	
 	//메일 처리를 위한 컨트롤러 매핑
 	@RequestMapping("custom/mailTest.do")
-	public String mailTest(HttpServletRequest req, HttpServletResponse resp,EmailVO emailvo) {
+	public String mailTestAction(HttpServletRequest req, HttpServletResponse resp,EmailVO emailvo) throws Exception
+	{
 		
 	    String idx = "1";
 	    String name = req.getParameter("name");
@@ -193,6 +194,8 @@ public class MyBatisController
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("실패");
+			throw e;
+			
 		}
 	
 		return "redirect:/custom/cus_qna";
