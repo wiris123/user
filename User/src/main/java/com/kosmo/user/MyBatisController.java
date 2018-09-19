@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.apache.http.HttpRequest;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -72,14 +73,18 @@ public class MyBatisController
 	
 	//로그인 리다이렉팅
 	@RequestMapping("/member/login.do")
-	public String login(HttpSession session,Model model)
+	public String login(HttpServletRequest req, HttpSession session,Model model)
 	{
 		/* 네이버아이디로 인증 URL을 생성하기 위하여 naverLoginBO클래스의 getAuthorizationUrl메소드 호출 */
 		String naverAuthUrl = naverLoginBO.getAuthorizationUrl(session);
-		
+		String referrer = req.getHeader("REFERER");
+		System.out.println(referrer);
+		if(!(referrer.contains("callback")||referrer.contains("join"))) {
+			session.setAttribute("prev-page", referrer);
+		}
 		//https://nid.naver.com/oauth2.0/authorize?response_type=code&client_id=sE***************&
 		//redirect_uri=http%3A%2F%2F211.63.89.90%3A8090%2Flogin_project%2Fcallback&state=e68c269c-5ba9-4c31-85da-54c16c658125
-		System.out.println("네이버:" + naverAuthUrl);
+		//System.out.println("네이버:" + naverAuthUrl);
 		
 		//네이버 
 		model.addAttribute("url", naverAuthUrl);
@@ -88,7 +93,7 @@ public class MyBatisController
 		OAuth2Operations oauthOperations = googleConnectionFactory.getOAuthOperations();
 		String url = oauthOperations.buildAuthorizeUrl(GrantType.AUTHORIZATION_CODE, googleOAuth2Parameters);
 
-		System.out.println("구글:" + url);
+		//System.out.println("구글:" + url);
 
 		model.addAttribute("google_url", url);
 
@@ -99,12 +104,16 @@ public class MyBatisController
 	
 	//로그인 성공시
 	@RequestMapping("/member/loginSuccess.do")
-	public String loginSuc(HttpSession session)
+	public ModelAndView loginSuc(HttpSession session)
 	{
-		
+		String prevpage = "member/login.do";
 		Object principal = SecurityContextHolder.getContext().getAuthentication().getPrincipal();
 		UserDetails userDetails = (UserDetails)principal;
-
+		if(session.getAttribute("prev-page")!=null) {
+			prevpage = (String) session.getAttribute("prev-page");
+			session.removeAttribute("prev-page");
+			
+		}
 		String user_id = userDetails.getUsername(); 
 		
 		MemberVO memVO = sqlSession.getMapper(MyMemberImpl.class).selectMyPageMember(user_id);
@@ -113,10 +122,10 @@ public class MyBatisController
 		session.setAttribute("USER_NAME", memVO.getName());
 		session.setAttribute("USER_EMAIL", memVO.getEmail());
 		session.setAttribute("USER_BIRTH", memVO.getBirth());
-		System.out.println("dsds"+memVO.getAddress());
+		System.out.println("로그인성공");
 		session.setAttribute("USER_ADDR", memVO.getAddress());
 		
-		return "member/login";
+		return new ModelAndView("redirect:"+prevpage);
 		
 	}
 	
@@ -180,7 +189,7 @@ public class MyBatisController
 			message.setText(mailcontent,"UTF-8","html");	// 내용(html 준수)
 			message.setRecipients(RecipientType.TO,"chambre1991@gmail.com"); // 받는 사람 설정
 			javaMailSender.send(message); // 메일 보내기
-			System.out.println("성공");
+			System.out.println("메일전송 성공");
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("실패");

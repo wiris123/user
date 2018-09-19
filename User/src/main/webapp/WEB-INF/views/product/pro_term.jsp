@@ -23,6 +23,7 @@ $(function()
 {
    $('.list-result').hide();
 });
+
 function premiPlus()
 {
    

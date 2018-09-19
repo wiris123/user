@@ -30,6 +30,12 @@ public class CustomController {
 		
 		return "custom/cus_faq";
 	}
+	@RequestMapping("/include/chat")
+	public String chat2() {
+		
+		
+		return "include/chat";
+	}
 	
 	@RequestMapping("/custom/cus_qna")
 	public String cus_qna() {

@@ -208,7 +208,7 @@ public class InsuController
 			
 			return mv;
 		}
-		catch (Exception e) 
+		catch (RuntimeException e) 
 		{
 			e.printStackTrace();
 			//transactionManager.rollback(status);
@@ -334,25 +334,9 @@ public class InsuController
 			return mv;
 			
 		}
-		/*catch (RuntimeException e) 
-		{
-			
-			
-			mv.addObject("msg","가입에 실패하였습니다. 고객센터에 문의하세요");
-			mv.addObject("url", "../product/pro_prop");
-			mv.setViewName("/product/pro_success");
-			
-			e.printStackTrace();
-			
-			return mv;
-
-		}*/
+		
 		catch (RuntimeException e) 
 		{
-
-			mv.addObject("msg","가입에 실패하였습니다. 고객센터에 문의하세요");
-			mv.addObject("url", "../product/pro_prop");
-			mv.setViewName("/product/pro_success");
 
 			e.printStackTrace();
 			//transactionManager.rollback(status);

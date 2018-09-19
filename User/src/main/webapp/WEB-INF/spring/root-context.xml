@@ -12,11 +12,7 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 		<property name="driverClassName" value="oracle.jdbc.OracleDriver"></property>
-<<<<<<< HEAD
 		<property name="url" value="jdbc:oracle:thin:@192.168.0.34:1522:orcl"></property> 
-=======
-		<property name="url" value="jdbc:oracle:thin:@localhost:1522:orcl"></property> 
->>>>>>> branch '180904branch' of https://github.com/wiris123/user.git
 		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.0.34:1521:orcl"></property> -->
 		<!-- <property name="url" value="jdbc:oracle:thin:@192.168.0.21:1521:orcl"></property> -->
 		<property name="username" value="insu"></property>

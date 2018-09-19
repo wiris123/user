@@ -1,0 +1,454 @@
+@charset "utf-8";
+/* COMMON */
+html {.overflow:scroll; .overflow-x:auto;  background: #fff; height: 100%;}
+body {background-color:#fff; color:#666; font-size:14px; font-family:돋움,Dotum,굴림,Gulim,Apple-Gothic,sans-serif;
+    letter-spacing:-1px; line-height:1em; -webkit-text-size-adjust:none; min-height: 480px; }
+body[orient="portrait"] { min-height: 460px; }
+body[orient="landscape"] { min-height: 460px; }
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,button,p,blockquote,th,td {margin:0; padding:0;}
+img,fieldset{border:0}
+ul,ol,li{list-style:none;}
+h1,h2,h3,h4,h5,h6 {font-size:100%; font-weight:normal;}
+hr {display:none;}
+a, a:link {color:#333; text-decoration:none;}
+em,i {font-style:normal; font-weight:normal;}
+legend,caption    {display:none; clear:both;}
+button {border:none; font-family:돋움,Dotum,굴림,Gulim,Apple-Gothic,sans-serif; cursor:pointer; overflow:visible;}
+input,textarea,select {font-family:inherit; font-size:inherit; font-weight:inherit; *font-size:100%;}
+textarea, input {outline-color:-moz-use-text-color; outline-style:none; outline-width:medium;}
+input[type="button"], input[type="submit"] {-webkit-appearance:none;-webkit-border-radius:0;}
+
+#wrap {position:relative; _text-align:left; _height:1%; margin-bottom:0px;}
+
+.type-text    {background:#fff;height:14px; text-align:left;}
+.type-btn    {margin:0; padding:0; overflow:hidden; border:0; text-indent:-1000em; cursor:pointer; cursor:hand;}
+
+.menu { margin-top: 10px; padding-left: 5px; }
+.menu span.title { font-weight: bold; font-size: 1.2em; }
+
+/* 메뉴탭 */
+.top_menu { padding: 7px 10px 7px 10px; border-bottom: 1px solid #c6c6c6; background-color: #FFFFFF; *display: inline-block;}
+    .top_menu table.tb_menu { margin: 0px; width:100%;}
+    .top_menu table.tb_menu td { padding: 0px; height: 26px; text-align: left; vertical-align: middle; }
+#btnPrev { height: 26px; padding: 5px 10px 5px 17px; background: url('../images/btn_prev.gif') no-repeat 0px 0px; border: 1px solid #b8b8b8; font-weight: bold; cursor: pointer; }
+#btnModify { height: 26px; padding: 5px 10px 5px 17px; background: url('../images/bg_button02.gif') no-repeat 0px 0px; border: 1px solid #b8b8b8; font-weight: bold; cursor: pointer; }
+#btnTalkIng { height: 26px; padding: 5px 10px 5px 17px; background: url('../images/bg_button02.gif') no-repeat 0px 0px; border: 1px solid #b8b8b8; font-weight: bold; cursor: pointer; }
+#btnTalkEnd { height: 26px; padding: 5px 10px 5px 17px; background: url('../images/bg_button02.gif') no-repeat 0px 0px; border: 1px solid #b8b8b8; font-weight: bold; cursor: pointer; }
+#btnTalkDelete { height: 26px; padding: 5px 10px 5px 17px; background: url('../images/bg_button02.gif') no-repeat 0px 0px; border: 1px solid #b8b8b8; font-weight: bold; cursor: pointer; }
+
+/* 로고 */
+.top_logo { padding: 0px 0px 0px 0px; border-bottom: 1px solid #c6c6c6; background-color: #FFFFFF; *display: inline-block;}
+    .top_logo table.tb_logo {  margin: 0px; width:100%;}
+    .top_logo table.tb_logo td { padding-left:12px;padding-bottom:6px; height: 26px; text-align: right; vertical-align: middle; }
+/* 검색 */
+.gnb_search { padding: 10px; border-bottom: 2px solid #6cafeb; }
+    .gnb_search table { margin: 0px; width: 100%; border: 3px solid #4B8FC7; }
+    .gnb_search table td { padding: 0px; height: 30px; text-align: left; vertical-align: middle; }
+    .search_box { -webkit-appearance:none;-webkit-border-radius:0; padding: 3px; width: 97%; height: 100%; border: 0px; }
+    .search_btn { width: 100%; height: 100%; border: 0px; background-color: #4B8FC7; color: #fff; font-weight: bold; font-size: 1.1em; }
+    .gnb_search table td.gnb_search_form {text-align:center; width: 100%; height: 100%; border: 0px; background-color: #4B8FC7; cursor:pointer; color: #fff; font-weight: bold; font-size: 1.1em;}
+
+/* FAQ */
+.faqMain { padding-top: 5px; }
+    .faqMain div.menu_bg { margin: 15px; width: 90%; height:54px; background: url(../images/main_sub_bar02.png) no-repeat 50%; cursor: pointer; }
+    .faqMain div.menu_bg p.menu_title { padding: 18px 0 18px 15%; font-size:14px; color:#000; font-weight:bold; }
+
+.faq { padding-top: 10px; }
+    .faq table { margin: 0px; width:100%; }
+    .faq table td { 
+        width:50%; padding: 10px; background-color: #F6F4F6; border-top: 1px solid #D4D4D4; border-bottom: 2px solid #6cafeb;
+        text-align: center; font-size: 1.1em; cursor: pointer; }
+    .faq table td.on { background-color: #fff; border-top: 2px solid #6cafeb; border-bottom: 1px solid #fff; 
+        font-weight: bold; }
+    .faq table td.left { border-left: 1px solid #D4D4D4; border-right: 2px solid #6cafeb; }
+    .faq table td.right { border-right: 1px solid #D4D4D4; border-left: 2px solid #6cafeb; }
+
+.faqList { margin-top: 10px; }
+    .faqList ul li.flist { padding: 10px 0 10px 22px; border-bottom: 1px solid #D4D4D4; background:url(../images/bullet_blue.gif) no-repeat 5px; cursor: pointer; }
+    .faqList ul li.flistnone { padding: 10px; }
+
+.faqAnswer ul li.ftitle { padding: 10px; background-color: #DCEBFC; border-bottom: 1px solid #D4D4D4; line-height: 20px; font-weight: bold; font-size: 1.1em; }
+.faqAnswer ul li.fcontens { padding: 10px; line-height: 20px; word-break: break-all; overflow: hidden; text-align: justify; }
+
+.fnodeList { margin: 10px; padding: 10px 5px 10px 5px; line-height: 25px; border: 2px solid #6cafeb; }
+    .fnodeList span.nlist { margin-left: 5px; margin-right: 5px; padding-left: 15px; background:url(../images/bullet01.gif) no-repeat 1%; font-size: 1.1em; cursor: pointer; }
+    .fnodeList span.nlist.on { font-weight: bold; color: #4B8FC7; }
+
+/* QNA */
+#mail { width:100%; }
+    #mail div.menu1 { margin: 15px; width: 90%; height:54px; background: url(../images/main_sub_bar01.png) no-repeat 50%; cursor: pointer; }
+    #mail div.menu2 { margin: 15px; width: 90%; height:54px; background: url(../images/main_sub_bar02.png) no-repeat 50%; cursor: pointer; }
+    #mail div.menu3 { margin: 15px; width: 90%; height:54px; background: url(../images/main_sub_bar03.png) no-repeat 50%; cursor: pointer; }
+    #mail div.menu1 p.menu_text, #mail div.menu2 p.menu_text, #mail div.menu3 p.menu_text { padding: 18px 0 18px 15%; font-size:14px; color:#000; font-weight:bold; }
+    #mail table td.tdstext { margin-top: 20px; margin-right: 15px; margin-left: 15px; padding: 10px; line-height: 18px; border: 1px solid #e3e3e3; }
+    #mail div.stext { line-height: 18px; text-align: center; }
+    #mail div.stext img.icon { float: left; margin-top: 12px; background-color: #fff; }
+    #mail div.stext dl.text1 { float: left; margin-left: 10px; text-align: left; font-size: 0.9em; }
+    #mail div.stext dl.text1 dt { width: 200px; color: #000; font-weight: bold; }
+    #mail div.stext dl.text1 dd { width: 200px; padding: 8px 0px; }
+
+#mailsend { margin-top: 10px; width:100%; }
+    #mailsend table.form_type1 { margin-bottom: 10px; width: 100%; border-top: 2px solid #6fafe9; table-layout:fixed; }
+    #mailsend table.form_type1 th { padding-left: 10px; border-bottom:1px solid #cccccc; font-weight:bold; text-align:left; font-size: 1.1em; }
+    #mailsend table.form_type1 td { padding: 10px; border-bottom:1px solid #cccccc; text-align:left; color: #565656; vertical-align:top;}
+    #mailsend table.form_type1 td select.select01 { margin-bottom: 3px; height:30px; border: 1px solid #ACACAC; }
+    #mailsend table.form_type1 td input.input02 { height:24px; color: #4B4B4B; padding: 3px 2px 2px 3px; border: 1px solid #ACACAC; border-radius: 3px; }
+    #mailsend table.form_type1 td textarea.comment { width: 98%; height:200px; padding: 3px; color: #4B4B4B; line-height: 16px; border: 1px solid #ACACAC;
+        overflow:scroll;
+        scrollbar-face-color:#f7f7f7;
+        scrollbar-highlight-color:#f7f7f7;
+        scrollbar-3dlight-color:#D2D2D2;
+        scrollbar-shadow-color:#d8d8d8;
+        scrollbar-darkshadow-color:#fff;
+        scrollbar-track-color: #F7F7F7;
+        scrollbar-arrow-color:#000; }
+    #mailsend div.bbsbtn1 { padding-bottom: 20px; text-align: center; }
+    #mailsend div.bbsbtn1 span.btn_bt01 { background: url('../images/bg_button02.gif') repeat-x 0 0; border: 1px solid #b8b8b8; border-radius: 3px; 
+        display: inline-block; padding: 7px 10px 7px 26px; text-decoration: none; letter-spacing: normal; word-spacing: normal; color: #000; }
+    #mailsend div.send { width: 100%; }
+        #mailsend div.send div.sendim {text-align:center; padding:20px 0 0 0;}
+        #mailsend div.send div.sendim p.texts {text-align:center; font-size:14px; color:#000; font-weight:bold; line-height:20px;}
+        #mailsend div.send div.sendbox {margin:0 auto; padding:10px; width:200px; background-color:#ececec;  margin-bottom:20px; line-height:16px;}
+
+.attach_file { padding: 5px; font-size: .9em; font-weight: bold; }
+
+.maillist { padding-top: 10px; }
+    .maillist ul li.mlist1 { padding: 15px 10px 15px 10px; background-color: #DCEBFC; border-top: 2px solid #6cafeb; border-bottom: 2px solid #D4D4D4; font-weight: bold; font-size: 1.1em; }
+    .maillist ul li.mlist1 span.t1 { color:#008cf9; font-weight:bold;}
+    .maillist ul li.mlist1 span.t2 { color:#ff4800; font-weight:bold;}
+    .maillist ul li.mlist2 { padding: 10px 0 10px 22px; border-bottom: 1px solid #D4D4D4; background:url(../images/bullet_blue.gif) no-repeat 5px; cursor: pointer; }
+    .maillist ul li.mlist2 span.mstat1 { color:#ff4800; font-size: .9em; }
+    .maillist ul li.mlist2 span.mstat2 { color:#008cf9; font-size: .9em; }
+    .maillist ul li.mlist2 table {}
+    .maillist ul li.mlist2 table td.end { padding-right: 7px; text-align: right; }
+    .maillist ul li.mlistnone { padding: 10px; }
+
+.mailAnswer { padding-top: 10px; }
+.mailAnswer ul li.mtitleQ { padding: 13px 10px 15px 30px; border-top: 2px solid #6cafeb; border-bottom: 1px solid #D4D4D4; background:url(../images/qicon.png) no-repeat 10px #F3FAFF; font-weight: bold; font-size: 1.1em; }
+.mailAnswer ul li.mtitleA { margin-top: 20px; padding: 13px 10px 15px 30px; border-top: 1px dotted #6cafeb; border-bottom: 1px solid #D4D4D4; background:url(../images/aicon.png) no-repeat 10px #F3FAFF; font-weight: bold; font-size: 1.1em; }
+.mailAnswer ul li.mcontens { padding: 10px; line-height: 20px; word-break: break-all; overflow: hidden; }
+
+/* 설문 */
+.m_box {float:left; text-align:center; width:90%; border:1px solid #eaeaea; font-weight:bold; background-color:#f9f9fb;}
+    .m_box p.line {border-bottom:1px solid #eaeaea; font-size:12px; color:#000; padding:5px 0;}
+    .m_box p.line2 {font-size:12px; color:#000; padding:5px 0;}
+    .m_box p.line2 span.img{width:50px; padding:0 5px;}
+
+.mbtn {padding:10px 0px 10px 0; z-index:1000;}
+    .mbtn ul li {display:inline; margin-left:-2px;}
+    .mbtn input.mbtn_bt {margin-left: 5px; border-style:none; background:url(../images/y_but.png) no-repeat; width:62px; height:30px; padding:0px 1px 3px 0px; color:#4B4B4B; overflow:hidden; cursor:pointer; text-align:center; font-weight:bold;}
+    
+    
+/* 설문 */
+.m_talk_box {float:left; text-align:left; width:90%; border:5px solid #eaeaea; background-color:#f9f9fb;}
+    .m_talk_box p.line {border-bottom:1px solid #eaeaea; font-size:12px; color:#000; padding:10px 0 0 5px;}
+    .m_talk_box p.line2 {font-size:12px; color:#000; padding:5px 0 0 5px;}
+    .m_talk_box p.line2 span.img{width:50px; padding:0 5px;}
+    
+.m_talk_btn {padding:10px 10px 10px 0; z-index:1000;text-align:right;}
+    .m_talk_btn ul li {display:inline; margin-left:-2px;}
+    .m_talk_btn input.mbtn_bt {margin-left: 5px; border-style:none; background:url(../images/y_but.png) no-repeat; width:62px; height:30px; color:#4B4B4B; overflow:hidden; cursor:pointer; text-align:center; font-weight:bold;}    
+
+/* 페이징 */
+.paging span.first_off, .paging span.first_on, .paging span.prev_off, .paging span.prev_on { padding: 0 0 0 0; margin-bottom:2px; }
+.paging span.prev_off, .paging span.prev_on { margin-right:7px; }
+.paging span.first_off span { background: url('../images/btn_paging.png') no-repeat 0px -11px transparent; display:inline-block; height:25px; width:31px; }
+.paging span.first_on span { background: url('../images/btn_paging.png') no-repeat 0px -54px transparent; display:inline-block; height:25px; width:31px; cursor: pointer; }
+.paging span.prev_off span { background: url('../images/btn_paging.png') no-repeat -31px -11px transparent; display:inline-block; height:25px; width:31px; }
+.paging span.prev_on span { background: url('../images/btn_paging.png') no-repeat -31px -97px transparent; display:inline-block; height:25px; width:31px; cursor: pointer; }
+.paging span.first_off span.first, .paging span.first_on span.first,
+.paging span.prev_off span.prev, .paging span.prev_on span.prev { overflow:hidden; vertical-align:middle; margin-top:-3px; }
+
+.paging span.num, .paging strong { display: inline-block; padding: 5px 9px 5px 9px; text-decoration: none; letter-spacing: normal; word-spacing: normal; }
+.paging strong { background: url('../images/bg_button.gif') repeat-x 0 0; border: 1px solid #b8b8b8; border-radius: 2px; }
+
+.paging span.end_off, .paging span.end_on, .paging span.next_off, .paging span.next_on {padding: 0 0 0 0; margin-bottom:2px; }
+.paging span.next_off, .paging span.next_on { margin-left:7px; }
+.paging span.end_off span  { background: url('../images/btn_paging.png') no-repeat -93px -11px transparent; display:inline-block; height:25px; width:31px; }
+.paging span.end_on span  { background: url('../images/btn_paging.png') no-repeat -93px -54px transparent; display:inline-block; height:25px; width:31px; cursor: pointer; }
+.paging span.next_off span  { background: url('../images/btn_paging.png') no-repeat -62px -11px transparent; display:inline-block; height:25px; width:31px; }
+.paging span.next_on span  { background: url('../images/btn_paging.png') no-repeat -62px -97px transparent; display:inline-block; height:25px; width:31px; cursor: pointer; }
+.paging span.end_off span.end, .paging span.end_on span.end,
+.paging span.next_off span.next, .paging span.next_on span.next { overflow:hidden; vertical-align:middle; margin-top:-3px; }
+/* 페이징 end*/
+
+/* Talk */
+.talktap{float:left; margin:0; width:100%; height:50px; background-color:#e7e7e7; border-bottom:1px solid #d8d8d8;}
+.talktap span.but {float:left; border: 1px solid #c1c1c1; margin:10px 1px 0 7px; padding: 8px 0;text-align: center; width: 45%;-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;background: #f7fbff;behavior: url(/PIE.htc);}
+.talktap span.but_o {float:left; font-size:12px; color:#fff; font-weight:bold; border: 1px solid #286aae; margin:10px 1px 0 7px; padding: 8px 0;text-align: center; width: 45%;-webkit-border-radius: 8px;-moz-border-radius: 8px;border-radius: 8px;background: #4a94e0;behavior: url(/PIE.htc);}
+
+.talklist {float:left; padding:0px; width:100%; letter-spacing:normal; }
+.talklist ul.tlist {margin:0px;}
+.talklist ul li.list1 {float:left; cursor: pointer; padding:15px 0 10px 10px; border-bottom:1px solid #ccc; background:url(../images/list_arrow.png) no-repeat 95%;}
+.talklist ul li.list1 h2 {float:left; font-size:12px; color:#000; font-weight:bold; width:75%;}
+.talklist ul li.list1 span {float:right; font-size:11px; color:#909090; padding-right:18px;} 
+.talklist ul li.list1 span span.rednum {float:left; font-size:11px; color:#fff; font-weight:bold; margin:0 5px; padding: 1px;text-align: center; width: 15px;-webkit-border-radius: 7px;-moz-border-radius: 7px;border-radius: 7px;background: #cc0000;behavior: url(/PIE.htc);}
+.talklist ul li.list1 p {float:left; font-size:12px; color:#000; width:270px; padding:8px 0 2px 0; line-height:16px;}
+
+.talksent {float:left; width:100%; background-color:#FFFFFF; border-top:1px solid #8ea3b2;}
+.talksent ul {float:left; width:100%;}
+.talksent li.t_search_box {float:left;padding-top: 5px;}
+.talksent li.t_search_box textarea.comment
+{ 
+		width: 300px; height:46px; padding: 3px; color: #4B4B4B; line-height: 16px; border: 1px solid #ACACAC;
+        overflow-y:scroll;
+        scrollbar-face-color:#f7f7f7;
+        scrollbar-highlight-color:#f7f7f7;
+        scrollbar-3dlight-color:#D2D2D2;
+        scrollbar-shadow-color:#d8d8d8;
+        scrollbar-darkshadow-color:#fff;
+        scrollbar-track-color: #F7F7F7;
+        scrollbar-arrow-color:#000; }
+.talksent li.t_search_box input {width:195px; font-size:12px; color:#969696; height: 28px; margin:10px 0; -webkit-border-radius: 15px;-moz-border-radius: 15px;border-radius: 15px;}
+.talksent li.t_attach_btn {float:left; margin:5px 5px 0 5px;}
+.talksent li.t_send_btn {float:left; margin:5px 5px 0 5px;}
+.talksent li.search_byte {float:left; margin:2px 2px 0 5px;font-size:11px; color:#969696;}
+
+
+/* 채팅창 속성
+------------------------------------------------------------------------------------ */
+div.talk_date {font-weight:bold; font-size:12px; color:#1d435c; text-align:center; padding:10px 0px; }
+div.preMessage {
+    background:#eff1f3; 
+    font-size:11px; color:#5d656e;
+    height:13px; line-height:15px; 
+    padding:3px 0 3px 10px; margin-top:14px; 
+    border-top:1px solid #7a7b7b;
+    border-bottom:1px solid #b1b4ba;
+    overflow-x:hidden; 
+    overflow-y:hidden;
+    }
+div.dialoguePane {
+    /*background:#fff;*/
+    background:#F1F3F4
+    position:relative; width:100%;
+    /*overflow:auto;
+    height:340px;*/
+    margin:0; 
+    padding:0; 
+    margin-bottom: 0px;
+    /*background:url(../images/talk_bg.png); repeat;*/
+    }
+div.dialoguePane ul.dialogueInner {
+    width:100%;
+    list-style-type:none; 
+    padding:0; 
+    margin:0;
+     }
+ ul.dialogueInner li.cMessagePane {
+    position: relative;
+    clear: both;
+    width: 65%;
+    margin-top: 5px;
+    padding:0 0 5px 16px;
+    display:block;
+     }
+ul.dialogueInner li.aMessagePane {      
+    float:right; 
+    position: relative; 
+    clear: both;
+    text-align:right;
+    margin:0;
+    margin-right: 5px;
+    width: 75%;
+    margin-top: 5px;
+    padding:0;
+     }
+
+div.commandPane {
+    background:#eff1f3;
+    width:100%; 
+    height:25px;
+    left:0; 
+    bottom:50px;
+}
+div.contentsWrapper {
+    clear:both;
+}
+div.contentsWrapper div.inputPane {
+    width:100%; 
+    height:60px;  
+    left:0; 
+    bottom:0;
+}
+div.inputPane div.inputPaneInner {
+    height:100%;
+}
+div.inputPaneInner div.fieldset {       
+        display:block; 
+        position: relative;
+        padding-left:5px; 
+        padding-right:65px; 
+        padding-top: 5px;
+        padding-bottom: 2px;
+        margin: 5px;
+        height: 40px;
+        border: 1px solid #79b7e7;
+        background-color: #fff;
+}
+div.inputPaneInner div.fieldset fieldset {
+    margin:0; 
+    padding:0;
+}
+div.fieldset textarea.txtMessage {
+    width:100%; 
+    font-size: 9pt;
+    height:36px;
+    margin:0;
+    padding:0;
+    overflow-y:auto;
+    border: 0;
+    
+}
+div.inputPaneInner div.fieldset input[type=button]{
+    position:absolute;
+    padding:0;
+}
+ 
+div.fieldset input.btnSendMessage {
+    position:absolute; 
+    right:2px;  
+    padding:0;
+    top: 4px; 
+    height: 40px; 
+    width:55px; 
+}
+ 
+
+/* 시스템 채팅  -----------------------------------------*/
+span.rbmd {font-size:12px; color:#FFFFFF;  position:relative; display:inline-block; vertical-align:top; margin-right:5px;}
+
+span.rbmd .rbmd_fix 
+{position:relative; display:inline-block; vertical-align:top}  
+
+span.rbmd .rbtc 
+{position:relative; text-align:right; line-height:1px !important; display:block; background:url(../images/chat_box.png) repeat-x;
+font-size:9px !important; vertical-align:top; padding-top:10px; *padding-top:1px;}
+
+span.rbmd .rbtr 
+{position:absolute; width:6px; zoom:1; background:url(../images/chat_box.png) no-repeat 0px -84px; height:10px; vertical-align:top; overflow:hidden;
+background-position:-12px -57px; top:0px; right:0px;}
+
+span.rbmd .rbmc 
+{background-color:#878b95; border-bottom:#6C7079 0px solid; text-align:left; border-left:#6C7079 1px solid; padding-bottom:1px; line-height:18px; padding-left:8px; padding-right:8px; zoom:1; display:inline-block; word-wrap:break-word; white-space:normal; word-break:break-all; border-top:#6C7079 0px solid; border-right:#6C7079 1px solid; padding-top:0px;}
+
+span.rbmd .rbbc 
+{position:relative; text-align:right; line-height:1px !important; display:block; background:url(../images/chat_box.png) repeat-x; font-size:8px; vertical-align:top; padding-top:17px; background-position:0px -11px; *padding-top:9px;}
+
+span.rbmd .rbbr 
+{position:absolute; width:8px; height:17px; top:0px; zoom:1; background:url(../images/chat_box.png) no-repeat -10px -68px; vertical-align:top; overflow:hidden; right:0px; }
+
+span.rbmd .rbtl 
+{position:absolute; width:8px; zoom:1; background:url(../images/chat_box.png) no-repeat -1px -56px; height:11px; vertical-align:top; overflow:hidden; top:0px;}
+
+span.rbmd .rbbl 
+{position:absolute; bottom:-3px left:0px; width:7px; zoom:1; background:url(../images/chat_box.png) no-repeat -1px -68px; height:17px; vertical-align:top; overflow:hidden; bottom:0px;}
+
+span.rbmd .rbar 
+{position:absolute; top:10px; left:-10px; width:11px; zoom:1; display:inline-block; background:url(../images/chat_box.png) no-repeat -60px -59px; height:18px; vertical-align:top; overflow:hidden; }
+
+span.line_date 
+{position:absolute; width: 75px;color: #3d5e75; font-size: 11px;font-family: AppleGothic;color:#2d495c; vertical-align:middle; top:30%; right:-81px;}
+
+span.line_attach 
+{position:absolute; width: 75px;color: #3d5e75; font-size: 11px;font-family: AppleGothic;color:#2d495c; vertical-align:middle; bottom:7px; right:-81px;}
+
+/* 고객 채팅  -----------------------------------------*/
+span.rbmd2 
+{font-size:12px; color:#FFFFFF; position:relative; display:inline-block; vertical-align:top; padding-right:12px; margin:0px;}
+
+span.rbmd2 .rbmd_fix 
+{position:relative; display:inline-block; vertical-align:top; text-align:right;}  
+
+span.rbmd2 .rbtc 
+{position:relative; text-align:right; line-height:1px !important; display:block; background:url(../images/chat_box.png) repeat-x;
+font-size:9px !important; vertical-align:top; padding-top:11px; background-position:5px -27px; *padding-top:1px;}
+
+span.rbmd2 .rbtr 
+{position:absolute; width:6px; zoom:1; background:url(../images/chat_box.png) no-repeat 0px -84px; height:10px; vertical-align:top; overflow:hidden;
+background-position:-42px -56px; top:0px; right:0px;}
+
+span.rbmd2 .rbmc 
+{background-color:#008EDA; border-bottom:#086099 0px solid; text-align:left; border-left:#086099 1px solid; padding-bottom:1px; line-height:18px; padding-left:8px; padding-right:8px; zoom:1; display:inline-block; word-wrap:break-word; white-space:normal; word-break:break-all; border-top:#086099 0px solid; border-right:#086099 1px solid; padding-top:0px;}
+
+span.rbmd2 .rbbc 
+{position:relative; text-align:right; line-height:1px !important; display:block; background:url(../images/chat_box.png) repeat-x; font-size:9px !important; vertical-align:top; padding-top:17px; background-position:0px -39px; *padding-top:8px;}
+
+span.rbmd2 .rbbr 
+{position:absolute; width:7px; top:0px; zoom:1; background:url(../images/chat_box.png) no-repeat 0px -84px; height:17px; vertical-align:top; overflow:hidden; background-position:-41px -68px; bottom:0px; right:0px; }
+
+span.rbmd2 .rbtl 
+{position:absolute; width:8px; zoom:1; background:url(../images/chat_box.png) no-repeat 0px -84px; height:11px; vertical-align:top; overflow:hidden; background-position:-31px -56px; top:0px; left:0px;}
+
+span.rbmd2 .rbbl 
+{position:absolute; width:6px; zoom:1; background:url(../images/chat_box.png) no-repeat 0px -84px; height:17px; vertical-align:top; overflow:hidden; background-position:-31px -68px; bottom:0px; left:0px;}
+
+span.rbmd2 .rbar 
+{position:absolute; top:10px; right:12px; width:11px; height:18px; zoom:1; display:inline-block; background:url(../images/chat_box.png) no-repeat -73px -59px; vertical-align:top; overflow:hidden; margin-right:-10px;}
+
+span.line_date2 
+{position:absolute; width: 75px;color: #3d5e75; font-size: 11px;font-family: AppleGothic;color:#2d495c; vertical-align:middle; top:30%; left:-81px;}
+ 
+ 
+/* 상담원 채팅  -----------------------------------------*/
+span.rbmd3 {font-size:12px; color:#333333; position:relative; display:inline-block; vertical-align:top; margin-right:5px;}
+
+span.rbmd3 .rbmd_fix 
+{position:relative; display:inline-block; vertical-align:top}  
+
+span.rbmd3 .rbtc 
+{position:relative; text-align:right; line-height:1px !important; display:block; background:url(../images/chat_box_b.png) repeat-x;
+font-size:9px !important; vertical-align:top; padding-top:10px; *padding-top:1px;}
+
+span.rbmd3 .rbtr 
+{position:absolute; width:6px; zoom:1; background:url(../images/chat_box_b.png) no-repeat 0px -84px; height:10px; vertical-align:top; overflow:hidden;
+background-position:-12px -57px; top:0px; right:0px;}
+
+span.rbmd3 .rbmc 
+{background-color:#FFFFFF; border-bottom:#CFD2F6 0px solid; text-align:left; border-left:#CFD2F6 1px solid; padding-bottom:1px; line-height:18px; padding-left:8px; padding-right:8px; zoom:1; display:inline-block; word-wrap:break-word; white-space:normal; word-break:break-all; border-top:#CFD2F6 0px solid; border-right:#CFD2F6 1px solid; padding-top:0px;}
+
+span.rbmd3 .rbbc 
+{position:relative; text-align:right; line-height:1px !important; display:block; background:url(../images/chat_box_b.png) repeat-x; font-size:8px !important; vertical-align:top; padding-top:17px; background-position:0px -11px; *padding-top:9px;}
+
+span.rbmd3 .rbbr 
+{position:absolute; width:8px; height:17px; top:0px; zoom:1; background:url(../images/chat_box_b.png) no-repeat -10px -68px; vertical-align:top; overflow:hidden;right:0px; }
+
+span.rbmd3 .rbtl 
+{position:absolute; width:8px; zoom:1; background:url(../images/chat_box_b.png) no-repeat -1px -57px; height:10px; vertical-align:top; overflow:hidden; top:0px;}
+
+span.rbmd3 .rbbl 
+{position:absolute; bottom:-3px left:0px; width:7px; zoom:1; background:url(../images/chat_box_b.png) no-repeat -1px -68px; height:17px; vertical-align:top; overflow:hidden; bottom:0px;}
+
+span.rbmd3 .rbar 
+{position:absolute; top:10px; left:-10px; width:11px; zoom:1; display:inline-block; background:url(../images/chat_box_b.png) no-repeat -60px -59px; height:18px; vertical-align:top; overflow:hidden; }
+
+.talklist {float:left; padding:0px; width:100%}
+.talklist ul.mlist {margin:0px;}
+.talklist ul li.listt {float:left; cursor: pointer; padding:15px 0px 15px 10px; width:100%; border-bottom:1px solid #ccc; background-color:#f2f9ff;}
+.talklist ul li.listt span.t1 {font-size:12px; color:#008cf9; font-weight:bold;}
+.talklist ul li.listt span.t2 {font-size:12px; color:#ff4800; font-weight:bold;}
+.talklist ul li.listt2 {float:left; cursor: pointer; padding:15px 0 15px 30px; width:290px; border-bottom:1px solid #ccc; font-size:12px; color:#000; font-weight:bold; background:url(../images/qicon.png) no-repeat 3%;}
+.talklist ul li.listt3 {float:left; cursor: pointer; padding:15px 0 15px 10px; width:100%; border-bottom:1px solid #ccc; font-size:12px; color:#000; font-weight:bold; background-color:#f2f9ff;}
+.talklist ul li.listt4 {float:left; cursor: pointer; padding:15px 0 15px 10px; width:100%; border-bottom:1px solid #ccc; font-size:12px; color:#000; font-weight:bold; background-color:#F6F4F6; text-align:center;}
+.talklist ul li.list1 {float:left; cursor: pointer; padding:15px 0 15px 10px; width:100%; border-bottom:1px solid #ccc; background:url(../images/list_arrow.png) no-repeat 95%;}
+.talklist ul li.list2 {float:left; cursor: pointer; padding:15px 0 15px 10px; width:310px; border-bottom:1px solid #ccc; line-height:20px;}
+.talklist ul li.list2 div.sendbox {margin:0 auto; padding:10px; width:200px; background-color:#ececec;  margin-bottom:20px; line-height:16px;}
+ 
+ 
+#basic-modal-content {display:none;}
+/* Overlay */
+#simplemodal-overlay {background-color:#000; cursor:wait;}
+/* Container */
+#simplemodal-container {height:300px; width:260px; color:#bbb; background-color:#333; border:4px solid #444; padding:12px;}
+#simplemodal-container .simplemodal-data {padding:8px;}
+#simplemodal-container code {background:#141414; border-left:3px solid #65B43D; color:#bbb; display:block; font-size:12px; margin-bottom:12px; padding:4px 6px 6px;}
+#simplemodal-container a {color:#ddd;}
+#simplemodal-container a.modalCloseImg {background:url(images/close_x.png) no-repeat; width:25px; height:29px; display:inline; z-index:3200; position:absolute; top:-15px; right:-16px; cursor:pointer;}
+#simplemodal-container h3 {color:#84b8d9;}
+
+
+#content {border-bottom:1px dotted #999; border-top:1px dotted #999; padding:20px 0;}
+#footer {clear:left; color:#888; margin:20px 0;}
+#footer a:link, #footer a:visited {color:#888; text-decoration:none;}
+#footer a:hover {color:#333; text-decoration:underline;}
+ 

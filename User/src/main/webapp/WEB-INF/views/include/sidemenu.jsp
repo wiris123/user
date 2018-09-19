@@ -129,8 +129,8 @@ function qnaCheck(fn) {
          </div>
       </dd>
       <dd class="m2">
-         <a href="#none" onclick="openPopCounsel('chat');ga('send','event','Direct','Etc','Rightside-Navi_Chat',1);" title="새창">
-            <em name="chatStatus" class="icon-state1 off">[OFF]</em><span>채팅상담</span>
+         <a href="#" onclick="window.open('<%=request.getContextPath() %>/include/chat', 'ISM상담','width=600px, height=800px'); return false" target="_blank" onFocus="this.blur();">
+            <em name="chatStatus" class="icon-state1 on">[ON]</em><span>채팅상담</span>
          </a>
       </dd>
        <dd class="m6">
@@ -152,7 +152,7 @@ function qnaCheck(fn) {
          </a>
       </dd>
       <dd class="m5">
-         <a href="cus_faq" onclick="ga('send','event','Direct','Etc','Rightside-Navi_FAQ',1);"><em>FAQ</em><span>자주하는 질문</span></a>
+         <a href="<%=request.getContextPath() %>/custom/cus_faq" onclick="ga('send','event','Direct','Etc','Rightside-Navi_FAQ',1);"><em>FAQ</em><span>자주하는 질문</span></a>
       </dd>
    </dl>
    <a href="#wrapper" class="btn-top">페이지상단으로 이동</a>
